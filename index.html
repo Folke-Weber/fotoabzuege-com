@@ -162,6 +162,36 @@ footer a{display:block;padding:4px 0}
   .fileitem .lineprice{text-align:left}
 }
 
+
+.customerbox{margin-top:22px;border-top:1px solid #e5e5e1;padding-top:22px}
+.customerbox h3{margin:0 0 16px;font-size:24px}
+.customergrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.customergrid .wide{grid-column:1/-1}
+.customergrid input{width:100%;padding:13px 12px;border:1px solid #d8d8d5;border-radius:9px;background:#fff;font:inherit}
+.shipping-address{margin-top:16px;padding:16px;background:#fafaf8;border:1px solid #e5e5e1;border-radius:12px}
+.pickup-note{margin-top:16px;padding:14px;background:#f3f8f3;border:1px solid #d9e7d9;border-radius:10px;font-size:13px}
+.reviewbtn{width:100%;margin-top:20px;font-size:17px;padding:16px 20px}
+.orderpreview{display:none;margin-top:20px;background:#171919;color:#fff;border-radius:14px;padding:20px}
+.orderpreview.show{display:block}
+.orderpreview h4{margin:0 0 12px;font-size:22px}
+.orderpreview .sumrow{border-bottom:1px solid #ffffff18}
+.orderpreview .sumrow:last-child{border-bottom:0}
+.formerror{display:none;margin-top:12px;color:#b42318;background:#fff1ee;border:1px solid #ffc9bf;border-radius:9px;padding:11px;font-size:13px}
+.formerror.show{display:block}
+@media(max-width:700px){.customergrid{grid-template-columns:1fr}.customergrid .wide{grid-column:auto}}
+
+
+.format-card{appearance:none;text-align:left;font-family:inherit;cursor:pointer;position:relative;transition:.15s transform,.15s border-color,.15s box-shadow}
+.format-card:hover{transform:translateY(-2px);border-color:#ef3a19;box-shadow:0 9px 22px #00000010}
+.format-card:focus-visible{outline:3px solid #ffb49f;outline-offset:2px}
+.format-card em{display:block;width:100%;margin-top:8px;color:#ef3a19;font-size:11px;font-style:normal;font-weight:950}
+.surface-card{appearance:none;text-align:left;font-family:inherit;cursor:pointer;transition:.15s transform,.15s border-color,.15s box-shadow}
+.surface-card:hover{transform:translateY(-2px);border-color:#ef3a19;box-shadow:0 9px 22px #00000010}
+.surface-card em{display:block;margin-top:12px;color:#ef3a19;font-size:12px;font-style:normal;font-weight:950}
+.surface-card.active{border:2px solid #ef3a19;background:#fff8f5}
+.selection-flash{animation:selectionFlash .8s ease}
+@keyframes selectionFlash{0%{box-shadow:0 0 0 0 rgba(239,58,25,.45)}100%{box-shadow:0 0 0 12px rgba(239,58,25,0)}}
+
 </style>
 </head>
 <body>
@@ -202,30 +232,78 @@ footer a{display:block;padding:4px 0}
     <div class="kicker">Viele Formate</div>
     <h2>Für jedes Bild das <b>Richtige.</b></h2>
     <p class="sub">Von quadratisch über klassische Fotoformate bis zu Vario- und Panoramaabzügen.</p>
-    <div class="format-grid"><div class="format-card"><strong>10×10</strong><span>quadratisch</span></div>
-<div class="format-card"><strong>10×15</strong><span>klassisch</span></div>
-<div class="format-card vario"><strong>10×Vario</strong><span>bis 100 cm</span></div>
-<div class="format-card"><strong>13×13</strong><span>quadratisch</span></div>
-<div class="format-card"><strong>13×18</strong><span>klassisch</span></div>
-<div class="format-card vario"><strong>13×Vario</strong><span>bis 100 cm</span></div>
-<div class="format-card"><strong>15×15</strong><span>quadratisch</span></div>
-<div class="format-card"><strong>15×20</strong><span>klassisch</span></div>
-<div class="format-card"><strong>15×21</strong><span>klassisch</span></div>
-<div class="format-card"><strong>15×23</strong><span>klassisch</span></div>
-<div class="format-card vario"><strong>15×Vario</strong><span>bis 100 cm</span></div>
-<div class="format-card"><strong>20×20</strong><span>quadratisch</span></div>
-<div class="format-card"><strong>20×28</strong><span>klassisch</span></div>
-<div class="format-card"><strong>20×30</strong><span>klassisch</span></div>
-<div class="format-card vario"><strong>20×Vario</strong><span>bis 100 cm</span></div>
-<div class="format-card"><strong>24×30</strong><span>cm</span></div>
-<div class="format-card"><strong>25×38</strong><span>cm</span></div>
-<div class="format-card"><strong>28×35</strong><span>cm</span></div>
-<div class="format-card"><strong>30×30</strong><span>cm</span></div>
-<div class="format-card"><strong>30×40</strong><span>cm</span></div>
-<div class="format-card"><strong>30×42</strong><span>cm</span></div>
-<div class="format-card"><strong>30×45</strong><span>cm</span></div>
-<div class="format-card"><strong>30×48</strong><span>cm</span></div>
-<div class="format-card vario"><strong>30×Vario</strong><span>bis 121 cm</span></div></div>
+    <div class="format-grid"><button class="format-card" type="button" data-format-index="0" aria-label="10×10 auswählen und bestellen">
+      <strong>10×10</strong><span>quadratisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="1" aria-label="10×15 auswählen und bestellen">
+      <strong>10×15</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card vario" type="button" data-format-index="2" aria-label="10×Vario auswählen und bestellen">
+      <strong>10×Vario</strong><span>bis 100 cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="3" aria-label="13×13 auswählen und bestellen">
+      <strong>13×13</strong><span>quadratisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="4" aria-label="13×18 auswählen und bestellen">
+      <strong>13×18</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card vario" type="button" data-format-index="5" aria-label="13×Vario auswählen und bestellen">
+      <strong>13×Vario</strong><span>bis 100 cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="6" aria-label="15×15 auswählen und bestellen">
+      <strong>15×15</strong><span>quadratisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="7" aria-label="15×20 auswählen und bestellen">
+      <strong>15×20</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="8" aria-label="15×21 auswählen und bestellen">
+      <strong>15×21</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="9" aria-label="15×23 auswählen und bestellen">
+      <strong>15×23</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card vario" type="button" data-format-index="10" aria-label="15×Vario auswählen und bestellen">
+      <strong>15×Vario</strong><span>bis 100 cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="11" aria-label="20×20 auswählen und bestellen">
+      <strong>20×20</strong><span>quadratisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="12" aria-label="20×28 auswählen und bestellen">
+      <strong>20×28</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="13" aria-label="20×30 auswählen und bestellen">
+      <strong>20×30</strong><span>klassisch</span><em>bestellen →</em>
+    </button>
+<button class="format-card vario" type="button" data-format-index="14" aria-label="20×Vario auswählen und bestellen">
+      <strong>20×Vario</strong><span>bis 100 cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="15" aria-label="24×30 auswählen und bestellen">
+      <strong>24×30</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="16" aria-label="25×38 auswählen und bestellen">
+      <strong>25×38</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="17" aria-label="28×35 auswählen und bestellen">
+      <strong>28×35</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="18" aria-label="30×30 auswählen und bestellen">
+      <strong>30×30</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="19" aria-label="30×40 auswählen und bestellen">
+      <strong>30×40</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="20" aria-label="30×42 auswählen und bestellen">
+      <strong>30×42</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="21" aria-label="30×45 auswählen und bestellen">
+      <strong>30×45</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card" type="button" data-format-index="22" aria-label="30×48 auswählen und bestellen">
+      <strong>30×48</strong><span>cm</span><em>bestellen →</em>
+    </button>
+<button class="format-card vario" type="button" data-format-index="23" aria-label="30×Vario auswählen und bestellen">
+      <strong>30×Vario</strong><span>bis 121 cm</span><em>bestellen →</em>
+    </button></div>
     <div class="vario-note">Vario-Formate werden passend zum Bildverhältnis gefertigt – bis 100 cm, bei 30 cm Breite bis 121 cm Länge.</div>
   </div>
 </section>
@@ -237,8 +315,8 @@ footer a{display:block;padding:4px 0}
       <div class="kicker">Oberflächen</div>
       <h2>Matt oder Glänzend – <b>Sie haben die Wahl.</b></h2>
       <div class="surface-cards">
-        <div class="surface-card active"><strong>Matt</strong><p>Ruhige, elegante Oberfläche – besonders schön für Portraits, Hochzeiten und harmonische Motive.</p></div>
-        <div class="surface-card"><strong>Glänzend</strong><p>Leuchtende Farben und brillanter Glanz – ideal für Urlaub, Familie und farbstarke Aufnahmen.</p></div>
+        <button class="surface-card active surface-pick" type="button" data-surface="Glänzend"><strong>Glänzend</strong><p>Leuchtende Farben und brillanter Glanz – ideal für Urlaub, Familie und farbstarke Aufnahmen.</p><em>Glänzend bestellen →</em></button>
+        <button class="surface-card surface-pick" type="button" data-surface="Matt"><strong>Matt</strong><p>Ruhige, elegante Oberfläche – besonders schön für Portraits, Hochzeiten und harmonische Motive.</p><em>Matt bestellen →</em></button>
       </div>
     </div>
   </div>
@@ -295,8 +373,8 @@ footer a{display:block;padding:4px 0}
     <div class="field">
       <label>2. Oberfläche</label>
       <div class="radio-row">
-        <label class="choice"><input type="radio" name="surface" value="Matt" checked> Matt</label>
-        <label class="choice"><input type="radio" name="surface" value="Glänzend"> Glänzend</label>
+        <label class="choice"><input type="radio" name="surface" value="Glänzend" checked> Glänzend</label>
+        <label class="choice"><input type="radio" name="surface" value="Matt"> Matt</label>
       </div>
     </div>
   </div>
@@ -325,13 +403,54 @@ footer a{display:block;padding:4px 0}
     </div>
   </div>
 
+
+  <div class="customerbox">
+    <h3>5. Ihre Kontaktdaten</h3>
+    <div class="customergrid">
+      <div class="field"><label for="firstName">Vorname *</label><input id="firstName" autocomplete="given-name" required></div>
+      <div class="field"><label for="lastName">Nachname *</label><input id="lastName" autocomplete="family-name" required></div>
+      <div class="field"><label for="email">E-Mail *</label><input id="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="phone">Telefon</label><input id="phone" type="tel" autocomplete="tel"></div>
+    </div>
+
+    <div id="pickupNote" class="pickup-note">
+      <strong>Abholung bei Foto Weber</strong><br>
+      Unterstadt 14 · 72401 Haigerloch
+    </div>
+
+    <div id="shippingAddress" class="shipping-address" style="display:none">
+      <strong>Lieferadresse</strong>
+      <div class="customergrid" style="margin-top:12px">
+        <div class="field wide"><label for="street">Straße & Hausnummer *</label><input id="street" autocomplete="street-address"></div>
+        <div class="field"><label for="zip">PLZ *</label><input id="zip" inputmode="numeric" autocomplete="postal-code"></div>
+        <div class="field"><label for="city">Ort *</label><input id="city" autocomplete="address-level2"></div>
+      </div>
+    </div>
+
+    <div id="formError" class="formerror"></div>
+  </div>
+
   <div class="summary">
     <div class="sumrow"><span>Bilder</span><strong id="sumImageCount">0</strong></div>
     <div class="sumrow"><span>Fotoabzüge gesamt</span><strong id="sumPrintCount">0</strong></div>
-    <div class="sumrow"><span>Oberfläche</span><strong id="sumSurface">Matt</strong></div>
+    <div class="sumrow"><span>Oberfläche</span><strong id="sumSurface">Glänzend</strong></div>
     <div class="sumrow"><span>Fotoabzüge</span><strong id="sumPhotos">0,00 €</strong></div>
     <div class="sumrow"><span>Versand</span><strong id="sumShipping">0,00 €</strong></div>
     <div class="sumrow total"><span>Gesamt</span><span id="sumTotal">0,00 €</span></div>
+  </div>
+
+  <button id="reviewOrder" class="btn reviewbtn" type="button">Bestellung prüfen →</button>
+
+  <div id="orderPreview" class="orderpreview">
+    <h4>Bestellübersicht</h4>
+    <div class="sumrow"><span>Bestellnummer</span><strong id="previewOrderNo">–</strong></div>
+    <div class="sumrow"><span>Kunde</span><strong id="previewCustomer">–</strong></div>
+    <div class="sumrow"><span>Lieferart</span><strong id="previewShipping">–</strong></div>
+    <div class="sumrow"><span>Fotoabzüge</span><strong id="previewPrints">–</strong></div>
+    <div class="sumrow"><span>Gesamt</span><strong id="previewTotal">–</strong></div>
+    <div style="margin-top:14px;font-size:12px;color:#c7c7c7">
+      Diese Prüfung ist noch lokal im Browser. Im nächsten Schritt verbinden wir den Button mit dem echten Bestell-Backend.
+    </div>
   </div>
 
   <div class="statusnote"><strong>Jetzt verbessert:</strong> Mehrfachauswahl, nachträgliches Hinzufügen weiterer Bilder und eigenes Format pro Bild funktionieren im Browser. Bestellung, Bezahlung und Server-Upload werden danach angeschlossen.</div>
@@ -541,10 +660,121 @@ fileInput.addEventListener("change",e=>addFiles(e.target.files));
 });
 uploadZone.addEventListener("drop",e=>addFiles(e.dataTransfer.files));
 
+function shippingLabel(){
+  const key=document.querySelector('input[name="shipping"]:checked').value;
+  return key==="pickup" ? "Abholung bei Foto Weber" : key==="post" ? "Deutsche Post" : "Hermes";
+}
+
+function toggleAddress(){
+  const key=document.querySelector('input[name="shipping"]:checked').value;
+  const shipping=document.getElementById("shippingAddress");
+  const pickup=document.getElementById("pickupNote");
+  const needsAddress=key!=="pickup";
+  shipping.style.display=needsAddress ? "block" : "none";
+  pickup.style.display=needsAddress ? "none" : "block";
+  ["street","zip","city"].forEach(id=>{
+    document.getElementById(id).required=needsAddress;
+  });
+}
+
+function makeOrderNo(){
+  const d=new Date();
+  const pad=n=>String(n).padStart(2,"0");
+  const rnd=Math.floor(100+Math.random()*900);
+  return `FW-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}-${rnd}`;
+}
+
 document.querySelectorAll('input[name="surface"],input[name="shipping"]').forEach(el=>{
-  el.addEventListener("change",updateSummary);
+  el.addEventListener("change",()=>{
+    updateSummary();
+    toggleAddress();
+  });
 });
 
+document.getElementById("reviewOrder").addEventListener("click",()=>{
+  const err=document.getElementById("formError");
+  err.classList.remove("show");
+  err.textContent="";
+
+  const first=document.getElementById("firstName").value.trim();
+  const last=document.getElementById("lastName").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const shipKey=document.querySelector('input[name="shipping"]:checked').value;
+
+  let errors=[];
+  if(items.length===0) errors.push("Bitte mindestens ein Bild auswählen.");
+  if(!first) errors.push("Bitte Vorname eingeben.");
+  if(!last) errors.push("Bitte Nachname eingeben.");
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Bitte eine gültige E-Mail-Adresse eingeben.");
+
+  if(shipKey!=="pickup"){
+    if(!document.getElementById("street").value.trim()) errors.push("Bitte Straße und Hausnummer eingeben.");
+    if(!document.getElementById("zip").value.trim()) errors.push("Bitte PLZ eingeben.");
+    if(!document.getElementById("city").value.trim()) errors.push("Bitte Ort eingeben.");
+  }
+
+  if(errors.length){
+    err.textContent=errors.join(" ");
+    err.classList.add("show");
+    document.getElementById("orderPreview").classList.remove("show");
+    return;
+  }
+
+  const printCount=items.reduce((sum,item)=>sum+item.qty,0);
+  const photos=items.reduce((sum,item)=>sum+(PRICE_TABLE[item.format][1]*item.qty),0);
+  const shipping=SHIPPING[shipKey];
+  const preview=document.getElementById("orderPreview");
+  document.getElementById("previewOrderNo").textContent=makeOrderNo();
+  document.getElementById("previewCustomer").textContent=`${first} ${last}`;
+  document.getElementById("previewShipping").textContent=shippingLabel();
+  document.getElementById("previewPrints").textContent=`${printCount} Stück · ${items.length} Bilddatei${items.length===1?"":"en"}`;
+  document.getElementById("previewTotal").textContent=euro(photos+shipping);
+  preview.classList.add("show");
+  preview.scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+
+
+function goToOrder(){
+  const target=document.getElementById("bestellen");
+  target.scrollIntoView({behavior:"smooth",block:"start"});
+  const box=target.querySelector(".shopbox");
+  if(box){
+    box.classList.remove("selection-flash");
+    void box.offsetWidth;
+    box.classList.add("selection-flash");
+  }
+}
+
+document.querySelectorAll(".format-card[data-format-index]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const idx=Number(btn.dataset.formatIndex);
+    defaultFormat.value=String(idx);
+    goToOrder();
+  });
+});
+
+document.querySelectorAll(".surface-pick[data-surface]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const wanted=btn.dataset.surface;
+    const radio=document.querySelector(`input[name="surface"][value="${wanted}"]`);
+    if(radio){
+      radio.checked=true;
+      document.querySelectorAll(".surface-pick").forEach(x=>x.classList.toggle("active",x===btn));
+      updateSummary();
+    }
+    goToOrder();
+  });
+});
+
+document.querySelectorAll('input[name="surface"]').forEach(radio=>{
+  radio.addEventListener("change",()=>{
+    document.querySelectorAll(".surface-pick").forEach(btn=>{
+      btn.classList.toggle("active",btn.dataset.surface===radio.value);
+    });
+  });
+});
+
+toggleAddress();
 updateSummary();
 </script>
 
