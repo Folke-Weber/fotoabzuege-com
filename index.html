@@ -892,13 +892,30 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     for(let i=0;i<items.length;i++){
       progressText.textContent=`Bild ${i+1} von ${items.length} wird übertragen: ${items[i].name}`;
       await uploadOne(items[i],order.orderId,order.uploadToken,surface);
-      const pct=Math.round(((i+1)/items.length)*95)+5;
-      progressBar.style.width=Math.min(100,pct)+"%";
+      const pct=Math.round(((i+1)/items.length)*90)+5;
+      progressBar.style.width=Math.min(95,pct)+"%";
     }
 
-    progressText.textContent="Alle Bilder wurden erfolgreich übertragen.";
+    progressText.textContent="Bestellung wird abgeschlossen …";
+    progressBar.style.width="97%";
+
+    const finalizeResponse=await fetch("/api/finalize",{
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify({
+        orderId:order.orderId,
+        uploadToken:order.uploadToken
+      })
+    });
+
+    const finalizeData=await finalizeResponse.json();
+    if(!finalizeResponse.ok || !finalizeData.ok){
+      throw new Error(finalizeData.error || "Bestellung konnte nicht abgeschlossen werden.");
+    }
+
+    progressText.textContent="Bestellung vollständig abgeschlossen.";
     progressBar.style.width="100%";
-    success.innerHTML=`<strong>Upload erfolgreich.</strong><br>Bestellnummer: <strong>${order.orderId}</strong><br>${items.length} Bilddatei${items.length===1?"":"en"} wurden sicher übertragen.`;
+    success.innerHTML=`<strong>Bestellung erfolgreich übertragen.</strong><br>Bestellnummer: <strong>${order.orderId}</strong><br>${items.length} Bilddatei${items.length===1?"":"en"} wurden sicher übertragen.<br>Status: <strong>vollständig</strong>`;
     success.classList.add("show");
   }catch(err){
     error.textContent="Fehler: "+(err?.message || err);
