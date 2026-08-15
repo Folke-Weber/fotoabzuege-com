@@ -812,6 +812,7 @@ function formatCode(label){
 
 async function createServerOrder(){
   const shipKey=document.querySelector('input[name="shipping"]:checked').value;
+  const surface=document.querySelector('input[name="surface"]:checked').value;
   const payload={
     firstName:document.getElementById("firstName").value.trim(),
     lastName:document.getElementById("lastName").value.trim(),
@@ -820,7 +821,13 @@ async function createServerOrder(){
     shipping:shipKey,
     street:document.getElementById("street").value.trim(),
     zip:document.getElementById("zip").value.trim(),
-    city:document.getElementById("city").value.trim()
+    city:document.getElementById("city").value.trim(),
+    surface,
+    items:items.map(item=>({
+      filename:item.name,
+      format:formatCode(PRICE_TABLE[item.format][0]),
+      quantity:item.qty
+    }))
   };
 
   const response=await fetch("/api/order",{
