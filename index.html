@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoWorks GETIN V16 · 2026-08-15 -->
+<!-- FotoWorks GETIN V17 · 2026-08-17 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -244,7 +244,7 @@ body.modal-open{overflow:hidden}
 
 
 
-/* FotoWorks GETIN V16 – Feinschliff, Fotoprodukte & Accessibility */
+/* FotoWorks GETIN V17 – Feinschliff, Fotoprodukte & Accessibility */
 .skip-link{position:fixed;left:12px;top:-80px;z-index:2000;background:#111;color:#fff;padding:12px 16px;border-radius:8px;font-weight:900}
 .skip-link:focus{top:12px}
 .navlinks a:focus-visible,.btn:focus-visible,.more-formats-btn:focus-visible,.product-teaser:focus-visible,.format-close:focus-visible,.choice:focus-within,.uploadbtn:focus-within,.sendbtn:focus-visible,.reviewbtn:focus-visible{outline:3px solid #ffb49f;outline-offset:3px}
@@ -277,7 +277,7 @@ body.modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 
-/* FotoWorks GETIN V16 – Bildkacheln & backendfähige Preislogik */
+/* FotoWorks GETIN V17 – Bildkacheln & backendfähige Preislogik */
 .main-format-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
 .main-format-grid .visual-format-card{padding:0;min-height:0;display:block;overflow:hidden;border-radius:14px;background:#fff;border:1px solid #deded9;box-shadow:0 8px 24px rgba(0,0,0,.055);position:relative;text-align:left}
 .main-format-grid .visual-format-card.primary-format{border:2px solid var(--red);background:#fff}
@@ -304,7 +304,7 @@ body.modal-open{overflow:hidden}
 @media(max-width:440px){.main-format-grid{grid-template-columns:1fr}.visual-format-card .format-visual{height:220px}}
 
 
-/* FotoWorks GETIN V16 – emotionalere Bildwelt der fünf Standardformate */
+/* FotoWorks GETIN V17 – emotionalere Bildwelt der fünf Standardformate */
 .main-format-grid .visual-format-card[data-format-index="1"] .format-visual img{object-position:center 40%}
 .main-format-grid .visual-format-card[data-format-index="4"] .format-visual img{object-position:center 35%}
 .main-format-grid .visual-format-card[data-format-index="7"] .format-visual img{object-position:center 48%}
@@ -312,7 +312,7 @@ body.modal-open{overflow:hidden}
 .main-format-grid .visual-format-card[data-format-index="19"] .format-visual img{object-position:center 50%}
 
 
-/* FotoWorks GETIN V16 – bebilderte Produktkarten für Tassen und Leinwand */
+/* FotoWorks GETIN V17 – bebilderte Produktkarten für Tassen und Leinwand */
 .visual-product-teaser{min-height:118px;padding:14px 18px 14px 14px;display:grid;grid-template-columns:112px 1fr 26px;align-items:center;gap:18px}
 .visual-product-teaser .product-teaser-visual{display:block;height:82px;border-radius:10px;overflow:hidden;background:#f3f3f1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .visual-product-teaser .product-teaser-visual img{width:100%;height:100%;object-fit:cover}
@@ -329,6 +329,20 @@ body.modal-open{overflow:hidden}
   .visual-product-teaser .price-list{font-size:12px}
   .visual-product-teaser .pickup-text{font-size:12px}
 }
+
+/* FotoWorks GETIN V17 – ALFO-Fotobuch & Live-Backend */
+.product-teasers{grid-template-columns:repeat(3,minmax(0,1fr))}
+.alfo-teaser{color:inherit}
+.alfo-teaser .product-teaser-copy small{font-size:11px;color:#666;font-weight:750;line-height:1.3}
+.alfo-visual{display:flex!important;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff1eb,#fff8f4)!important}
+.alfo-book{width:67px;height:70px;border-radius:4px 9px 9px 4px;background:#fff;box-shadow:0 7px 18px #0002;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 7px;overflow:hidden;border-left:7px solid var(--red)}
+.alfo-book:before{content:"";position:absolute;inset:7px 7px 30px 7px;border-radius:3px;background:linear-gradient(135deg,#ef3a19 0 35%,#ff9b73 35% 55%,#ffd7c7 55% 72%,#252525 72% 100%)}
+.alfo-book b{font-size:12px;line-height:1;color:#222;letter-spacing:.02em;position:relative}
+.alfo-book small{font-size:7px!important;color:#777!important;font-weight:900!important;letter-spacing:.08em;position:relative;margin-top:2px}
+.backend-live-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:900;color:#3e6d42;background:#eef8ef;border:1px solid #cfe7d1;border-radius:999px;padding:4px 8px;margin-top:3px}
+.backend-live-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:#4d9a55}
+@media(max-width:1050px){.product-teasers{grid-template-columns:1fr 1fr}.alfo-teaser{grid-column:1/-1}}
+@media(max-width:700px){.product-teasers{grid-template-columns:1fr}.alfo-teaser{grid-column:auto}}
 
 </style>
 
@@ -406,7 +420,7 @@ body.modal-open{overflow:hidden}
     <div>
       <div class="kicker">Premium Fotoabzüge aus Ihrem Fotofachgeschäft</div>
       <h1>Fotoabzüge in<br><span>Laborqualität.</span></h1>
-      <p class="lead">Brillante Fotoabzüge in vielen Formaten – dazu Fototassen und Leinwandbilder. Wählen Sie Ihr Produkt in wenigen Schritten und laden Sie anschließend Ihre Bilder hoch.</p>
+      <p class="lead">Brillante Fotoabzüge in vielen Formaten – dazu Fototassen, Leinwandbilder sowie Fotobücher, Kalender und Fotogeschenke über ALFO. Wählen Sie Ihr Produkt in wenigen Schritten und laden Sie anschließend Ihre Bilder hoch.</p>
       <div class="hero-actions">
         <a class="btn" href="#formate">▣ Fotos & Produkte auswählen →</a>
       </div>
@@ -420,7 +434,7 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="kicker">FotoWorks GETIN · Schnellwahl</div>
     <h2>Für jedes Bild das <b>Richtige.</b></h2>
-    <p class="sub">Die fünf beliebtesten Fotoformate sehen Sie sofort als Bildkacheln. Darunter finden Sie Fototassen und Leinwandbilder ebenfalls direkt als bebilderte Auswahlkarten – Sondergrößen und Vario nur einen Klick weiter.</p>
+    <p class="sub">Die fünf beliebtesten Fotoformate sehen Sie sofort als Bildkacheln. Darunter finden Sie Fototassen, Leinwandbilder und den ALFO-Designer für Fotobücher, Kalender & Fotogeschenke – Sondergrößen und Vario nur einen Klick weiter.</p>
 
     <div class="flowline" aria-label="Bestellablauf">
       <span>1 Produkt</span><span>2 Oberfläche</span><span>3 Bilder</span><span>4 Lieferung</span><span>5 Prüfen</span>
@@ -461,8 +475,8 @@ body.modal-open{overflow:hidden}
         <span class="product-teaser-visual"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAABICAYAAADWKYp8AAA7C0lEQVR4nJW9WZBlyXnf98vMc87d69baVV2993RPz4bBMgPMYLCSAAWSJg1CpEIMBmlH2JYVjlDIsh6sBz/4wXbIfnKEGZbDinDYEk0GFwgCKZIiFlICMBhgMAswC2am96W69vXuZ8tMP+TZbnU3bN+IXuqeczLz2/7fkl+eEnEcWRBgAQEgEGRfWYtJNbZRZ//v/g61f/3v0N0OxqQAIIT74x7LHpeARQg3phEWrC2u2+J2gc2/FwKsxWIR7i4suHEqP7kxZLZct2CRj1vck4+Q/StsQVv+PQLc18Z9Z92V4kYLYLA5bQDWrUVkPCrnstmTlbWLfLziTjfh1De2+LucJntOVCkSCGEpprW2eD5/NudrMYMoWF7wGwSetSClKISLtVhhs7UJhHVkqIsXEck3kMrDaI3In8k454RgM0WR2aJBClEQYQUZQ7LppXALtBaQ7tlC6+z0vUIUTKnoZYVtEiEEFkM+SyGYisykENk6QAiFtZZCNrnQBYByfKgIQGTXpwWePyLL+0RFtvn6rADpfnLj5OuyFYk7PjhJZfQKQWEv1lbuy4zSimKdhRpZqKp8/r1I4tjmj4LNrE1kTBBYbUiVJFm7S++LX6F+ewM5MwvSUWRtxrxMxUQ+VrHCkrnW5iZWseTCOsq/j7HJPSNz9tpCLqXSivK+YwRakaEM1VtyaWTokjPcAtaUSjz1TEX5CpSYXqcATOV6YV7FMqet2q3bZALLv68qXFWhigVm3zqLLy28ovlymovF/EkSZ/Qee6hCR5okpPWA5K13mPx3/xTzo7dIAStkxrPMksh5aHM9r8COu89kNNrjk1TuExUYK3GBKQaUsJnfawtFy6EtVzSkwFl+SZ+1AqxxSm2rYsv+LwXWVpRK25LpVXRn6scpTyAoV+t0XGaKIEoDztxJrnDF/NWRMwW1VmdDZbTKgssOafMnC2WsPA+IJEkymeRwkkOFKARgjSVNE3SthklTkrW7aGOcsPOFGVt5xiFEVRiFoCo+ZJqk48ROa+u0T849pXTfGVMw0VoDNlM2IbBSIITMkKckvoDFKnpQcR65otjMpWV+vCrGKaW1DyqwOOZCqqjmfixpFjZD1ZyPhU/PrFSUqDXNwUzVs8UUij6FPdk3cRxbIURBfP5g7hpyODfGYFKNtgZ8v4Q/kTG84k9s7u+LYOPY6nK6rbMwIXLC8r9LLlYJqjLP6WXmJsqHCwY+bNJK3FS4kHzpBXsq4wjKmELk8xSQXcXyHFcymBUio6tCzxSFwgk1173CrVHOSRkb2Cl6qnROo/C0a8k/FdiP49hWL+SPFUaVY1kGlViLNQZbpeHY44WiAEJU49TqvRVmmFIlq/fki7SZX8vHzvVq+t5SybKFZ/D98DUe4/+0by3+tqVMjg31kJELnkzbVBXB7CPoK8U8TVupcIXeZBPY6mQVBSxVzk7NAZll8wDzRKbZjgIn7+llTxFZUFplTG41FfJyRD8WF9gp08yWnRGUEy+EqIyVk1RhaxUef+Yn15bKN7kFlWZfmef42h4yXvUekWcw1esZb8QxnuTQWxmmujRbea5K+5QhHr8uSgWjGMd9vOOa5CarWEmeRxQwXXH6OcyT6WCuZQUSHBNsQYkt4NsNK0tNtmBtjhwCKbPJshSpUKxMuCWcTnOtUBRZAUYLWbw8JSRr5ZRockEUcUfFPVWvl89PMSSju/wup+W4URQ850EB5W6u8NXiuMc+bjQPSU3zK9maZFV+VRpkLpTs6WntAmtsYUglcfn1imbngYctx8ocbkm0NcVAZSAmCwbZ7NkyniqtuJixVPcpJ5znu2XWJ8g0KGcRLrrNCiwZU/NAz5Kv/+HzTAOXKALBfL02V5aCACqCLxl+zNjJp7Q2jwccrwSUwdzUZxpLcpGWuTnIPNos/Iet3J1BUq5BeSA35Zxy2LCOU9bmdpQRXdE+kTHLFhRRCQYrfqcaSRVIUiyq4sXKQNKROw2Tpct2a8mzg9zfVS3DVgQgqkWKqqK6pzNhlblsXmNwimILaBZYyuJKyfTKrBmbs3Sx8qekhspMjlST83KK1gqiZfdgbcF/AXhukTZHoKzIARhbVHByYKgoiSNEkAm3opZkFaJqVCxEyYTKILnISs21RWwg8gUVkUJZgnXG7dxFAf9TSpExxpYQnpdni7gtX9+ULxSlSWUKUPW/olDyihUJCuQSFR6UUi3Hy6uROSPFMeusTF0MLioCLUirokvVmKrfZ+vPMwmEQMRRbAvCp26u+CRR8RUVqxZZBS0nqBCaKMXo/Fym+ZWFTBPj5qn6nEIAxbRTeJkXwIr5S5WsPD9l9bZwR+5SCY/V1Grq+ZwLxwKrKUTIn8+vV61XVMgtLFAWnuj4x0JZjCq+fJBfUzzKBWptlrCIqWdFxbBkAcNClFadCTIX0NQEIifCYhxWFAwRFQXIgDLTKqf5ssK4aVqnIVvY7A+lr54uJmQuwk4PVAhcTEN0sWxx/Jv8+4qgKz7/uOCnl2wLJucUCCmZAo0sFBFCuGtSljZViVmm1p/PX3EfD1Q1K89ZJ4QMrquoVnjKgnCvCIoyDSlueMintMKS+e5+y/HliAp8lRFDjgqFx6GEz2NwVVhE/nO1CDItjOPaXk1tpsOb0nqmuCLkA3NUaS7+/xCLLqxt2scxDffO5RSGUlnscV7n9DyAVBULnVrf1Hqn3UtBc0aXl29mTOeGmRfM5GLzxZYh0DHIyPFKlAQjigJPnrJUZ7CF4CAv0YoqA6oQXIT90zA5vd7jnwy2K8SX66goiKjWrLLrGdpNuQ5bZaQoBXqMHrLxxJSkjmMXU/FEOXeJSHZqlQ+h7fh/i1sfAPpsPouXXy6ILhhUWmZZiy7unlLPcp7K88UOQsnIHA9sdWwhSr+fj5ZJ5SF1t0JLCzAiU0HBNKRW/q1+maNTaS15aiWm7rWivP7AHpI9Rnc+3/F06NgCBCV6ZsQXRlYF4Ue6jnxJGTyUuJEr1zSMwzRSiSiKyrmnoAe3+1ZQVRZPpqmpkF1E4FX/Or34B8V3jMTjQc40lT8jv3yEFTzSQI49dyyynV4TU9ceFMqj1/AoVyMeZEQJP8e/41hB5/gEU766dGHHx/Imk8mDyzwmzwcgqHoxh257vDL1wDDlv1N8zSP6YrWl7lTHko8S9kPGqKytms5NzcGDvP7Zn7JClauiPQ62xy1V5PeVc5b1AgvWZtuUFBZfuI+HCuRBg3C8LOvrx+Onapwj4iiq5Dz24QyopCb5lKXvOQYV5NCadYVU4P6BYXlIqvGIT1HBy8abyiGP0Z8PbnOfYquBTGlSD0ulCiuqRPsPqFHVJWRjyYpQp7ZTKw/ZB+aani9fc+E2K4yuutLqfnjpanMFLvN3WzbPuKesMfZB+HqQOFFVrqoh5r5o6v6cifk3P3v8/9+fbEHHFe3R9z9iCY+E+J99Q74f8Ci+PXK6h/jRso/A/ZyP+zAEs9a6SllxPcOCh4c82c8VQzRaF8LOiwK5tRWtSVMWUNHnKrOPQctDmxCOfx7mt6gwcyowPAZJx9b1QO0+o1hmidYDmFVhsAtwRPF1EVjaR6x9yq9VfsjT1yLsz0JM4cYvAN5Fcw8v0uQFGuEsWACmzHcr/xxf1yOYWRlfGGOK8lMBIccXUYGg/DtjzFR1hmPaftzqcliSUj6SyCmCf0bV6lGf/y+WnivFIxldfX7KHzLlzo5bby6k4vpDFLbw4dU0jsKpUK36/2zXNh1FOZpMJYDOG0fyW0Wm+MfGKNdRFRRFapAzqhC8KJuPctIettQ8hyzh58Fgqzp28Vw2z/+bEB/uD3OYPGbxjxihoGE6Esuu/mz2V2OVfIwyDBRZEdFS7PAVD+a0idJgiqkePqurr1d+LmA7r4I6PuZyLuMKSkHmEaQsdKA61YPg8eAGQL4rNu3OptKBY6M8ysoeIPAhijGlFJXCy/S9x/pVq8paRPh50DWNJlAyqlrffyBYLtB5WpnzS+UDAgp3kU9arteKbH0Vy80NrPoRMNWFY/NQ97iRFP93a3AwXmVglQyRb7yXU5ce+0FfXRBWYY6bzE4xNJ9hCs6mtWPKQqr3TrXMiuk5y+t5ysWDLWmVT9EzXthlNXah4mfLsQt+PHQ97mI1QK0qf9l9lVudxKWsoqQhh3py43tQAYv1UFUmUXyRczLfCs1n9EoiylIolTRLFIRVNPIhPj5HBZG34FYUp5oDF6McE/wUEQ9Eo2JKKNM+T5QanX9tLVbYjI/iAYU8bpW5YuSBWjF/JvBCWo6zxZw5TFd3/gp3d0wqtsrDh6RluZJWsu1sTCfEYvu1SmYlr2fKUF3vXIXhSMArSm1QIWhKeQsNFLjGg2rwkT9gjqHCwzTyeDdnYcFClEhwzGJcc6Mpv8sFYWyl9l5pH8oZV1iILbE3v7eIN3LWZCcQTMm4CjYXHDMFEuQ8su673HJzv5/vtVd8b/6vEHmAWtgupbM4vvcgC7gvW7cqn6p7EBVaKVu+qlLyquX4KSFOKUBelynV5fjEx+sI1fr39OIEQlTSIWswWmN0ijEarTU61VitMVZjjMUYV7ctU5pMwfIu14xxMttG9DwPpTyEyhsuqjtrBpmvQbr9ZSFVsT0ppUR5foVFlUZ8UaXD/SNzhchhX0B+FKq4tTDqvDYAJtsIKaP30tYKR1QV5iM+edtStcotphdbiMF71ACicn+xw2XtlMJPW60r6RTafeyTL8ACRqdYrYmjkHAyJopCoigkTVKs1QihKFt1nNULIRBKFoKTlMshC7asySzQaJRnEKkETOEwtU4xOusty06D2MylSClQXoDv+fi1AC8I8JVCeh5K+UzFDEUQmPnWSnqW+/lcCQsBCllWtmwphjyXESK715TVweymKbc6zVFb8H3askpBlwomKrtehXDLCFDkVlOkIrlvqpT+qr5VTLfauNszRgiB0ZpwMmEyGtDv94gmY9IkxVhDvsGvpMTz3P/LeSki5zIVkwXTc4UoYdc9KqXAZsd+DCCsRFqnDA5UjDv8YA2JMUAEGTQrpajVG7Q7HYJanVq9UYltSnV+IEsoMLDau0exVtepkscDkjybyd1jEcfkP+e+vmpBFYt/WKSe99kXRptfM6aozzxgrS7QKStq1YCqAPVjjiHfdCi0NosxdJIwHg0ZjYas3bmFEOApD+UppFBIWebtUjoByfzYjhRIIcmhWkr3r6lsjbqTqE7oSimk8gokyD8mTdFGg86EnMUDlrxI5Mgx2pBmKCA9j+WVVYIgoNFql2nS8dSvyiNbBc9MBWzJvwcD0KkRKsLO9T2PJXjop8gqKkHkcegXVGBclkOWwdKxhYjCV4lSmKWxHyM+D8YMUip6gz6T0ZBmu00Uhe56kM3nCbRxDJBSYK0sjgTnVmsqAZe1EmOqu0sCIwTYbDtCCCwp2UPIbGfJWgPGYLEYmwvbYozOxnOaKTOpa6MJvAZBrc7O1ianztbxPG+qelgSXCLig/zOr4nCl4spYZYPFHl2FmiVQXw1Zjo+dSYfquoyfb8FPFuBkXzRpSAzsxSU0W81msib/CkFXbiAPCAqecHm/XtcunKFjz33CQ4OD+gfHZLEMaPRCCkFtXoNk5YxglVe0bslpMsGMKUPz5VBCpl9rx3TjZ6ytAIhMih1MF4yPfB9hHQKlGaxRLMzQ6fTJQgC7t6+wdHBIWfOn88yAzEFs9UetjJts9khvawZMA8Uc8Uo4qCcQU4h8yYEC9lzplSXrJfPmsrOmhDY7JSqLcRayrqKQF4hiYoGVlA+U4ucIEeSqK6xSnRlrGlfCsrzscDu1g61Ro3OzAxz8wsIKZmMRhzs77F29y5KCYIgoOYHBDVFzffwAn9awNnSpFQoKZ3/LtwHiLxjRgqEVC7CVgphITUu2h8NB4zHY6I44fDwkO3tHZRSzM3NohPNxz7+caLJhI37d9nZ3qHdalO1tDJzyfrXjMlSN6cMVgjwvCmfCRa0AWuwLhVw/NMaYdIy0MriAitAClUI0ApnALlbLRRap04xtHWIqNQDSAvgVZCm7GvOFlZtFyq6F23pjaZhKAeBCnRUokQhnC9VnkeSJhwdHLpgLKjRaDVZWFoiimMODg+4vbbF0dERB4eHzM3PsbSwkLmDTHmylKlIsYSzAJ35Yp0kJGkKCIy19Ho9RsMR1ljiOKLTmcHzPYRU1BtN2u0GyydXmJ9fYKbdxvc9BkeHaJ0ClnotQHpeEYDm/tZYECYBPKRSoDIBRCEiTRBrG+j794knE8RkiB0MMEmCTWJXkDYWE0fo8QSTRKAtxjpUQvmomo/0fUTNQzRa0GzjzS1Cq4lBIVttOHUa0ewgfA9Rq5fcj2OslO70SwYKXqZvyCKtKgCphJop7cyVo+Ks83sFmQVWC6qZZSuFlAqhQAnHaJEpx2Q8RkrB6dOnOHvmFB959sNoY4jihHEYMhmHxElEGE4YDYeMxmOiMGY8GZOkCTpNSNIEo00RhfueRyOoU28EdM+cxvd9ms0m7XaHZqvFwvwC9UbDuQhriaOQ0WhEHEaEk9ClQlJijXZKn0e2Ujor1hqCAIFCxiHm3m0mb75JcuMDoh+8wmRnH7u/hx4M0AJ0o46ut8DPwqQ0JZ2E2CjEJDEkCe7EkUFLiX/yJLXFE/izs3gzbVSjAVGId+cG3rAHqUUYMI06st7BX1nBf/7j1B6/gv/ii8gTKxip3DqNBaXwHPw54RTQXOSQZcCWp0+lr8nyQlEJkrQmTVNSnRSFkBxuoyhCCOn8awa7UuUw68aLowSbpWGe8mjUa8x02jSaLZQfZIrjYLAsfGeRbuaLtU7RaYrR2gU7md801qKNu8daS5ok9KPYXTMaaww6C/qUFOg8IjeGNElc9G8MKnvbgQwCzM42+rvfZvff/Cnja9fo3brDYL+PUQqrFMbzUL6PVBIlEqQZI3wPi0BbMEYghALlOd5YB/NaALUa1GvYIED7AZ7ySMKYyc37iHgCUmK1RacpaWpA/xjv639Oa7ZL49Qqc5/9FK3/8NcJPvkpRLMBWufRuChTqDIQrEjf/V/kMJCF+XmunaaaKJygTYrMXmQjpMRYkzE+Ioki2jMdkjSl2WiglCTVWZ6c7RC4oNn5YCElRhtiG2MQeJ4TjE41Os2tQGOswRqL1jqLHQ02g/M88pVFxQ7H1GxPPc/XXTSfYqzGWuOi8zRBCQNWk6ZR9kz2ch7lEf7NXxP98e9x4+Xvsn1/h9A6qw9mOihrUdIJz2AQuAMVxiiUVUUd3lqnZFa7LEFYizAGlEBikdJglQVpMGmMCcek1qKtyI5YQeoptHRjjoHDJILr16hdvcaZ773C6q99hcbf+/vIlZUMxisRtQU3cQbV1S3IMje0RcAUhSFxHCGlwFMyfx8MAotSAiV9UgFJ7FpqLNAbhWjpcXKu5fRIG2d5tpIzV3xHUb3KkwApEcKSpqLMwwudVBhpkNYU+a7M6tGm8LXZQLYSVwiJkgbpSaxQxMKyvj8gTS2BlG5t2iD8gP4H7xF89fe4fuMmb9zZYrlZRxmNSQ2x0Y43xuAJgZCgjECmIEXskEkoF8wZg01T974W7fJ9hUUagRyN4Mh3yheOEQgmu3uMoghrDCK73502dYpssuQp9RRRqvnR1Rt89t412r//f9D9x/+NS71yIRQQnkW9xa5WEbOV1i+kYDIekUQRAstoOHL+dDTEGovv+zSaTQI/cBqYpiSJpttucOPeDt99f43HV+eYbTc4OdtmrlWn3ajj+x5CeSipUFhS7SzDWQGunJi7CPJUygmybHAsK2x5UQJrsxOpIJVCSeXcSJbbpkbTHyVsH464u33End0+H6wd8MLjJ3nuZECky2A0EXDjxl1WZ+qEH36MW/e2GPViZJISYAmEIFASqwQK4YRgDCKO0XHsyrx5XcGaojwqs9jHM4bJ3h5ifzdTZoUWEqMtMtXO2GyeolowmiSxhBYiY9H1Gu2lOa689BxbW1uw+hjPC/Cmui5zC8YiphoYKmkNIhP0mMl4hNUpu9tb7O/uMBqPaLZn6M7OEyUpR5sbNGo12jMzpNoglY9UHkEtoF2vcTAI2Tkccmt9l3bNo9Wos9Kp89jqIpGGSaJp1ANajTq1IECq3OsIF/1aibUaz9hSSTMtt8ahRao1whosLuBLrSXWlkmiSbUlTjT7/SGTMGEYp/SGEw4HE+LU0AgUMw03p1ISlHL/P7lK9A//K3Z/9AqnzRusCsVOP2FrMqY3HHGUanSS4EchvrUoq5FYhFTZa6uEM3Cse8OYzHBJOPgWeVpnLdJYUgupsSRZdmGxGCnRQiA9iVdrUK9LVL3G6oklVha6tE+tEq2s8GaYcuLZp8lq49V0Kwfo3EfnQVkZVwshSJKE0bAPVrOxdo+tjXWk8njyI8+zunoapdzL5MajIWt3b9Pr9Wi3Oy74khJrLEpa6oEHnsKTLihKEo2ymn6vR6wt72/2iY1lvlWjVfOYbQYstALCSYTyXI4dJpqdUDA2Bl/kuY/FGo0xhoZnOT/X4v7RmLVehDaaNNWkqcn8vKRW81GeB9bSaQRIYYmiFE9CXU2nmwDJJCSe6bD4n/8XhJvbeNeucub9D3js3XcxSUKaDhnHhpGEfhQzsoJwNGJw2GOcpERak0rpBGs0KtWF61S5G1MKoRRCKrRSWCEItKXhezTaTXzlUZfQDTxmmw2C2RnUbAf/4hVG587SW1xmNDPD+Or7hFEM1uLlcffxFKtayC8sPjOeQa8HxrC/u8vu9g5CSJ7+6Mc5uXrKbVFqjbXQaLR54ulnuX3zGkd7O3RmF1y+jUUJgcIVQJQAaaFVU6zM+ITaIJCcXWizdjDGWJBG0xAJXqLpKMNoPGYQxoRWsNm3hAZOdWsIKRnGLvIOJFw+NYMnNONQo6SHQhD4AisSGt0uKh2zfett9sKUx559gUGYkqYpgVJoa/GVQxFhZYU7YKOYaO8Q0WygPvNpJl/8AmkYU4ti6tubtLe3CZKYdHcHIQVes0YyiZhEMclwSLS+jT3qo8MRdjzGpElRgFG+QvkBSoBQCtto43fb+KdO4i2fIo0mhKMxsjsL9QZxo0F6+gzJwiID3yOKI9LRADPoI8YRXmsWhHD72YV4s6JBdcOj8I2ZVUdhSBJHpPGE3e1tAE5deIyTq6dI08Tl0pnvNMaAEZy7cImj/X2iMMTOdACLyl596XuShpeXKg33DkJ8JQm1QElBq+bRCQSnZwOkgN1xghICRMC9ccIkNQS+YrWh8KSh0Qho+JrDieX0XJ12TRGlhtMLDfxBzCA0oAXtToeND37CX37tD9lcX2PrcMAzz73Ib/79/5KJ74ExeDal5gmU5yF1vqliSXSCNgaNQaag+0OEN0HV66SdNubEs6Qf84mlQCIw4zEiihDa4CUx3mRMbWcPEU7QSYJJXd0N6fbYXXbqon+jPGi2ka0OemaGpBaAEuAHRLj306Vxggkn2CiEiUZojUgNQvmoWgNfWMzedr7FWZ5myGvj5OU2kUF7lqoMRwOwmsPDQ6IopNZocvbcxWwTQzknkIX3eVQtpeTSE09y99ZN0iTGGo2SEHgKbSEy4EmJtbA71ihlkAhXHFGKdj1AG8E41RxFln6YEMWaxBhHtwBfWeLUMhgkzDV9rizXaPmC/jjGKp+ZVp1RakmShKDeYu2DN/j9/+V/5PrWABv4NBoN/v1ff4srH/ooH/3slzjcP6The9RqAVaqIqU0xqWTFoPvOXclfR/P81FCIbVGDocZ30AjsEoiAx/heVhaGDuLXj3pPE5W51BZQSWPsFOts5057RpApduetUa7+cMxpKkTrNaIrEZgpKuj2KwiWpuZgVs32f/Tr5cVtNIpZZFebtsVa9dpShJOMGnKaNDHGEN3bp5Wu4PRaXbYPK+JT6Ee9UYTCyRxDGiksNS9bM+6Uqw3eZFElo+PEkukLYm2jGJNmBpMplMGQWIs++OUpq+Q0o0xCWMGo5TYSDodn2QUESeGZr3GJJqw99NX+a9/+0u8/e4N/uX3fsp6b4jwFNfff5eXfu6XGQgIJKiMlnwL1liLpySHgz7xXo8LK0vUawGe51H2kYnifa5CZNuyQqCMy9Oltdg4wqTa0Wxc8cZmLfyZyIt0UkqF8j2EUO6aBaQCr9KubFOEMSgMyhOkQmIVeEFAMB7QDXsu9SL3zzb3z66tJt+ot9ZZZxSFLoWKQuIwRErJ/OJSuZda+Rwvwmtt3CswcemINCnK7QXge6ro8PCVY2iU2mJfO9Eanb3NIcgCKU8KUqOZRCa7zyCNZpJa9rUmqfk0aj6ddpvAVwyGQ4TVqKBGsrfOJ194htWmJNy6x6xv+elwQkMJ7t26TjwZuM4VkeWxQhYpmtUG3wsIozG37txjkMDJboul2Q6dRh3fy17BnRuKzDPZLB3M3tgsPR+LcNU7VCbe6V47oEBU10YlkNbD81zBSlqJkpAkhsQIxrFmGCb0Is1ur89qLaVWr3F0OGL/7v3KRkhp15lu4hZmy1g9jkKUlAzCkFRrfD+g05kpFpgTWBmsMM+84QAh8ZSkEXj4XtY7ZSz5e1iksNQ8hRROwXxPAU6wwpJtYLidIl8KtNFYIfGVoFu3+KnAeh5zrTo1XzLubXCYGOqdDtYPEErS39nhr776x3zxhcf4o2+/xaUTbd7dmZAkKYPDPqSTTCgm2/p0Asnp9II6Nplw9+rLNBo/xyRZ5iC2tBsJdV9QV4KmrwiUh+d7BL6i5gusUHieID+VZzGQmgxZBTZ7ka2sZEDGuOs6qzQKKUm0JU4StDZMwoiDYcjBKGQYaSaJIbIQR4aTgYuNhlLw7lvv47l9UFPE4g5VbYHtQpb5dziZIATO71pDUKs5eM6j9UqdPHP67vu8/mohqNfpHe7xnW/+AX/7K/8RvtdCoPF9hRQSbcH3JCuzDXwlqWV7zTuDCfuDiCixpNnLXK0FoTxn/RK2Y+f7Z4IAz/fZ++BVvv/tv+TG5gFzC7N8+ld/i4tPfRQzPuBLn3mG9WvXef7Zsxz0xzxzImR7MOHgqIcZD5idXWE8GLC7u8fZlQXX4YIrJinfJ6jXqcU32LuT0Ksv0lu8TLu7iu+3CDzX5NBtNZgJanhKEngege/hKS8r/lQ6ZYxDvVywxR6EFaTGkGiDMVlhCMne9m3qjS5BvUOSxIzCFG3d5g8KRJLij0dgFNJ61OIx+rNfdHl2boRTFl5tQMi2OqVw27FJkoIQBPU6ylNZzViWG2YPfGzmuxRBEDAYDLh57fs01N8hNXWkckDmKUEgJN1mgK8k41jTDzVKWJSQNGsevrJEWqK1Lvy7IN9bca+49oM6rZrgnfffoiYsXZVw8523eeWt6/zu//kH3L15i8fSm2xs7fKZDy3wWj+mVVfs72rsZMhw+w719jzffPkVXnr2cS6ePkkyiYqgVUmF59eYbXg0vQnj4U164zUORJ3UNpHBLF5jke7iac6trHKi06bptQikdB2zeCTa8dEY6yJ7kzo3IUDljQyZwK3NmoqFRCd9dm//K+ZWnmNh9UU8ZWgEjumRsZg4xu+9TLr1AZPaL+BPDJ2zF/jIP/wn7j1o7u1EtoCT4gyXLYWe588OWlzDXrPVQSmFTlOkOi7gB324UgLPCzAmZTIaMhkeMLu4wmg8IhUSKcHzJP2JRoQGpZQLDK3b9PAlqECitCDVrgypMwSSuJwUo1nsBLz5F3/EXJBy5UMn2Wv3WevM8L//aJfesMdwPOK1tz7g/NkV3rq+y7WtPlf3J4xTzXJDcWdzm7W9n3BrfZNPP/d05k+nafG8ADA0fJ+GX6ceKNJUMw57GD0kGe8z3tjkVm+Oo1qdx5o12nWP9vwyozSgb+uIRhekh5KeC+KUh6+yhgxE5t5tVhU0xFFEf+s79A5eJRaS2MyytPIYkBIoizEeOvoeZvAn9PeO6Cx9nE444cRHn2P+ycfzogpl83+lubyol+N8h9EGqbI+ZyHwfP+RqPDQT7bdqNOYu/f7fOeHP+CLX7xEp9WgXncb71pnxAk3p1KuH81tZhi0ERjpIgudRa9SyKJ/Wyif8eEui4ttdjfavPHyD1BxyNrN+6zMn6Q7O4tUiiNZR7Y7vPfWJrIWEHiKhm9RIub2nTXsxWVqgUKaNGN8lh5kwahSAk8BOkUbi6z7LM21nGGkhsRCbDUwZJ6Y3p0d3r6/jdec5dTqCborJ9mzNfoakD5WeAhVY2F2ibmZBXxPZc2VriFTpxEH69/ig7d/j+s3N2juvc8nV7+EkD5YjdYJJB8w2f06Nt5lPNEuaNWp44u1LkArjgZMGWPZN1U53VKxWTH19vqpEyC5shQv1MlLjpYkTWg3fM4uBWxufMCfv/wGy/MznF2Z58KpkyzMtDPFcylUFEWIqQZEi68kRoCUBpXBONmLb5UUGCO4sDjD9q1rPP2JT7D+41c5GCScf+4jLM136czU+V9fXydJDb/44VN8sDNidGtALVDoVLG3t8mFK5pmTRaBo5cVi4qTMViUTagpTSosaThioEOarSbNZou2V8MiSVPY/+AucpzwjVdvcBRDs1Hj8Qsn+eRnnkbXFL1hxDhyGcdOo0WzOYtSPr7yCLyATnMGL/kp0f6/Ip2sY62kO9/FDwyT3k/oHb6BtCMGR++ysXYVEweMJpHr3pUS4buUoOgbF5mgqi9PE3n6VW57IZDkTfzlac/icqENxYkGJ4fMal1jQZxa5rt1bl+/iZjfBs/n3u51XvvgFgszDQLlYbTlmUvnuXjmBAKR7U9nhQ3rGh98Id0vEZCuJVknEcJoGp0ZSGaJDvps3lmjd/cOZ1ZnefHnP8cf/4v/iz/7828StJsstDyageT23oQIRSAhrXW4tr7D/W/9W86dXcD3DVJ5eNncrq8jC5ziIa36KlIa6oGLslMzIhlHyHqHVnuGiY346l/8gDnVpO0pdnoD9vt9Xn3rBv045Fd/8zNYYWi3POJEY8yEZDwmlR6i5uNpgadGyMn3MJN1ZluGuRnF1uY1Tlz9ZzS9NTa27+P5NWwqCVST+3sDPOE6ZpWvCgT2LC7XzaPA8h9Rfec7CNdPjadc54V0O06QvzulhO6iHVbkuGGLTTXXcKB5727Mhy559Nbf5cypsyjRQHqCg2GC0SHWWtZ++BNOXp/lqYunOL28gELSaXfwPInONm+lr7jz3pts3LnFxz/1eerNDnawR38cI+cXmFcJbx/FXPjsF7i+dp+v/8lXOUwVjWbAYJywP0zRtSaen7jChAqIjU9/a4+V+Zhm3cMAnq8KfVZSIK1hMhoSRRNazTrYGKksjSAg8Bso5WHNhIav6DQ9fuP5p7iy1OT9uzvs9yPevr3F+vYu2qR0O3V0aklSQ5y4Tp+ahEagqYttvMlrDHr32dxNOBjC+r7k9EpKS1xja2OPN962hCbkhY80OTga4XmGg+2E4ThkUfnFS3o8KN9gmx/kzonKhWjz0memDF7WOBiFYVZ0eEgIXtk6tcVercAYCGoeRkis8Xlm/oDG5BZDe5o4TWkGAXg1jIFmU3I4DvnhT2/SuHYXISQLs7PMz7TQVrB32Ofy6gynOx7j2RaHm7fozC6je1tc+/afEIYjdjc2aa6c4/kvfZn/+Xf/GUGjjR6EnFmeZ2k+wLbmOHnG4+itDVcUkYLJcAQqILAJrZrjSN57nvklPBUwGExYX1/j4oXztBsBiTYksetq8f0anlT4gc/f/aXnWIkkBwcHXDnRxVvxONcK+OevXWc4tsRJTBS5EnLNtxibYITGw8MmG2xt3cOTmmZDsd2DZy7Oc+Vci+3tQ8Kx5uxJxa11w607Q9LE4gmfzW2LUhKTxuS/ycXtpBaFkyJcK2AdcFuSynPRsbV4vo+nFFEYodOsddZS/Ml7tMtxs9RICSyGen2GM6fm2R4p3ls/5M/+4ussdX2QhvdvvY+0mraSeImlbiW+EBhj8TzF4XDIzY1dfnrrPs26x5mFJmubh8jmHHc2drh26wbrg4S7G5vYo/vcPhwiVy9xuLfLb/3GrxL4NZIk5rkXXqI/nFCreXzzzVtYBPXAI80OEiZxykI74OlLpwmTFFU5uO/YpNB4HB722NnbQ1tNLQjodro0GjNYawjjMaNBjycvLpMoyde++zY3Dof8wXd+wk/v3+elTz/J3EyLmYbP6mKT1UWfuXZKx4+piRHCHGLSPoc9yySGoO4xSjxOLlpGk20OB2MmkeDuhuHgwLC5BzUP9nYSV01VEh3HRR9A8eaFrOZZBDvFCcIC2l0FzCJc0V8pUh2jjS7edV1GZtlzUxafHcuRklpQx1OGxaWA16/3OXv+Kf7WxUW+/NQFltoBm+uvY8evMNu4x8pil1Mnljl1Yo4T821OLs3h+YKF2Rqfevo09+7cZhLGWJMiPXeowG93Of/5X+Mn90d0Tl3hzKWL3Lt9i/3tbXb393j8yad4/MwyvbXb2O4pbG2GuW6HVrOBMdops6dAWcJ4gjDl8VtjIE00nvLwvTrGaja2DhgMhqTJkDQdgOkjmBCP97BRSKvZZb6e8tmPnOPc6S4r8w0uPXOSX/zysyw2R5xbtCzPaJpqQitIeHy1zZOnl1iZVQx7WwyGmjSVXL2dcvVmRL/fwyYTTsx6NHy4tWa4fg/eec8SRpbZjmBjC0YTV6BSQcVnl0d1bOGgXYX8mC/OqA0CV/iPk4Rhv09taSl7BbIoovaykpbn6srlk8L1X0dJgh+HPPnEZf7bf/SPee3P/jVRr8ffeepJ/uhH13i7v8biyjrdGcP8wgX6gyG+r+jUOiy1G7zwxDk279xiMBxR8wN0kmC1wfN9ovEQrz2LWlpl4dxjSCu4cPkS7779DsPRkF//5IvUdI/nP/9p1Omn2D74DjO1BuNJiPI8tJQEns/GXp9rt+5w+fHHXYCYfYxNmZ9p8uHHP8zG1jscjWP6vQNMamnUWiwsPk177jxLSy2arbN4vbu8/aPX2RvC5u6AZDzmvVsTztjY9crh9vPnaopJv87djZCbN/epd+tcvvBJSL9Pb7jL4ZHl/EqdM8sBSQJr62PiSDPXEcQJXDoPdc+lr6MYGs02fhTiqUzYuRCrr5ywwhY4n+9Kgdu5Gg96BDVXjozimOGwz8LSUnYYP/cCD/pwISxCKYx1W4PNmkQYw97BHt/4+v9GdOM2oZkn8CwvLJzipp5nc5AiidHpFidOLHFheZEnz5zmxGyL61evcdg7wlOQRH1qvusHl9aSphHheAi1Np3ZOU5fegySmP6wz/Lqac6dXCYws5y9fIVvvvoeURShfcEkSlCejzEav97gzsYB/UGcnT8r2SHQeMN1Xnr+F9neucTNO28xGt4j1g2e/4V/xNK5l4hjQ5poUpNyuLVBmEiunJ5h5dwKP3x7gyd+4Rdcx0ocY7WmGdR4/Xtr/M3fXGMYJkRJym5vyIUnzvP3fucz3N/6GqOxZXMv5u1rAacXNJ2Wz401w+a+odOCi6uW2/dhbV0gAkmr1cKGeZ3/gfPZosghqRCXmSeNZov+0SF+EOAFPkEa0Ds8JD2TuuicXNA2f2QqUBOANpooTkmiFNGQbGzucfX2yzx1Yo7dtSbbB9t86937/Gdf+TwLy6vo1mnOnTuLJ8FE+2xdfZMDX7E/mJAmmnC0QzLY4/RzXyBMFZNRHx0nSASXn/0Yy6dOY5OUw/1ttg8OWVg6wUyzzrAXMRpOODw6LPJRcC3JWgqSNGWuU2dhfpY4SajX/Iwfzh1t3XmD1dVznD7/CU6sPMmdD16hO38WTy6ysXYXgjZX336b7vwi3sSnuXSS23feZzA4ZJQs8NQnf4WDrVcxyTZ+TbP23jZvvXKdL338Etev3+DHdw6Za8GPX3+Lr85qXnh2Fewd7m8J/sWf9vjv/0Gb5YWUb/5AstiFZy4rrt5M2O4peqHH0TBEIF1jQ6apXrG9WUB27qvJINkW12q1OmnqzlPX6w3SJCWKJvSODllYXHIdlDlSZMBf/R0ZxmjSJCZOXJ19dU6QhoKZxYS7oz0uP9Xm2ps7GBHyf//bP+OlC03GfoObS2e5cuVDSK/G0WjM0XCCDAJmWnW2Nt/n1JmTSK+OL2CkU0BjTMLyyVWkEEwmQ9bWNti5v46utTHJkEAkSB2TRBNUti1ps9/8J40mHMPihSbzM3XCSUStpgql92sNDo92scPrPNb8Mn7zNFc++mUCv8b6W99kZyJoPvF5wiikkWhGdp7W5U/wV//uDZKbA57+9GV6usPS6c9T379BoxHx5je+yu/89pf5+Ece4+4b3+cHr7/LH758HaUkr79+m2cutRFC0PANrbpPnMD7uwn7fcPnnxNs7Gju7lj6o5Tldo0LlxfpNj3iNHZHl6owTg7BlFuVeU9y8ZsAlKLVmSGJxtQbDReN65SdzXUWFhaz5/I98FzcDiXyrosoCmk1fbCSweGQz3xU8ePrEXHS5Nb9e3Tp8CsvLjDxYu4faWRDMZpscOfdMZNYMIkE2zshX/mlX2Z5bsR40aJknaBWZ3ywhzUxOjv0r7WmPaPo7e1x/eotLpzo8uNbW2zfuY5UNVo1S93PswRXZ0+jiBcvzPHBXshob4/93QMWTumy0cAafOEh613eeP1rzJ/uUms+wdyJj6FjQztdZ+PeBvv1Feq1GYRJ6MwuUmu9xNM/d4PJcBczt8y3/v0P+dynP8mpM5+h2fGZX3qVdLzPrduawbDHhQXFS5dm+f6NfbrtAKFTklSBMBwNI/7ZH0Uoz9JqKcLII4oDPvPhNmcXznJyfonTKzVmuj63UoMX1JywXUxmszaWLKDKaqmF/Cu/0nZmdo61W/sstpo0mk0AJuGYna1NTpxcxRhddGiUB+Cy47YIrHFNCeNI0h9L0qua3QOfMI34xJUrXFg9SSR36S50eW2zx9b2iIU5HyEmCDTzc128Zodnn7rM5tWvs3c04qmLTziosoZGs0m/N0D5rqqWhiPeffsdPvniE1w53eHN/+EPWVhaJugucrRxq1iXUB7S90iSlHGisdpiJiFxnFK8ksOWmLW0cpL4yglGk9c42HwNmTZp15c4vPcWemcX3b1M8/KnkCbBRzNOFM/83JdZv/oa23GT1ZUT3Lh+nZ3tHS5cPE+j2eLd119DvPAML3/nHcb9IVfOd/nS0ydZWVnATLZRVjLb8Dh3YZZnLpxgZalFUPPpzszTrHWo+x1m5p8kRbF543ukSeo2hzJQ8phKm1zVK4fiajQthTvr1Gy1aDSbTEYTGs0W1lqUp9jauE+j2aLT7U4dVs9TtvwdKVIoPOUa3vcOUuJIUWtqlrtL/Mbf+nmuXbuB8lpsD2I+9dEV/urVdcZjjfSgoTwO9yc01BL9rVuMh2Ni06W7eIlaTXHi1DkOdtapNxOMSVFSsb+/y9HRkJeePsu3vvkdXnrpOZaXF9k9nID0qPkeVmu0deetfOUzRHJmocZjJ+rZ7+Bw7y4pC8nQqDc4efIJWh3D3fe+S3dml+aMIDrcZX9tk0T+hMXLH6Pme9TTHjUVw+ISe4NneHpumVanQxRFrG9ssr1xi1PK8uKv/xZefMRLn/gwcmYJ09/gt7tH/NXb65zqnOJTv/bzYJrMd7vU6x0QrpAj/TppnDIOQwbDIaPBPqN+j3Z2Osdku5WeyFuPsrpoEV4ZW3mLXuWtQ8CJ1VPcvvo+taYr+ocTVy9fu3uHM+fO0+l2CyXJ37xwdLhPFE7oducRApbmfBqBol5XbOyG/OLnFvD6rzMcDLi9scM9E2DZIw4FXuBxsDchTS2pTfmlT1zBxkfcvLNNMPM0J5ZPcrS/iRSSNE0Iag0mwzEAW9s7hKlmfSh5cyPh0rlTDCYJcZrgB3UajRZWa5LE9ZELKTmYwMefrXNmKWIcp3kJgmoPvSEF0WZ2+UUuPLXIwtwyr3z7B+y9d0C3FjAeHLAoD+nG99h4/332dw8I5s7y9Md/ka3YJwpDjNXsbmxyuTPi8NZbHO1sYTfeIxr0mT9/hcUZj3/+1+/w9sYe/+l//FusXn6WsG8xViJ8L9sVzPayoyNMHDEab6O1xg+amejKgNnLrTrfySoicVFW0ETlAWMMjUaThaVlDnZ2WD19Bs/3GY1GeL7H5vp9wsmYmbl5giBACEkYjukd7LvuS6XACpbnFOOx4fBI8HMfabO2f4vR0S6fe/GjfO0H9xgon8DTJDrFR/Pis4/xzo1t1vaHzM40sEmI1YbGzCq+r7A6YRiOMcaSpClRGhN4AfWgRmumy5FsY4VPw5eEkwnj/oDJuE8rUPjStfkY7c5rCdmgl1p698Z88kmNosg+yX+XWG+0QTp5i/HRHF7QJB4f8dTj5/je7Vmube+x1LXMjK5y+4cvc2ttxNhr0xte48TaFk985R8wjC1JnDI63GVhpcZmf507a0d86XPPsr2+ThIO+PHNbW4ejKjVfH7y1gdcfPwKkXXNDdFo6HJ/FbgNJmOQfo16Q7hmiHgCKkB6ASY1JYy7lOnBjhVR/Tk/IZDtQC2fOs1oNGRrc4PVM+fwazVGwyG1mmGSve4qCILsHJbGmNS9j0Qb0iTmwskGe0ce9zZSEu1xe81yckXy7e/+hE99+Cxvr425ea/PqaUZJpOEbrNBOI6Ik9Ttb+uEpfnTfOFX/jbjwQGH+7ugXFAZhROEkMTG0uh0qc0mvPyj9/DqNR574hL9Xh9tLUZ51Op1luZnubd9iDaWhflZZtqKzZ5hfSvkw+NkqnRsrHOBm9t7vPvWbT4RG9p+E6k/xv7dIzb3Bqz1BP37B/TvXac7N8unnv9l5MJpNq5f51t/9uec/dQa9eWLHOzvM9tWPHPWI/lxyP/0b+7RuXSepXHI1XeuE3gG31fMNT3efPce9ccHXHnsMWbiPYSJ3R44hjSNMoMVTMZ9JpMeOhrj+XWUH2DSuLTs6W4iQf7Wy9JvV19WQ7HXfP7SZW5cfZ97t2+yevoMM90ucRRS03W00Rits8ZBRW8yQSCJwpBWo8Yb78WEEfi+4hs/jOm2fBIdYpdbDAcHfOaZZc7MSBqtDpOhxJMDNvd6JCbloH/EeKbGYKDQOuTurWso5RRJeB5RnLhmBwH9yZhRGHFyPuUvX/kRC02f558+j/Ut6WjM3s4eMzVJoCSJUQhhCTxLo2bpdhRCpMXBO3cSNPs9WgS8fRP2R/fp+JJfeeYpbtza4OXbQ548M8fF8yfpzM7y3s33mOUa7aN9wt6E2e4Mmx+8w+OnLhOOR8zYQ772+z/i9ntbeIHin/7un/BPfulxnrxygpt3NwkUdNuKd7ckr35zh7NPrPD4XIvfeKJBxx6RCkFQaxBORqRpQq3RJk4Thr09PL+GUgE6CkthT/8mRfd6jeLNe7mQc+FDdlrBBS2XrjzFnZvXuHPzOrOzs7S7s/hBgDICI10702gwQCcp2hoCIfCDOhv7moUZn5pyx3IiA0jF4iwsL0mkHPHFF7q8fXfE+ZU2Vy622HphhR/f2OJEbcRrr95kYyfhhc015pdOcHR4SBi7VHA8Hrj3q+EhVYMnH+9w5/o1wsTwx9/4Pj9963XmGoofX9thONGsrs7SaSgGCBoS0mSC5/nMNiX1mnRHj1VeU3RnxJ+88AS//vMvcXt3i1s37zOYSGbqoHyPA13jC595nns/fYUnPvYsjfMvsXH9KkHNoDyP/sGuO73iC968ehMPj978Kp3xhNXlLufPnyedHHD23FlOHOyzvbvJoL1Asx4w3NvitX4HX3v8Jx8OmAwPCKNR9taJFoPBHqreRNY9UkAhsJMx1pjsbUlCVCpflTp5JmQqwVu1ZSW3/IuXn+DwYI/tjXX2b153x22zRN5oTZqEjMdjGs02zXYXi+BzH5nj1bcO2BtAu+nhK0mcSNBDnr7cptE4xTjUPPt4i8CvYazmVz53ki98coHTc02+/86A3/zKf8BffP8dbDLmiy99lGZbsLm+SaNex/gGEbTYPbzD9Zf/mr1+n9mLT3P60iUONtbYGPTwnzjHiVqdcHjIZGODcZrwoaUuZxcb/HTQIwotRrhuUJn1wxkkEdCQLT68+iwfvfwxjp7eZ153uf7BT3j+dA21epK6r7h59x4nTl2EnRs0/Ii9vXv0ej1OXlmgqTySo02urW+zfPkyd3YVh+kWlxd8aC0ye+IMP93c583791jtzOCdeAyLh9AJXnjIj254/NLjDUS4TYxkMt6i0TzLvZ13ac7Mo+MxBo0YD7GjEUJK/h9azebV0a2ldQAAAABJRU5ErkJggg==" alt="Beispielbild mit zwei Fototassen"></span>
         <span class="product-teaser-copy">
           <strong>Fototassen</strong>
-          <span class="price-list"><small>weiß</small><b>9,99 €</b></span>
-          <span class="price-list"><small>farbig</small><b>12,95 €</b></span>
+          <span class="price-list"><small>weiß</small><b id="mugWhiteTeaserPrice">9,99 €</b></span>
+          <span class="price-list"><small>farbig</small><b id="mugColorTeaserPrice">12,95 €</b></span>
         </span>
         <span class="product-teaser-arrow" aria-hidden="true">›</span>
       </button>
@@ -474,6 +488,16 @@ body.modal-open{overflow:hidden}
         </span>
         <span class="product-teaser-arrow" aria-hidden="true">›</span>
       </button>
+
+      <a class="product-teaser visual-product-teaser alfo-teaser" id="alfoLink" href="https://alfo-fotobuch.com?affiliateCode=51016" target="_blank" rel="noopener noreferrer" aria-label="Fotobücher, Kalender und Fotogeschenke bei ALFO gestalten">
+        <span class="product-teaser-visual alfo-visual" aria-hidden="true"><span class="alfo-book"><b>ALFO</b><small>FOTOBUCH</small></span></span>
+        <span class="product-teaser-copy">
+          <strong>Fotobücher, Kalender & Fotogeschenke</strong>
+          <span class="pickup-text">Mit ALFO individuell gestalten</span>
+          <small>Öffnet den ALFO-Designer mit Foto-Webers Händlerzuordnung.</small>
+        </span>
+        <span class="product-teaser-arrow" aria-hidden="true">›</span>
+      </a>
     </div>
     <div class="catalog-status" id="catalogStatus" aria-live="polite"></div>
   </div>
@@ -519,8 +543,8 @@ body.modal-open{overflow:hidden}
 
       <div class="format-section-title" id="mugs">Fototassen</div>
       <div class="product-grid">
-        <button class="format-card product-card" type="button" data-format-index="24" aria-label="Fototasse weiß für 9,99 Euro auswählen"><strong>Fototasse weiß</strong><span class="product-price">9,99 €</span></button>
-        <button class="format-card product-card" type="button" data-format-index="25" aria-label="Fototasse farbig für 12,95 Euro auswählen"><strong>Fototasse farbig</strong><span class="product-price">12,95 €</span></button>
+        <button class="format-card product-card" type="button" data-format-index="24" aria-label="Fototasse weiß für 9,99 Euro auswählen"><strong>Fototasse weiß</strong><span class="product-price" id="mugWhiteModalPrice">9,99 €</span></button>
+        <button class="format-card product-card" type="button" data-format-index="25" aria-label="Fototasse farbig für 12,95 Euro auswählen"><strong>Fototasse farbig</strong><span class="product-price" id="mugColorModalPrice">12,95 €</span></button>
       </div>
 
       <div class="format-section-title" id="canvas">Leinwandbilder</div>
@@ -534,7 +558,7 @@ body.modal-open{overflow:hidden}
         <button class="format-card canvas-card" type="button" disabled aria-disabled="true"><strong>80×100</strong><span>cm</span><em>Preis folgt</em></button>
         <button class="format-card canvas-card" type="button" disabled aria-disabled="true"><strong>90×130</strong><span>cm</span><em>Preis folgt</em></button>
       </div>
-      <div class="product-note"><strong>Leinwand in V15:</strong> Alle gewünschten Größen sind sichtbar. Die Preise sollen zentral aus dem Backend kommen; bis zur Preisfreigabe bleiben Leinwandformate bewusst gesperrt. „Nur Abholung in Haigerloch“ ist bereits fest vorgesehen.</div>
+      <div class="product-note"><strong>Leinwand in V17:</strong> Alle gewünschten Größen sind sichtbar. Die Preise sollen zentral aus dem Backend kommen; bis zur Preisfreigabe bleiben Leinwandformate bewusst gesperrt. „Nur Abholung in Haigerloch“ ist bereits fest vorgesehen.</div>
 
       <div class="modal-footnote"><strong>Noch offen:</strong> Für 6×9, 7×10, 9×13, 18×24 und 20×25 fehlen in der bisherigen Preistabelle Preis und Backend-Zuordnung. Deshalb werden auch hier keine Werte erfunden.</div>
     </div>
@@ -631,9 +655,9 @@ body.modal-open{overflow:hidden}
   <div class="field" style="margin-top:18px">
     <label>4. Lieferung / Abholung</label>
     <div class="radio-row">
-      <label class="choice"><input type="radio" name="shipping" value="pickup" checked> Abholung · 0,00 €</label>
-      <label class="choice"><input type="radio" name="shipping" value="post"> Deutsche Post · 7,69 €</label>
-      <label class="choice"><input type="radio" name="shipping" value="hermes"> Hermes · 5,19 €</label>
+      <label class="choice"><input type="radio" name="shipping" value="pickup" checked> <span id="shippingPickupChoice">Abholung · 0,00 €</span></label>
+      <label class="choice"><input type="radio" name="shipping" value="post"> <span id="shippingPostChoice">Deutsche Post · 7,69 €</span></label>
+      <label class="choice"><input type="radio" name="shipping" value="hermes"> <span id="shippingHermesChoice">Hermes · 5,19 €</span></label>
     </div>
   </div>
 
@@ -648,8 +672,8 @@ body.modal-open{overflow:hidden}
     </div>
 
     <div id="pickupNote" class="pickup-note">
-      <strong>Abholung bei Foto Weber</strong><br>
-      Unterstadt 14 · 72401 Haigerloch
+      <strong id="pickupNoteLabel">Abholung bei Foto Weber</strong><br>
+      <span id="pickupNoteAddress">Unterstadt 14 · 72401 Haigerloch</span>
     </div>
 
     <div id="shippingAddress" class="shipping-address" style="display:none">
@@ -696,7 +720,7 @@ body.modal-open{overflow:hidden}
   <div id="uploadSuccess" class="successbox" role="status" aria-live="polite"></div>
   <div id="uploadError" class="errorbox" role="alert" aria-live="assertive"></div>
 
-  <div class="statusnote"><strong>FotoWorks GETIN V16:</strong> Bildkacheln für die fünf Standardformate sowie jetzt auch bebilderte Auswahlkarten für Fototassen und Leinwandbilder, dazu Sonder-/Vario-Popup, Live-Preis und Mehrfachauswahl. Die Preislogik ist für eine zentrale Backend-Preisliste vorbereitet; ohne Backend greift die lokale Preisliste als Rückfallebene.</div>
+  <div class="statusnote"><strong>FotoWorks GETIN V17:</strong> Das zentrale FotoWorks BACKEND V1 liefert Preise und Versandkosten für den Händler <strong>foto-weber</strong>; Aufträge und Bilddateien werden direkt an das Backend übertragen. Die lokale Preisliste bleibt nur als Ausfallsicherung. Zusätzlich führt die neue ALFO-Kachel direkt zum Fotobuch-, Kalender- und Fotogeschenk-Designer mit Foto-Webers Händlerzuordnung.</div>
 </div>
 
   </div>
@@ -707,9 +731,9 @@ body.modal-open{overflow:hidden}
     <div class="kicker">Lieferung</div>
     <h2>Abholen oder <b>zuschicken lassen.</b></h2>
     <div class="delivery">
-      <div class="delivery-card"><strong>Abholung bei Foto Weber</strong><p>Unterstadt 14 · 72401 Haigerloch.</p></div>
-      <div class="delivery-card"><strong>Deutsche Post</strong><p>Versand 7,69 € pro Bestellung.</p></div>
-      <div class="delivery-card"><strong>Hermes</strong><p>Versand 5,19 € pro Bestellung.</p></div>
+      <div class="delivery-card"><strong id="deliveryPickupLabel">Abholung bei Foto Weber</strong><p id="deliveryPickupAddress">Unterstadt 14 · 72401 Haigerloch.</p></div>
+      <div class="delivery-card"><strong>Deutsche Post</strong><p id="deliveryPostPrice">Versand 7,69 € pro Bestellung.</p></div>
+      <div class="delivery-card"><strong>Hermes</strong><p id="deliveryHermesPrice">Versand 5,19 € pro Bestellung.</p></div>
     </div>
   </div>
 </section>
@@ -739,7 +763,7 @@ body.modal-open{overflow:hidden}
     <div><strong>Informationen</strong><a href="#formate">Formate & Produkte</a><a href="#oberflaechen">Matt & Glänzend</a><a href="#lieferung">Versand & Abholung</a><a href="#faq">FAQ</a></div>
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
-  <div class="wrap legal">FotoWorks GETIN V16 · Fotoabzüge & Fotoprodukte. Leinwandbilder ausschließlich zur Abholung in Haigerloch. <span class="version-tag">V16</span></div>
+  <div class="wrap legal">FotoWorks GETIN V17 · Fotoabzüge & Fotoprodukte. Leinwandbilder ausschließlich zur Abholung in Haigerloch. <span class="version-tag">V17</span></div>
 </footer>
 
 
@@ -755,8 +779,19 @@ const LOCAL_PRICE_TABLE = [
   ["Fototasse weiß",9.99],["Fototasse farbig",12.95]
 ];
 let PRICE_TABLE = LOCAL_PRICE_TABLE.map(row=>[...row]);
-const PRODUCT_API_URL = "/api/products";
-const SHIPPING = {pickup:0,post:7.69,hermes:5.19};
+
+const BACKEND_BASE = "https://fotoworks-backend.folke-weber.workers.dev";
+const TENANT_SLUG = "foto-weber";
+const CATALOG_API_URL = `${BACKEND_BASE}/api/v1/catalog?tenant=${encodeURIComponent(TENANT_SLUG)}`;
+const ORDER_API_URL = `${BACKEND_BASE}/api/order?tenant=${encodeURIComponent(TENANT_SLUG)}`;
+const UPLOAD_API_URL = `${BACKEND_BASE}/api/upload`;
+const FINALIZE_API_URL = `${BACKEND_BASE}/api/finalize`;
+const DEFAULT_ALFO_URL = "https://alfo-fotobuch.com?affiliateCode=51016";
+
+let SHIPPING = {pickup:0,post:7.69,hermes:5.19};
+let BACKEND_PRODUCTS = [];
+let BACKEND_SETTINGS = {};
+let ALFO_URL = DEFAULT_ALFO_URL;
 const euro = n => Number(n).toLocaleString("de-DE",{style:"currency",currency:"EUR"});
 const itemType = index => index===24 || index===25 ? "mug" : "photo";
 const isPhotoItem = item => itemType(item.format)==="photo";
@@ -787,30 +822,139 @@ function populateDefaultFormat(preserveValue=true){
 }
 
 function backendProductLabel(p){return p?.label || p?.name || p?.title || "";}
+
+function currentSurfaceCode(){
+  const selected=document.querySelector('input[name="surface"]:checked')?.value || "Glänzend";
+  return selected==="Matt" ? "matte" : "glossy";
+}
+
+function safeExternalUrl(value, fallback){
+  try{
+    const u=new URL(String(value || ""));
+    return /^https?:$/.test(u.protocol) ? u.href : fallback;
+  }catch{return fallback;}
+}
+
+function centsSetting(settings,key,fallback){
+  const raw=Number(settings?.[key]);
+  return Number.isFinite(raw) && raw>=0 ? raw/100 : fallback;
+}
+
+function refreshMugPrices(){
+  const white=PRICE_TABLE[24]?.[1], color=PRICE_TABLE[25]?.[1];
+  if(Number.isFinite(white)){
+    const a=document.getElementById("mugWhiteTeaserPrice");
+    const b=document.getElementById("mugWhiteModalPrice");
+    if(a) a.textContent=euro(white);
+    if(b) b.textContent=euro(white);
+  }
+  if(Number.isFinite(color)){
+    const a=document.getElementById("mugColorTeaserPrice");
+    const b=document.getElementById("mugColorModalPrice");
+    if(a) a.textContent=euro(color);
+    if(b) b.textContent=euro(color);
+  }
+}
+
+function applyBackendSettings(settings={}){
+  BACKEND_SETTINGS=settings || {};
+  SHIPPING.post=centsSetting(settings,"shipping_post_cents",SHIPPING.post);
+  SHIPPING.hermes=centsSetting(settings,"shipping_hermes_cents",SHIPPING.hermes);
+
+  const pickupLabel=String(settings.pickup_label || "Abholung bei Foto Weber");
+  const pickupAddress=String(settings.pickup_address || "Unterstadt 14, 72401 Haigerloch");
+
+  const choicePickup=document.getElementById("shippingPickupChoice");
+  const choicePost=document.getElementById("shippingPostChoice");
+  const choiceHermes=document.getElementById("shippingHermesChoice");
+  if(choicePickup) choicePickup.textContent=`${pickupLabel} · ${euro(0)}`;
+  if(choicePost) choicePost.textContent=`Deutsche Post · ${euro(SHIPPING.post)}`;
+  if(choiceHermes) choiceHermes.textContent=`Hermes · ${euro(SHIPPING.hermes)}`;
+
+  const noteLabel=document.getElementById("pickupNoteLabel");
+  const noteAddress=document.getElementById("pickupNoteAddress");
+  const deliveryPickupLabel=document.getElementById("deliveryPickupLabel");
+  const deliveryPickupAddress=document.getElementById("deliveryPickupAddress");
+  const deliveryPostPrice=document.getElementById("deliveryPostPrice");
+  const deliveryHermesPrice=document.getElementById("deliveryHermesPrice");
+  if(noteLabel) noteLabel.textContent=pickupLabel;
+  if(noteAddress) noteAddress.textContent=pickupAddress;
+  if(deliveryPickupLabel) deliveryPickupLabel.textContent=pickupLabel;
+  if(deliveryPickupAddress) deliveryPickupAddress.textContent=pickupAddress+".";
+  if(deliveryPostPrice) deliveryPostPrice.textContent=`Versand ${euro(SHIPPING.post)} pro Bestellung.`;
+  if(deliveryHermesPrice) deliveryHermesPrice.textContent=`Versand ${euro(SHIPPING.hermes)} pro Bestellung.`;
+
+  ALFO_URL=safeExternalUrl(
+    settings.photobook_external_url || settings.alfo_affiliate_url || DEFAULT_ALFO_URL,
+    DEFAULT_ALFO_URL
+  );
+  const alfo=document.getElementById("alfoLink");
+  if(alfo) alfo.href=ALFO_URL;
+}
+
+function syncPricesFromBackend(preserveValue=true){
+  if(!BACKEND_PRODUCTS.length) return 0;
+  const desiredPhotoSurface=currentSurfaceCode();
+  const previous=preserveValue ? defaultFormat.value : "1";
+  const next=LOCAL_PRICE_TABLE.map(row=>[...row]);
+  let updates=0;
+
+  next.forEach(row=>{
+    const localLabel=row[0];
+    const isMug=/^Fototasse/.test(localLabel);
+    const candidate=BACKEND_PRODUCTS.find(p=>{
+      if(backendProductLabel(p)!==localLabel) return false;
+      if(isMug) return p.surface==="none" || p.category==="mug";
+      return p.surface===desiredPhotoSurface;
+    });
+    const price=Number(candidate?.price);
+    if(candidate && Number.isFinite(price)){
+      row[1]=price;
+      updates++;
+    }
+  });
+
+  if(updates){
+    PRICE_TABLE=next;
+    populateDefaultFormat(false);
+    if(previous!=="" && PRICE_TABLE[Number(previous)]) defaultFormat.value=previous;
+    refreshMugPrices();
+    if(items.length) renderFiles();
+    updateSummary();
+  }
+  return updates;
+}
+
 async function loadBackendPrices(){
   const status=document.getElementById("catalogStatus");
   try{
-    const response=await fetch(PRODUCT_API_URL,{headers:{"accept":"application/json"},cache:"no-store"});
-    if(!response.ok) throw new Error("Kein Produkt-Backend aktiv");
+    const response=await fetch(CATALOG_API_URL,{headers:{"accept":"application/json"},cache:"no-store"});
+    if(!response.ok) throw new Error(`Backend HTTP ${response.status}`);
     const data=await response.json();
-    const products=Array.isArray(data) ? data : (Array.isArray(data.products) ? data.products : []);
+    const products=Array.isArray(data?.products) ? data.products : [];
     if(!products.length) throw new Error("Leere Produktliste");
-    let updates=0;
-    const next=PRICE_TABLE.map(row=>[...row]);
-    products.forEach(p=>{
-      const label=backendProductLabel(p);
-      const price=Number(p?.price);
-      if(!label || !Number.isFinite(price)) return;
-      const idx=next.findIndex(([localLabel])=>localLabel===label);
-      if(idx>=0){next[idx][1]=price;updates++;}
-    });
-    if(!updates) throw new Error("Keine passenden Produkte");
-    PRICE_TABLE=next;
-    populateDefaultFormat(true);
-    if(items.length) renderFiles();
-    if(status){status.textContent="Preise aktuell aus FotoWorks Backend geladen.";status.className="catalog-status ok";}
+
+    BACKEND_PRODUCTS=products;
+    applyBackendSettings(data.settings || {});
+    const updates=syncPricesFromBackend(true);
+    if(!updates) throw new Error("Keine passenden aktiven Produkte");
+
+    if(status){
+      status.innerHTML='<span class="backend-live-badge">BACKEND V1 LIVE</span> Preise & Versandkosten zentral geladen.';
+      status.className="catalog-status ok";
+    }
   }catch(err){
-    if(status){status.textContent="Aktuelle lokale Preisliste aktiv · zentrale Backend-Preise werden als nächster Schritt angeschlossen.";status.className="catalog-status warn";}
+    BACKEND_PRODUCTS=[];
+    PRICE_TABLE=LOCAL_PRICE_TABLE.map(row=>[...row]);
+    populateDefaultFormat(true);
+    refreshMugPrices();
+    const alfo=document.getElementById("alfoLink");
+    if(alfo) alfo.href=DEFAULT_ALFO_URL;
+    if(status){
+      status.textContent="Backend momentan nicht erreichbar · lokale Ausfall-Preisliste aktiv.";
+      status.className="catalog-status warn";
+    }
+    console.warn("FotoWorks Backend:",err);
   }
 }
 populateDefaultFormat(false);
@@ -962,7 +1106,7 @@ uploadZone.addEventListener("drop",e=>addFiles(e.dataTransfer.files));
 
 function shippingLabel(){
   const key=document.querySelector('input[name="shipping"]:checked').value;
-  return key==="pickup" ? "Abholung bei Foto Weber" : key==="post" ? "Deutsche Post" : "Hermes";
+  return key==="pickup" ? String(BACKEND_SETTINGS.pickup_label || "Abholung bei Foto Weber") : key==="post" ? "Deutsche Post" : "Hermes";
 }
 
 function toggleAddress(){
@@ -986,6 +1130,7 @@ function makeOrderNo(){
 
 document.querySelectorAll('input[name="surface"],input[name="shipping"]').forEach(el=>{
   el.addEventListener("change",()=>{
+    if(el.name==="surface" && BACKEND_PRODUCTS.length) syncPricesFromBackend(true);
     updateSummary();
     toggleAddress();
   });
@@ -1174,10 +1319,10 @@ async function createServerOrder(){
     }))
   };
 
-  const response=await fetch("/api/order",{
+  const response=await fetch(ORDER_API_URL,{
     method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify(payload)
+    headers:{"content-type":"application/json","x-fotoworks-tenant":TENANT_SLUG},
+    body:JSON.stringify({...payload,tenant:TENANT_SLUG})
   });
 
   const data=await response.json();
@@ -1192,7 +1337,7 @@ async function uploadOne(item, orderId, token, surface){
 
   const surfaceCode=itemType(item.format)==="mug" ? "none" : (surface==="Glänzend" ? "glossy" : "matte");
 
-  const response=await fetch("/api/upload",{
+  const response=await fetch(UPLOAD_API_URL,{
     method:"POST",
     headers:{
       "content-type":item.file.type || "application/octet-stream",
@@ -1201,7 +1346,8 @@ async function uploadOne(item, orderId, token, surface){
       "x-filename":encodeURIComponent(item.name),
       "x-format":code,
       "x-surface":surfaceCode,
-      "x-quantity":String(item.qty)
+      "x-quantity":String(item.qty),
+      "x-fotoworks-tenant":TENANT_SLUG
     },
     body:item.file
   });
@@ -1243,12 +1389,13 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     progressText.textContent="Bestellung wird abgeschlossen …";
     progressBar.style.width="97%";
 
-    const finalizeResponse=await fetch("/api/finalize",{
+    const finalizeResponse=await fetch(FINALIZE_API_URL,{
       method:"POST",
-      headers:{"content-type":"application/json"},
+      headers:{"content-type":"application/json","x-fotoworks-tenant":TENANT_SLUG},
       body:JSON.stringify({
         orderId:order.orderId,
-        uploadToken:order.uploadToken
+        uploadToken:order.uploadToken,
+        tenant:TENANT_SLUG
       })
     });
 
