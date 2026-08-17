@@ -1,0 +1,27 @@
+FotoWorks GETIN V18
+Datum: 17.08.2026
+
+KORREKTUR AUF BASIS DER FREIGEGEBENEN V16
+
+Wichtig:
+- V18 wurde NEU direkt aus der freigegebenen V16 erzeugt.
+- Sämtliche vorhandenen Bilder der V16 sind unverändert übernommen.
+- Kein Bild wurde ersetzt, neu generiert, umgefärbt oder verändert.
+- Das ALFO-Logo wird NICHT nachgebaut oder verändert.
+- Da keine Original-ALFO-Logodatei vorliegt, verwendet V18 nur einen neutralen Textlink.
+
+Neu gegenüber V16:
+- FotoWorks BACKEND V1 produktiv angebunden.
+- Mandant/Händler: foto-weber.
+- Preise werden über /api/v1/catalog geladen.
+- Matt und Glänzend werden getrennt aus dem Backend übernommen.
+- Versandkosten werden aus den Händler-Einstellungen im Backend geladen.
+- Bestellung, Upload und Finalisierung gehen direkt an das FotoWorks Backend.
+- Lokale V16-Preise bleiben als Rückfallebene.
+- ALFO-Textlink:
+  https://alfo-fotobuch.com?affiliateCode=51016
+
+ALFO:
+- Kein nachgebautes Logo.
+- Kein verändertes Logo.
+- Ein Original-ALFO-Logo kann später 1:1 eingesetzt werden, sobald die Originaldatei vorliegt.
