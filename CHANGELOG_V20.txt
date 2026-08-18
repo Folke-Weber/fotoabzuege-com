@@ -1,0 +1,52 @@
+FotoWorks GETIN V20
+Datum: 18.08.2026
+
+Deep-Review-Korrekturen gegenüber V19:
+
+Kundenseite / Vertrauen
+- Alle internen Entwicklungs- und Versionshinweise aus der sichtbaren Kundenseite entfernt.
+- Veralteten Hinweis „Leinwand in V15“ entfernt.
+- „Backend-Zuordnung“, „Noch offen“ und Cloudflare-Entwicklungssprache entfernt.
+- Leinwand und noch nicht freigegebene Sonderformate jetzt kundengerecht als „auf Anfrage“ gekennzeichnet.
+- Footer ohne interne Versionsnummer.
+
+Backend / Preislogik
+- Backend bleibt alleinige Preisquelle für Bestellungen.
+- Versandpreise, Abholbezeichnung und Abholadresse werden sichtbar aus den Backend-Einstellungen übernommen.
+- Sichtbare Preise für Fototasse weiß/farbig werden mit dem Backend synchronisiert.
+- Bei Wechsel Matt/Glänzend werden Backendpreise auch über die großen Oberflächen-Schaltflächen korrekt neu geladen.
+- Deaktivierte Backend-Produkte werden in Auswahlfeldern und Formatkarten nicht mehr als normal bestellbar angeboten.
+- Ist das Backend nicht erreichbar, bleibt die Seite sichtbar, aber eine Bestellung wird aus Sicherheitsgründen nicht mit möglicherweise veralteten Preisen abgesendet.
+- Direkt vor dem endgültigen Absenden werden die aktuellen Preise nochmals geladen.
+
+Upload / Fehlervermeidung
+- Dateien über 40 MB werden bereits vor der Bestellung abgefangen.
+- Nicht unterstützte Dateien erhalten eine sichtbare Textmeldung statt still ignoriert zu werden.
+- Dateinamen werden vor HTML-Ausgabe escaped.
+- Stückzahl kann während der Eingabe nicht mehr intern auf 0 fallen, während der Server später 1 berechnet.
+
+Bildqualität
+- Pixelabmessungen werden nach dem Upload im Browser ermittelt, soweit das Bildformat vom Browser lesbar ist.
+- Qualitätsanzeige pro Bild: Sehr gut / Gut / Knapp / Niedrig.
+- Orientierung wird berücksichtigt.
+- Bei abweichendem Seitenverhältnis wird „Beschnitt möglich“ angezeigt.
+- Bei niedriger Auflösung oder möglichem Beschnitt erscheint vor dem Absenden eine zusätzliche Warnung.
+- Die Qualitätsanzeige blockiert alte/kleine Bilder nicht automatisch.
+- Hinweis: Bewertet wird nur die Pixelauflösung; Schärfe/Verwacklung kann nicht automatisch beurteilt werden.
+
+Formular / Accessibility
+- Fehlerhafte Pflichtfelder erhalten aria-invalid.
+- Fokus springt auf das erste fehlerhafte Eingabefeld.
+- Fehlermeldungen bleiben zusätzlich als verständlicher Text sichtbar.
+- Veraltete statische Preisangaben aus aria-labels der Fototassen entfernt.
+
+SEO / Auffindbarkeit
+- Kundennäherer Seitentitel und Meta-Description.
+- Canonical URL ergänzt.
+- OpenGraph URL/Site/Locale ergänzt.
+- WebApplication + LocalBusiness strukturierte Daten ergänzt.
+
+Unverändert
+- Alle vorhandenen V19-Bilder, einschließlich beider Original-ALFO-Dateien, sind unverändert.
+- Händlerlink ALFO bleibt affiliateCode=51016.
+- Grunddesign und Seitenstruktur bleiben erhalten.
