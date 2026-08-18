@@ -1,0 +1,13 @@
+FotoWorks GETIN V19
+Datum: 18.08.2026
+
+Korrektur gegenüber V18:
+- ALFO-Bereich sichtbar überarbeitet.
+- Beide vom Nutzer gelieferten ALFO-Originaldateien bleiben unverändert eingebettet.
+- ALFO-Logo wird links klar sichtbar dargestellt.
+- Das originale ALFO-Fotobuch-Motiv mit sichtbarem alfo.fotobuch-Schriftzug wird rechts vollständig angezeigt.
+- Kein Logo-Nachbau, keine Umfärbung, keine Retusche, kein Beschnitt.
+- Händlerlink bleibt: https://alfo-fotobuch.com?affiliateCode=51016
+- Bestehende V16-Fotobilder bleiben unverändert.
+- Backend-Anbindung aus V18 bleibt erhalten.
+- JavaScript-Syntax geprüft: OK.
