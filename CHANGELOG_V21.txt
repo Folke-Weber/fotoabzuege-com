@@ -1,0 +1,29 @@
+FotoWorks GETIN V21
+Datum: 19.08.2026
+
+Änderungen gegenüber V20:
+
+Preisprüfung / Aktionen
+- Aktive Mengenaktionen werden aus dem Backend-Katalog übernommen.
+- Mengen desselben Produktcodes werden zusammengezählt.
+- GETIN berechnet für die sichtbare Vorschau denselben günstigsten Mix aus Normalpreis und Mengenpaketen wie das Backend.
+- Beispiel: 53× 10×15 glänzend bei 0,49 € und aktiver 50er-Aktion 14,99 € = 16,46 €.
+- Beim Klick auf „Bestellung prüfen“ werden Preise und Aktionen mit cache:no-store kurz neu vom Backend geladen.
+- Während dieser kurzen Prüfung zeigt der Button „Preis wird geprüft …“.
+- Aktionsvorteil wird in Zusammenfassung und Bestellübersicht sichtbar ausgewiesen.
+- Das Backend bleibt beim tatsächlichen Anlegen der Bestellung die verbindliche Preisquelle.
+
+Upload
+- Keine Restzeit-Anzeige.
+- Fortschritt wird über „Bilder werden übertragen · X von Y“ und Fortschrittsbalken dargestellt.
+- Hinweis: Seite geöffnet lassen; keine möglicherweise abschreckende oder ungenaue Minutenprognose.
+
+Cache-Schutz
+- Zusätzliche Browser-No-Cache-Metaangaben.
+- Cloudflare-Pages-_headers mit no-store/no-cache für / und /index.html, damit Mobilgeräte nach einem Update möglichst keine alte GETIN-Version weiterverwenden.
+
+Unverändert
+- Grunddesign und Seitenstruktur aus V20.
+- Bilder und eingebettetes Original-ALFO-Material bleiben unverändert.
+- Händlerlink ALFO bleibt affiliateCode=51016.
+- Produkt-/Versandpreise bleiben backendgeführt.

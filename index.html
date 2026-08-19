@@ -1,8 +1,11 @@
 <!doctype html>
-<!-- FotoWorks GETIN V20 · 2026-08-17 -->
+<!-- FotoWorks GETIN V21 · 2026-08-19 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fotoabzüge online bestellen | Foto Weber Haigerloch</title>
 <meta name="description" content="Fotoabzüge online bei Foto Weber Haigerloch bestellen: Matt oder Glänzend, Standard-, Sonder-, Vario- und Panoramaformate, Fototassen sowie Fotobücher und Fotogeschenke über ALFO. Abholung oder Versand.">
@@ -259,6 +262,13 @@ footer a{display:block;padding:4px 0}
 .uploadprogress.show{display:block}
 .progressbar{height:10px;background:#e5e5e1;border-radius:999px;overflow:hidden;margin-top:10px}
 .progressbar span{display:block;height:100%;width:0;background:#ef3a19;transition:width .2s}
+.progresshint{margin-top:8px;font-size:12px;color:#666;line-height:1.45}
+.review-price-status{min-height:18px;margin:9px 0 0;font-size:12px;color:#666;text-align:center}
+.review-price-status.checking{color:#8b5e24;font-weight:850}
+.review-price-status.ok{color:#2f6a39;font-weight:850}
+.review-price-status.warn{color:#8a2517;font-weight:850}
+.promo-saving{color:#237033}
+.orderpreview .promo-saving{color:#9fe5ad}
 .successbox{display:none;margin-top:18px;padding:18px;border-radius:12px;background:#eef8ef;border:1px solid #cfe5d1;color:#17451e}
 .successbox.show{display:block}
 .errorbox{display:none;margin-top:18px;padding:18px;border-radius:12px;background:#fff1ee;border:1px solid #ffc9bf;color:#8a2517}
@@ -299,7 +309,7 @@ body.modal-open{overflow:hidden}
 
 
 
-/* FotoWorks GETIN V20 – Feinschliff, Fotoprodukte & Accessibility */
+/* FotoWorks GETIN V21 – Feinschliff, Fotoprodukte & Accessibility */
 .skip-link{position:fixed;left:12px;top:-80px;z-index:2000;background:#111;color:#fff;padding:12px 16px;border-radius:8px;font-weight:900}
 .skip-link:focus{top:12px}
 .navlinks a:focus-visible,.btn:focus-visible,.more-formats-btn:focus-visible,.product-teaser:focus-visible,.format-close:focus-visible,.choice:focus-within,.uploadbtn:focus-within,.sendbtn:focus-visible,.reviewbtn:focus-visible{outline:3px solid #ffb49f;outline-offset:3px}
@@ -332,7 +342,7 @@ body.modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 
-/* FotoWorks GETIN V20 – Bildkacheln & backendfähige Preislogik */
+/* FotoWorks GETIN V21 – Bildkacheln & backendfähige Preislogik */
 .main-format-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
 .main-format-grid .visual-format-card{padding:0;min-height:0;display:block;overflow:hidden;border-radius:14px;background:#fff;border:1px solid #deded9;box-shadow:0 8px 24px rgba(0,0,0,.055);position:relative;text-align:left}
 .main-format-grid .visual-format-card.primary-format{border:2px solid var(--red);background:#fff}
@@ -359,7 +369,7 @@ body.modal-open{overflow:hidden}
 @media(max-width:440px){.main-format-grid{grid-template-columns:1fr}.visual-format-card .format-visual{height:220px}}
 
 
-/* FotoWorks GETIN V20 – emotionalere Bildwelt der fünf Standardformate */
+/* FotoWorks GETIN V21 – emotionalere Bildwelt der fünf Standardformate */
 .main-format-grid .visual-format-card[data-format-index="1"] .format-visual img{object-position:center 40%}
 .main-format-grid .visual-format-card[data-format-index="4"] .format-visual img{object-position:center 35%}
 .main-format-grid .visual-format-card[data-format-index="7"] .format-visual img{object-position:center 48%}
@@ -367,7 +377,7 @@ body.modal-open{overflow:hidden}
 .main-format-grid .visual-format-card[data-format-index="19"] .format-visual img{object-position:center 50%}
 
 
-/* FotoWorks GETIN V20 – bebilderte Produktkarten für Tassen und Leinwand */
+/* FotoWorks GETIN V21 – bebilderte Produktkarten für Tassen und Leinwand */
 .visual-product-teaser{min-height:118px;padding:14px 18px 14px 14px;display:grid;grid-template-columns:112px 1fr 26px;align-items:center;gap:18px}
 .visual-product-teaser .product-teaser-visual{display:block;height:82px;border-radius:10px;overflow:hidden;background:#f3f3f1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .visual-product-teaser .product-teaser-visual img{width:100%;height:100%;object-fit:cover}
@@ -385,7 +395,7 @@ body.modal-open{overflow:hidden}
   .visual-product-teaser .pickup-text{font-size:12px}
 }
 
-/* FotoWorks GETIN V20 – Original-ALFO-Material unverändert eingebettet */
+/* FotoWorks GETIN V21 – Original-ALFO-Material unverändert eingebettet */
 .alfo-external{
   width:100%;margin:16px 0 0;border:1px solid #dededb;border-radius:16px;
   background:#fff;overflow:hidden;display:grid;grid-template-columns:185px minmax(300px,1fr) 360px;
@@ -772,11 +782,13 @@ body.modal-open{overflow:hidden}
     <div class="sumrow"><span>Produkte gesamt</span><strong id="sumPrintCount">0</strong></div>
     <div class="sumrow"><span>Oberfläche</span><strong id="sumSurface">Glänzend</strong></div>
     <div class="sumrow"><span>Produkte</span><strong id="sumPhotos">0,00 €</strong></div>
+    <div class="sumrow" id="sumPromoRow" hidden><span>Aktionsvorteil</span><strong id="sumPromo" class="promo-saving">−0,00 €</strong></div>
     <div class="sumrow"><span>Versand</span><strong id="sumShipping">0,00 €</strong></div>
     <div class="sumrow total"><span>Gesamt</span><span id="sumTotal">0,00 €</span></div>
   </div>
 
   <button id="reviewOrder" class="btn reviewbtn" type="button">Bestellung prüfen →</button>
+  <div id="reviewPriceStatus" class="review-price-status" aria-live="polite">Aktuelle Preise und Aktionen werden beim Prüfen kurz bestätigt.</div>
 
   <div id="orderPreview" class="orderpreview">
     <h4>Bestellübersicht</h4>
@@ -784,6 +796,7 @@ body.modal-open{overflow:hidden}
     <div class="sumrow"><span>Kunde</span><strong id="previewCustomer">–</strong></div>
     <div class="sumrow"><span>Lieferart</span><strong id="previewShipping">–</strong></div>
     <div class="sumrow"><span>Produkte</span><strong id="previewPrints">–</strong></div>
+    <div class="sumrow" id="previewPromoRow" hidden><span>Aktionsvorteil</span><strong id="previewPromo" class="promo-saving">–</strong></div>
     <div class="sumrow"><span>Gesamt</span><strong id="previewTotal">–</strong></div>
     <div style="margin-top:14px;font-size:12px;color:#c7c7c7">
       Prüfen Sie Ihre Angaben noch einmal. Mit dem nächsten Button werden Bestellung und Bilder sicher übertragen.
@@ -795,6 +808,7 @@ body.modal-open{overflow:hidden}
   <div id="uploadProgress" class="uploadprogress">
     <strong id="uploadProgressText" aria-live="polite">Upload wird vorbereitet …</strong>
     <div class="progressbar"><span id="uploadProgressBar"></span></div>
+    <div id="uploadProgressHint" class="progresshint">Bitte diese Seite geöffnet lassen. Der Fortschritt wird nach übertragenen Bilddateien angezeigt – ohne ungenaue Restzeit.</div>
   </div>
   <div id="uploadSuccess" class="successbox" role="status" aria-live="polite"></div>
   <div id="uploadError" class="errorbox" role="alert" aria-live="assertive"></div>
@@ -867,8 +881,10 @@ const DEFAULT_ALFO_URL = "https://alfo-fotobuch.com?affiliateCode=51016";
 
 let SHIPPING = {pickup:0,post:7.69,hermes:5.19};
 let BACKEND_PRODUCTS = [];
+let BACKEND_PROMOTIONS = [];
 let BACKEND_SETTINGS = {};
 let BACKEND_READY = false;
+let LAST_REVIEW_PRICE = null;
 const MAX_UPLOAD_BYTES = 41943040;
 
 const FORMAT_CM = {
@@ -1034,6 +1050,7 @@ async function loadBackendPrices(){
     if(!products.length) throw new Error("Leere Produktliste");
 
     BACKEND_PRODUCTS=products;
+    BACKEND_PROMOTIONS=Array.isArray(data?.promotions) ? data.promotions : [];
     BACKEND_READY=true;
     applyBackendSettings(data.settings || {});
     if(!syncBackendPrices(true)) throw new Error("Keine passenden Produkte");
@@ -1046,6 +1063,7 @@ async function loadBackendPrices(){
     return true;
   }catch(err){
     BACKEND_PRODUCTS=[];
+    BACKEND_PROMOTIONS=[];
     BACKEND_READY=false;
     PRICE_TABLE=LOCAL_PRICE_TABLE.map(row=>[...row]);
     populateDefaultFormat(true);
@@ -1293,18 +1311,95 @@ function renderFiles(){
   updateSummary();
 }
 
+function clientBundlePlan(quantity, unitPrice, promotions){
+  const qty=Math.max(0,Math.min(999,Number(quantity||0)));
+  const unitCents=Math.max(0,Math.round(Number(unitPrice||0)*100));
+  const ps=(promotions||[]).map(p=>({
+    raw:p,
+    id:String(p.id||""),
+    quantity:Math.max(0,Math.round(Number(p.quantity||0))),
+    priceCents:Math.max(0,Math.round(Number(p.price||0)*100))
+  })).filter(p=>p.quantity>0 && Number.isFinite(p.priceCents));
+  const dp=Array(qty+1).fill(Infinity),prev=Array(qty+1).fill(null);
+  dp[0]=0;
+  for(let n=1;n<=qty;n++){
+    dp[n]=dp[n-1]+unitCents;
+    prev[n]={type:"unit",from:n-1};
+    for(const p of ps){
+      if(n>=p.quantity && dp[n-p.quantity]+p.priceCents<dp[n]){
+        dp[n]=dp[n-p.quantity]+p.priceCents;
+        prev[n]={type:"promo",from:n-p.quantity,promotion:p};
+      }
+    }
+  }
+  const counts=new Map();
+  let n=qty;
+  while(n>0 && prev[n]){
+    const step=prev[n];
+    if(step.type==="promo") counts.set(step.promotion.id,(counts.get(step.promotion.id)||0)+1);
+    n=step.from;
+  }
+  const applied=[];
+  for(const p of ps){
+    const count=counts.get(p.id)||0;
+    if(count) applied.push({promotion:p.raw,count});
+  }
+  return {totalCents:Number.isFinite(dp[qty])?dp[qty]:qty*unitCents,applied};
+}
+
+function currentPriceSnapshot(){
+  let baseCents=0;
+  const groups=new Map();
+  for(const item of items){
+    const label=PRICE_TABLE[item.format]?.[0] || "";
+    const unit=Number(PRICE_TABLE[item.format]?.[1] || 0);
+    const qty=Math.max(1,Number(item.qty||1));
+    const unitCents=Math.round(unit*100);
+    baseCents += unitCents*qty;
+    const product=backendProductForLabel(label);
+    const code=product?.code || `LOCAL:${label}:${itemType(item.format)==="mug"?"none":selectedSurfaceCode()}`;
+    if(!groups.has(code)) groups.set(code,{code,label,unit,qty:0});
+    groups.get(code).qty += qty;
+  }
+  let productCents=0;
+  const applied=[];
+  for(const group of groups.values()){
+    const promos=BACKEND_PROMOTIONS.filter(p=>String(p.productCode||"")===group.code);
+    const plan=clientBundlePlan(group.qty,group.unit,promos);
+    productCents += plan.totalCents;
+    for(const entry of plan.applied) applied.push({...entry,productCode:group.code,label:group.label});
+  }
+  const savingsCents=Math.max(0,baseCents-productCents);
+  return {baseCents,productCents,savingsCents,applied};
+}
+
+function promotionStatusText(snapshot){
+  if(!snapshot?.applied?.length) return "Aktuelle Preise bestätigt.";
+  const names=[];
+  for(const a of snapshot.applied){
+    const name=String(a.promotion?.name||"Aktion");
+    names.push(a.count>1 ? `${a.count}× ${name}` : name);
+  }
+  return `Aktionspreis berücksichtigt: ${names.join(" · ")}`;
+}
+
 function updateSummary(){
   const printCount=items.reduce((sum,item)=>sum+item.qty,0);
-  const photos=items.reduce((sum,item)=>sum+(PRICE_TABLE[item.format][1]*item.qty),0);
+  const pricing=currentPriceSnapshot();
   const shippingKey=document.querySelector('input[name="shipping"]:checked').value;
   const shipping=SHIPPING[shippingKey];
   document.getElementById("sumImageCount").textContent=items.length;
   document.getElementById("sumPrintCount").textContent=printCount;
   const hasPhotos=items.some(isPhotoItem);
   document.getElementById("sumSurface").textContent=hasPhotos ? document.querySelector('input[name="surface"]:checked').value : (items.length ? "–" : document.querySelector('input[name="surface"]:checked').value);
-  document.getElementById("sumPhotos").textContent=euro(photos);
+  document.getElementById("sumPhotos").textContent=euro(pricing.productCents/100);
   document.getElementById("sumShipping").textContent=euro(shipping);
-  document.getElementById("sumTotal").textContent=euro(photos+shipping);
+  document.getElementById("sumTotal").textContent=euro(pricing.productCents/100+shipping);
+  const promoRow=document.getElementById("sumPromoRow"),promo=document.getElementById("sumPromo");
+  if(promoRow && promo){
+    promoRow.hidden=pricing.savingsCents<=0;
+    promo.textContent=pricing.savingsCents>0 ? `−${euro(pricing.savingsCents/100)}` : `−${euro(0)}`;
+  }
 }
 
 function updateProductHint(){
@@ -1369,7 +1464,9 @@ document.querySelectorAll('input[name="surface"],input[name="shipping"]').forEac
   });
 });
 
-document.getElementById("reviewOrder").addEventListener("click",()=>{
+document.getElementById("reviewOrder").addEventListener("click",async ()=>{
+  const reviewBtn=document.getElementById("reviewOrder");
+  const priceStatus=document.getElementById("reviewPriceStatus");
   const err=document.getElementById("formError");
   const qualityWarning=document.getElementById("qualityWarning");
   err.classList.remove("show");
@@ -1392,7 +1489,6 @@ document.getElementById("reviewOrder").addEventListener("click",()=>{
     errors.push(message);
   };
 
-  if(!BACKEND_READY) errors.push("Die aktuellen Online-Preise sind gerade nicht erreichbar. Bitte laden Sie die Seite neu und versuchen Sie es erneut.");
   if(items.length===0) errors.push("Bitte mindestens ein Bild auswählen.");
   if(!first) invalid("firstName","Bitte Vorname eingeben.");
   if(!last) invalid("lastName","Bitte Nachname eingeben.");
@@ -1404,15 +1500,36 @@ document.getElementById("reviewOrder").addEventListener("click",()=>{
     if(!document.getElementById("city").value.trim()) invalid("city","Bitte Ort eingeben.");
   }
 
-  const unavailable=items.filter(item=>!isLabelAvailable(PRICE_TABLE[item.format]?.[0]));
-  if(unavailable.length) errors.push(`${unavailable.length} gewählte${unavailable.length===1?"s Produkt ist":" Produkte sind"} für die aktuelle Oberfläche derzeit nicht online verfügbar. Bitte wählen Sie ein anderes Format.`);
-
   if(errors.length){
     err.textContent=errors.join(" ");
     err.classList.add("show");
     document.getElementById("orderPreview").classList.remove("show");
-    if(firstInvalid) firstInvalid.focus();
-    else err.focus();
+    if(firstInvalid) firstInvalid.focus(); else err.focus();
+    return;
+  }
+
+  reviewBtn.disabled=true;
+  const oldText=reviewBtn.textContent;
+  reviewBtn.textContent="Preis wird geprüft …";
+  priceStatus.textContent="Aktuelle Preise und Aktionen werden kurz geprüft …";
+  priceStatus.className="review-price-status checking";
+  const backendOk=await loadBackendPrices();
+  reviewBtn.disabled=false;
+  reviewBtn.textContent=oldText;
+  if(!backendOk){
+    priceStatus.textContent="Preisprüfung nicht möglich. Bitte versuchen Sie es gleich noch einmal.";
+    priceStatus.className="review-price-status warn";
+    err.textContent="Die aktuellen Online-Preise sind gerade nicht erreichbar. Die Bestellung wird nicht mit möglicherweise veralteten Preisen abgesendet.";
+    err.classList.add("show");
+    document.getElementById("orderPreview").classList.remove("show");
+    return;
+  }
+
+  const unavailable=items.filter(item=>!isLabelAvailable(PRICE_TABLE[item.format]?.[0]));
+  if(unavailable.length){
+    err.textContent=`${unavailable.length} gewählte${unavailable.length===1?"s Produkt ist":" Produkte sind"} für die aktuelle Oberfläche derzeit nicht online verfügbar. Bitte wählen Sie ein anderes Format.`;
+    err.classList.add("show");
+    document.getElementById("orderPreview").classList.remove("show");
     return;
   }
 
@@ -1427,14 +1544,23 @@ document.getElementById("reviewOrder").addEventListener("click",()=>{
   }
 
   const printCount=items.reduce((sum,item)=>sum+Math.max(1,item.qty),0);
-  const photos=items.reduce((sum,item)=>sum+(PRICE_TABLE[item.format][1]*Math.max(1,item.qty)),0);
+  const pricing=currentPriceSnapshot();
   const shipping=SHIPPING[shipKey];
+  const total=pricing.productCents/100+shipping;
+  LAST_REVIEW_PRICE={total,product:pricing.productCents/100,shipping,savings:pricing.savingsCents/100,at:Date.now()};
+  updateSummary();
+
   const preview=document.getElementById("orderPreview");
   document.getElementById("previewOrderNo").textContent="wird beim Senden erzeugt";
   document.getElementById("previewCustomer").textContent=`${first} ${last}`;
   document.getElementById("previewShipping").textContent=shippingLabel();
   document.getElementById("previewPrints").textContent=`${printCount} Stück · ${items.length} Bilddatei${items.length===1?"":"en"}`;
-  document.getElementById("previewTotal").textContent=euro(photos+shipping);
+  document.getElementById("previewTotal").textContent=euro(total);
+  const promoRow=document.getElementById("previewPromoRow"),promo=document.getElementById("previewPromo");
+  promoRow.hidden=pricing.savingsCents<=0;
+  promo.textContent=pricing.savingsCents>0 ? `−${euro(pricing.savingsCents/100)}` : "–";
+  priceStatus.textContent=promotionStatusText(pricing);
+  priceStatus.className="review-price-status ok";
   preview.classList.add("show");
   document.getElementById("sendOrder").disabled=false;
   preview.scrollIntoView({behavior:"smooth",block:"nearest"});
@@ -1633,28 +1759,35 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
   btn.disabled=true;
 
   try{
-    progressText.textContent="Aktuelle Preise werden noch einmal geprüft …";
-    progressBar.style.width="3%";
+    progressText.textContent="Bestellung wird vorbereitet …";
+    progressBar.style.width="4%";
     const backendOk=await loadBackendPrices();
-    if(!backendOk) throw new Error("Aktuelle Preise konnten nicht geladen werden. Bitte versuchen Sie es erneut.");
+    if(!backendOk) throw new Error("Aktuelle Preise konnten nicht bestätigt werden. Bitte versuchen Sie es erneut.");
 
-    progressText.textContent="Bestellnummer wird erzeugt …";
-    progressBar.style.width="5%";
+    progressText.textContent="Preis wird serverseitig bestätigt …";
+    progressBar.style.width="7%";
 
     const order=await createServerOrder();
     document.getElementById("previewOrderNo").textContent=order.orderId;
+    const serverTotal=Number(order.total);
+    if(Number.isFinite(serverTotal)){
+      document.getElementById("previewTotal").textContent=euro(serverTotal);
+      if(LAST_REVIEW_PRICE && Math.abs(serverTotal-LAST_REVIEW_PRICE.total)>0.005){
+        console.warn("FotoWorks: Preis zwischen Prüfung und Serverauftrag geändert",LAST_REVIEW_PRICE.total,serverTotal);
+      }
+    }
 
     const surface=document.querySelector('input[name="surface"]:checked').value;
 
     for(let i=0;i<items.length;i++){
-      progressText.textContent=`Bild ${i+1} von ${items.length} wird übertragen: ${items[i].name}`;
+      progressText.textContent=`Bilder werden übertragen · ${i+1} von ${items.length}`;
       await uploadOne(items[i],order.orderId,order.uploadToken,surface);
-      const pct=Math.round(((i+1)/items.length)*90)+5;
-      progressBar.style.width=Math.min(95,pct)+"%";
+      const pct=Math.round(((i+1)/items.length)*85)+8;
+      progressBar.style.width=Math.min(93,pct)+"%";
     }
 
     progressText.textContent="Bestellung wird abgeschlossen …";
-    progressBar.style.width="97%";
+    progressBar.style.width="96%";
 
     const finalizeResponse=await fetch(FINALIZE_API_URL,{
       method:"POST",
