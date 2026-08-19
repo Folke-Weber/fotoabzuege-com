@@ -1,0 +1,9 @@
+FotoWorks GETIN V23 – APP-Hinweis 1.1
+Datum: 19.08.2026
+
+- QR-Code öffnet weiterhin https://fotoabzüge.com/app/.
+- Text korrigiert: Eine PWA installiert sich nicht automatisch.
+- iPhone-Anleitung sichtbar: Safari > Teilen > Zum Home-Bildschirm > Hinzufügen.
+- Android-Anleitung sichtbar: App öffnen > App installieren / Zum Startbildschirm hinzufügen.
+- GETIN V23 Bestell-, Preis-, Aktions- und Uploadlogik unverändert.
+- Backend unverändert.
