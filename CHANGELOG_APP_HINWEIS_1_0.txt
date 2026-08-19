@@ -1,0 +1,10 @@
+FotoWorks GETIN V23 – APP-Hinweis 1.0
+Datum: 19.08.2026
+
+- GETIN V23 Bestell-, Preis-, Upload- und Backend-Logik unverändert.
+- Neue App-Werbefläche direkt unter dem Hero-Bereich.
+- Desktop: QR-Code führt direkt zu https://fotoabzüge.com/app/
+- Smartphone: direkter Button „FotoWorks App öffnen“.
+- iPhone-Hinweis: Safari → Teilen → Zum Home-Bildschirm.
+- Stil an fotoabzüge.com angepasst.
+- Keine Änderung an Backend, ADMIN oder GETOUT.
