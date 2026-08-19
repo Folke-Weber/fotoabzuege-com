@@ -1,0 +1,14 @@
+FotoWorks APP V1 · 19.08.2026
+Basis: stabiles GETIN V23
+
+- GETIN V23 unverändert als Bestellkern übernommen.
+- Neue installierbare PWA unter /app/.
+- Eigenes Manifest und App-Icons (192, 512, maskable, Apple Touch).
+- Standalone-Start ohne normale Browserleisten.
+- Android-Installationshinweis über beforeinstallprompt.
+- iPhone-Hinweis für Safari: Teilen → Zum Home-Bildschirm.
+- Service Worker absichtlich konservativ:
+  keine API-/POST-/Upload-Caches, Navigation network-first.
+- Offline-Seite erklärt, dass Bestellung und Upload Internet benötigen.
+- App-Seite noindex, Root-Website bleibt SEO-Hauptseite.
+- Vorhandenes Backend wird 1:1 weitergenutzt.
