@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoWorks GETIN V21 · 2026-08-19 -->
+<!-- FotoWorks GETIN V22 · 2026-08-19 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -309,7 +309,7 @@ body.modal-open{overflow:hidden}
 
 
 
-/* FotoWorks GETIN V21 – Feinschliff, Fotoprodukte & Accessibility */
+/* FotoWorks GETIN V22 – Feinschliff, Fotoprodukte & Accessibility */
 .skip-link{position:fixed;left:12px;top:-80px;z-index:2000;background:#111;color:#fff;padding:12px 16px;border-radius:8px;font-weight:900}
 .skip-link:focus{top:12px}
 .navlinks a:focus-visible,.btn:focus-visible,.more-formats-btn:focus-visible,.product-teaser:focus-visible,.format-close:focus-visible,.choice:focus-within,.uploadbtn:focus-within,.sendbtn:focus-visible,.reviewbtn:focus-visible{outline:3px solid #ffb49f;outline-offset:3px}
@@ -342,7 +342,7 @@ body.modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 
-/* FotoWorks GETIN V21 – Bildkacheln & backendfähige Preislogik */
+/* FotoWorks GETIN V22 – Bildkacheln & backendfähige Preislogik */
 .main-format-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
 .main-format-grid .visual-format-card{padding:0;min-height:0;display:block;overflow:hidden;border-radius:14px;background:#fff;border:1px solid #deded9;box-shadow:0 8px 24px rgba(0,0,0,.055);position:relative;text-align:left}
 .main-format-grid .visual-format-card.primary-format{border:2px solid var(--red);background:#fff}
@@ -369,7 +369,7 @@ body.modal-open{overflow:hidden}
 @media(max-width:440px){.main-format-grid{grid-template-columns:1fr}.visual-format-card .format-visual{height:220px}}
 
 
-/* FotoWorks GETIN V21 – emotionalere Bildwelt der fünf Standardformate */
+/* FotoWorks GETIN V22 – emotionalere Bildwelt der fünf Standardformate */
 .main-format-grid .visual-format-card[data-format-index="1"] .format-visual img{object-position:center 40%}
 .main-format-grid .visual-format-card[data-format-index="4"] .format-visual img{object-position:center 35%}
 .main-format-grid .visual-format-card[data-format-index="7"] .format-visual img{object-position:center 48%}
@@ -377,7 +377,7 @@ body.modal-open{overflow:hidden}
 .main-format-grid .visual-format-card[data-format-index="19"] .format-visual img{object-position:center 50%}
 
 
-/* FotoWorks GETIN V21 – bebilderte Produktkarten für Tassen und Leinwand */
+/* FotoWorks GETIN V22 – bebilderte Produktkarten für Tassen und Leinwand */
 .visual-product-teaser{min-height:118px;padding:14px 18px 14px 14px;display:grid;grid-template-columns:112px 1fr 26px;align-items:center;gap:18px}
 .visual-product-teaser .product-teaser-visual{display:block;height:82px;border-radius:10px;overflow:hidden;background:#f3f3f1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .visual-product-teaser .product-teaser-visual img{width:100%;height:100%;object-fit:cover}
@@ -395,7 +395,7 @@ body.modal-open{overflow:hidden}
   .visual-product-teaser .pickup-text{font-size:12px}
 }
 
-/* FotoWorks GETIN V21 – Original-ALFO-Material unverändert eingebettet */
+/* FotoWorks GETIN V22 – Original-ALFO-Material unverändert eingebettet */
 .alfo-external{
   width:100%;margin:16px 0 0;border:1px solid #dededb;border-radius:16px;
   background:#fff;overflow:hidden;display:grid;grid-template-columns:185px minmax(300px,1fr) 360px;
@@ -876,6 +876,7 @@ const TENANT_SLUG = "foto-weber";
 const CATALOG_API_URL = `${BACKEND_BASE}/api/v1/catalog?tenant=${encodeURIComponent(TENANT_SLUG)}`;
 const ORDER_API_URL = `${BACKEND_BASE}/api/order?tenant=${encodeURIComponent(TENANT_SLUG)}`;
 const UPLOAD_API_URL = `${BACKEND_BASE}/api/upload`;
+const UPLOAD_STATUS_API_URL = `${BACKEND_BASE}/api/upload-status`;
 const FINALIZE_API_URL = `${BACKEND_BASE}/api/finalize`;
 const DEFAULT_ALFO_URL = "https://alfo-fotobuch.com?affiliateCode=51016";
 
@@ -885,6 +886,8 @@ let BACKEND_PROMOTIONS = [];
 let BACKEND_SETTINGS = {};
 let BACKEND_READY = false;
 let LAST_REVIEW_PRICE = null;
+let ACTIVE_UPLOAD = false;
+let ACTIVE_UPLOAD_UI = null;
 const MAX_UPLOAD_BYTES = 41943040;
 
 const FORMAT_CM = {
@@ -1718,7 +1721,48 @@ async function createServerOrder(){
   return data;
 }
 
-async function uploadOne(item, orderId, token, surface){
+function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms));}
+
+function networkLikeError(err){
+  const m=String(err?.message||err||"").toLowerCase();
+  return err instanceof TypeError || m.includes("load failed") || m.includes("failed to fetch") || m.includes("network") || m.includes("offline");
+}
+
+function pageReadyForUpload(){
+  return navigator.onLine!==false && document.visibilityState!=="hidden";
+}
+
+async function waitUntilPageReady(){
+  if(pageReadyForUpload()) return;
+  if(ACTIVE_UPLOAD_UI){
+    ACTIVE_UPLOAD_UI.text.textContent="Übertragung pausiert · bitte FotoWorks wieder öffnen";
+    ACTIVE_UPLOAD_UI.hint.textContent="Bereits vollständig übertragene Bilder bleiben erhalten. Sobald diese Seite wieder aktiv und online ist, geht es automatisch weiter.";
+  }
+  await new Promise(resolve=>{
+    const check=()=>{
+      if(!pageReadyForUpload()) return;
+      window.removeEventListener("online",check);
+      document.removeEventListener("visibilitychange",check);
+      resolve();
+    };
+    window.addEventListener("online",check);
+    document.addEventListener("visibilitychange",check);
+  });
+}
+
+async function getUploadStatus(orderId, token){
+  const response=await fetch(UPLOAD_STATUS_API_URL,{
+    method:"POST",
+    headers:{"content-type":"application/json","x-fotoworks-tenant":TENANT_SLUG},
+    body:JSON.stringify({orderId,uploadToken:token,tenant:TENANT_SLUG}),
+    cache:"no-store"
+  });
+  const data=await response.json();
+  if(!response.ok || !data.ok) throw new Error(data.error || "Upload-Status konnte nicht geprüft werden.");
+  return data;
+}
+
+async function uploadOne(item, itemIndex, orderId, token, surface){
   const label=PRICE_TABLE[item.format][0];
   const code=formatCode(label);
   if(!code) throw new Error("Unbekanntes Format: "+label);
@@ -1735,14 +1779,82 @@ async function uploadOne(item, orderId, token, surface){
       "x-format":code,
       "x-surface":surfaceCode,
       "x-quantity":String(item.qty),
+      "x-item-index":String(itemIndex),
       "x-fotoworks-tenant":TENANT_SLUG
     },
     body:item.file
   });
 
   const data=await response.json();
-  if(!response.ok || !data.ok) throw new Error(data.error || ("Upload fehlgeschlagen: "+item.name));
+  if(!response.ok || !data.ok){
+    const e=new Error(data.error || ("Upload fehlgeschlagen: "+item.name));
+    e.httpStatus=response.status;
+    throw e;
+  }
   return data;
+}
+
+async function uploadOneWithRecovery(item, itemIndex, orderId, token, surface, progressText, progressHint){
+  let attempt=0;
+  while(true){
+    await waitUntilPageReady();
+    try{
+      progressText.textContent=`Bilder werden übertragen · ${itemIndex+1} von ${items.length}`;
+      progressHint.textContent="Bitte diese Seite geöffnet lassen. Bei einer kurzen Unterbrechung setzt FotoWorks automatisch fort – ohne Restzeit-Anzeige.";
+      return await uploadOne(item,itemIndex,orderId,token,surface);
+    }catch(err){
+      attempt++;
+      const retryable=networkLikeError(err) || Number(err?.httpStatus)>=500;
+      if(!retryable || attempt>6) throw err;
+
+      progressText.textContent=`Übertragung kurz unterbrochen · ${itemIndex} von ${items.length} bereits bestätigt`;
+      progressHint.textContent="Kein Problem: Bereits übertragene Bilder bleiben erhalten. FotoWorks prüft den Stand und setzt automatisch fort, sobald die Verbindung wieder da ist.";
+      await waitUntilPageReady();
+
+      // Falls das Handy genau nach erfolgreichem Server-Upload eingeschlafen ist,
+      // prüfen wir zuerst den Server und laden die Datei nicht doppelt hoch.
+      try{
+        const st=await getUploadStatus(orderId,token);
+        const serverItem=Array.isArray(st.items)?st.items.find(x=>Number(x.index)===itemIndex):null;
+        if(serverItem?.uploaded) return {ok:true,alreadyUploaded:true,itemId:serverItem.id};
+      }catch(statusErr){
+        if(!networkLikeError(statusErr) && attempt>=6) throw statusErr;
+      }
+      await sleep(Math.min(800*Math.pow(2,attempt-1),5000));
+    }
+  }
+}
+
+async function finalizeWithRecovery(order, progressText, progressHint){
+  let attempt=0;
+  while(true){
+    await waitUntilPageReady();
+    try{
+      const response=await fetch(FINALIZE_API_URL,{
+        method:"POST",
+        headers:{"content-type":"application/json","x-fotoworks-tenant":TENANT_SLUG},
+        body:JSON.stringify({orderId:order.orderId,uploadToken:order.uploadToken,tenant:TENANT_SLUG})
+      });
+      const data=await response.json();
+      if(!response.ok || !data.ok){
+        const e=new Error(data.error || "Bestellung konnte nicht abgeschlossen werden.");
+        e.httpStatus=response.status;
+        throw e;
+      }
+      return data;
+    }catch(err){
+      attempt++;
+      if(!(networkLikeError(err)||Number(err?.httpStatus)>=500) || attempt>6) throw err;
+      progressText.textContent="Abschluss kurz unterbrochen · wird fortgesetzt …";
+      progressHint.textContent="Ihre Bilder sind bereits übertragen. FotoWorks wartet nur noch auf die Verbindung zum Abschluss der Bestellung.";
+      await waitUntilPageReady();
+      try{
+        const st=await getUploadStatus(order.orderId,order.uploadToken);
+        if(st.status==="ready") return {ok:true,status:"ready",alreadyFinalized:true};
+      }catch(_e){}
+      await sleep(Math.min(800*Math.pow(2,attempt-1),5000));
+    }
+  }
 }
 
 document.getElementById("sendOrder").addEventListener("click", async ()=>{
@@ -1750,6 +1862,7 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
   const progress=document.getElementById("uploadProgress");
   const progressText=document.getElementById("uploadProgressText");
   const progressBar=document.getElementById("uploadProgressBar");
+  const progressHint=document.getElementById("uploadProgressHint");
   const success=document.getElementById("uploadSuccess");
   const error=document.getElementById("uploadError");
 
@@ -1757,9 +1870,12 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
   error.classList.remove("show");
   progress.classList.add("show");
   btn.disabled=true;
+  ACTIVE_UPLOAD=true;
+  ACTIVE_UPLOAD_UI={text:progressText,hint:progressHint};
 
   try{
     progressText.textContent="Bestellung wird vorbereitet …";
+    progressHint.textContent="Bitte diese Seite während der Übertragung geöffnet lassen.";
     progressBar.style.width="4%";
     const backendOk=await loadBackendPrices();
     if(!backendOk) throw new Error("Aktuelle Preise konnten nicht bestätigt werden. Bitte versuchen Sie es erneut.");
@@ -1780,39 +1896,47 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     const surface=document.querySelector('input[name="surface"]:checked').value;
 
     for(let i=0;i<items.length;i++){
-      progressText.textContent=`Bilder werden übertragen · ${i+1} von ${items.length}`;
-      await uploadOne(items[i],order.orderId,order.uploadToken,surface);
+      await uploadOneWithRecovery(items[i],i,order.orderId,order.uploadToken,surface,progressText,progressHint);
       const pct=Math.round(((i+1)/items.length)*85)+8;
       progressBar.style.width=Math.min(93,pct)+"%";
     }
 
     progressText.textContent="Bestellung wird abgeschlossen …";
+    progressHint.textContent="Alle Bilddateien sind übertragen. Die Bestellung wird jetzt nur noch bestätigt.";
     progressBar.style.width="96%";
-
-    const finalizeResponse=await fetch(FINALIZE_API_URL,{
-      method:"POST",
-      headers:{"content-type":"application/json","x-fotoworks-tenant":TENANT_SLUG},
-      body:JSON.stringify({
-        orderId:order.orderId,
-        uploadToken:order.uploadToken,
-        tenant:TENANT_SLUG
-      })
-    });
-
-    const finalizeData=await finalizeResponse.json();
-    if(!finalizeResponse.ok || !finalizeData.ok){
-      throw new Error(finalizeData.error || "Bestellung konnte nicht abgeschlossen werden.");
-    }
+    await finalizeWithRecovery(order,progressText,progressHint);
 
     progressText.textContent="Bestellung vollständig abgeschlossen.";
+    progressHint.textContent="Vielen Dank. Sie können diese Seite jetzt schließen.";
     progressBar.style.width="100%";
     success.innerHTML=`<strong>Bestellung erfolgreich übertragen.</strong><br>Bestellnummer: <strong>${order.orderId}</strong><br>${items.length} Bilddatei${items.length===1?"":"en"} wurden sicher übertragen.<br>Status: <strong>vollständig</strong>`;
     success.classList.add("show");
   }catch(err){
-    error.textContent="Fehler: "+(err?.message || err);
+    const raw=String(err?.message||err||"");
+    const friendly=networkLikeError(err)
+      ? "Die Verbindung wurde unterbrochen. Bitte FotoWorks geöffnet lassen und erneut auf ‚Bestellung senden‘ tippen."
+      : raw;
+    error.textContent="Fehler: "+friendly;
     error.classList.add("show");
-    progressText.textContent="Übertragung wurde abgebrochen.";
+    progressText.textContent="Übertragung konnte noch nicht abgeschlossen werden.";
+    progressHint.textContent="Bereits vom Server bestätigte Bilddateien bleiben erhalten.";
     btn.disabled=false;
+  }finally{
+    ACTIVE_UPLOAD=false;
+    ACTIVE_UPLOAD_UI=null;
+  }
+});
+
+window.addEventListener("beforeunload",e=>{
+  if(!ACTIVE_UPLOAD) return;
+  e.preventDefault();
+  e.returnValue="";
+});
+
+document.addEventListener("visibilitychange",()=>{
+  if(!ACTIVE_UPLOAD || !ACTIVE_UPLOAD_UI) return;
+  if(document.visibilityState!=="hidden" && navigator.onLine!==false){
+    ACTIVE_UPLOAD_UI.hint.textContent="FotoWorks ist wieder aktiv. Die Übertragung wird automatisch fortgesetzt.";
   }
 });
 

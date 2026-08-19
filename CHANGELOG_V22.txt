@@ -1,0 +1,18 @@
+FotoWorks GETIN V22 · 2026-08-19
+
+Neu gegenüber V21:
+- Robuster Upload bei kurzzeitiger Unterbrechung, Handy-Sperre oder Netzwechsel.
+- Keine rohe Browsermeldung „Load Failed“ mehr bei typischen Netzabbrüchen.
+- Upload pausiert, wenn die Seite im Hintergrund ist, und setzt nach Rückkehr automatisch fort.
+- Bereits serverseitig bestätigte Bilddateien werden über eine feste Positionsnummer erkannt und nicht doppelt hochgeladen.
+- Vor einem Wiederholungsversuch wird der Upload-Status am Backend geprüft.
+- Fortschritt bleibt „x von y“ ohne ungenaue Restzeit-Anzeige.
+- Kundenhinweis: Seite während der Übertragung geöffnet lassen.
+- Abschluss der Bestellung ist wiederholbar/idempotent.
+
+WICHTIG:
+GETIN V22 benötigt FotoWorks BACKEND V1.3.2 oder neuer, da dafür /api/upload-status und x-item-index verwendet werden.
+
+Unverändert:
+- V21 Preisprüfung/Mengenaktionen bleiben erhalten.
+- Gestaltung, Produkte und ALFO-Material bleiben unverändert.
