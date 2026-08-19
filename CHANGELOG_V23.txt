@@ -1,0 +1,9 @@
+FotoWorks GETIN V23 · 2026-08-19
+
+Änderung gegenüber V22:
+- Dezente sichtbare Versionszeile ganz unten im Footer ergänzt.
+- Anzeige: FotoWorks V23 · by JFW · All Rights Reserved
+- Dadurch ist die tatsächlich geladene GETIN-Version auf PC und Smartphone sofort erkennbar.
+- Keine Änderungen an Preislogik, Aktionen, Upload-Fortsetzung oder Backend-Anbindung.
+
+Basis: GETIN V22.
