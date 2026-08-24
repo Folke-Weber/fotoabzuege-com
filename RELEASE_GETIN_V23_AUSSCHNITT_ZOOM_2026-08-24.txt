@@ -1,0 +1,30 @@
+FotoWorks GETIN V23 – Live-Freigabe Ausschnitt / Zoom / Bildoptimierung
+Stand 24.08.2026
+
+Freigegebener Funktionsumfang:
+- „Bild bearbeiten“ dauerhaft in der Bildliste erreichbar
+- Bildminiatur zusätzlich anklickbar
+- manueller Ausschnitt passend zum gewählten Fotoformat
+- quadratischer Rahmen z. B. für 13×13 cm
+- Quer-/Hochformat bei rechteckigen Formaten
+- Verschieben per Maus oder Finger
+- Zoom 1× bis 3×
+- Qualitätsanzeige reagiert auf Ausschnitt und Zoom
+- optionale dezente Bildoptimierung
+- bearbeitete Datei wird tatsächlich an FotoWorks übertragen
+- Änderungen an Stückzahl/Format/Ausschnitt usw. machen die alte Bestellprüfung ungültig
+- erneute Bestellprüfung vor Übertragung erforderlich
+- zusätzliche harte Prüfung unmittelbar vor der Übertragung
+
+End-to-End:
+- Frontend-Test erfolgreich
+- Preis-/Stückzahlberechnung erfolgreich
+- Backend-Übertragung vom Benutzer erfolgreich bestätigt
+
+Unverändert:
+- Backend API
+- ADMIN
+- GETOUT
+- zentrale Produkt-/Preisquelle
+
+Produktbasis bleibt GETIN V23.

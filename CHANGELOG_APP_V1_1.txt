@@ -1,0 +1,8 @@
+FotoWorks APP V1.1 · GETIN V23
+Datum: 19.08.2026
+
+- iPhone-Installationshinweis klarer in 3 Schritten.
+- Hinweis erklärt, dass das FotoWorks-Icon erst nach „Zum Home-Bildschirm“ + „Hinzufügen“ erscheint.
+- Android-Installationsdialog bleibt über beforeinstallprompt erhalten, sofern vom Browser angeboten.
+- GETIN V23 Bestell-, Preis-, Aktions- und Uploadlogik unverändert.
+- Backend unverändert.

@@ -2,7 +2,7 @@
    Absichtlich kein API-/Upload-Caching.
    Navigation: Netzwerk zuerst, damit GETIN-Updates sofort greifen.
 */
-const APP_CACHE = "fotoworks-app-v1-shell";
+const APP_CACHE = "fotoworks-app-v23-crop-live-20260824";
 const STATIC = [
   "/app/offline.html",
   "/app/manifest.webmanifest",
