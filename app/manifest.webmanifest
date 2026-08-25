@@ -1,0 +1,49 @@
+{
+  "id": "/app/",
+  "name": "FotoJoe – Fotoabzüge & Fotoprodukte",
+  "short_name": "FotoJoe",
+  "description": "FotoJoe – das Annahmeterminal und die App für Fotoprodukte von JustForWork. Fotoabzüge und Fotoprodukte bei Foto Weber Haigerloch bestellen.",
+  "lang": "de-DE",
+  "dir": "ltr",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ef3a19",
+  "orientation": "any",
+  "categories": [
+    "shopping"
+  ],
+  "icons": [
+    {
+      "src": "/app/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Fotoabzüge auswählen",
+      "short_name": "Fotoabzüge",
+      "url": "/app/#formate"
+    },
+    {
+      "name": "Bestellung starten",
+      "short_name": "Bestellen",
+      "url": "/app/#bestellen"
+    }
+  ]
+}
