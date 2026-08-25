@@ -1,0 +1,32 @@
+FotoJoe GETIN V25 – KORRIGIERTER LIVE-STAND
+Stand: 25.08.2026
+
+Basis:
+- exakt die vom Anwender bereitgestellte Datei FotoWorks_GETIN_V23_LIVE_AUSSCHNITT_ZOOM_2026-08-24(1).zip
+- damit die am 24.08.2026 live freigegebene Ausschnitt-/Zoom-/Bildoptimierungslogik
+
+Enthalten:
+- Bild bearbeiten dauerhaft in der Bildliste
+- Miniatur anklickbar
+- Ausschnitt passend zum gewählten Fotoformat
+- Quer-/Hochformat bzw. quadratisch
+- Verschieben per Finger/Maus
+- Zoom 1x bis 3x
+- Qualitätsanzeige reagiert auf Ausschnitt und Zoom
+- Farbe & Bild automatisch optimieren
+- bearbeitete Datei wird tatsächlich übertragen
+- Bestellprüfung wird nach Änderungen ungültig und muss erneut ausgeführt werden
+- zusätzliche harte Prüfung direkt vor der Übertragung
+- mobile Pointer-Steuerung mit preventDefault stabilisiert
+- neuer PWA-Cache für V25, damit alte Handy-App-Dateien ersetzt werden
+
+Unverändert:
+- Backend/API
+- Tenant/Preise/Produkte
+- ADMIN
+- GETOUT
+- technische x-fotoworks-* Header und interne Kompatibilitätsnamen
+
+Branding:
+FotoJoe – Annahmeterminal & App für Fotoprodukte
+by JustForWork

@@ -1,8 +1,8 @@
-/* FotoJoe APP V1 · GETIN V23
+/* FotoJoe APP · GETIN V25
    Absichtlich kein API-/Upload-Caching.
    Navigation: Netzwerk zuerst, damit GETIN-Updates sofort greifen.
 */
-const APP_CACHE = "fotoworks-app-v1-shell";
+const APP_CACHE = "fotojoe-app-v25-live-20260825";
 const STATIC = [
   "/app/offline.html",
   "/app/manifest.webmanifest",

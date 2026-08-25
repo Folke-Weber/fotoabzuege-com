@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe APP V1.1 · GETIN V23 · 2026-08-19 -->
+<!-- FotoJoe APP · GETIN V25 · AUSSCHNITT/ZOOM/FARBOPTIMIERUNG · 2026-08-25 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -320,7 +320,7 @@ body.modal-open{overflow:hidden}
 
 
 
-/* FotoJoe GETIN V23 – Feinschliff, Fotoprodukte & Accessibility */
+/* FotoJoe GETIN V25 – Feinschliff, Fotoprodukte & Accessibility */
 .skip-link{position:fixed;left:12px;top:-80px;z-index:2000;background:#111;color:#fff;padding:12px 16px;border-radius:8px;font-weight:900}
 .skip-link:focus{top:12px}
 .navlinks a:focus-visible,.btn:focus-visible,.more-formats-btn:focus-visible,.product-teaser:focus-visible,.format-close:focus-visible,.choice:focus-within,.uploadbtn:focus-within,.sendbtn:focus-visible,.reviewbtn:focus-visible{outline:3px solid #ffb49f;outline-offset:3px}
@@ -353,7 +353,7 @@ body.modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 
-/* FotoJoe GETIN V23 – Bildkacheln & backendfähige Preislogik */
+/* FotoJoe GETIN V25 – Bildkacheln & backendfähige Preislogik */
 .main-format-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
 .main-format-grid .visual-format-card{padding:0;min-height:0;display:block;overflow:hidden;border-radius:14px;background:#fff;border:1px solid #deded9;box-shadow:0 8px 24px rgba(0,0,0,.055);position:relative;text-align:left}
 .main-format-grid .visual-format-card.primary-format{border:2px solid var(--red);background:#fff}
@@ -380,7 +380,7 @@ body.modal-open{overflow:hidden}
 @media(max-width:440px){.main-format-grid{grid-template-columns:1fr}.visual-format-card .format-visual{height:220px}}
 
 
-/* FotoJoe GETIN V23 – emotionalere Bildwelt der fünf Standardformate */
+/* FotoJoe GETIN V25 – emotionalere Bildwelt der fünf Standardformate */
 .main-format-grid .visual-format-card[data-format-index="1"] .format-visual img{object-position:center 40%}
 .main-format-grid .visual-format-card[data-format-index="4"] .format-visual img{object-position:center 35%}
 .main-format-grid .visual-format-card[data-format-index="7"] .format-visual img{object-position:center 48%}
@@ -388,7 +388,7 @@ body.modal-open{overflow:hidden}
 .main-format-grid .visual-format-card[data-format-index="19"] .format-visual img{object-position:center 50%}
 
 
-/* FotoJoe GETIN V23 – bebilderte Produktkarten für Tassen und Leinwand */
+/* FotoJoe GETIN V25 – bebilderte Produktkarten für Tassen und Leinwand */
 .visual-product-teaser{min-height:118px;padding:14px 18px 14px 14px;display:grid;grid-template-columns:112px 1fr 26px;align-items:center;gap:18px}
 .visual-product-teaser .product-teaser-visual{display:block;height:82px;border-radius:10px;overflow:hidden;background:#f3f3f1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
 .visual-product-teaser .product-teaser-visual img{width:100%;height:100%;object-fit:cover}
@@ -406,7 +406,7 @@ body.modal-open{overflow:hidden}
   .visual-product-teaser .pickup-text{font-size:12px}
 }
 
-/* FotoJoe GETIN V23 – Original-ALFO-Material unverändert eingebettet */
+/* FotoJoe GETIN V25 – Original-ALFO-Material unverändert eingebettet */
 .alfo-external{
   width:100%;margin:16px 0 0;border:1px solid #dededb;border-radius:16px;
   background:#fff;overflow:hidden;display:grid;grid-template-columns:185px minmax(300px,1fr) 360px;
@@ -439,7 +439,7 @@ body.modal-open{overflow:hidden}
 }
 
 
-/* FotoJoe APP V1.1 – Installationshinweise; GETIN-Design bleibt unverändert */
+/* FotoJoe APP – Installationshinweise; GETIN-Design bleibt unverändert */
 .pwa-install{
  position:fixed;right:16px;bottom:16px;z-index:90;
  display:none;align-items:center;gap:10px;
@@ -466,6 +466,63 @@ body.modal-open{overflow:hidden}
 }
 @media(display-mode:standalone){
  .pwa-install,.pwa-ios-tip{display:none!important}
+}
+
+
+/* FotoJoe V25 – Ausschnitt / Zoom / dezente Optimierung */
+.crop-edit-btn{border:1px solid #d8d8d5;background:#fff;border-radius:8px;padding:7px 10px;font:inherit;font-size:11px;font-weight:900;cursor:pointer;margin-top:7px;color:#333}
+.crop-edit-btn:hover{border-color:var(--red);color:var(--red)}
+.crop-edit-btn.edited{background:#fff3ee;border-color:#ffb49f;color:#9c2d17}
+.crop-modal{position:fixed;inset:0;z-index:2400;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:18px}
+.crop-modal.show{display:flex}
+.crop-panel{width:min(940px,100%);max-height:calc(100vh - 36px);overflow:auto;background:#fff;border-radius:18px;box-shadow:0 30px 90px #0008;padding:22px}
+.crop-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px}
+.crop-head h3{margin:0;font-size:25px;letter-spacing:-.02em}.crop-head p{margin:5px 0 0;color:#70706d;font-size:13px}
+.crop-close{border:0;background:#f0f0ee;border-radius:9px;width:38px;height:38px;font-size:22px;cursor:pointer}
+.crop-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:22px;align-items:start}
+.crop-preview-wrap{background:#202020;border-radius:14px;padding:14px;display:grid;place-items:center;min-height:390px}
+#cropCanvas{display:block;max-width:100%;max-height:66vh;background:#fff;box-shadow:0 10px 30px #0008;touch-action:none;cursor:grab}
+#cropCanvas.dragging{cursor:grabbing}.crop-controls{display:grid;gap:15px}
+.crop-control{border:1px solid #e3e3df;border-radius:12px;padding:14px;background:#fafaf8}.crop-control strong{display:block;font-size:13px;margin-bottom:9px}
+.crop-orientation{display:flex;gap:8px}.crop-orientation button{flex:1;border:1px solid #d6d6d2;background:#fff;border-radius:8px;padding:10px;font-weight:900;cursor:pointer}
+.crop-orientation button.active{border-color:var(--red);background:#fff2ed;color:#9c2d17}
+.crop-zoom-row{display:grid;grid-template-columns:34px 1fr 48px;gap:8px;align-items:center}.crop-zoom-row input{width:100%}
+.crop-quality-box{padding:12px;border-radius:10px;background:#fff;border:1px solid #e2e2de}.crop-quality-box .qualitydetail{font-size:11px}
+.crop-optimize{display:flex;gap:9px;align-items:flex-start;font-size:13px;cursor:pointer}.crop-optimize input{margin-top:3px}
+.crop-help{font-size:12px;color:#6f6f6b;line-height:1.45}.crop-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:2px}
+.crop-actions button{border:1px solid #d5d5d1;background:#fff;border-radius:9px;padding:11px 14px;font-weight:900;cursor:pointer}
+.crop-actions .apply{background:linear-gradient(90deg,var(--red),var(--red2));border-color:transparent;color:#fff;flex:1}
+.crop-processing{display:none;margin-top:8px;font-size:12px;font-weight:800;color:#9c2d17}.crop-processing.show{display:block}
+body.crop-open{overflow:hidden}
+@media(max-width:820px){.crop-modal{padding:0;align-items:stretch}.crop-panel{border-radius:0;max-height:100vh;width:100%;padding:16px}.crop-layout{grid-template-columns:1fr}.crop-preview-wrap{min-height:300px;padding:8px}#cropCanvas{max-height:48vh}}
+
+
+/* FotoJoe GETIN V25 – Bildbearbeitung in der Dateiliste sichtbar */
+.crop-list-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:7px}
+.crop-list-actions .crop-edit-btn{
+  display:inline-flex!important;align-items:center;justify-content:center;
+  min-height:34px;margin:0;padding:7px 11px;border:1px solid #ffb49f;
+  border-radius:8px;background:#fff7f4;color:#9c2d17;font:inherit;
+  font-size:11px;font-weight:950;cursor:pointer
+}
+.crop-list-actions .crop-edit-btn:hover{background:#fff0ea;border-color:var(--red);color:var(--red)}
+.crop-list-actions .crop-edit-btn.edited{background:#fff0ea;border-color:var(--red);color:#8d260f}
+.thumb.crop-clickable{cursor:pointer;position:relative}
+.thumb.crop-clickable:after{
+  content:"✎";position:absolute;right:4px;bottom:4px;width:23px;height:23px;
+  border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.95);
+  color:#9c2d17;border:1px solid #ffb49f;font-size:13px;font-weight:950;
+  box-shadow:0 2px 8px #0002
+}
+@media(max-width:900px){
+  .crop-list-actions .crop-edit-btn{width:100%;max-width:220px}
+}
+
+
+/* FotoJoe GETIN V25 – geprüfte Bestellung bei Änderungen sicher verwerfen */
+.review-price-status.changed{
+  color:#8a4d00!important;background:#fff7df;border:1px solid #f1d98b;
+  border-radius:9px;padding:9px 11px;margin-top:9px;font-weight:850
 }
 
 </style>
@@ -911,8 +968,34 @@ body.modal-open{overflow:hidden}
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe APP V1.1 · GETIN V23 · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe APP · GETIN V25 · Ausschnitt/Zoom/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
+
+
+
+<div id="cropModal" class="crop-modal" aria-hidden="true">
+  <div class="crop-panel" role="dialog" aria-modal="true" aria-labelledby="cropTitle">
+    <div class="crop-head">
+      <div><h3 id="cropTitle">Ausschnitt bearbeiten</h3><p id="cropSubtitle">Bild im gewählten Fotoformat ausrichten.</p></div>
+      <button id="cropClose" class="crop-close" type="button" aria-label="Ausschnitt schließen">×</button>
+    </div>
+    <div class="crop-layout">
+      <div class="crop-preview-wrap"><canvas id="cropCanvas" width="720" height="480" aria-label="Vorschau des Fotoausschnitts"></canvas></div>
+      <div class="crop-controls">
+        <div id="cropOrientationBox" class="crop-control">
+          <strong>Rahmen</strong>
+          <div class="crop-orientation"><button id="cropLandscape" type="button">Querformat</button><button id="cropPortrait" type="button">Hochformat</button></div>
+        </div>
+        <div class="crop-control"><strong>Zoom</strong><div class="crop-zoom-row"><span>−</span><input id="cropZoom" type="range" min="1" max="3" step="0.01" value="1" aria-label="Zoom"><span id="cropZoomValue">1,00×</span></div></div>
+        <div class="crop-control"><strong>Bildqualität</strong><div id="cropQuality" class="crop-quality-box"></div></div>
+        <div class="crop-control"><label class="crop-optimize"><input id="cropOptimize" type="checkbox"><span><b>Farbe & Bild automatisch optimieren</b><br>Dezent: Helligkeit, Kontrast und Farbe werden leicht verbessert.</span></label></div>
+        <div class="crop-help">Ziehen Sie das Bild mit Maus oder Finger in die gewünschte Position. Die weiße Fläche entspricht dem späteren Foto.</div>
+        <div class="crop-actions"><button id="cropReset" type="button">Original</button><button id="cropCancel" type="button">Abbrechen</button><button id="cropApply" class="apply" type="button">Übernehmen</button></div>
+        <div id="cropProcessing" class="crop-processing">Ausschnitt wird vorbereitet …</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script>
@@ -973,6 +1056,97 @@ const surfaceHint = document.getElementById("surfaceHint");
 
 let items = [];
 let nextId = 1;
+
+
+/* FotoJoe V25 – Review-Sperre gegen veraltete Bestellübersicht */
+let LAST_REVIEW_FINGERPRINT=null;
+
+/* FotoJoe V25 – harte Freigabesperre gegen Änderungen nach Prüfung */
+function liveOrderFingerprint(){
+  const val=id=>document.getElementById(id)?.value?.trim?.() || "";
+  const liveItems=items.map(item=>{
+    const row=fileList?.querySelector(`[data-id="${item.id}"]`);
+    const formatControl=row?.querySelector("select");
+    const qtyControl=row?.querySelector('input[type="number"]');
+    const liveFormat=formatControl ? Number(formatControl.value) : Number(item.format);
+    const rawQty=qtyControl ? Number(qtyControl.value) : Number(item.qty||1);
+    const liveQty=Math.min(999,Math.max(1,Number.isFinite(rawQty)?Math.round(rawQty):1));
+    return {
+      id:item.id,format:liveFormat,qty:liveQty,
+      filename:(item.uploadFile||item.file)?.name || item.name,
+      edited:!!item.edited,
+      crop:item.cropState ? {
+        orientation:item.cropState.orientation||"",zoom:Number(item.cropState.zoom||1),
+        cx:Math.round(Number(item.cropState.cx||0)*1000)/1000,
+        cy:Math.round(Number(item.cropState.cy||0)*1000)/1000,
+        optimize:!!item.cropState.optimize
+      } : null
+    };
+  });
+  return JSON.stringify({
+    surface:document.querySelector('input[name="surface"]:checked')?.value || "",
+    shipping:document.querySelector('input[name="shipping"]:checked')?.value || "",
+    firstName:val("firstName"),lastName:val("lastName"),email:val("email"),phone:val("phone"),
+    street:val("street"),zip:val("zip"),city:val("city"),items:liveItems
+  });
+}
+function syncItemsFromVisibleRows(){
+  let changed=false;
+  items.forEach(item=>{
+    const row=fileList?.querySelector(`[data-id="${item.id}"]`);
+    if(!row) return;
+    const sel=row.querySelector("select");
+    const qty=row.querySelector('input[type="number"]');
+    if(sel){
+      const f=Number(sel.value);
+      if(Number.isFinite(f) && f!==item.format){
+        if(item.edited) clearAppliedCrop(item);
+        item.format=f;changed=true;
+      }
+    }
+    if(qty){
+      const n=Math.min(999,Math.max(1,parseInt(qty.value,10)||1));
+      if(n!==item.qty){item.qty=n;changed=true;}
+      qty.value=String(n);
+    }
+  });
+  return changed;
+}
+
+function orderFingerprint(){
+  const val=id=>document.getElementById(id)?.value?.trim?.() || "";
+  return JSON.stringify({
+    surface:document.querySelector('input[name="surface"]:checked')?.value || "",
+    shipping:document.querySelector('input[name="shipping"]:checked')?.value || "",
+    firstName:val("firstName"),lastName:val("lastName"),email:val("email"),phone:val("phone"),
+    street:val("street"),zip:val("zip"),city:val("city"),
+    items:items.map(item=>({
+      id:item.id,format:item.format,qty:Number(item.qty||1),
+      filename:(item.uploadFile||item.file)?.name || item.name,
+      edited:!!item.edited,
+      crop:item.cropState ? {
+        orientation:item.cropState.orientation||"",zoom:Number(item.cropState.zoom||1),
+        cx:Math.round(Number(item.cropState.cx||0)*1000)/1000,
+        cy:Math.round(Number(item.cropState.cy||0)*1000)/1000,
+        optimize:!!item.cropState.optimize
+      } : null
+    }))
+  });
+}
+function invalidateReview(message="Bestellung geändert – bitte erneut prüfen."){
+  LAST_REVIEW_PRICE=null;
+  LAST_REVIEW_FINGERPRINT=null;
+  const send=document.getElementById("sendOrder");
+  const preview=document.getElementById("orderPreview");
+  const status=document.getElementById("reviewPriceStatus");
+  if(send){send.disabled=true;send.dataset.reviewValid="0";send.setAttribute("aria-disabled","true");}
+  if(preview) preview.classList.remove("show");
+  if(status){status.textContent=message;status.className="review-price-status changed";}
+}
+function reviewStillCurrent(){
+  return !!LAST_REVIEW_FINGERPRINT && LAST_REVIEW_FINGERPRINT===liveOrderFingerprint();
+}
+
 
 function backendProductForLabel(label){
   if(!BACKEND_PRODUCTS.length) return null;
@@ -1167,6 +1341,20 @@ function qualityInfo(item){
   if(itemType(item.format)!=="photo"){
     return {kind:"unknown",label:"Nicht relevant",detail:"Fotoprodukt",crop:false,ppi:null};
   }
+  if(item.edited && item.editedPixelWidth && item.editedPixelHeight && item.cropState){
+    const ps=cropPrintSize(item,item.cropState.orientation==="square"?"landscape":item.cropState.orientation);
+    if(ps){
+      const ppi=Math.min(item.editedPixelWidth/(ps.w/2.54),item.editedPixelHeight/(ps.h/2.54));
+      let kind,label;
+      if(ppi>=300){kind="excellent";label="Sehr gut";}
+      else if(ppi>=200){kind="good";label="Gut";}
+      else if(ppi>=150){kind="warn";label="Knapp";}
+      else{kind="bad";label="Niedrig";}
+      const extras=["Ausschnitt gewählt",`Zoom ${Number(item.cropState.zoom||1).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})}×`];
+      if(item.cropState.optimize) extras.push("optimiert");
+      return {kind,label,detail:`${item.editedPixelWidth}×${item.editedPixelHeight} px · ${Math.round(ppi)} ppi · ${extras.join(" · ")}`,crop:false,ppi};
+    }
+  }
   if(!item.pixelWidth || !item.pixelHeight){
     return {
       kind:"unknown",
@@ -1229,8 +1417,144 @@ function probeImageDimensions(item){
     item.dimensionError=true;
     updateQualityCell(item.id);
   };
-  img.src=item.url;
+  img.src=item.sourceUrl || item.url;
 }
+
+
+/* FotoJoe V25 – einfacher Ausschnitteditor */
+const cropModal=document.getElementById("cropModal");
+const cropCanvas=document.getElementById("cropCanvas");
+const cropCtx=cropCanvas?.getContext("2d",{alpha:false});
+const cropZoom=document.getElementById("cropZoom");
+const cropZoomValue=document.getElementById("cropZoomValue");
+const cropOptimize=document.getElementById("cropOptimize");
+const cropQuality=document.getElementById("cropQuality");
+const cropOrientationBox=document.getElementById("cropOrientationBox");
+const cropLandscape=document.getElementById("cropLandscape");
+const cropPortrait=document.getElementById("cropPortrait");
+const cropProcessing=document.getElementById("cropProcessing");
+let CROP_ACTIVE_ITEM=null,CROP_IMAGE=null,CROP_STATE=null,CROP_POINTER=null;
+
+function cropPrintSize(item,orientation){
+  const dims=physicalFormat(PRICE_TABLE[item.format]?.[0]);
+  if(!dims || dims[1]==null) return null;
+  const a=Number(dims[0]),b=Number(dims[1]);
+  if(a===b) return {w:a,h:b,square:true};
+  const short=Math.min(a,b),long=Math.max(a,b);
+  return orientation==="portrait" ? {w:short,h:long,square:false} : {w:long,h:short,square:false};
+}
+function defaultCropOrientation(item){
+  const dims=physicalFormat(PRICE_TABLE[item.format]?.[0]);
+  if(!dims || dims[1]==null || Number(dims[0])===Number(dims[1])) return "square";
+  return (item.pixelHeight||0)>(item.pixelWidth||0) ? "portrait" : "landscape";
+}
+function cropRectFor(item,state){
+  if(!item?.pixelWidth || !item?.pixelHeight) return null;
+  const orientation=state.orientation==="square" ? "landscape" : state.orientation;
+  const ps=cropPrintSize(item,orientation);
+  if(!ps) return null;
+  const W=item.pixelWidth,H=item.pixelHeight,target=ps.w/ps.h,imgRatio=W/H;
+  let baseW,baseH;
+  if(imgRatio>target){baseH=H;baseW=H*target;}else{baseW=W;baseH=W/target;}
+  const z=Math.max(1,Math.min(3,Number(state.zoom)||1));
+  const w=baseW/z,h=baseH/z;
+  const minX=w/2,maxX=W-w/2,minY=h/2,maxY=H-h/2;
+  let cx=Number.isFinite(state.cx)?state.cx:W/2,cy=Number.isFinite(state.cy)?state.cy:H/2;
+  cx=Math.min(maxX,Math.max(minX,cx));cy=Math.min(maxY,Math.max(minY,cy));
+  state.cx=cx;state.cy=cy;
+  return {x:cx-w/2,y:cy-h/2,w,h,printW:ps.w,printH:ps.h};
+}
+function cropQualityFor(item,state){
+  const r=cropRectFor(item,state);
+  if(!r) return {kind:"unknown",label:"Nicht prüfbar",detail:"Bildmaße fehlen",ppi:null};
+  const ppi=Math.min(r.w/(r.printW/2.54),r.h/(r.printH/2.54));
+  let kind,label;
+  if(ppi>=300){kind="excellent";label="Sehr gut";}else if(ppi>=200){kind="good";label="Gut";}else if(ppi>=150){kind="warn";label="Knapp";}else{kind="bad";label="Niedrig";}
+  return {kind,label,ppi,detail:`ca. ${Math.round(ppi)} ppi bei diesem Ausschnitt`};
+}
+function setCropCanvasShape(item,state){
+  const ps=cropPrintSize(item,state.orientation==="square"?"landscape":state.orientation);
+  if(!ps) return;
+  const ratio=ps.w/ps.h;
+  let w,h;
+  if(ratio>=1){w=720;h=Math.max(360,Math.round(w/ratio));}else{h=720;w=Math.max(360,Math.round(h*ratio));}
+  cropCanvas.width=w;cropCanvas.height=h;
+}
+function drawCrop(){
+  if(!CROP_ACTIVE_ITEM || !CROP_IMAGE || !CROP_STATE || !cropCtx) return;
+  const r=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(!r) return;
+  setCropCanvasShape(CROP_ACTIVE_ITEM,CROP_STATE);
+  cropCtx.save();cropCtx.fillStyle="#fff";cropCtx.fillRect(0,0,cropCanvas.width,cropCanvas.height);
+  cropCtx.imageSmoothingEnabled=true;cropCtx.imageSmoothingQuality="high";
+  cropCtx.filter=CROP_STATE.optimize ? "brightness(1.03) contrast(1.04) saturate(1.04)" : "none";
+  cropCtx.drawImage(CROP_IMAGE,r.x,r.y,r.w,r.h,0,0,cropCanvas.width,cropCanvas.height);cropCtx.restore();
+  const q=cropQualityFor(CROP_ACTIVE_ITEM,CROP_STATE);
+  cropQuality.innerHTML=`<span class="qualitybadge ${q.kind}">${escapeHtml(q.label)}</span><span class="qualitydetail">${escapeHtml(q.detail)}</span>`;
+  cropZoomValue.textContent=Number(CROP_STATE.zoom).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})+"×";
+  cropLandscape?.classList.toggle("active",CROP_STATE.orientation==="landscape");
+  cropPortrait?.classList.toggle("active",CROP_STATE.orientation==="portrait");
+}
+function loadImageForCrop(item){
+  return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error("Bild kann in diesem Browser nicht für den Ausschnitt geöffnet werden."));img.src=item.sourceUrl||item.url;});
+}
+async function openCropEditor(item){
+  if(itemType(item.format)!=="photo") return;
+  if(!item.pixelWidth || !item.pixelHeight){alert("Die Bildmaße konnten nicht gelesen werden. Für dieses Bild ist die Ausschnittbearbeitung in diesem Browser leider nicht verfügbar.");return;}
+  const dims=physicalFormat(PRICE_TABLE[item.format]?.[0]);
+  if(!dims || dims[1]==null){alert("Für Vario-Formate wird der manuelle Ausschnitt in diesem Test noch nicht angeboten.");return;}
+  try{
+    CROP_ACTIVE_ITEM=item;CROP_IMAGE=await loadImageForCrop(item);
+    const orientation=item.cropState?.orientation||defaultCropOrientation(item);
+    CROP_STATE={orientation,zoom:item.cropState?.zoom||1,cx:Number.isFinite(item.cropState?.cx)?item.cropState.cx:item.pixelWidth/2,cy:Number.isFinite(item.cropState?.cy)?item.cropState.cy:item.pixelHeight/2,optimize:!!item.cropState?.optimize};
+    cropZoom.value=String(CROP_STATE.zoom);cropOptimize.checked=CROP_STATE.optimize;
+    const ps=cropPrintSize(item,CROP_STATE.orientation==="square"?"landscape":CROP_STATE.orientation);
+    cropOrientationBox.style.display=ps?.square?"none":"block";
+    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"} · Ausschnitt verschieben und bei Bedarf zoomen`;
+    cropProcessing.classList.remove("show");cropModal.classList.add("show");cropModal.setAttribute("aria-hidden","false");document.body.classList.add("crop-open");drawCrop();
+  }catch(err){alert(err?.message||"Ausschnittbearbeitung konnte nicht geöffnet werden.");CROP_ACTIVE_ITEM=null;CROP_IMAGE=null;CROP_STATE=null;}
+}
+function closeCropEditor(){cropModal?.classList.remove("show");cropModal?.setAttribute("aria-hidden","true");document.body.classList.remove("crop-open");CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}
+function resetCropEditor(){
+  if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
+  CROP_STATE.orientation=defaultCropOrientation(CROP_ACTIVE_ITEM);CROP_STATE.zoom=1;CROP_STATE.cx=CROP_ACTIVE_ITEM.pixelWidth/2;CROP_STATE.cy=CROP_ACTIVE_ITEM.pixelHeight/2;CROP_STATE.optimize=false;
+  cropZoom.value="1";cropOptimize.checked=false;
+  const ps=cropPrintSize(CROP_ACTIVE_ITEM,CROP_STATE.orientation==="square"?"landscape":CROP_STATE.orientation);cropOrientationBox.style.display=ps?.square?"none":"block";drawCrop();
+}
+function revokeEditedPreview(item){if(item?.editedPreviewUrl){try{URL.revokeObjectURL(item.editedPreviewUrl);}catch(_e){}item.editedPreviewUrl="";}}
+function clearAppliedCrop(item){if(!item)return;revokeEditedPreview(item);item.uploadFile=null;item.cropState=null;item.editedPixelWidth=0;item.editedPixelHeight=0;item.edited=false;}
+async function makeCroppedFile(item,state){
+  const r=cropRectFor(item,state);if(!r)throw new Error("Ausschnitt konnte nicht berechnet werden.");
+  const maxSide=6500,scale=Math.min(1,maxSide/Math.max(r.w,r.h)),outW=Math.max(1,Math.round(r.w*scale)),outH=Math.max(1,Math.round(r.h*scale));
+  const c=document.createElement("canvas");c.width=outW;c.height=outH;const ctx=c.getContext("2d",{alpha:false});
+  ctx.fillStyle="#fff";ctx.fillRect(0,0,outW,outH);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";ctx.filter=state.optimize?"brightness(1.03) contrast(1.04) saturate(1.04)":"none";
+  ctx.drawImage(CROP_IMAGE,r.x,r.y,r.w,r.h,0,0,outW,outH);
+  const srcType=(item.file?.type||"").toLowerCase();
+  const outType=srcType==="image/png"?"image/png":srcType==="image/webp"?"image/webp":"image/jpeg";
+  const ext=outType==="image/png"?"png":outType==="image/webp"?"webp":"jpg";
+  const blob=await new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(new Error("Bilddatei konnte nicht erzeugt werden.")),outType,outType==="image/png"?undefined:0.94));
+  const base=(item.name||"foto").replace(/\.[^.]+$/,""),filename=`${base}_ausschnitt.${ext}`;
+  const file=new File([blob],filename,{type:outType,lastModified:Date.now()});
+  return {file,width:outW,height:outH,previewUrl:URL.createObjectURL(blob)};
+}
+async function applyCropEditor(){
+  if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
+  const btn=document.getElementById("cropApply");btn.disabled=true;cropProcessing.classList.add("show");
+  try{const made=await makeCroppedFile(CROP_ACTIVE_ITEM,CROP_STATE);revokeEditedPreview(CROP_ACTIVE_ITEM);CROP_ACTIVE_ITEM.uploadFile=made.file;CROP_ACTIVE_ITEM.editedPreviewUrl=made.previewUrl;CROP_ACTIVE_ITEM.editedPixelWidth=made.width;CROP_ACTIVE_ITEM.editedPixelHeight=made.height;CROP_ACTIVE_ITEM.cropState={...CROP_STATE};CROP_ACTIVE_ITEM.edited=true;invalidateReview("Bildbearbeitung geändert – bitte Bestellung erneut prüfen.");renderFiles();closeCropEditor();}
+  catch(err){alert(err?.message||"Ausschnitt konnte nicht übernommen werden.");}
+  finally{btn.disabled=false;cropProcessing.classList.remove("show");}
+}
+cropZoom?.addEventListener("input",()=>{if(!CROP_STATE)return;CROP_STATE.zoom=Number(cropZoom.value)||1;drawCrop();});
+cropOptimize?.addEventListener("change",()=>{if(!CROP_STATE)return;CROP_STATE.optimize=cropOptimize.checked;drawCrop();});
+function changeCropOrientation(o){if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;CROP_STATE.orientation=o;CROP_STATE.cx=CROP_ACTIVE_ITEM.pixelWidth/2;CROP_STATE.cy=CROP_ACTIVE_ITEM.pixelHeight/2;drawCrop();}
+cropLandscape?.addEventListener("click",()=>changeCropOrientation("landscape"));cropPortrait?.addEventListener("click",()=>changeCropOrientation("portrait"));
+document.getElementById("cropReset")?.addEventListener("click",resetCropEditor);document.getElementById("cropCancel")?.addEventListener("click",closeCropEditor);document.getElementById("cropClose")?.addEventListener("click",closeCropEditor);document.getElementById("cropApply")?.addEventListener("click",applyCropEditor);
+cropModal?.addEventListener("click",e=>{if(e.target===cropModal)closeCropEditor();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&cropModal?.classList.contains("show"))closeCropEditor();});
+cropCanvas?.addEventListener("pointerdown",e=>{if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();CROP_POINTER={id:e.pointerId,x:e.clientX,y:e.clientY};cropCanvas.setPointerCapture?.(e.pointerId);cropCanvas.classList.add("dragging");});
+cropCanvas?.addEventListener("pointermove",e=>{if(!CROP_POINTER||e.pointerId!==CROP_POINTER.id||!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();const rect=cropCanvas.getBoundingClientRect(),crop=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(!crop||!rect.width||!rect.height)return;const dx=e.clientX-CROP_POINTER.x,dy=e.clientY-CROP_POINTER.y;CROP_POINTER.x=e.clientX;CROP_POINTER.y=e.clientY;CROP_STATE.cx-=dx*(crop.w/rect.width);CROP_STATE.cy-=dy*(crop.h/rect.height);drawCrop();});
+function endCropPointer(e){if(CROP_POINTER&&(!e||e.pointerId===CROP_POINTER.id)){CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}}
+cropCanvas?.addEventListener("pointerup",endCropPointer);cropCanvas?.addEventListener("pointercancel",endCropPointer);
+
 
 function showUploadFeedback(messages){
   const box=document.getElementById("uploadFeedback");
@@ -1281,16 +1605,27 @@ function addFiles(fileCollection){
       qty:1,
       format:selectedFormat,
       url:URL.createObjectURL(file),
+      sourceUrl:null,
+      uploadFile:null,
+      editedPreviewUrl:"",
+      cropState:null,
+      editedPixelWidth:0,
+      editedPixelHeight:0,
+      edited:false,
       pixelWidth:0,
       pixelHeight:0,
       dimensionError:false
     };
+    item.sourceUrl=item.url;
     items.push(item);
     added++;
     probeImageDimensions(item);
   });
 
-  if(added && !messages.length) messages.push(`${added} Bild${added===1?"":"er"} hinzugefügt.`);
+  if(added){
+    invalidateReview("Bilder geändert – bitte Bestellung erneut prüfen.");
+    if(!messages.length) messages.push(`${added} Bild${added===1?"":"er"} hinzugefügt.`);
+  }
   fileInput.value="";
   showUploadFeedback(messages);
   renderFiles();
@@ -1311,10 +1646,13 @@ function renderFiles(){
     const safeName=escapeHtml(item.name);
     const q=qualityInfo(item);
     row.innerHTML=`
-      <div class="thumb"><img src="${item.url}" alt=""></div>
+      <div class="thumb ${itemType(item.format)==="photo"?"crop-clickable":""}" title="${itemType(item.format)==="photo"?"Bild bearbeiten":""}">
+        <img src="${item.editedPreviewUrl || item.url}" alt="">
+      </div>
       <div class="filemeta">
         <div class="name" title="${safeName}">${safeName}</div>
-        <div class="size">${fileSize(item.bytes)}</div>
+        <div class="size">${fileSize((item.uploadFile||item.file).size)}</div>
+        ${itemType(item.format)==="photo" ? `<div class="crop-list-actions"><button class="crop-edit-btn ${item.edited?"edited":""}" type="button">${item.edited?"Ausschnitt / Zoom ändern ✓":"Bild bearbeiten ✎"}</button></div>` : ""}
       </div>
       <div class="formatcell">
         <select aria-label="Format für ${safeName}">${formatOptions(item.format)}</select>
@@ -1330,22 +1668,27 @@ function renderFiles(){
     const formatSel=row.querySelector("select");
     const qtyInput=row.querySelector('input[type="number"]');
     const linePrice=row.querySelector(".lineprice");
+    row.querySelector(".crop-edit-btn")?.addEventListener("click",()=>openCropEditor(item));
+    row.querySelector(".thumb.crop-clickable")?.addEventListener("click",()=>openCropEditor(item));
 
     formatSel.addEventListener("change",e=>{
-      item.format=Number(e.target.value);
-      linePrice.textContent=euro(PRICE_TABLE[item.format][1]*item.qty);
-      updateQualityCell(item.id);
-      updateSummary();
+      const nextFormat=Number(e.target.value);
+      if(item.edited && nextFormat!==item.format) clearAppliedCrop(item);
+      item.format=nextFormat;
+      invalidateReview("Format geändert – bitte Bestellung erneut prüfen.");
+      renderFiles();
     });
 
     qtyInput.addEventListener("input",e=>{
       if(e.target.value===""){
         item.qty=1;
         linePrice.textContent=euro(PRICE_TABLE[item.format][1]);
+        invalidateReview("Stückzahl geändert – bitte Bestellung erneut prüfen.");
         updateSummary();
         return;
       }
       const val=Math.min(999,Math.max(1,parseInt(e.target.value,10)||1));
+      if(val!==item.qty) invalidateReview("Stückzahl geändert – bitte Bestellung erneut prüfen.");
       item.qty=val;
       linePrice.textContent=euro(PRICE_TABLE[item.format][1]*val);
       updateSummary();
@@ -1356,13 +1699,16 @@ function renderFiles(){
         item.qty=1;
         e.target.value=1;
         linePrice.textContent=euro(PRICE_TABLE[item.format][1]);
+        invalidateReview("Stückzahl geändert – bitte Bestellung erneut prüfen.");
         updateSummary();
       }
     });
 
     row.querySelector(".removebtn").addEventListener("click",()=>{
-      URL.revokeObjectURL(item.url);
+      try{URL.revokeObjectURL(item.url);}catch(_e){}
+      revokeEditedPreview(item);
       items=items.filter(x=>x.id!==item.id);
+      invalidateReview("Bild entfernt – bitte Bestellung erneut prüfen.");
       renderFiles();
     });
 
@@ -1478,6 +1824,15 @@ updateProductHint();
 
 fileInput.addEventListener("change",e=>addFiles(e.target.files));
 
+// V4: zusätzliche delegierte Sicherung – unabhängig von den Listenern einzelner Zeilen.
+fileList.addEventListener("input",e=>{
+  if(e.target.matches('input[type="number"]')) invalidateReview("Stückzahl geändert – bitte Bestellung erneut prüfen.");
+});
+fileList.addEventListener("change",e=>{
+  if(e.target.matches("select")) invalidateReview("Format geändert – bitte Bestellung erneut prüfen.");
+  if(e.target.matches('input[type="number"]')) invalidateReview("Stückzahl geändert – bitte Bestellung erneut prüfen.");
+});
+
 ["dragenter","dragover"].forEach(evt=>{
   uploadZone.addEventListener(evt,e=>{
     e.preventDefault();
@@ -1518,13 +1873,22 @@ function makeOrderNo(){
 
 document.querySelectorAll('input[name="surface"],input[name="shipping"]').forEach(el=>{
   el.addEventListener("change",()=>{
+    invalidateReview(el.name==="surface" ? "Oberfläche geändert – bitte Bestellung erneut prüfen." : "Lieferart geändert – bitte Bestellung erneut prüfen.");
     if(el.name==="surface" && BACKEND_PRODUCTS.length) syncBackendPrices(true);
     updateSummary();
     toggleAddress();
   });
 });
 
+["firstName","lastName","email","phone","street","zip","city"].forEach(id=>{
+  document.getElementById(id)?.addEventListener("input",()=>invalidateReview("Kundendaten geändert – bitte Bestellung erneut prüfen."));
+});
+
 document.getElementById("reviewOrder").addEventListener("click",async ()=>{
+  syncItemsFromVisibleRows();
+  LAST_REVIEW_PRICE=null;
+  LAST_REVIEW_FINGERPRINT=null;
+  document.getElementById("sendOrder").disabled=true;
   const reviewBtn=document.getElementById("reviewOrder");
   const priceStatus=document.getElementById("reviewPriceStatus");
   const err=document.getElementById("formError");
@@ -1608,6 +1972,7 @@ document.getElementById("reviewOrder").addEventListener("click",async ()=>{
   const shipping=SHIPPING[shipKey];
   const total=pricing.productCents/100+shipping;
   LAST_REVIEW_PRICE={total,product:pricing.productCents/100,shipping,savings:pricing.savingsCents/100,at:Date.now()};
+  LAST_REVIEW_FINGERPRINT=liveOrderFingerprint();
   updateSummary();
 
   const preview=document.getElementById("orderPreview");
@@ -1622,7 +1987,10 @@ document.getElementById("reviewOrder").addEventListener("click",async ()=>{
   priceStatus.textContent=promotionStatusText(pricing);
   priceStatus.className="review-price-status ok";
   preview.classList.add("show");
-  document.getElementById("sendOrder").disabled=false;
+  const sendAfterReview=document.getElementById("sendOrder");
+  sendAfterReview.disabled=false;
+  sendAfterReview.dataset.reviewValid="1";
+  sendAfterReview.setAttribute("aria-disabled","false");
   preview.scrollIntoView({behavior:"smooth",block:"nearest"});
 });
 
@@ -1760,7 +2128,7 @@ async function createServerOrder(){
     city:document.getElementById("city").value.trim(),
     surface,
     items:items.map(item=>({
-      filename:item.name,
+      filename:(item.uploadFile||item.file).name || item.name,
       format:formatCode(PRICE_TABLE[item.format][0]),
       productType:itemType(item.format),
       quantity:item.qty
@@ -1826,20 +2194,21 @@ async function uploadOne(item, itemIndex, orderId, token, surface){
 
   const surfaceCode=itemType(item.format)==="mug" ? "none" : (surface==="Glänzend" ? "glossy" : "matte");
 
+  const uploadFile=item.uploadFile || item.file;
   const response=await fetch(UPLOAD_API_URL,{
     method:"POST",
     headers:{
-      "content-type":item.file.type || "application/octet-stream",
+      "content-type":uploadFile.type || "application/octet-stream",
       "x-order-id":orderId,
       "x-upload-token":token,
-      "x-filename":encodeURIComponent(item.name),
+      "x-filename":encodeURIComponent(uploadFile.name || item.name),
       "x-format":code,
       "x-surface":surfaceCode,
       "x-quantity":String(item.qty),
       "x-item-index":String(itemIndex),
       "x-fotoworks-tenant":TENANT_SLUG
     },
-    body:item.file
+    body:uploadFile
   });
 
   const data=await response.json();
@@ -1923,6 +2292,18 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
   const success=document.getElementById("uploadSuccess");
   const error=document.getElementById("uploadError");
 
+  if(btn.dataset.reviewValid!=="1" || !reviewStillCurrent()){
+    invalidateReview("Bestellung wurde nach der Prüfung geändert – bitte erneut auf „Bestellung prüfen“ klicken.");
+    return;
+  }
+  // Ein zweiter Vergleich direkt aus den sichtbaren Eingabefeldern schützt auch dann,
+  // wenn ein Browser einen input/change-Event nicht ausgelöst hat.
+  if(LAST_REVIEW_FINGERPRINT!==liveOrderFingerprint()){
+    invalidateReview("Bestellung wurde nach der Prüfung geändert – bitte erneut auf „Bestellung prüfen“ klicken.");
+    return;
+  }
+  syncItemsFromVisibleRows();
+
   success.classList.remove("show");
   error.classList.remove("show");
   progress.classList.add("show");
@@ -1936,6 +2317,15 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     progressBar.style.width="4%";
     const backendOk=await loadBackendPrices();
     if(!backendOk) throw new Error("Aktuelle Preise konnten nicht bestätigt werden. Bitte versuchen Sie es erneut.");
+    const sendShipKey=document.querySelector('input[name="shipping"]:checked').value;
+    const sendPricing=currentPriceSnapshot();
+    const sendTotal=sendPricing.productCents/100+SHIPPING[sendShipKey];
+    if(!LAST_REVIEW_PRICE || Math.abs(sendTotal-LAST_REVIEW_PRICE.total)>0.005){
+      progress.classList.remove("show");
+      ACTIVE_UPLOAD=false;ACTIVE_UPLOAD_UI=null;
+      invalidateReview("Preis oder Bestellung hat sich geändert – bitte erneut prüfen.");
+      return;
+    }
 
     progressText.textContent="Preis wird serverseitig bestätigt …";
     progressBar.style.width="7%";
@@ -1946,7 +2336,8 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     if(Number.isFinite(serverTotal)){
       document.getElementById("previewTotal").textContent=euro(serverTotal);
       if(LAST_REVIEW_PRICE && Math.abs(serverTotal-LAST_REVIEW_PRICE.total)>0.005){
-        console.warn("FotoJoe: Preis zwischen Prüfung und Serverauftrag geändert",LAST_REVIEW_PRICE.total,serverTotal);
+        invalidateReview("Serverpreis weicht von der Prüfung ab – bitte Bestellung erneut prüfen.");
+        throw new Error("Serverpreis weicht von der geprüften Summe ab. Es werden keine Bilder übertragen.");
       }
     }
 
@@ -1977,7 +2368,9 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     error.classList.add("show");
     progressText.textContent="Übertragung konnte noch nicht abgeschlossen werden.";
     progressHint.textContent="Bereits vom Server bestätigte Bilddateien bleiben erhalten.";
-    btn.disabled=false;
+    const canRetry=btn.dataset.reviewValid==="1" && reviewStillCurrent();
+    btn.disabled=!canRetry;
+    btn.setAttribute("aria-disabled",canRetry?"false":"true");
   }finally{
     ACTIVE_UPLOAD=false;
     ACTIVE_UPLOAD_UI=null;
@@ -2036,7 +2429,7 @@ updateSummary();
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/app/sw.js", {scope:"/app/"})
+      navigator.serviceWorker.register("/app/sw.js?v=25", {scope:"/app/"})
         .catch(err => console.warn("FotoJoe APP: Service Worker", err));
     });
   }
