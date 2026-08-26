@@ -1,8 +1,8 @@
 {
   "id": "/app/",
-  "name": "fotoabzüge.com – FotoWorks",
-  "short_name": "Fotoabzüge",
-  "description": "Fotoabzüge und Fotoprodukte bei Foto Weber Haigerloch bestellen.",
+  "name": "FotoJoe – Fotoabzüge & Fotoprodukte",
+  "short_name": "FotoJoe",
+  "description": "FotoJoe – das Annahmeterminal und die App für Fotoprodukte von JustForWork. Fotoabzüge und Fotoprodukte bei Foto Weber Haigerloch bestellen.",
   "lang": "de-DE",
   "dir": "ltr",
   "start_url": "/app/",
@@ -37,7 +37,7 @@
   "shortcuts": [
     {
       "name": "Fotoabzüge auswählen",
-      "short_name": "Fotoabzüge",
+      "short_name": "FotoJoe",
       "url": "/app/#formate"
     },
     {

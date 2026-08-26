@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe GETIN V25 · AUSSCHNITT/ZOOM/FARBOPTIMIERUNG · 2026-08-25 -->
+<!-- FotoJoe GETIN V25.1 · ZUR LETZTEN AUSWAHL · AUSSCHNITT/ZOOM/FARBOPTIMIERUNG · 2026-08-25 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -513,6 +513,21 @@ body.crop-open{overflow:hidden}
   border-radius:9px;padding:9px 11px;margin-top:9px;font-weight:850
 }
 
+/* FotoJoe GETIN V25.1 – schwebender Rücksprung zur letzten Bildauswahl */
+.last-selection-btn{
+  position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));
+  width:48px;height:48px;border:0;border-radius:0;background:#e60020;color:#fff;
+  display:none;align-items:center;justify-content:center;z-index:950;cursor:pointer;
+  box-shadow:0 5px 16px #0004;touch-action:manipulation;-webkit-tap-highlight-color:transparent
+}
+.last-selection-btn.show{display:flex}
+.last-selection-btn svg{width:28px;height:28px;display:block}
+.last-selection-btn:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 5px #e60020,0 5px 16px #0004}
+.last-selection-btn:active{transform:translateY(1px)}
+.fileitem.last-selection-target{animation:lastSelectionPulse .9s ease}
+@keyframes lastSelectionPulse{0%,100%{box-shadow:inherit}45%{box-shadow:0 0 0 4px rgba(230,0,32,.28)}}
+@media(max-width:600px){.last-selection-btn{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));width:44px;height:44px}.last-selection-btn svg{width:25px;height:25px}}
+
 </style>
 
 <script type="application/ld+json">
@@ -834,7 +849,7 @@ body.crop-open{overflow:hidden}
 
   <div id="uploadZone" class="uploadzone">
     <strong>3. Bilder hinzufügen</strong><br>
-    <span>Sie können 1, 5, 55 oder mehr Bilder auf einmal auswählen – oder später weitere hinzufügen.</span><br>
+    <span>Wählen Sie beliebig viele Bilder auf einmal aus – weitere Fotos können Sie jederzeit hinzufügen.</span><br>
     <label class="uploadbtn">Bilder auswählen
       <input id="photoFiles" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple>
     </label>
@@ -964,7 +979,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe V25 · Ausschnitt/Zoom/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe V25.1 · Ausschnitt/Zoom/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -992,6 +1007,11 @@ body.crop-open{overflow:hidden}
     </div>
   </div>
 </div>
+
+
+<button id="lastSelectionBtn" class="last-selection-btn" type="button" aria-label="Zur letzten Auswahl" title="Zur letzten Auswahl">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 15.5 12 8.5l7 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+</button>
 
 
 <script>
@@ -1047,6 +1067,24 @@ const fileInput = document.getElementById("photoFiles");
 const fileList = document.getElementById("fileList");
 const uploadZone = document.getElementById("uploadZone");
 const uploadCount = document.getElementById("uploadCount");
+const lastSelectionBtn = document.getElementById("lastSelectionBtn");
+function updateLastSelectionButton(){
+  if(!lastSelectionBtn) return;
+  lastSelectionBtn.classList.toggle("show",items.length>0);
+}
+function goToLastSelection(){
+  const rows=[...document.querySelectorAll("#fileList .fileitem")];
+  const target=rows.length ? rows[rows.length-1] : uploadZone;
+  if(!target) return;
+  target.scrollIntoView({behavior:"smooth",block:rows.length?"center":"center"});
+  if(rows.length){
+    target.classList.remove("last-selection-target");
+    void target.offsetWidth;
+    target.classList.add("last-selection-target");
+    window.setTimeout(()=>target.classList.remove("last-selection-target"),1000);
+  }
+}
+lastSelectionBtn?.addEventListener("click",goToLastSelection);
 const fileHead = document.getElementById("fileHead");
 const surfaceHint = document.getElementById("surfaceHint");
 
@@ -1633,6 +1671,7 @@ function renderFiles(){
   uploadCount.textContent = items.length
     ? `${items.length} Bild${items.length===1?"":"er"} ausgewählt. Sie können jederzeit weitere hinzufügen.`
     : "Noch keine Bilder ausgewählt.";
+  updateLastSelectionButton();
 
   items.forEach(item=>{
     const price=PRICE_TABLE[item.format][1];

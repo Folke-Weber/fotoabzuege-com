@@ -1,0 +1,27 @@
+FotoJoe GETIN V25.1 – KLEINE UX-ERGÄNZUNG
+Stand: 25.08.2026
+
+Basis:
+- FotoJoe GETIN V25 FINAL LIVE ZOOM (funktionierender und gesicherter Referenzstand)
+
+Neu in V25.1:
+- kleiner roter schwebender Pfeil unten rechts, wie gewünscht
+- Funktion: „Zur letzten Auswahl“
+- Pfeil erscheint, sobald mindestens ein Bild ausgewählt ist
+- Klick/Tipp springt weich zum zuletzt ausgewählten Bild in der Bildliste
+- das Zielbild wird kurz optisch hervorgehoben
+- neuer Hilfetext beim Upload:
+  „Wählen Sie beliebig viele Bilder auf einmal aus – weitere Fotos können Sie jederzeit hinzufügen.“
+- PWA-Cache auf V25.1 angehoben, damit die Handy-App die Änderung übernimmt
+
+Unverändert:
+- Zoom / Ausschnitt / Verschieben
+- Farb- und Bildoptimierung
+- Qualitätsanzeige
+- Upload- und Bestelllogik
+- Backend/API / Preise / Tenant
+- ADMIN / GETOUT
+
+Branding:
+FotoJoe – Annahmeterminal & App für Fotoprodukte
+by JustForWork
