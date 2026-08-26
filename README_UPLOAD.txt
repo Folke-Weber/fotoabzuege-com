@@ -1,30 +1,33 @@
-FotoWorks APP V1 · GETIN V23
-================================
+FotoJoe GETIN V25.2 – RESPONSIVE OPTIMIERUNG
+==============================================
+Stand: 26.08.2026
 
-Ziel:
-- kostenlose installierbare App-Version von fotoabzüge.com
-- exakt auf der stabilen GETIN-V23-Basis
-- vorhandenes FotoWorks-Backend wird unverändert genutzt
-- bestehende Website im Root bleibt unangetastet
+Basis:
+- funktionierender FotoJoe GETIN V25.1 Referenzstand
+- Backend/API/Preise/Upload/Bestellung unverändert
 
-UPLOAD:
-1. Im bestehenden GitHub-Repository von fotoabzüge.com im Root einen Ordner `app` anlegen.
-2. Den kompletten Inhalt des Ordners `app` aus diesem Paket dort hochladen.
-3. Committen und Cloudflare Pages deployen lassen.
-4. Danach im Browser öffnen:
-   https://fotoabzüge.com/app/
-
-TEST:
-- Android/Chrome: Installationshinweis sollte angeboten werden, sofern der Browser PWA-Installation zulässt.
-- iPhone/Safari: Hinweis „Teilen → Zum Home-Bildschirm“ erscheint.
-- Nach Installation startet die App ohne normale Browserleisten im Standalone-Modus.
-- Bestellung, Preise, Aktionen und Upload laufen weiterhin über das vorhandene Backend.
+UPLOAD IN GITHUB (fotoabzuege-com):
+1. Dieses ZIP lokal entpacken.
+2. Im bestehenden Repository die Dateien mit gleicher Ordnerstruktur hochladen/ersetzen:
+   - index.html
+   - _headers
+   - app/index.html
+   - app/manifest.webmanifest
+   - app/offline.html
+   - app/sw.js
+   - app/icons/...
+3. Commit z. B.: "FotoJoe V25.2 Responsive"
+4. Cloudflare Pages automatisch deployen lassen.
+5. Danach zuerst Smartphone, dann Desktop testen.
 
 WICHTIG:
-- Die bestehende root-index.html von GETIN V23 wird NICHT ersetzt.
-- Backend V1.4/ADMIN/GETOUT werden NICHT verändert.
-- Der Service Worker cached keine Bestellungen, Uploads oder Backend-Aufrufe.
-- Die App-Seite ist `noindex`, damit sie die normale Website in Suchmaschinen nicht dupliziert.
+- Keine Änderungen am Backend oder an Cloudflare Worker/DB nötig.
+- Der PWA-Service-Worker cached keine Bestellungen, Uploads oder Backend-Aufrufe.
+- V25.1 bleibt als Rückfallstand im SAFE erhalten.
 
-Version:
-FotoWorks APP V1 · GETIN V23 · 19.08.2026
+TEST NACH DEPLOYMENT:
+- Smartphone: Navigation, Bildauswahl, mehrere Bilder, Format, Stückzahl, Qualität, Löschen
+- Ausschnitt/Zoom/Farboptimierung mit Finger
+- roter Pfeil "Zur letzten Auswahl"
+- Bestellung prüfen und Testauftrag bis READY
+- Desktop: Layout und Bestellablauf gegenprüfen

@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe GETIN V25.1 · ZUR LETZTEN AUSWAHL · AUSSCHNITT/ZOOM/FARBOPTIMIERUNG · 2026-08-25 -->
+<!-- FotoJoe GETIN V25.2 · ZUR LETZTEN AUSWAHL · AUSSCHNITT/ZOOM/FARBOPTIMIERUNG · 2026-08-26 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -513,7 +513,7 @@ body.crop-open{overflow:hidden}
   border-radius:9px;padding:9px 11px;margin-top:9px;font-weight:850
 }
 
-/* FotoJoe GETIN V25.1 – schwebender Rücksprung zur letzten Bildauswahl */
+/* FotoJoe GETIN V25.2 – schwebender Rücksprung zur letzten Bildauswahl */
 .last-selection-btn{
   position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));
   width:48px;height:48px;border:0;border-radius:0;background:#e60020;color:#fff;
@@ -528,6 +528,120 @@ body.crop-open{overflow:hidden}
 @keyframes lastSelectionPulse{0%,100%{box-shadow:inherit}45%{box-shadow:0 0 0 4px rgba(230,0,32,.28)}}
 @media(max-width:600px){.last-selection-btn{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));width:44px;height:44px}.last-selection-btn svg{width:25px;height:25px}}
 
+
+
+/* FotoJoe GETIN V25.2 – Responsive Optimierung (Darstellung/Bedienung) */
+.mobile-nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:9px;background:#fff;color:#111;align-items:center;justify-content:center;cursor:pointer;font-size:25px;line-height:1;flex:0 0 44px;-webkit-tap-highlight-color:transparent}
+.mobile-nav-toggle:focus-visible{outline:3px solid #ffb49f;outline-offset:2px}
+
+@media(max-width:950px){
+  .navin{position:relative;min-height:64px;gap:12px}
+  .logo{font-size:25px}
+  .mobile-nav-toggle{display:inline-flex}
+  .navlinks.mobile-open{display:flex;position:absolute;top:calc(100% + 7px);left:0;right:0;z-index:80;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:7px;box-shadow:0 16px 38px #0002}
+  .navlinks.mobile-open a{padding:13px 14px;border-radius:8px;font-size:14px}
+  .navlinks.mobile-open a:hover,.navlinks.mobile-open a:focus-visible{background:#f6f6f3;color:var(--red);outline:none}
+  .hero-grid{min-height:auto;padding:46px 0}
+  section{padding:58px 0}
+  .order-info{padding:26px 8px 26px 0}
+}
+
+@media(max-width:700px){
+  .wrap{width:min(100% - 24px,1180px)}
+  .topbar{font-size:11px;line-height:1.3;padding:7px 10px}
+  .navin{min-height:58px;gap:9px}
+  .logo{font-size:22px;letter-spacing:-.045em}
+  .navin>.btn{padding:11px 13px;font-size:12px;white-space:nowrap}
+  .hero-grid{padding:32px 0 38px;gap:24px}
+  h1{font-size:clamp(40px,12vw,54px);line-height:.94;letter-spacing:-.052em;margin:11px 0 17px}
+  h2{font-size:clamp(32px,10vw,46px);line-height:1;letter-spacing:-.042em;margin:8px 0 20px}
+  .lead{font-size:17px;line-height:1.48}
+  .hero-actions{margin-top:20px}
+  .hero-actions .btn{width:100%;min-height:48px;padding:13px 16px}
+  .hero-trust{gap:9px 14px;margin-top:19px;font-size:11px}
+  .hero-image{height:285px;border-radius:14px}
+  section{padding:46px 0}
+  .sub{font-size:16px;line-height:1.5}
+  .shopbox{padding:18px 14px;border-radius:14px}
+  .uploadzone{padding:19px 12px}
+  .uploadbtn,.reviewbtn,.choice{min-height:46px}
+  .radio-row{display:grid;grid-template-columns:1fr;gap:8px}
+  .choice{display:flex;align-items:center;padding:11px 13px}
+  .customerbox h3{font-size:21px}
+  .steps{padding:20px 17px}
+  .order-info{padding:0 0 8px}
+  .production{padding:19px}
+  .machine{height:220px;padding:16px}
+  .delivery-card{padding:19px}
+  .ctain{padding:30px 0}
+
+  /* Bildliste: auf dem Handy klar in Blöcke statt gequetschter Desktop-Spalten */
+  .filelist{gap:12px}
+  .fileitem{grid-template-columns:88px minmax(0,1fr)!important;grid-template-rows:auto!important;gap:10px 12px!important;padding:14px!important;align-items:start;border-radius:13px}
+  .fileitem .thumb{grid-column:1!important;grid-row:1!important;width:88px;height:88px;border-radius:10px}
+  .fileitem .filemeta{grid-column:2!important;grid-row:1!important;align-self:start}
+  .fileitem .formatcell{grid-column:1/-1!important;grid-row:2!important}
+  .fileitem .qtycell{grid-column:1!important;grid-row:3!important}
+  .fileitem .qualitycell{grid-column:2!important;grid-row:3!important;align-self:end}
+  .fileitem .lineprice{grid-column:1!important;grid-row:4!important;text-align:left!important;align-self:center;font-size:17px}
+  .fileitem .removecell{grid-column:2!important;grid-row:4!important;justify-self:end;align-self:center}
+  .fileitem .formatcell:before,.fileitem .qtycell:before,.fileitem .qualitycell:before,.fileitem .lineprice:before{display:block;margin-bottom:5px;font-size:10px;line-height:1;text-transform:uppercase;letter-spacing:.06em;color:#777;font-weight:900}
+  .fileitem .formatcell:before{content:"Format"}
+  .fileitem .qtycell:before{content:"Stückzahl"}
+  .fileitem .qualitycell:before{content:"Qualität"}
+  .fileitem .lineprice:before{content:"Preis"}
+  .fileitem select,.fileitem input[type="number"]{min-height:44px;padding:10px 10px}
+  .crop-edit-btn{min-height:42px;padding:9px 11px;font-size:12px}
+  .removebtn{width:44px;height:44px;font-size:22px}
+  .qualitybadge{font-size:11px;padding:6px 9px}
+  .qualitydetail{font-size:11px}
+
+  /* Bedienflächen im Ausschnitt-Editor fingerfreundlich */
+  .crop-close{width:44px;height:44px}
+  .crop-orientation button,.crop-actions button{min-height:44px}
+  .crop-panel{max-height:100dvh}
+  .crop-preview-wrap{min-height:250px}
+  #cropCanvas{max-height:45dvh}
+
+  /* Produktkacheln etwas früher einspaltig: besser lesbar auf typischen Handys */
+  .main-format-grid,.product-teasers,.product-grid,.canvas-grid{grid-template-columns:1fr!important}
+  .visual-format-card .format-visual{height:210px}
+}
+
+@media(max-width:520px){
+  .navin>.btn{display:none}
+  .logo{font-size:21px}
+  .mobile-nav-toggle{margin-left:auto}
+  .hero-image{height:245px}
+  section{padding:38px 0}
+  .surface-card{padding:19px}
+  .feature{padding:19px 8px}
+  .motive{height:205px}
+  .app-promo-card{padding:17px 14px}
+  .app-promo-copy{display:block}
+  .app-promo-mark{margin-bottom:12px}
+  .app-promo-actions{display:none}
+  .visual-product-teaser{grid-template-columns:82px 1fr 18px;gap:10px;padding:10px}
+  .visual-product-teaser .product-teaser-visual{height:68px}
+  .alfo-external-copy{padding:16px}
+}
+
+@media(max-width:380px){
+  .wrap{width:min(100% - 18px,1180px)}
+  h1{font-size:38px}
+  .fileitem{grid-template-columns:76px minmax(0,1fr)!important;padding:12px!important}
+  .fileitem .thumb{width:76px;height:76px}
+}
+
+/* Moderne dynamische Viewport-Höhe für Browserleisten auf iOS/Android */
+@supports(height:100dvh){
+  .crop-panel{max-height:calc(100dvh - 36px)}
+  @media(max-width:820px){.crop-panel{max-height:100dvh}}
+}
+
+/* PWA-Installationshinweis darf den roten Rücksprung-Pfeil nicht überdecken */
+#pwaInstall.show ~ .last-selection-btn{bottom:max(104px,calc(env(safe-area-inset-bottom) + 104px))}
+#pwaIosTip.show ~ .last-selection-btn{bottom:max(170px,calc(env(safe-area-inset-bottom) + 170px))}
 </style>
 
 <script type="application/ld+json">
@@ -588,13 +702,14 @@ body.crop-open{overflow:hidden}
 <nav class="nav">
   <div class="wrap navin">
     <a class="logo" href="#top">foto<b>abzüge</b>.com</a>
-    <div class="navlinks">
+    <div id="mobileNavLinks" class="navlinks">
       <a href="#formate">Formate & Produkte</a>
       <a href="#oberflaechen">Oberflächen</a>
       <a href="#bestellen">Bestellen</a>
       <a href="#lieferung">Versand & Abholung</a>
       <a href="#faq">FAQ</a>
     </div>
+    <button id="mobileNavToggle" class="mobile-nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNavLinks">☰</button>
     <a class="btn" href="#formate">Jetzt starten →</a>
   </div>
 </nav>
@@ -979,7 +1094,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe V25.1 · Ausschnitt/Zoom/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe V25.2 · Responsive optimiert · Ausschnitt/Zoom/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -2429,5 +2544,25 @@ toggleAddress();
 updateSummary();
 </script>
 
+
+<script>
+/* FotoJoe GETIN V25.2 – mobiles Navigationsmenü; keine Bestell-/Uploadlogik */
+(()=>{
+  const toggle=document.getElementById('mobileNavToggle');
+  const links=document.querySelector('.navlinks');
+  if(!toggle || !links) return;
+  const close=()=>{links.classList.remove('mobile-open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';};
+  toggle.addEventListener('click',()=>{
+    const open=!links.classList.contains('mobile-open');
+    links.classList.toggle('mobile-open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.textContent=open?'×':'☰';
+  });
+  links.addEventListener('click',e=>{if(e.target.closest('a')) close();});
+  document.addEventListener('click',e=>{if(!e.target.closest('.navin')) close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') close();});
+  window.addEventListener('resize',()=>{if(window.innerWidth>950) close();},{passive:true});
+})();
+</script>
 </body>
 </html>

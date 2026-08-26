@@ -1,0 +1,24 @@
+FotoJoe GETIN V25.2 – RESPONSIVE OPTIMIERUNG
+Stand: 26.08.2026
+
+Basis: funktionierender und gesicherter FotoJoe GETIN V25.1 Stand.
+
+Geändert wurde ausschließlich Darstellung/Bedienbarkeit auf kleineren Bildschirmen:
+- kompaktere Überschriften und vertikale Abstände auf Smartphone/Tablet
+- mobile Navigation mit Menübutton statt vollständig ausgeblendeter Navigation
+- Bild-/Bestellliste auf dem Handy klar neu angeordnet
+- sichtbare Mobil-Labels für Format, Stückzahl, Qualität und Preis
+- größere Touch-Ziele (ca. 44 px) für zentrale Bedienelemente
+- Produktkacheln auf typischen Handys früher einspaltig
+- Ausschnitt-/Zoom-Dialog nutzt dynamische Viewport-Höhe (100dvh)
+- Rücksprung-Pfeil wird bei sichtbarem PWA-Installationshinweis nach oben versetzt
+- PWA-Cache auf V25.2 angehoben
+
+NICHT geändert:
+- Upload-/Wiederaufnahme-Logik
+- Bestell- und Preislogik
+- Backend/API/Tenant
+- Zoom/Ausschnitt/Farboptimierungs-Funktion
+- Versand- und Zahlungslogik
+
+Rückfallstand: FotoJoe GETIN V25.1 im SAFE bleibt unverändert.
