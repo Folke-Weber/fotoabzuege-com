@@ -1,15 +1,15 @@
-/* FotoJoe APP · GETIN V25
+/* FotoJoe APP · GETIN V26.3
    Absichtlich kein API-/Upload-Caching.
    Navigation: Netzwerk zuerst, damit GETIN-Updates sofort greifen.
 */
-const APP_CACHE = "fotojoe-app-v25-live-20260825";
+const APP_CACHE = "fotojoe-app-v26-3-app-refresh-20260827";
 const STATIC = [
   "/app/offline.html",
   "/app/manifest.webmanifest",
-  "/app/icons/icon-192.png",
-  "/app/icons/icon-512.png",
-  "/app/icons/icon-maskable-512.png",
-  "/app/icons/apple-touch-icon-180.png"
+  "/app/icons/icon-192-v26.png",
+  "/app/icons/icon-512-v26.png",
+  "/app/icons/icon-maskable-512-v26.png",
+  "/app/icons/apple-touch-icon-180-v26.png"
 ];
 
 self.addEventListener("install", event => {
@@ -23,9 +23,13 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== APP_CACHE).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.startsWith("fotojoe-app-") && k !== APP_CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
+});
+
+self.addEventListener("message", event => {
+  if(event.data === "SKIP_WAITING") self.skipWaiting();
 });
 
 self.addEventListener("fetch", event => {
