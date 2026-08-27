@@ -1,0 +1,26 @@
+FotoJoe GETIN V25.3 – PERFORMANCE / SEO / KI – CANDIDATE
+Stand: 27.08.2026
+
+Basis:
+- FotoJoe GETIN V25.2 RESPONSIVE (funktionierender Stand)
+- Performance-Auslagerung der bisher eingebetteten Bilder
+- SEO/KI-Ergänzungen nach technischer Prüfung
+
+Freigabestatus:
+CANDIDATE – erst nach Smartphone-/Desktop-End-to-End-Test als neuer Referenzstand sichern.
+
+Kernverbesserungen:
+- Root-HTML ca. 1,75 MB -> ca. 146 KB
+- App-HTML ca. 1,75 MB -> ca. 145 KB
+- gemeinsame /assets/ für Startseite und App
+- echte content-gehashte Asset-Dateinamen + 1-Jahr immutable Cache
+- robots.txt / sitemap.xml / llms.txt
+- OAI-SearchBot zugelassen
+- App bleibt noindex,follow und wird nicht per robots.txt blockiert
+- korrekte IDN/Punycode-Domain: xn--fotoabzge-w9a.com
+- Standortkoordinaten Foto Weber korrigiert
+- alter FotoWorks-Alttext am App-QR auf FotoJoe korrigiert
+
+Funktionslogik:
+Upload, Preise, Bestellung, Backend, Zoom, Ausschnitt, Verschieben,
+Farboptimierung, Versand/Zahlung wurden nicht verändert.

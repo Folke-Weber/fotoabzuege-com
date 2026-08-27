@@ -1,0 +1,41 @@
+# robots.txt · fotoabzüge.com (Foto Weber Haigerloch)
+# Öffentliche Startseite für Suchmaschinen und Answer-Engines zugänglich.
+# /app/ bleibt per Meta-Robots noindex; Crawling ist erlaubt, damit noindex gelesen werden kann.
+
+User-agent: *
+Allow: /
+
+# OpenAI Search / ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# GPTBot betrifft Training, nicht die ChatGPT-Suche. Aktuell zugelassen.
+User-agent: GPTBot
+Allow: /
+
+# Weitere Crawler
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://xn--fotoabzge-w9a.com/sitemap.xml

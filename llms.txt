@@ -1,0 +1,43 @@
+# fotoabzüge.com — Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch
+
+> Onlineshop zum Bestellen hochwertiger Fotoabzüge in Laborqualität sowie Fototassen
+> und Leinwandbildern. Betrieben vom Fotofachgeschäft Foto Weber in Haigerloch
+> (Baden-Württemberg, Deutschland). Bilder werden auf einem Epson SureLab D3000
+> Profi-Minilab in Matt oder Glänzend produziert. Abholung in Haigerloch oder Versand
+> per Deutsche Post / Hermes.
+
+## Produkte & Formate
+- Fotoabzüge in Matt oder Glänzend, Festformate von 6×9 cm bis 30×48 cm
+- Beliebteste Formate: 10×15 cm (Klassiker), 13×18 cm, 15×20 cm, 20×30 cm, 30×40 cm
+- Quadratische Formate: 10×10, 13×13, 15×15, 20×20, 30×30 cm
+- Vario-/Panoramaformate: 10×/13×/15×/20×Vario bis 100 cm, 30×Vario bis 121 cm Länge
+- Fototasse weiß: 9,99 € · Fototasse farbig: 12,95 €
+- Leinwandbilder (30×50 bis 90×130 cm): derzeit nur auf Anfrage & Abholung in Haigerloch
+- Fotobücher, Kalender & Fotogeschenke über den ALFO-Designer (Händlerzuordnung Foto Weber)
+
+## Bestellablauf
+1. Produkt/Format wählen  2. Oberfläche (Matt/Glänzend)  3. Bilder hochladen
+4. Stückzahl je Bild festlegen  5. Lieferung/Abholung & Kontaktdaten  6. Prüfen & absenden
+Bestellung direkt im Browser oder über die installierbare FotoJoe-App.
+
+## Lieferung & Abholung
+- Abholung bei Foto Weber, Unterstadt 14, 72401 Haigerloch: 0,00 €
+- Deutsche Post: 7,69 € pro Bestellung
+- Hermes: 5,19 € pro Bestellung
+
+## Kontakt
+- Foto Weber Haigerloch, Unterstadt 14, 72401 Haigerloch, Deutschland
+- Telefon: +49 7474 6248
+- E-Mail: foto-weber-haigerloch@t-online.de
+- Fotofachgeschäft: https://www.fotoweber.de/
+
+## Für Agenten
+- Startseite (bestellbar): https://fotoabzüge.com/
+- App (installierbar): https://fotoabzüge.com/app/
+- Preise für Fotoabzüge werden im Bestellprozess dynamisch angezeigt; Tassen- und
+  Versandpreise stehen oben.
+
+## Technische Hinweise
+- Kanonische öffentliche Domain: https://fotoabzüge.com/
+- IDN/ASCII: https://xn--fotoabzge-w9a.com/
+- Die installierbare /app/ ist bewusst nicht für Suchmaschinen-Indexierung vorgesehen.

@@ -1,0 +1,17 @@
+FotoJoe V25.3 Candidate Asset Mapping (content-hashed):
+/assets/alfo-logo.png -> /assets/alfo-logo.d1e24727c2.png
+/assets/alfo-motiv.webp -> /assets/alfo-motiv.d9b94ff29a.webp
+/assets/app-qrcode.png -> /assets/app-qrcode.fc6b7b9372.png
+/assets/format-10x15.webp -> /assets/format-10x15.cedbd134e7.webp
+/assets/format-13x18.webp -> /assets/format-13x18.bea40234c6.webp
+/assets/format-15x20.webp -> /assets/format-15x20.7aa23a0b84.webp
+/assets/format-20x30.webp -> /assets/format-20x30.697e8cb356.webp
+/assets/format-30x40.webp -> /assets/format-30x40.0bf13249c0.webp
+/assets/hero-fotoabzuege.webp -> /assets/hero-fotoabzuege.0bb4bdc6fd.webp
+/assets/motiv-familie.webp -> /assets/motiv-familie.38d7eb5dbd.webp
+/assets/motiv-hochzeit.webp -> /assets/motiv-hochzeit.41431ca76d.webp
+/assets/motiv-panorama.webp -> /assets/motiv-panorama.822fedcad8.webp
+/assets/motiv-urlaub.webp -> /assets/motiv-urlaub.7da6e9e899.webp
+/assets/oberflaeche-hochzeit.webp -> /assets/oberflaeche-hochzeit.41431ca76d.webp
+/assets/teaser-fototassen.png -> /assets/teaser-fototassen.3ae156a055.png
+/assets/teaser-leinwand.png -> /assets/teaser-leinwand.916cb24ba0.png
