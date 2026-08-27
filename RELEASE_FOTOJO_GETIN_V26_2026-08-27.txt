@@ -1,0 +1,35 @@
+FotoJoe GETIN V26 – MOBILE UX / PERFORMANCE / SEO / KI
+Datum: 27.08.2026
+
+Basis:
+- FotoJoe GETIN V25.3 Performance/SEO/KI Candidate
+- Performance-Auslagerung der Bilder und SEO/KI-Dateien bleiben erhalten.
+
+Gezielte Änderungen in V26:
+1. Upload-Hinweis bewusst schlank formuliert:
+   „Wählen Sie Ihre Bilder aus – weitere Fotos können Sie jederzeit hinzufügen.“
+   Keine Beispielmengen wie 1, 5 oder 55.
+2. Ausschnitteditor: Zwei-Finger-Zoom (Pinch-to-Zoom) zusätzlich zum vorhandenen Zoom-Regler.
+   Ein-Finger-Verschieben bleibt erhalten.
+3. Roter Return-Button „Zur letzten Auswahl“ ist im Root und in der App enthalten und wird nach Bildauswahl sichtbar.
+   Das Symbol ist jetzt ein klares weißes Dreieck auf rotem Quadrat.
+4. Neues PWA-App-Icon mit klarer Bildbestellungs-Symbolik (Fotokarten + Bestell-Haken).
+   Die Icon-Dateien sind versioniert, der PWA-Cache wurde auf V26 angehoben.
+5. Sichtbare Versionsangaben auf V26 aktualisiert.
+
+Bewusst NICHT geändert:
+- Preislogik
+- Backend-URLs/API
+- Bestelllogik
+- Upload-/Finalize-Logik
+- bestehende Farboptimierung
+- Formatlogik
+- SEO/robots/sitemap/llms.txt aus V25.3
+
+Test nach Deployment:
+- Smartphone: App neu laden; bei installierter PWA ggf. einmal schließen/neu öffnen.
+- Mehrere Bilder auswählen.
+- Roter Return-Button prüfen.
+- Ausschnitt öffnen: 1 Finger verschiebt, 2 Finger zoomen, Regler zoomt weiterhin.
+- Format/Stückzahl/Farboptimierung prüfen.
+- Testbestellung bis READY durchführen.

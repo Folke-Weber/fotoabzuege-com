@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe GETIN V25.3 · PERFORMANCE/SEO/KI · ZUR LETZTEN AUSWAHL · AUSSCHNITT/ZOOM/FARBOPTIMIERUNG · 2026-08-27 -->
+<!-- FotoJoe GETIN V26 · MOBILE UX/PERFORMANCE/SEO/KI · PINCH-ZOOM · RETURN · 2026-08-27 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -494,7 +494,7 @@ body.crop-open{overflow:hidden}
 .last-selection-btn{
   position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));
   width:48px;height:48px;border:0;border-radius:0;background:#e60020;color:#fff;
-  display:none;align-items:center;justify-content:center;z-index:950;cursor:pointer;
+  display:none;align-items:center;justify-content:center;z-index:2100;cursor:pointer;
   box-shadow:0 5px 16px #0004;touch-action:manipulation;-webkit-tap-highlight-color:transparent
 }
 .last-selection-btn.show{display:flex}
@@ -1044,7 +1044,7 @@ body.crop-open{overflow:hidden}
 
   <div id="uploadZone" class="uploadzone">
     <strong>3. Bilder hinzufügen</strong><br>
-    <span>Wählen Sie beliebig viele Bilder auf einmal aus – weitere Fotos können Sie jederzeit hinzufügen.</span><br>
+    <span>Wählen Sie Ihre Bilder aus – weitere Fotos können Sie jederzeit hinzufügen.</span><br>
     <label class="uploadbtn">Bilder auswählen
       <input id="photoFiles" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple>
     </label>
@@ -1174,7 +1174,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe V25.3 · Performance/SEO/KI optimiert · Responsive · Ausschnitt/Zoom/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe V26 · Mobile UX · Performance/SEO/KI · Pinch-Zoom/Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1195,7 +1195,7 @@ body.crop-open{overflow:hidden}
         <div class="crop-control"><strong>Zoom</strong><div class="crop-zoom-row"><span>−</span><input id="cropZoom" type="range" min="1" max="3" step="0.01" value="1" aria-label="Zoom"><span id="cropZoomValue">1,00×</span></div></div>
         <div class="crop-control"><strong>Bildqualität</strong><div id="cropQuality" class="crop-quality-box"></div></div>
         <div class="crop-control"><label class="crop-optimize"><input id="cropOptimize" type="checkbox"><span><b>Farbe & Bild automatisch optimieren</b><br>Dezent: Helligkeit, Kontrast und Farbe werden leicht verbessert.</span></label></div>
-        <div class="crop-help">Ziehen Sie das Bild mit Maus oder Finger in die gewünschte Position. Die weiße Fläche entspricht dem späteren Foto.</div>
+        <div class="crop-help">Mit einem Finger verschieben · mit zwei Fingern zoomen. Alternativ den Zoom-Regler verwenden. Die weiße Fläche entspricht dem späteren Foto.</div>
         <div class="crop-actions"><button id="cropReset" type="button">Original</button><button id="cropCancel" type="button">Abbrechen</button><button id="cropApply" class="apply" type="button">Übernehmen</button></div>
         <div id="cropProcessing" class="crop-processing">Ausschnitt wird vorbereitet …</div>
       </div>
@@ -1205,7 +1205,7 @@ body.crop-open{overflow:hidden}
 
 
 <button id="lastSelectionBtn" class="last-selection-btn" type="button" aria-label="Zur letzten Auswahl" title="Zur letzten Auswahl">
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 15.5 12 8.5l7 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5 21 18H3Z" fill="currentColor"/></svg>
 </button>
 
 
@@ -1662,7 +1662,7 @@ const cropOrientationBox=document.getElementById("cropOrientationBox");
 const cropLandscape=document.getElementById("cropLandscape");
 const cropPortrait=document.getElementById("cropPortrait");
 const cropProcessing=document.getElementById("cropProcessing");
-let CROP_ACTIVE_ITEM=null,CROP_IMAGE=null,CROP_STATE=null,CROP_POINTER=null;
+let CROP_ACTIVE_ITEM=null,CROP_IMAGE=null,CROP_STATE=null,CROP_POINTER=null,CROP_POINTERS=new Map(),CROP_GESTURE=null;
 
 function cropPrintSize(item,orientation){
   const dims=physicalFormat(PRICE_TABLE[item.format]?.[0]);
@@ -1738,11 +1738,11 @@ async function openCropEditor(item){
     cropZoom.value=String(CROP_STATE.zoom);cropOptimize.checked=CROP_STATE.optimize;
     const ps=cropPrintSize(item,CROP_STATE.orientation==="square"?"landscape":CROP_STATE.orientation);
     cropOrientationBox.style.display=ps?.square?"none":"block";
-    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"} · Ausschnitt verschieben und bei Bedarf zoomen`;
+    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"} · Ausschnitt verschieben · mit zwei Fingern oder Regler zoomen`;
     cropProcessing.classList.remove("show");cropModal.classList.add("show");cropModal.setAttribute("aria-hidden","false");document.body.classList.add("crop-open");drawCrop();
   }catch(err){alert(err?.message||"Ausschnittbearbeitung konnte nicht geöffnet werden.");CROP_ACTIVE_ITEM=null;CROP_IMAGE=null;CROP_STATE=null;}
 }
-function closeCropEditor(){cropModal?.classList.remove("show");cropModal?.setAttribute("aria-hidden","true");document.body.classList.remove("crop-open");CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}
+function closeCropEditor(){cropModal?.classList.remove("show");cropModal?.setAttribute("aria-hidden","true");document.body.classList.remove("crop-open");CROP_POINTER=null;CROP_POINTERS.clear();CROP_GESTURE=null;cropCanvas?.classList.remove("dragging");}
 function resetCropEditor(){
   if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
   CROP_STATE.orientation=defaultCropOrientation(CROP_ACTIVE_ITEM);CROP_STATE.zoom=1;CROP_STATE.cx=CROP_ACTIVE_ITEM.pixelWidth/2;CROP_STATE.cy=CROP_ACTIVE_ITEM.pixelHeight/2;CROP_STATE.optimize=false;
@@ -1779,10 +1779,13 @@ cropLandscape?.addEventListener("click",()=>changeCropOrientation("landscape"));
 document.getElementById("cropReset")?.addEventListener("click",resetCropEditor);document.getElementById("cropCancel")?.addEventListener("click",closeCropEditor);document.getElementById("cropClose")?.addEventListener("click",closeCropEditor);document.getElementById("cropApply")?.addEventListener("click",applyCropEditor);
 cropModal?.addEventListener("click",e=>{if(e.target===cropModal)closeCropEditor();});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&cropModal?.classList.contains("show"))closeCropEditor();});
-cropCanvas?.addEventListener("pointerdown",e=>{if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();CROP_POINTER={id:e.pointerId,x:e.clientX,y:e.clientY};cropCanvas.setPointerCapture?.(e.pointerId);cropCanvas.classList.add("dragging");});
-cropCanvas?.addEventListener("pointermove",e=>{if(!CROP_POINTER||e.pointerId!==CROP_POINTER.id||!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();const rect=cropCanvas.getBoundingClientRect(),crop=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(!crop||!rect.width||!rect.height)return;const dx=e.clientX-CROP_POINTER.x,dy=e.clientY-CROP_POINTER.y;CROP_POINTER.x=e.clientX;CROP_POINTER.y=e.clientY;CROP_STATE.cx-=dx*(crop.w/rect.width);CROP_STATE.cy-=dy*(crop.h/rect.height);drawCrop();});
-function endCropPointer(e){if(CROP_POINTER&&(!e||e.pointerId===CROP_POINTER.id)){CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}}
-cropCanvas?.addEventListener("pointerup",endCropPointer);cropCanvas?.addEventListener("pointercancel",endCropPointer);
+function cropPointerPair(){return [...CROP_POINTERS.values()].slice(0,2);}
+function cropPairMetrics(){const pts=cropPointerPair();if(pts.length<2)return null;const a=pts[0],b=pts[1];return {distance:Math.hypot(b.x-a.x,b.y-a.y),centerX:(a.x+b.x)/2,centerY:(a.y+b.y)/2};}
+function beginCropGesture(){const m=cropPairMetrics();if(!m||!CROP_STATE)return;CROP_POINTER=null;CROP_GESTURE={startDistance:Math.max(1,m.distance),startZoom:Number(CROP_STATE.zoom)||1,lastCenterX:m.centerX,lastCenterY:m.centerY};}
+cropCanvas?.addEventListener("pointerdown",e=>{if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();cropCanvas.setPointerCapture?.(e.pointerId);CROP_POINTERS.set(e.pointerId,{id:e.pointerId,x:e.clientX,y:e.clientY});if(CROP_POINTERS.size===1){CROP_POINTER={id:e.pointerId,x:e.clientX,y:e.clientY};CROP_GESTURE=null;}else if(CROP_POINTERS.size===2){beginCropGesture();}cropCanvas.classList.add("dragging");});
+cropCanvas?.addEventListener("pointermove",e=>{if(!CROP_POINTERS.has(e.pointerId)||!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();const point=CROP_POINTERS.get(e.pointerId);const oldX=point.x,oldY=point.y;point.x=e.clientX;point.y=e.clientY;CROP_POINTERS.set(e.pointerId,point);const rect=cropCanvas.getBoundingClientRect();if(!rect.width||!rect.height)return;if(CROP_POINTERS.size>=2){if(!CROP_GESTURE)beginCropGesture();const m=cropPairMetrics();if(!m||!CROP_GESTURE)return;const before=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(before){const dx=m.centerX-CROP_GESTURE.lastCenterX,dy=m.centerY-CROP_GESTURE.lastCenterY;CROP_STATE.cx-=dx*(before.w/rect.width);CROP_STATE.cy-=dy*(before.h/rect.height);}const scale=m.distance/Math.max(1,CROP_GESTURE.startDistance);CROP_STATE.zoom=Math.max(1,Math.min(3,CROP_GESTURE.startZoom*scale));cropZoom.value=String(CROP_STATE.zoom);CROP_GESTURE.lastCenterX=m.centerX;CROP_GESTURE.lastCenterY=m.centerY;drawCrop();return;}if(CROP_POINTER&&e.pointerId===CROP_POINTER.id){const crop=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(!crop)return;const dx=e.clientX-oldX,dy=e.clientY-oldY;CROP_POINTER.x=e.clientX;CROP_POINTER.y=e.clientY;CROP_STATE.cx-=dx*(crop.w/rect.width);CROP_STATE.cy-=dy*(crop.h/rect.height);drawCrop();}});
+function endCropPointer(e){if(e)CROP_POINTERS.delete(e.pointerId);else CROP_POINTERS.clear();if(CROP_POINTERS.size<2)CROP_GESTURE=null;if(CROP_POINTERS.size===1){const p=[...CROP_POINTERS.values()][0];CROP_POINTER={id:p.id,x:p.x,y:p.y};cropCanvas?.classList.add("dragging");}else if(CROP_POINTERS.size===0){CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}}
+cropCanvas?.addEventListener("pointerup",endCropPointer);cropCanvas?.addEventListener("pointercancel",endCropPointer);cropCanvas?.addEventListener("lostpointercapture",endCropPointer);
 
 
 function showUploadFeedback(messages){
