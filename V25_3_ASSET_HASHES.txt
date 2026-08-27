@@ -1,3 +1,5 @@
+HINWEIS V26.1: Historische Liste aus V25.3. In V26.1 liegen diese Dateien direkt im Web-Hauptverzeichnis; /assets/ wird nicht mehr verwendet.
+
 FotoJoe V25.3 Candidate Asset Mapping (content-hashed):
 /assets/alfo-logo.png -> /assets/alfo-logo.d1e24727c2.png
 /assets/alfo-motiv.webp -> /assets/alfo-motiv.d9b94ff29a.webp

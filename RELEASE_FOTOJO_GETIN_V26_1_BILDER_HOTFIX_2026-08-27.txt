@@ -1,0 +1,17 @@
+FotoJoe GETIN V26.1 · BILDER-HOTFIX · 27.08.2026
+
+Basis: FotoJoe GETIN V26.
+
+Grund:
+Auf der Live-Seite wurden Dateien unter /assets/ nicht ausgeliefert. Dadurch fehlten sämtliche Produkt- und Motivbilder.
+
+Änderung:
+- keine Abhängigkeit mehr vom Verzeichnis /assets/
+- optimierte Bilddateien liegen direkt im Web-Stammverzeichnis
+- index.html und app/index.html verweisen direkt auf diese Root-Dateien
+- SEO-/OpenGraph-Bild-URLs entsprechend korrigiert
+- Browser-Caching für root-level WebP/PNG beibehalten
+- Service-Worker-Cache auf V26.1 angehoben, damit installierte Apps die Korrektur sofort erhalten
+
+Unverändert:
+Upload, Preise, Bestellung, Backend, Zoom/Ausschnitt, Zwei-Finger-Zoom, Farboptimierung und Mengen-/Formatlogik.

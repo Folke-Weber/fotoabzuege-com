@@ -1,25 +1,15 @@
 <!doctype html>
-<!-- FotoJoe APP · GETIN V26 · MOBILE UX · PINCH-ZOOM · RETURN · AUSSCHNITT/FARBOPTIMIERUNG · 2026-08-27 -->
+<!-- FotoJoe GETIN V26 · MOBILE UX/PERFORMANCE/SEO/KI · PINCH-ZOOM · RETURN · 2026-08-27 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fotoabzüge online bestellen | Foto Weber Haigerloch</title>
 <meta name="description" content="Fotoabzüge online bei Foto Weber Haigerloch bestellen: Matt oder Glänzend, Standard-, Sonder-, Vario- und Panoramaformate, Fototassen sowie Fotobücher und Fotogeschenke über ALFO. Abholung oder Versand.">
 <meta name="theme-color" content="#ef3a19">
-<meta name="application-name" content="fotoabzüge.com">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="FotoJoe">
-<meta name="format-detection" content="telephone=no">
-<link rel="manifest" href="/app/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/app/icons/icon-192-v26.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/app/icons/icon-512-v26.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/app/icons/apple-touch-icon-180-v26.png">
 <link rel="canonical" href="https://fotoabzüge.com/">
 <meta property="og:title" content="Fotoabzüge online bestellen – Foto Weber Haigerloch">
 <meta property="og:description" content="Fotoabzüge in Matt oder Glänzend, Fototassen und weitere Fotoprodukte einfach online bestellen.">
@@ -28,30 +18,7 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="fotoabzüge.com">
 <meta name="twitter:card" content="summary">
-<meta name="robots" content="noindex,follow">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"FotoJoe GETIN – fotoabzüge.com",
-  "url":"https://fotoabzüge.com/",
-  "applicationCategory":"ShoppingApplication",
-  "operatingSystem":"Web",
-  "provider":{
-    "@type":"LocalBusiness",
-    "name":"Foto Weber",
-    "url":"https://www.fotoweber.de/",
-    "telephone":"+49 7474 6248",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Unterstadt 14",
-      "postalCode":"72401",
-      "addressLocality":"Haigerloch",
-      "addressCountry":"DE"
-    }
-  }
-}
-</script>
+<meta name="robots" content="index,follow">
 <style>
 :root{
  --ink:#151515;--red:#ef3a19;--red2:#ff5b19;--paper:#fff;--soft:#f5f5f3;
@@ -439,33 +406,31 @@ body.modal-open{overflow:hidden}
 }
 
 
-/* FotoJoe APP – Installationshinweise; GETIN-Design bleibt unverändert */
-.pwa-install{
- position:fixed;right:16px;bottom:16px;z-index:90;
- display:none;align-items:center;gap:10px;
- background:#fff;border:1px solid var(--line);border-radius:14px;
- padding:10px 12px;box-shadow:0 16px 45px #0003;
- max-width:min(360px,calc(100vw - 32px))
+/* FotoJoe APP-Hinweis 1.2 · Desktop QR / Mobile Direktlink */
+.app-promo{padding:30px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.app-promo-card{display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;background:linear-gradient(110deg,#fff 0 62%,#f5f5f3 62%);border:1px solid var(--line);border-radius:18px;padding:26px 30px;box-shadow:0 14px 34px #0000000d}
+.app-promo-copy{display:flex;align-items:center;gap:20px}
+.app-promo-mark{width:62px;height:62px;flex:0 0 62px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--orange));color:#fff;font-size:30px;font-weight:950;box-shadow:0 10px 24px rgba(239,58,25,.22)}
+.app-promo-text .kicker{margin-bottom:4px}
+.app-promo-text h3{font-size:clamp(24px,3vw,35px);line-height:1.05;letter-spacing:-.035em;margin:0 0 8px}
+.app-promo-text h3 b{color:var(--red)}
+.app-promo-text p{margin:0;color:var(--muted);font-size:15px;max-width:690px}
+.app-promo-actions{display:flex;align-items:center;gap:18px}
+.app-promo-qr{width:112px;height:112px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.app-promo-qr img{width:100%;height:100%;object-fit:contain}
+.app-promo-qrtext{max-width:155px;font-size:12px;color:#555;font-weight:800;line-height:1.35}
+.app-promo-mobile{display:none}
+@media(max-width:820px){
+ .app-promo{padding:20px 0}
+ .app-promo-card{grid-template-columns:1fr;background:#fff;padding:22px}
+ .app-promo-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap}
+ .app-promo-mobile{display:flex;margin-top:17px;gap:10px;align-items:center;flex-wrap:wrap}
+ .app-promo-mobile small{color:var(--muted);font-size:11px}
 }
-.pwa-install.show{display:flex}
-.pwa-install-text{font-size:12px;line-height:1.3;color:#555}
-.pwa-install-text strong{display:block;color:#111;font-size:13px;margin-bottom:2px}
-.pwa-install .btn{padding:10px 13px;border-radius:9px;white-space:nowrap;font-size:12px}
-.pwa-install-close{border:0;background:transparent;color:#777;font-size:20px;line-height:1;cursor:pointer;padding:4px}
-.pwa-ios-tip{
- position:fixed;left:16px;right:16px;bottom:16px;z-index:91;
- display:none;background:#fff;border:1px solid var(--line);border-radius:16px;
- padding:16px;box-shadow:0 18px 55px #0004;max-width:520px;margin:auto
-}
-.pwa-ios-tip.show{display:block}
-.pwa-ios-tip strong{font-size:16px}
-.pwa-ios-tip p{margin:7px 0 0;color:#555;font-size:13px}
-.pwa-ios-actions{display:flex;justify-content:flex-end;margin-top:12px}
-@media(max-width:620px){
- .pwa-install{left:12px;right:12px;bottom:12px;max-width:none}
-}
-@media(display-mode:standalone){
- .pwa-install,.pwa-ios-tip{display:none!important}
+@media(max-width:520px){
+ .app-promo-copy{align-items:flex-start;gap:14px}
+ .app-promo-mark{width:50px;height:50px;flex-basis:50px;border-radius:12px;font-size:24px}
+ .app-promo-text h3{font-size:24px}
 }
 
 
@@ -661,50 +626,153 @@ body.crop-open{overflow:hidden}
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "name": "Foto Weber",
+      "@type": "WebSite",
+      "@id": "https://fotoabzüge.com/#website",
+      "url": "https://fotoabzüge.com/",
+      "name": "fotoabzüge.com",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://fotoabzüge.com/#business"
+      }
+    },
+    {
+      "@type": [
+        "Store",
+        "PhotographyBusiness",
+        "LocalBusiness"
+      ],
+      "@id": "https://fotoabzüge.com/#business",
+      "name": "Foto Weber Haigerloch",
+      "alternateName": "fotoabzüge.com",
+      "description": "Fotofachgeschäft in Haigerloch. Hochwertige Fotoabzüge in Laborqualität (Matt oder Glänzend), Fototassen und Leinwandbilder – online bestellen, Abholung in Haigerloch oder Versand.",
+      "url": "https://fotoabzüge.com/",
+      "telephone": "+49 7474 6248",
+      "email": "foto-weber-haigerloch@t-online.de",
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "image": "https://fotoabzüge.com/hero-fotoabzuege.0bb4bdc6fd.webp",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Unterstadt 14",
         "postalCode": "72401",
         "addressLocality": "Haigerloch",
+        "addressRegion": "Baden-Württemberg",
         "addressCountry": "DE"
-      }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.3671255,
+        "longitude": 8.8031371
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Deutschland"
+      },
+      "sameAs": [
+        "https://www.fotoweber.de/"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Fototasse weiß"
+          },
+          "price": "9.99",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Fototasse farbig"
+          },
+          "price": "12.95",
+          "priceCurrency": "EUR"
+        }
+      ]
     },
     {
       "@type": "Product",
+      "@id": "https://fotoabzüge.com/#fotoabzuege",
       "name": "Fotoabzüge",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "EUR",
-        "lowPrice": "0.49",
-        "highPrice": "24.99",
-        "offerCount": "24"
-      }
+      "description": "Fotoabzüge in Laborqualität, Matt oder Glänzend, in Festformaten von 6×9 cm bis 30×48 cm sowie Vario- und Panoramaformaten. Produziert auf Epson SureLab D3000.",
+      "category": "Fotoabzüge",
+      "brand": {
+        "@id": "https://fotoabzüge.com/#business"
+      },
+      "image": "https://fotoabzüge.com/format-10x15.cedbd134e7.webp",
+      "material": "Fotopapier",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Oberfläche",
+          "value": "Matt oder Glänzend"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Formate",
+          "value": "6×9 bis 30×48 cm, Vario/Panorama bis 121 cm"
+        }
+      ]
     },
     {
-      "@type": "Product",
-      "name": "Fototasse weiß",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "9.99", "availability": "https://schema.org/InStock"}
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://fotoabzüge.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Fotoabzüge & Produkte",
+          "item": "https://fotoabzüge.com/#formate"
+        }
+      ]
     },
     {
-      "@type": "Product",
-      "name": "Fototasse farbig",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "12.95", "availability": "https://schema.org/InStock"}
-    },
-    {
-      "@type": "ProductGroup",
-      "name": "Leinwandbilder",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "description": "Leinwandbilder in mehreren Größen. Nur Abholung bei Foto Weber in Haigerloch."
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welche Oberflächen gibt es?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Matt und Glänzend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie groß können die Bilder werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fotoabzüge bis 30×48 cm als Festformat und 30-cm-Vario bis 121 cm Länge; Leinwand bis 90×130 cm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich verschiedene Stückzahlen bestellen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Für jedes Bild kann die gewünschte Menge einzeln eingestellt werden."
+          }
+        }
+      ]
     }
   ]
 }
 </script>
-
+<meta name="geo.region" content="DE-BW">
+<meta name="geo.placename" content="Haigerloch">
+<meta name="geo.position" content="48.3656;8.8046">
+<meta name="ICBM" content="48.3671255, 8.8031371">
+<meta name="author" content="Foto Weber Haigerloch">
+<meta property="og:image" content="https://fotoabzüge.com/hero-fotoabzuege.0bb4bdc6fd.webp">
+<meta property="og:image:alt" content="Hochwertige Fotoabzüge von Foto Weber Haigerloch">
+<meta name="twitter:image" content="https://fotoabzüge.com/hero-fotoabzuege.0bb4bdc6fd.webp">
 </head>
 <body>
 <a class="skip-link" href="#formate">Direkt zur Produktauswahl</a>
@@ -737,9 +805,32 @@ body.crop-open{overflow:hidden}
       </div>
       <div class="hero-trust"><span>✦ Matt oder Glänzend</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>✓ Leinwand nur Abholung</span></div>
     </div>
-    <div class="hero-image"><img src="/assets/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven"></div>
+    <div class="hero-image"><img src="/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven"></div>
   </div>
 </header>
+
+<section class="app-promo" aria-label="FotoJoe App für Smartphone">
+  <div class="wrap">
+    <div class="app-promo-card">
+      <div class="app-promo-copy">
+        <div class="app-promo-mark" aria-hidden="true">▣</div>
+        <div class="app-promo-text">
+          <div class="kicker">FotoJoe App · kostenlos</div>
+          <h3>Fotoabzüge noch bequemer <b>vom Smartphone.</b></h3>
+          <p>Bilder direkt vom Handy auswählen, Format festlegen und bestellen. Am PC einfach den QR-Code scannen – am Smartphone die FotoJoe App direkt öffnen und zum Home-Bildschirm hinzufügen.</p>
+          <div class="app-promo-mobile">
+            <a class="btn" href="/app/">FotoJoe App öffnen →</a>
+            <small>iPhone: Safari · Teilen · „Zum Home-Bildschirm“ · Hinzufügen<br>Android: „App installieren“ bzw. „Zum Startbildschirm hinzufügen“</small>
+          </div>
+        </div>
+      </div>
+      <div class="app-promo-actions">
+        <div class="app-promo-qr"><img loading="lazy" decoding="async" src="/app-qrcode.fc6b7b9372.png" alt="QR-Code zur kostenlosen FotoJoe App"></div>
+        <div class="app-promo-qrtext">QR-Code scannen → FotoJoe App öffnen.<br><strong>iPhone:</strong> Safari · Teilen · „Zum Home-Bildschirm“.<br><strong>Android:</strong> „App installieren“ bzw. „Zum Startbildschirm hinzufügen“.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="soft center" id="formate">
   <div class="wrap">
@@ -754,24 +845,24 @@ body.crop-open{overflow:hidden}
     <div class="main-format-grid" aria-label="Beliebte Fotoformate">
       <button class="format-card visual-format-card primary-format" type="button" data-format-index="1" aria-label="10×15 cm auswählen">
         <span class="tile-badge">Der Klassiker</span>
-        <span class="format-visual"><img loading="lazy" decoding="async" src="/assets/format-10x15.cedbd134e7.webp" alt="Familienfoto als Beispiel für 10×15 cm"></span>
+        <span class="format-visual"><img loading="lazy" decoding="async" src="/format-10x15.cedbd134e7.webp" alt="Familienfoto als Beispiel für 10×15 cm"></span>
         <span class="format-copy"><strong>10 × 15 cm</strong><small>Der Klassiker für Familie & Alltag</small></span>
       </button>
       <button class="format-card visual-format-card" type="button" data-format-index="4" aria-label="13×18 cm auswählen">
-        <span class="format-visual"><img loading="lazy" decoding="async" src="/assets/format-13x18.bea40234c6.webp" alt="Portraitfoto als Beispiel für 13×18 cm"></span>
+        <span class="format-visual"><img loading="lazy" decoding="async" src="/format-13x18.bea40234c6.webp" alt="Portraitfoto als Beispiel für 13×18 cm"></span>
         <span class="format-copy"><strong>13 × 18 cm</strong><small>Ideal für Portraits</small></span>
       </button>
       <button class="format-card visual-format-card" type="button" data-format-index="7" aria-label="15×20 cm auswählen">
-        <span class="format-visual"><img loading="lazy" decoding="async" src="/assets/format-15x20.7aa23a0b84.webp" alt="Urlaubs- und Landschaftsfoto als Beispiel für 15×20 cm"></span>
+        <span class="format-visual"><img loading="lazy" decoding="async" src="/format-15x20.7aa23a0b84.webp" alt="Urlaubs- und Landschaftsfoto als Beispiel für 15×20 cm"></span>
         <span class="format-copy"><strong>15 × 20 cm</strong><small>Urlaub & besondere Erinnerungen</small></span>
       </button>
       <button class="format-card visual-format-card" type="button" data-format-index="13" aria-label="20×30 cm auswählen">
-        <span class="format-visual"><img loading="lazy" decoding="async" src="/assets/format-20x30.697e8cb356.webp" alt="Hochzeitsfoto als Beispiel für 20×30 cm"></span>
+        <span class="format-visual"><img loading="lazy" decoding="async" src="/format-20x30.697e8cb356.webp" alt="Hochzeitsfoto als Beispiel für 20×30 cm"></span>
         <span class="format-copy"><strong>20 × 30 cm</strong><small>Hochzeit, Familie & Rahmen</small></span>
       </button>
       <button class="format-card visual-format-card" type="button" data-format-index="19" aria-label="30×40 cm auswählen">
         <span class="tile-badge right">Großformat</span>
-        <span class="format-visual"><img loading="lazy" decoding="async" src="/assets/format-30x40.0bf13249c0.webp" alt="Wandbild im Wohnraum als Beispiel für 30×40 cm"></span>
+        <span class="format-visual"><img loading="lazy" decoding="async" src="/format-30x40.0bf13249c0.webp" alt="Wandbild im Wohnraum als Beispiel für 30×40 cm"></span>
         <span class="format-copy"><strong>30 × 40 cm</strong><small>Als Wandbild besonders wirkungsvoll</small></span>
       </button>
     </div>
@@ -783,7 +874,7 @@ body.crop-open{overflow:hidden}
 
     <div class="product-teasers" aria-label="Weitere Fotoprodukte">
       <button class="product-teaser visual-product-teaser" type="button" data-open-modal-section="mugs" aria-label="Fototassen ansehen">
-        <span class="product-teaser-visual"><img loading="lazy" decoding="async" src="/assets/teaser-fototassen.3ae156a055.png" alt="Beispielbild mit zwei Fototassen"></span>
+        <span class="product-teaser-visual"><img loading="lazy" decoding="async" src="/teaser-fototassen.3ae156a055.png" alt="Beispielbild mit zwei Fototassen"></span>
         <span class="product-teaser-copy">
           <strong>Fototassen</strong>
           <span class="price-list"><small>weiß</small><b id="mugWhiteTeaserPrice">9,99 €</b></span>
@@ -792,7 +883,7 @@ body.crop-open{overflow:hidden}
         <span class="product-teaser-arrow" aria-hidden="true">›</span>
       </button>
       <button class="product-teaser visual-product-teaser" type="button" data-open-modal-section="canvas" aria-label="Leinwandbilder ansehen">
-        <span class="product-teaser-visual"><img loading="lazy" decoding="async" src="/assets/teaser-leinwand.916cb24ba0.png" alt="Beispielbild eines Leinwandbilds"></span>
+        <span class="product-teaser-visual"><img loading="lazy" decoding="async" src="/teaser-leinwand.916cb24ba0.png" alt="Beispielbild eines Leinwandbilds"></span>
         <span class="product-teaser-copy">
           <strong>Leinwandbilder</strong>
           <span class="pickup-text">Nur Abholung in Haigerloch</span>
@@ -802,7 +893,7 @@ body.crop-open{overflow:hidden}
     </div>
     <a class="alfo-external" id="alfoLink" href="https://alfo-fotobuch.com?affiliateCode=51016" target="_blank" rel="noopener noreferrer" aria-label="ALFO Fotobuch, Kalender und Fotogeschenke mit Foto-Weber-Händlerzuordnung öffnen">
       <span class="alfo-logo-original">
-        <img loading="lazy" decoding="async" data-alfo-original="logo" src="/assets/alfo-logo.d1e24727c2.png" alt="ALFO Fotobuch">
+        <img loading="lazy" decoding="async" data-alfo-original="logo" src="/alfo-logo.d1e24727c2.png" alt="ALFO Fotobuch">
       </span>
       <span class="alfo-external-copy">
         <strong>Fotobücher, Kalender & Fotogeschenke</strong>
@@ -810,7 +901,7 @@ body.crop-open{overflow:hidden}
         <span class="alfo-external-action">Jetzt gestalten →</span>
       </span>
       <span class="alfo-promo-original">
-        <img loading="lazy" decoding="async" data-alfo-original="promo" src="/assets/alfo-motiv.d9b94ff29a.webp" alt="ALFO Fotobuch Motiv">
+        <img loading="lazy" decoding="async" data-alfo-original="promo" src="/alfo-motiv.d9b94ff29a.webp" alt="ALFO Fotobuch Motiv">
       </span>
     </a>
     <div class="catalog-status" id="catalogStatus" aria-live="polite"></div>
@@ -881,7 +972,7 @@ body.crop-open{overflow:hidden}
 
 <section id="oberflaechen">
   <div class="wrap surface-row">
-    <div class="surface-photo"><img loading="lazy" decoding="async" src="/assets/motiv-hochzeit.41431ca76d.webp" alt="Hochzeitsfotos als hochwertige Fotoabzüge"></div>
+    <div class="surface-photo"><img loading="lazy" decoding="async" src="/motiv-hochzeit.41431ca76d.webp" alt="Hochzeitsfotos als hochwertige Fotoabzüge"></div>
     <div>
       <div class="kicker">Oberflächen</div>
       <h2>Matt oder Glänzend – <b>Sie haben die Wahl.</b></h2>
@@ -905,10 +996,10 @@ body.crop-open{overflow:hidden}
     <div class="kicker">Für welche Bilder?</div>
     <h2>Aus Momenten werden <b>Fotoabzüge.</b></h2>
     <div class="motives">
-      <div class="motive"><img loading="lazy" decoding="async" src="/assets/motiv-familie.38d7eb5dbd.webp" alt="Familienfotos als Fotoabzüge"><span>Familie</span></div>
-      <div class="motive"><img loading="lazy" decoding="async" src="/assets/motiv-hochzeit.41431ca76d.webp" alt="Hochzeitsfotos als Fotoabzüge"><span>Hochzeit</span></div>
-      <div class="motive"><img loading="lazy" decoding="async" src="/assets/motiv-urlaub.7da6e9e899.webp" alt="Urlaubsfotos als Fotoabzüge"><span>Urlaub</span></div>
-      <div class="motive"><img loading="lazy" decoding="async" src="/assets/motiv-panorama.822fedcad8.webp" alt="Panoramafotos und Vario Fotoabzüge"><span>Panorama</span></div>
+      <div class="motive"><img loading="lazy" decoding="async" src="/motiv-familie.38d7eb5dbd.webp" alt="Familienfotos als Fotoabzüge"><span>Familie</span></div>
+      <div class="motive"><img loading="lazy" decoding="async" src="/motiv-hochzeit.41431ca76d.webp" alt="Hochzeitsfotos als Fotoabzüge"><span>Hochzeit</span></div>
+      <div class="motive"><img loading="lazy" decoding="async" src="/motiv-urlaub.7da6e9e899.webp" alt="Urlaubsfotos als Fotoabzüge"><span>Urlaub</span></div>
+      <div class="motive"><img loading="lazy" decoding="async" src="/motiv-panorama.822fedcad8.webp" alt="Panoramafotos und Vario Fotoabzüge"><span>Panorama</span></div>
     </div>
   </div>
 </section>
@@ -1076,21 +1167,6 @@ body.crop-open{overflow:hidden}
   </div>
 </section>
 
-<div id="pwaInstall" class="pwa-install" role="status" aria-live="polite">
-  <div class="pwa-install-text">
-    <strong>fotoabzüge.com als App</strong>
-    Kostenlos auf dem Startbildschirm installieren.
-  </div>
-  <button id="pwaInstallBtn" class="btn" type="button">App installieren</button>
-  <button id="pwaInstallClose" class="pwa-install-close" type="button" aria-label="Installationshinweis schließen">×</button>
-</div>
-
-<div id="pwaIosTip" class="pwa-ios-tip" role="dialog" aria-modal="false" aria-label="App auf dem iPhone installieren">
-  <strong>FotoJoe als App aufs iPhone</strong>
-  <p><b>1.</b> Unten in Safari auf <b>Teilen</b> tippen.<br><b>2.</b> <b>„Zum Home-Bildschirm“</b> wählen.<br><b>3.</b> Oben rechts <b>„Hinzufügen“</b> tippen.<br><small>Danach erscheint das FotoJoe-Icon auf dem Startbildschirm.</small></p>
-  <div class="pwa-ios-actions"><button id="pwaIosClose" class="btn" type="button">Verstanden</button></div>
-</div>
-
 <footer>
   <div class="wrap footergrid">
     <div><strong>fotoabzüge.com</strong><br>Ein Angebot von Foto Weber Haigerloch<br><br>Unterstadt 14 · 72401 Haigerloch<br>Telefon 07474 6248<br>foto-weber-haigerloch@t-online.de</div>
@@ -1098,7 +1174,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe APP · GETIN V26 · Mobile UX · Pinch-Zoom/Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe V26 · Mobile UX · Performance/SEO/KI · Pinch-Zoom/Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -2549,75 +2625,6 @@ document.addEventListener("visibilitychange",()=>{
 
 toggleAddress();
 updateSummary();
-</script>
-
-<script>
-(() => {
-  const installBox = document.getElementById("pwaInstall");
-  const installBtn = document.getElementById("pwaInstallBtn");
-  const installClose = document.getElementById("pwaInstallClose");
-  const iosTip = document.getElementById("pwaIosTip");
-  const iosClose = document.getElementById("pwaIosClose");
-  let deferredInstall = null;
-
-  const standalone =
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone === true;
-
-  const ua = navigator.userAgent || "";
-  const isIOS = /iPad|iPhone|iPod/.test(ua) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-  function dismissedRecently(){
-    try{
-      const until = Number(localStorage.getItem("fotoworks_pwa_hint_until") || 0);
-      return Date.now() < until;
-    }catch(_e){ return false; }
-  }
-
-  function dismissHint(days = 14){
-    installBox?.classList.remove("show");
-    iosTip?.classList.remove("show");
-    try{
-      localStorage.setItem("fotoworks_pwa_hint_until",
-        String(Date.now() + days * 24 * 60 * 60 * 1000));
-    }catch(_e){}
-  }
-
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/app/sw.js?v=25", {scope:"/app/"})
-        .catch(err => console.warn("FotoJoe APP: Service Worker", err));
-    });
-  }
-
-  window.addEventListener("beforeinstallprompt", event => {
-    event.preventDefault();
-    deferredInstall = event;
-    if (!standalone && !dismissedRecently()) installBox?.classList.add("show");
-  });
-
-  installBtn?.addEventListener("click", async () => {
-    if (!deferredInstall) return;
-    deferredInstall.prompt();
-    try{ await deferredInstall.userChoice; }catch(_e){}
-    deferredInstall = null;
-    installBox?.classList.remove("show");
-  });
-
-  installClose?.addEventListener("click", () => dismissHint(14));
-  iosClose?.addEventListener("click", () => dismissHint(14));
-
-  window.addEventListener("appinstalled", () => {
-    installBox?.classList.remove("show");
-    iosTip?.classList.remove("show");
-  });
-
-  // iOS/Safari has no beforeinstallprompt. Show a small one-time hint.
-  if (isIOS && !standalone && !dismissedRecently()) {
-    window.setTimeout(() => iosTip?.classList.add("show"), 1200);
-  }
-})();
 </script>
 
 
