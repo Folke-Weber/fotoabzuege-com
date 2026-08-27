@@ -2720,5 +2720,17 @@ updateSummary();
   window.addEventListener('resize',()=>{if(window.innerWidth>950) close();},{passive:true});
 })();
 </script>
+
+<script>
+/* FotoJoe V26.3 – PWA-Updatehelfer: aktualisiert nur den /app/-Service-Worker. */
+if("serviceWorker" in navigator){
+  window.addEventListener("load",async()=>{
+    try{
+      const reg=await navigator.serviceWorker.register("/app/sw.js?v=263",{scope:"/app/",updateViaCache:"none"});
+      await reg.update();
+    }catch(_e){}
+  });
+}
+</script>
 </body>
 </html>

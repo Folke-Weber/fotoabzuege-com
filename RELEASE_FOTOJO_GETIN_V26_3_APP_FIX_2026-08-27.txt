@@ -1,0 +1,16 @@
+FotoJoe GETIN V26.3 – APP-UPDATE-REPARATUR – 27.08.2026
+
+Ziel: Die installierte PWA muss wirklich den neuen App-Stand laden.
+
+Änderungen:
+- App-Service-Worker eindeutig auf V26.3 versioniert und updateViaCache=none.
+- Öffentliche Startseite stößt die Aktualisierung des /app/-Service-Workers zusätzlich an.
+- Manifest start_url mit V26.3-Hinweis für Neuinstallationen.
+- Rotes Return-Dreieck in der App dauerhaft sichtbar; ohne Bilder springt es zum Upload, mit Bildern zur letzten Auswahl.
+- Upload-Text: „Wählen Sie beliebig viele Bilder auf einmal aus – weitere Fotos können Sie jederzeit hinzufügen.“
+- Zwei-Finger-Zoom auf Touch-Geräten neu über native Touch-Events umgesetzt; ein Finger verschiebt das Bild.
+- Maus/Stift behalten die bewährte Pointer-Logik.
+- Kein Eingriff in Preise, Backend, Bestell-API, Upload/Finalize, Formatlogik oder Farboptimierung.
+
+Prüfmerkmal:
+Im App-Footer muss sichtbar „FotoJoe APP · GETIN V26.3“ stehen.

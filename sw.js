@@ -1,8 +1,8 @@
-/* FotoJoe APP · GETIN V26.2
+/* FotoJoe APP · GETIN V26.3
    Absichtlich kein API-/Upload-Caching.
    Navigation: Netzwerk zuerst, damit GETIN-Updates sofort greifen.
 */
-const APP_CACHE = "fotojoe-app-v26-2-stabil-repair-20260827";
+const APP_CACHE = "fotojoe-app-v26-3-app-refresh-20260827";
 const STATIC = [
   "/app/offline.html",
   "/app/manifest.webmanifest",
@@ -23,9 +23,13 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== APP_CACHE).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.startsWith("fotojoe-app-") && k !== APP_CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
+});
+
+self.addEventListener("message", event => {
+  if(event.data === "SKIP_WAITING") self.skipWaiting();
 });
 
 self.addEventListener("fetch", event => {

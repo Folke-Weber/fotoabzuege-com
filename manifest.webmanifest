@@ -5,7 +5,7 @@
   "description": "FotoJoe – die schlanke Bildbestellung für Fotoabzüge und Fotoprodukte von JustForWork bei Foto Weber Haigerloch.",
   "lang": "de-DE",
   "dir": "ltr",
-  "start_url": "/app/",
+  "start_url": "/app/?v=263",
   "scope": "/app/",
   "display": "standalone",
   "background_color": "#ffffff",
