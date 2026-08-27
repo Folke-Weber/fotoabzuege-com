@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe GETIN V26 · MOBILE UX/PERFORMANCE/SEO/KI · PINCH-ZOOM · RETURN · 2026-08-27 -->
+<!-- FotoJoe GETIN V26.2 · STABILITÄTS-REPARATUR · MOBILE UX · 2026-08-27 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -1174,7 +1174,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe V26 · Mobile UX · Performance/SEO/KI · Pinch-Zoom/Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe V26.2 · Mobile UX · Performance/SEO/KI · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1662,7 +1662,7 @@ const cropOrientationBox=document.getElementById("cropOrientationBox");
 const cropLandscape=document.getElementById("cropLandscape");
 const cropPortrait=document.getElementById("cropPortrait");
 const cropProcessing=document.getElementById("cropProcessing");
-let CROP_ACTIVE_ITEM=null,CROP_IMAGE=null,CROP_STATE=null,CROP_POINTER=null,CROP_POINTERS=new Map(),CROP_GESTURE=null;
+let CROP_ACTIVE_ITEM=null,CROP_IMAGE=null,CROP_STATE=null,CROP_POINTER=null;
 
 function cropPrintSize(item,orientation){
   const dims=physicalFormat(PRICE_TABLE[item.format]?.[0]);
@@ -1738,11 +1738,11 @@ async function openCropEditor(item){
     cropZoom.value=String(CROP_STATE.zoom);cropOptimize.checked=CROP_STATE.optimize;
     const ps=cropPrintSize(item,CROP_STATE.orientation==="square"?"landscape":CROP_STATE.orientation);
     cropOrientationBox.style.display=ps?.square?"none":"block";
-    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"} · Ausschnitt verschieben · mit zwei Fingern oder Regler zoomen`;
+    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"} · Verschieben · mit zwei Fingern oder Regler zoomen`;
     cropProcessing.classList.remove("show");cropModal.classList.add("show");cropModal.setAttribute("aria-hidden","false");document.body.classList.add("crop-open");drawCrop();
   }catch(err){alert(err?.message||"Ausschnittbearbeitung konnte nicht geöffnet werden.");CROP_ACTIVE_ITEM=null;CROP_IMAGE=null;CROP_STATE=null;}
 }
-function closeCropEditor(){cropModal?.classList.remove("show");cropModal?.setAttribute("aria-hidden","true");document.body.classList.remove("crop-open");CROP_POINTER=null;CROP_POINTERS.clear();CROP_GESTURE=null;cropCanvas?.classList.remove("dragging");}
+function closeCropEditor(){cropModal?.classList.remove("show");cropModal?.setAttribute("aria-hidden","true");document.body.classList.remove("crop-open");CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}
 function resetCropEditor(){
   if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
   CROP_STATE.orientation=defaultCropOrientation(CROP_ACTIVE_ITEM);CROP_STATE.zoom=1;CROP_STATE.cx=CROP_ACTIVE_ITEM.pixelWidth/2;CROP_STATE.cy=CROP_ACTIVE_ITEM.pixelHeight/2;CROP_STATE.optimize=false;
@@ -1779,13 +1779,86 @@ cropLandscape?.addEventListener("click",()=>changeCropOrientation("landscape"));
 document.getElementById("cropReset")?.addEventListener("click",resetCropEditor);document.getElementById("cropCancel")?.addEventListener("click",closeCropEditor);document.getElementById("cropClose")?.addEventListener("click",closeCropEditor);document.getElementById("cropApply")?.addEventListener("click",applyCropEditor);
 cropModal?.addEventListener("click",e=>{if(e.target===cropModal)closeCropEditor();});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&cropModal?.classList.contains("show"))closeCropEditor();});
-function cropPointerPair(){return [...CROP_POINTERS.values()].slice(0,2);}
-function cropPairMetrics(){const pts=cropPointerPair();if(pts.length<2)return null;const a=pts[0],b=pts[1];return {distance:Math.hypot(b.x-a.x,b.y-a.y),centerX:(a.x+b.x)/2,centerY:(a.y+b.y)/2};}
-function beginCropGesture(){const m=cropPairMetrics();if(!m||!CROP_STATE)return;CROP_POINTER=null;CROP_GESTURE={startDistance:Math.max(1,m.distance),startZoom:Number(CROP_STATE.zoom)||1,lastCenterX:m.centerX,lastCenterY:m.centerY};}
-cropCanvas?.addEventListener("pointerdown",e=>{if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();cropCanvas.setPointerCapture?.(e.pointerId);CROP_POINTERS.set(e.pointerId,{id:e.pointerId,x:e.clientX,y:e.clientY});if(CROP_POINTERS.size===1){CROP_POINTER={id:e.pointerId,x:e.clientX,y:e.clientY};CROP_GESTURE=null;}else if(CROP_POINTERS.size===2){beginCropGesture();}cropCanvas.classList.add("dragging");});
-cropCanvas?.addEventListener("pointermove",e=>{if(!CROP_POINTERS.has(e.pointerId)||!CROP_ACTIVE_ITEM||!CROP_STATE)return;e.preventDefault();const point=CROP_POINTERS.get(e.pointerId);const oldX=point.x,oldY=point.y;point.x=e.clientX;point.y=e.clientY;CROP_POINTERS.set(e.pointerId,point);const rect=cropCanvas.getBoundingClientRect();if(!rect.width||!rect.height)return;if(CROP_POINTERS.size>=2){if(!CROP_GESTURE)beginCropGesture();const m=cropPairMetrics();if(!m||!CROP_GESTURE)return;const before=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(before){const dx=m.centerX-CROP_GESTURE.lastCenterX,dy=m.centerY-CROP_GESTURE.lastCenterY;CROP_STATE.cx-=dx*(before.w/rect.width);CROP_STATE.cy-=dy*(before.h/rect.height);}const scale=m.distance/Math.max(1,CROP_GESTURE.startDistance);CROP_STATE.zoom=Math.max(1,Math.min(3,CROP_GESTURE.startZoom*scale));cropZoom.value=String(CROP_STATE.zoom);CROP_GESTURE.lastCenterX=m.centerX;CROP_GESTURE.lastCenterY=m.centerY;drawCrop();return;}if(CROP_POINTER&&e.pointerId===CROP_POINTER.id){const crop=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);if(!crop)return;const dx=e.clientX-oldX,dy=e.clientY-oldY;CROP_POINTER.x=e.clientX;CROP_POINTER.y=e.clientY;CROP_STATE.cx-=dx*(crop.w/rect.width);CROP_STATE.cy-=dy*(crop.h/rect.height);drawCrop();}});
-function endCropPointer(e){if(e)CROP_POINTERS.delete(e.pointerId);else CROP_POINTERS.clear();if(CROP_POINTERS.size<2)CROP_GESTURE=null;if(CROP_POINTERS.size===1){const p=[...CROP_POINTERS.values()][0];CROP_POINTER={id:p.id,x:p.x,y:p.y};cropCanvas?.classList.add("dragging");}else if(CROP_POINTERS.size===0){CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}}
-cropCanvas?.addEventListener("pointerup",endCropPointer);cropCanvas?.addEventListener("pointercancel",endCropPointer);cropCanvas?.addEventListener("lostpointercapture",endCropPointer);
+/* FotoJoe V26.2 – Zwei-Finger-Zoom, auf der bewährten V25.1-Ausschnittlogik aufgebaut */
+const CROP_TOUCH_POINTS=new Map();
+let CROP_PINCH=null;
+function cropPinchMetrics(){
+  const pts=[...CROP_TOUCH_POINTS.values()].slice(0,2);
+  if(pts.length<2)return null;
+  return {distance:Math.hypot(pts[1].x-pts[0].x,pts[1].y-pts[0].y)};
+}
+cropCanvas?.addEventListener("pointerdown",e=>{
+  if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
+  e.preventDefault();
+  if(e.pointerType==="touch"){
+    CROP_TOUCH_POINTS.set(e.pointerId,{id:e.pointerId,x:e.clientX,y:e.clientY});
+    if(CROP_TOUCH_POINTS.size===1){
+      CROP_POINTER={id:e.pointerId,x:e.clientX,y:e.clientY};
+      CROP_PINCH=null;
+    }else if(CROP_TOUCH_POINTS.size>=2){
+      const m=cropPinchMetrics();
+      CROP_POINTER=null;
+      CROP_PINCH=m?{distance:Math.max(1,m.distance),zoom:Number(CROP_STATE.zoom)||1}:null;
+    }
+    cropCanvas.classList.add("dragging");
+    return;
+  }
+  CROP_POINTER={id:e.pointerId,x:e.clientX,y:e.clientY};
+  cropCanvas.setPointerCapture?.(e.pointerId);
+  cropCanvas.classList.add("dragging");
+});
+cropCanvas?.addEventListener("pointermove",e=>{
+  if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
+  if(e.pointerType==="touch"){
+    const p=CROP_TOUCH_POINTS.get(e.pointerId);
+    if(!p)return;
+    e.preventDefault();
+    const oldX=p.x,oldY=p.y;
+    p.x=e.clientX;p.y=e.clientY;CROP_TOUCH_POINTS.set(e.pointerId,p);
+    if(CROP_TOUCH_POINTS.size>=2){
+      const m=cropPinchMetrics();
+      if(!m)return;
+      if(!CROP_PINCH)CROP_PINCH={distance:Math.max(1,m.distance),zoom:Number(CROP_STATE.zoom)||1};
+      const factor=m.distance/Math.max(1,CROP_PINCH.distance);
+      CROP_STATE.zoom=Math.max(1,Math.min(3,CROP_PINCH.zoom*factor));
+      cropZoom.value=String(CROP_STATE.zoom);
+      drawCrop();
+      return;
+    }
+    if(CROP_POINTER&&e.pointerId===CROP_POINTER.id){
+      const rect=cropCanvas.getBoundingClientRect(),crop=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);
+      if(!crop||!rect.width||!rect.height)return;
+      CROP_STATE.cx-=(e.clientX-oldX)*(crop.w/rect.width);
+      CROP_STATE.cy-=(e.clientY-oldY)*(crop.h/rect.height);
+      CROP_POINTER.x=e.clientX;CROP_POINTER.y=e.clientY;
+      drawCrop();
+    }
+    return;
+  }
+  if(!CROP_POINTER||e.pointerId!==CROP_POINTER.id)return;
+  e.preventDefault();
+  const rect=cropCanvas.getBoundingClientRect(),crop=cropRectFor(CROP_ACTIVE_ITEM,CROP_STATE);
+  if(!crop||!rect.width||!rect.height)return;
+  const dx=e.clientX-CROP_POINTER.x,dy=e.clientY-CROP_POINTER.y;
+  CROP_POINTER.x=e.clientX;CROP_POINTER.y=e.clientY;
+  CROP_STATE.cx-=dx*(crop.w/rect.width);CROP_STATE.cy-=dy*(crop.h/rect.height);
+  drawCrop();
+});
+function endCropPointer(e){
+  if(e?.pointerType==="touch"){
+    CROP_TOUCH_POINTS.delete(e.pointerId);
+    if(CROP_TOUCH_POINTS.size<2)CROP_PINCH=null;
+    if(CROP_TOUCH_POINTS.size===1){
+      const p=[...CROP_TOUCH_POINTS.values()][0];
+      CROP_POINTER={id:p.id,x:p.x,y:p.y};
+    }else if(CROP_TOUCH_POINTS.size===0){
+      CROP_POINTER=null;cropCanvas?.classList.remove("dragging");
+    }
+    return;
+  }
+  if(CROP_POINTER&&(!e||e.pointerId===CROP_POINTER.id)){CROP_POINTER=null;cropCanvas?.classList.remove("dragging");}
+}
+cropCanvas?.addEventListener("pointerup",endCropPointer);cropCanvas?.addEventListener("pointercancel",endCropPointer);
 
 
 function showUploadFeedback(messages){
@@ -1880,7 +1953,7 @@ function renderFiles(){
     const q=qualityInfo(item);
     row.innerHTML=`
       <div class="thumb ${itemType(item.format)==="photo"?"crop-clickable":""}" title="${itemType(item.format)==="photo"?"Bild bearbeiten":""}">
-        <img loading="lazy" decoding="async" src="${item.editedPreviewUrl || item.url}" alt="">
+        <img src="${item.editedPreviewUrl || item.url}" alt="">
       </div>
       <div class="filemeta">
         <div class="name" title="${safeName}">${safeName}</div>

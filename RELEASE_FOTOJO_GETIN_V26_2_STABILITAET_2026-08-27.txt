@@ -1,0 +1,21 @@
+FotoJoe GETIN V26.2 – Stabilitäts-Reparatur – 27.08.2026
+
+BASIS:
+- Bestell-/Upload-/Ausschnitt-Kern aus der vom Nutzer bestätigten FotoJoe V25.1 wiederhergestellt.
+- Performance-/SEO-/KI-Dateien und funktionierender V26.1-Bilder-Hotfix bleiben erhalten.
+
+GEZIELT NEU:
+- Upload-Text ohne "1, 5, 55".
+- Rotes Return-Dreieck auf Basis der bewährten V25.1-Anzeige-/Scrolllogik.
+- Zwei-Finger-Zoom als isolierte Erweiterung der bewährten V25.1-Pointerlogik; Regler und Ein-Finger-Verschieben bleiben erhalten.
+- PWA-Cache auf V26.2 angehoben.
+
+NICHT GEÄNDERT:
+- Preislogik
+- Backend-Endpunkte
+- Bestell-/Finalize-Logik
+- Format-/Mengenlogik
+- Farboptimierungslogik
+- Versandlogik
+
+WICHTIG: Dies ist ein Reparatur-Candidate und wird erst nach vollständigem Smartphone-Test zum SAFE.
