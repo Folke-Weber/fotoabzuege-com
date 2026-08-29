@@ -12,3 +12,19 @@
 
 /*.png
   Cache-Control: public, max-age=31536000, immutable
+
+# Stabiles Favicon für Browser und Suchergebnisse
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+# Ratgeber-/SEO-Seiten: schnell, aber regelmäßig aktualisierbar
+/fotoabzuege-vom-handy/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+/fotoabzuege-10x15/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+/fotoabzuege-matt-oder-glaenzend/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+/smartphone-fotos-ohne-beschnitt/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+/fotoabzuege-haigerloch/*
+  Cache-Control: public, max-age=300, s-maxage=3600
