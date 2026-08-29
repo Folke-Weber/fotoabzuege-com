@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe APP · GETIN V26.3 · APP-UPDATE-REPARATUR · MOBILE UX · 2026-08-27 -->
+<!-- FotoJoe APP · GETIN V27.1 · LAUNCH · MOBILE UX · 2026-08-29 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Fotoabzüge online bestellen | Foto Weber Haigerloch</title>
-<meta name="description" content="Fotoabzüge online bei Foto Weber Haigerloch bestellen: Matt oder Glänzend, Standard-, Sonder-, Vario- und Panoramaformate, Fototassen sowie Fotobücher und Fotogeschenke über ALFO. Abholung oder Versand.">
+<meta name="description" content="FotoJoe: Fotoabzüge direkt vom Smartphone bestellen. Format wählen, Ausschnitt prüfen, Bildqualität kontrollieren und Matt oder Glänzend auswählen.">
 <meta name="theme-color" content="#ef3a19">
 <meta name="application-name" content="fotoabzüge.com">
 <meta name="mobile-web-app-capable" content="yes">
@@ -20,6 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/app/icons/icon-192-v26.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/app/icons/icon-512-v26.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/app/icons/apple-touch-icon-180-v26.png">
+<link rel="preload" as="image" href="/hero-fotoabzuege.0bb4bdc6fd.webp" type="image/webp" fetchpriority="high">
 <link rel="canonical" href="https://fotoabzüge.com/">
 <meta property="og:title" content="Fotoabzüge online bestellen – Foto Weber Haigerloch">
 <meta property="og:description" content="Fotoabzüge in Matt oder Glänzend, Fototassen und weitere Fotoprodukte einfach online bestellen.">
@@ -27,19 +28,23 @@
 <meta property="og:url" content="https://fotoabzüge.com/">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="fotoabzüge.com">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex,follow">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"FotoJoe GETIN – fotoabzüge.com",
-  "url":"https://fotoabzüge.com/",
+  "@id":"https://fotoabzüge.com/app/#app",
+  "name":"FotoJoe – Bildbestellung",
+  "url":"https://fotoabzüge.com/app/",
   "applicationCategory":"ShoppingApplication",
   "operatingSystem":"Web",
+  "inLanguage":"de-DE",
+  "description":"Installierbare Web-App zum Bestellen von Fotoabzügen mit Formatwahl, Ausschnitt, Qualitätsanzeige und Bildoptimierung.",
   "provider":{
     "@type":"LocalBusiness",
-    "name":"Foto Weber",
+    "@id":"https://fotoabzüge.com/#business",
+    "name":"Foto Weber Haigerloch",
     "url":"https://www.fotoweber.de/",
     "telephone":"+49 7474 6248",
     "address":{
@@ -656,55 +661,6 @@ body.crop-open{overflow:hidden}
 #pwaIosTip.show ~ .last-selection-btn{bottom:max(170px,calc(env(safe-area-inset-bottom) + 170px))}
 </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "name": "Foto Weber",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Unterstadt 14",
-        "postalCode": "72401",
-        "addressLocality": "Haigerloch",
-        "addressCountry": "DE"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Fotoabzüge",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "EUR",
-        "lowPrice": "0.49",
-        "highPrice": "24.99",
-        "offerCount": "24"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Fototasse weiß",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "9.99", "availability": "https://schema.org/InStock"}
-    },
-    {
-      "@type": "Product",
-      "name": "Fototasse farbig",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "12.95", "availability": "https://schema.org/InStock"}
-    },
-    {
-      "@type": "ProductGroup",
-      "name": "Leinwandbilder",
-      "brand": {"@type": "Brand", "name": "FotoJoe"},
-      "description": "Leinwandbilder in mehreren Größen. Nur Abholung bei Foto Weber in Haigerloch."
-    }
-  ]
-}
-</script>
-
 </head>
 <body>
 <a class="skip-link" href="#formate">Direkt zur Produktauswahl</a>
@@ -737,7 +693,7 @@ body.crop-open{overflow:hidden}
       </div>
       <div class="hero-trust"><span>✦ Matt oder Glänzend</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>✓ Leinwand nur Abholung</span></div>
     </div>
-    <div class="hero-image"><img src="/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven"></div>
+    <div class="hero-image"><img src="/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven" loading="eager" decoding="async" fetchpriority="high"></div>
   </div>
 </header>
 
@@ -1031,7 +987,8 @@ body.crop-open{overflow:hidden}
     </div>
   </div>
 
-  <button id="sendOrder" class="sendbtn" type="button" disabled>Bestellung & Bilder übertragen</button>
+  <button id="sendOrder" class="sendbtn" type="button" disabled>Zahlungspflichtig bestellen & Bilder übertragen</button>
+  <div style="margin:9px 0 0;font-size:11px;line-height:1.45;color:#777;text-align:center">Vor dem Absenden sehen Sie die vollständige Bestellsumme. <a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener" style="text-decoration:underline">Impressum</a> · <a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener" style="text-decoration:underline">Datenschutz</a> · <a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener" style="text-decoration:underline">Liefer- & Zahlungsbedingungen</a></div>
 
   <div id="uploadProgress" class="uploadprogress">
     <strong id="uploadProgressText" aria-live="polite">Upload wird vorbereitet …</strong>
@@ -1095,10 +1052,10 @@ body.crop-open{overflow:hidden}
   <div class="wrap footergrid">
     <div><strong>fotoabzüge.com</strong><br>Ein Angebot von Foto Weber Haigerloch<br><br>Unterstadt 14 · 72401 Haigerloch<br>Telefon 07474 6248<br>foto-weber-haigerloch@t-online.de</div>
     <div><strong>Informationen</strong><a href="#formate">Formate & Produkte</a><a href="#oberflaechen">Matt & Glänzend</a><a href="#lieferung">Versand & Abholung</a><a href="#faq">FAQ</a></div>
-    <div><strong>Service</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a></div>
+    <div><strong>Service & Rechtliches</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a><a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener">Impressum</a><a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener">Liefer- & Zahlungsbedingungen</a><a href="https://www.fotoweber.de/j/shop/withdrawal" target="_blank" rel="noopener">Widerrufsbelehrung</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe APP · GETIN V26.3 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe APP · GETIN V27.1 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -2670,7 +2627,7 @@ updateSummary();
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
-        const reg = await navigator.serviceWorker.register("/app/sw.js?v=263", {scope:"/app/", updateViaCache:"none"});
+        const reg = await navigator.serviceWorker.register("/app/sw.js?v=27.1", {scope:"/app/", updateViaCache:"none"});
         await reg.update();
       } catch (err) {
         console.warn("FotoJoe APP: Service Worker", err);
