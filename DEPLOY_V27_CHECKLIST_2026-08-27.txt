@@ -1,0 +1,22 @@
+FotoJoe GETIN V27 · DEPLOY-CHECKLIST · 27.08.2026
+
+1. ZIP vollständig entpacken.
+2. Inhalt mit gleicher Ordnerstruktur ins GitHub-Repository fotoabzuege-com hochladen.
+3. Besonders kontrollieren, dass der Ordner app/ wirklich als Ordner erhalten bleibt.
+4. Ebenso die fünf neuen Ordner erhalten:
+   fotoabzuege-vom-handy/
+   fotoabzuege-10x15/
+   fotoabzuege-matt-oder-glaenzend/
+   smartphone-fotos-ohne-beschnitt/
+   fotoabzuege-haigerloch/
+5. Cloudflare Pages Deploy abwarten.
+6. Im normalen Handy-Browser https://www.fotoabzüge.com/app/ öffnen.
+7. Ganz unten muss „FotoJoe APP · GETIN V27“ stehen.
+8. Dann App schließen/neu öffnen und erneut V27 kontrollieren.
+9. Funktionstest: mehrere Bilder -> Bild bearbeiten -> Bild sichtbar -> 1 Finger verschieben -> 2 Finger zoomen -> Regler-Zoom -> Übernehmen.
+10. Format, Stückzahl, Matt/Glänzend, Qualitätsanzeige, Preisprüfung und Testauftrag bis READY prüfen.
+11. Startseite kontrollieren: alle Bilder, Favicon, App-Link.
+12. Neue Ratgeberseiten stichprobenartig öffnen.
+13. robots.txt, sitemap.xml und llms.txt im Browser öffnen.
+
+Erst nach erfolgreichem Test V27 als SAFE sichern.

@@ -1,0 +1,63 @@
+FotoJoe GETIN V27 · LAUNCH · 2026-08-27
+
+Basis: bestätigter SAFE-Stand FotoJoe GETIN V26.3.
+Ziel: Werbestart 29.08.2026. Stabilität der Bestelllogik hat Vorrang.
+
+NEU / VERBESSERT
+- stabiler Root-Favicon-Pfad /favicon.png plus Apple-Touch-Icon
+- Hero-Bild auf Startseite und App mit Preload + fetchpriority=high
+- OpenGraph/Twitter-Bildmetadaten ergänzt; twitter:card = summary_large_image
+- Startseitentext klarer auf Bestellung vom Smartphone oder PC ausgerichtet
+- Root-JSON-LD aufgeräumt: WebSite, LocalBusiness, WebApplication, Service, Breadcrumb, FAQ
+- keine festen dynamischen Produkt-/Versandpreise mehr in JSON-LD oder llms.txt
+- llms.txt auf Fakten, aktuelle App-Funktionen und wichtige Seiten konzentriert
+- 5 eigenständige indexierbare Ratgeber-/SEO-Seiten:
+  /fotoabzuege-vom-handy/
+  /fotoabzuege-10x15/
+  /fotoabzuege-matt-oder-glaenzend/
+  /smartphone-fotos-ohne-beschnitt/
+  /fotoabzuege-haigerloch/
+- Sitemap um diese Seiten erweitert
+- sichtbare interne Links zu den Ratgeberseiten im Footer der Startseite
+- sichtbare Links zu Impressum, Datenschutz, Liefer-/Zahlungsbedingungen und Widerruf auf den bestehenden Foto-Weber-Seiten
+- App-Absendebutton eindeutig: „Zahlungspflichtig bestellen & Bilder übertragen“
+- FotoJoe/PWA-Versionskennung und Service-Worker-Cache auf V27 angehoben
+
+NICHT GEÄNDERT
+- Preisberechnung und dynamisches Laden aus dem Backend
+- Backend-Endpunkte / Tenant
+- Bildauswahl und Upload-/Finalize-Logik
+- Format- und Stückzahllogik
+- Ausschnitt-, Zoom-, Zwei-Finger-Zoom- und Verschiebelogik
+- Farb-/Bildoptimierung
+- Qualitätsberechnung
+- Bestell-/READY-Logik
+- ALFO-Integration
+
+BEWUSST NICHT EINGEBAUT
+- keine WhatsApp-Zweitbestellung
+- keine Fotobox-/Passbild-Werbung
+- keine erfundenen Bewertungen, Siegel, Öffnungszeiten oder Lieferzeiten
+- keine Meta-Keywords
+- kein unnötiges hreflang bei nur einer Sprachversion
+- kein statisches AggregateOffer mit Preisen, die später vom Backend abweichen könnten
+- keine neue komplexe Upload-Status- oder Checkout-Logik kurz vor Werbestart
+
+TEST NACH DEPLOY
+1. Startseite: Bilder, Favicon, Navigation, App-Link
+2. App-Footer zeigt FotoJoe APP · GETIN V27
+3. Upload mehrerer Bilder
+4. Bild bearbeiten: Bild sichtbar, Verschieben, Regler-Zoom, Zwei-Finger-Zoom
+5. Format, Stückzahl, Matt/Glänzend, Qualitätsanzeige
+6. Bestellung prüfen, Preisprüfung, Testauftrag bis READY
+7. Ratgeberseiten öffnen und alle Links prüfen
+8. robots.txt, sitemap.xml, llms.txt aufrufbar
+
+ZUSÄTZLICHE V27-QUALITÄTSSICHERUNG
+- Root-Browserbestellung verwendet jetzt exakt die in der bestätigten V26.3-App funktionierende Touch-Logik für Ein-Finger-Verschieben und Zwei-Finger-Zoom.
+- App-Bestell-/Upload-/Preis-/Ausschnittlogik ist gegenüber dem bestätigten V26.3-Stand unverändert; geändert wurden dort nur Metadaten, sichtbare Recht-/Button-Texte und die PWA-Versionskennung.
+- JavaScript-Syntax für Root und App mit Node geprüft.
+- JSON-LD-Blöcke maschinell als JSON geparst.
+- Sitemap als XML geparst.
+- lokale Bild-, Manifest-, Icon- und Stylesheet-Verweise auf Existenz geprüft.
+- doppelte HTML-IDs geprüft.
