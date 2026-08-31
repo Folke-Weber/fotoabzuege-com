@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe APP · GETIN V27.1 · LAUNCH · MOBILE UX · 2026-08-29 -->
+<!-- FotoJoe APP · GETIN V28 · LAUNCH · MOBILE UX · 2026-08-27 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Fotoabzüge online bestellen | Foto Weber Haigerloch</title>
-<meta name="description" content="FotoJoe: Fotoabzüge direkt vom Smartphone bestellen. Format wählen, Ausschnitt prüfen, Bildqualität kontrollieren und Matt oder Glänzend auswählen.">
+<meta name="description" content="FotoJoe: Fotoabzüge direkt vom Smartphone bestellen. Format wählen, Ausschnitt prüfen, Bildqualität kontrollieren und Matt, Glänzend oder weißen Rand auswählen.">
 <meta name="theme-color" content="#ef3a19">
 <meta name="application-name" content="fotoabzüge.com">
 <meta name="mobile-web-app-capable" content="yes">
@@ -23,7 +23,7 @@
 <link rel="preload" as="image" href="/hero-fotoabzuege.0bb4bdc6fd.webp" type="image/webp" fetchpriority="high">
 <link rel="canonical" href="https://fotoabzüge.com/">
 <meta property="og:title" content="Fotoabzüge online bestellen – Foto Weber Haigerloch">
-<meta property="og:description" content="Fotoabzüge in Matt oder Glänzend, Fototassen und weitere Fotoprodukte einfach online bestellen.">
+<meta property="og:description" content="Fotoabzüge in Matt, Glänzend oder mit weißem Rand, Fototassen und weitere Fotoprodukte einfach online bestellen.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fotoabzüge.com/">
 <meta property="og:locale" content="de_DE">
@@ -659,6 +659,36 @@ body.crop-open{overflow:hidden}
 /* PWA-Installationshinweis darf den roten Rücksprung-Pfeil nicht überdecken */
 #pwaInstall.show ~ .last-selection-btn{bottom:max(104px,calc(env(safe-area-inset-bottom) + 104px))}
 #pwaIosTip.show ~ .last-selection-btn{bottom:max(170px,calc(env(safe-area-inset-bottom) + 170px))}
+
+
+/* FotoJoe GETIN V28 · Weißer Rand · minimal auf V27-Standard aufgebaut */
+.surface-cards{grid-template-columns:repeat(3,1fr)}
+.surface-card.white-border-card{border-color:#f0cfc5;background:#fffaf8}
+.surface-card.white-border-card strong{color:var(--red)}
+.surface-card.white-border-card small{display:block;margin-top:8px;color:#6b6b68;font-size:12px;font-weight:800;line-height:1.35}
+.border-compare{margin-top:28px;padding:24px;border:1px solid var(--line);border-radius:18px;background:#fafaf8}
+.border-compare h3{margin:0 0 7px;font-size:26px;letter-spacing:-.03em}
+.border-compare>p{margin:0;color:var(--muted)}
+.border-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.border-compare-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 10px 25px #0000000b}
+.border-compare-card b{display:block;margin-bottom:10px;font-size:14px}
+.border-compare-image{aspect-ratio:3/2;overflow:hidden;border-radius:8px;background:#fff}
+.border-compare-image.with-white-border{padding:18px;box-shadow:inset 0 0 0 1px #e5e5e2}
+.border-compare-image img{width:100%;height:100%;object-fit:cover}
+.border-compare-image.with-white-border img{object-fit:contain}
+.border-compare-note{margin-top:14px;font-size:13px;color:#555;font-weight:750}
+.choice.white-border-choice{align-items:flex-start}
+.choice.white-border-choice .choice-copy{display:inline-flex;flex-direction:column;gap:2px}
+.choice.white-border-choice small{font-size:10px;line-height:1.25;color:#777;font-weight:700}
+.thumb.white-border-preview{background:#fff;padding:6px;box-shadow:inset 0 0 0 1px #ddd}
+.white-border-inline-hint{display:none;margin-top:8px;padding:9px 11px;border-radius:8px;background:#fff7f4;border:1px solid #ffd1c4;color:#6b3c30;font-size:12px;font-weight:750}
+.white-border-inline-hint.show{display:block}
+@media(max-width:760px){
+  .surface-cards{grid-template-columns:1fr}
+  .border-compare{padding:18px}
+  .border-compare-grid{grid-template-columns:1fr;gap:14px}
+  .border-compare-image.with-white-border{padding:14px}
+}
 </style>
 
 </head>
@@ -691,7 +721,7 @@ body.crop-open{overflow:hidden}
       <div class="hero-actions">
         <a class="btn" href="#formate">▣ Fotos & Produkte auswählen →</a>
       </div>
-      <div class="hero-trust"><span>✦ Matt oder Glänzend</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>✓ Leinwand nur Abholung</span></div>
+      <div class="hero-trust"><span>✦ Matt · Glänzend · Weißer Rand</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>✓ Leinwand nur Abholung</span></div>
     </div>
     <div class="hero-image"><img src="/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven" loading="eager" decoding="async" fetchpriority="high"></div>
   </div>
@@ -840,12 +870,22 @@ body.crop-open{overflow:hidden}
     <div class="surface-photo"><img loading="lazy" decoding="async" src="/motiv-hochzeit.41431ca76d.webp" alt="Hochzeitsfotos als hochwertige Fotoabzüge"></div>
     <div>
       <div class="kicker">Oberflächen</div>
-      <h2>Matt oder Glänzend – <b>Sie haben die Wahl.</b></h2>
+      <h2>Matt, Glänzend oder <b>mit weißem Rand.</b></h2>
       <div class="surface-cards">
-        <button class="surface-card active surface-pick" type="button" data-surface="Glänzend"><strong>Glänzend</strong><p>Leuchtende Farben und brillanter Glanz – ideal für Urlaub, Familie und farbstarke Aufnahmen.</p><em>Glänzend bestellen →</em></button>
-        <button class="surface-card surface-pick" type="button" data-surface="Matt"><strong>Matt</strong><p>Ruhige, elegante Oberfläche – besonders schön für Portraits, Hochzeiten und harmonische Motive.</p><em>Matt bestellen →</em></button>
+        <button class="surface-card active surface-pick" type="button" data-surface="Glänzend" data-white-border="0"><strong>Glänzend</strong><p>Leuchtende Farben und brillanter Glanz – ideal für Urlaub, Familie und farbstarke Aufnahmen.</p><em>Glänzend bestellen →</em></button>
+        <button class="surface-card surface-pick" type="button" data-surface="Matt" data-white-border="0"><strong>Matt</strong><p>Ruhige, elegante Oberfläche – besonders schön für Portraits, Hochzeiten und harmonische Motive.</p><em>Matt bestellen →</em></button>
+        <button class="surface-card surface-pick white-border-card" type="button" data-surface="Glänzend" data-white-border="1"><strong>Weißer Rand</strong><p>Der klassische Foto-Look mit sichtbar weißem Rand.</p><small>nur 10×15 · 13×13 · 13×18 cm · glänzend</small><em>Mit weißem Rand bestellen →</em></button>
       </div>
     </div>
+  </div>
+  <div class="wrap border-compare" aria-label="Vergleich Fotoabzug ohne und mit weißem Rand">
+    <h3>Mit oder ohne weißen Rand?</h3>
+    <p>Das gleiche Urlaubsbild – Sie sehen den Unterschied sofort.</p>
+    <div class="border-compare-grid">
+      <div class="border-compare-card"><b>Ohne weißen Rand</b><div class="border-compare-image"><img loading="lazy" decoding="async" src="/vergleich-weisser-rand-urlaub.webp" alt="Urlaubsbild ohne weißen Rand"></div></div>
+      <div class="border-compare-card"><b>Mit weißem Rand</b><div class="border-compare-image with-white-border"><img loading="lazy" decoding="async" src="/vergleich-weisser-rand-urlaub.webp" alt="Dasselbe Urlaubsbild mit weißem Rand"></div></div>
+    </div>
+    <div class="border-compare-note">Weißer Rand ist ausschließlich in 10×15 cm, 13×13 cm und 13×18 cm erhältlich · automatisch glänzend.</div>
   </div>
 </section>
 
@@ -874,9 +914,9 @@ body.crop-open{overflow:hidden}
     <div class="machine"><div class="printer-illus" aria-label="Illustration eines professionellen Fotolabor-Drucksystems"></div></div>
     <div>
       <div class="kicker">Produktion bei Foto Weber Haigerloch</div>
-      <h3>Gedruckt mit professioneller Labortechnik.</h3>
-      <p>Ihre Fotoabzüge werden bei Foto Weber in Haigerloch auf einem <strong>Epson SureLab D3000</strong> produziert. Für klare Farben, feine Details und eine zuverlässige Produktion in Matt oder Glänzend.</p>
-      <span class="techbadge">EPSON SureLab D3000 · Professional Minilab</span>
+      <h3>Professionelle Fotolabor-Qualität.</h3>
+      <p>Ihre Fotoabzüge werden bei Foto Weber in Haigerloch auf einem <strong>Epson SureLab D3000 Professional Dry Lab</strong> produziert. Das Sechsfarb-System mit Epson UltraChrome D6 ist für professionelle Fotolabore entwickelt und liefert einen großen Farbraum, feine Tonwerte und wasserbeständige Fotoabzüge. Für eine lange Bildbeständigkeit sollten Fotos – wie hochwertige Bilder generell – nicht dauerhaft ungeschützt in direkter Sonne liegen.</p>
+      <span class="techbadge">EPSON SureLab D3000 · UltraChrome D6 · Professional Dry Lab</span>
     </div>
   </div>
 </section>
@@ -886,7 +926,7 @@ body.crop-open{overflow:hidden}
     <div class="order-info">
       <div class="kicker">Der Bestellablauf</div>
       <h2>Bilder hochladen.<br>Stückzahl wählen.</h2>
-      <p>Wählen Sie Fotoformat oder Fototasse, fügen Sie Ihre Bilder hinzu und stellen Sie für jedes Motiv die gewünschte Stückzahl ein. Bei Fotoabzügen wählen Sie zusätzlich Matt oder Glänzend. Der Gesamtpreis wird sofort berechnet.</p>
+      <p>Wählen Sie Fotoformat oder Fototasse, fügen Sie Ihre Bilder hinzu und stellen Sie für jedes Motiv die gewünschte Stückzahl ein. Bei Fotoabzügen wählen Sie zusätzlich Matt, Glänzend oder Weißer Rand. Beim weißen Rand sind automatisch nur 10×15, 13×13 und 13×18 cm in glänzend verfügbar. Der Gesamtpreis wird sofort berechnet.</p>
       <div class="notice" id="priceNotice"><strong>Preise:</strong> Aktuelle Produkt- und Versandpreise werden automatisch geladen. Bei Versand fallen immer Versandkosten an.</div>
     </div>
     
@@ -900,10 +940,12 @@ body.crop-open{overflow:hidden}
     <div class="field">
       <label>2. Oberfläche <span style="font-weight:400;text-transform:none;letter-spacing:0">(nur Fotoabzüge)</span></label>
       <div class="radio-row">
-        <label class="choice"><input type="radio" name="surface" value="Glänzend" checked> Glänzend</label>
-        <label class="choice"><input type="radio" name="surface" value="Matt"> Matt</label>
+        <label class="choice"><input type="radio" name="surface" value="Glänzend" data-white-border="0" checked> Glänzend</label>
+        <label class="choice"><input type="radio" name="surface" value="Matt" data-white-border="0"> Matt</label>
+        <label class="choice white-border-choice"><input type="radio" name="surface" value="Glänzend" data-white-border="1"><span class="choice-copy"><strong>Weißer Rand</strong><small>nur 10×15 · 13×13 · 13×18 cm · glänzend</small></span></label>
       </div>
       <div class="selection-hint" id="surfaceHint" aria-live="polite"></div>
+      <div class="white-border-inline-hint" id="whiteBorderHint">Bei „Weißer Rand“ werden nur 10×15 cm, 13×13 cm und 13×18 cm angezeigt. Die Oberfläche ist automatisch glänzend.</div>
     </div>
   </div>
 
@@ -1019,7 +1061,7 @@ body.crop-open{overflow:hidden}
     <div class="kicker">FAQ</div>
     <h2>Die wichtigsten Fragen.</h2>
     <div class="delivery">
-      <div class="delivery-card"><strong>Welche Oberflächen gibt es?</strong><p>Matt und Glänzend.</p></div>
+      <div class="delivery-card"><strong>Welche Oberflächen gibt es?</strong><p>Matt, Glänzend und Weißer Rand. Weißer Rand ist in 10×15, 13×13 und 13×18 cm erhältlich und automatisch glänzend.</p></div>
       <div class="delivery-card"><strong>Wie groß können die Bilder werden?</strong><p>Fotoabzüge bis 30×48 cm als Festformat und 30-cm-Vario bis 121 cm Länge; Leinwand bis 90×130 cm.</p></div>
       <div class="delivery-card"><strong>Kann ich verschiedene Stückzahlen bestellen?</strong><p>Ja. Für jedes Bild kann die gewünschte Menge einzeln eingestellt werden.</p></div>
     </div>
@@ -1055,7 +1097,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service & Rechtliches</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a><a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener">Impressum</a><a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener">Liefer- & Zahlungsbedingungen</a><a href="https://www.fotoweber.de/j/shop/withdrawal" target="_blank" rel="noopener">Widerrufsbelehrung</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe APP · GETIN V27.1 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe APP · GETIN V28 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1168,6 +1210,47 @@ let items = [];
 let nextId = 1;
 
 
+/* FotoJoe V28 – Weißer Rand, backend-kompatibel als glänzend */
+const WHITE_BORDER_FORMATS = new Set(["10×15 cm","13×13 cm","13×18 cm"]);
+const WHITE_BORDER_CM = 0.5;
+function selectedSurfaceInput(){return document.querySelector('input[name="surface"]:checked');}
+function isWhiteBorderSelected(){return selectedSurfaceInput()?.dataset.whiteBorder==="1";}
+function selectedSurfaceLabel(){return isWhiteBorderSelected()?"Weißer Rand (glänzend)":(selectedSurfaceInput()?.value||"");}
+function isWhiteBorderFormatIndex(index){return WHITE_BORDER_FORMATS.has(PRICE_TABLE[Number(index)]?.[0]||"");}
+function whiteBorderFormatTarget(item){
+  const label=PRICE_TABLE[item.format]?.[0]||"";
+  if(WHITE_BORDER_FORMATS.has(label)) return item.format;
+  const dims=physicalFormat(label);
+  if(dims && dims[1]!=null && Number(dims[0])===Number(dims[1])) return 3; // 13×13
+  if(dims && Math.min(Number(dims[0])||0,Number(dims[1])||0)>=13) return 4; // 13×18
+  return 1; // 10×15
+}
+function normalizeItemsForWhiteBorder(){
+  if(!isWhiteBorderSelected()) return false;
+  let changed=false;
+  items.forEach(item=>{
+    if(itemType(item.format)!=="photo") return;
+    if(isWhiteBorderFormatIndex(item.format)) return;
+    const next=whiteBorderFormatTarget(item);
+    if(item.edited) clearAppliedCrop(item);
+    item.format=next;
+    changed=true;
+  });
+  return changed;
+}
+function currentFormatAllowed(index,selectedIndex=null){
+  if(!isWhiteBorderSelected()) return true;
+  if(isWhiteBorderFormatIndex(index)) return true;
+  // Eine bereits vorhandene Fototasse bleibt in einer gemischten Bestellung erhalten,
+  // wird aber nicht als neue Weißrand-Option angeboten.
+  return selectedIndex!=null && Number(index)===Number(selectedIndex) && itemType(index)==="mug";
+}
+function updateWhiteBorderHint(){
+  const hint=document.getElementById("whiteBorderHint");
+  if(hint) hint.classList.toggle("show",isWhiteBorderSelected());
+}
+
+
 /* FotoJoe V25 – Review-Sperre gegen veraltete Bestellübersicht */
 let LAST_REVIEW_FINGERPRINT=null;
 
@@ -1194,7 +1277,7 @@ function liveOrderFingerprint(){
     };
   });
   return JSON.stringify({
-    surface:document.querySelector('input[name="surface"]:checked')?.value || "",
+    surface:selectedSurfaceLabel(),
     shipping:document.querySelector('input[name="shipping"]:checked')?.value || "",
     firstName:val("firstName"),lastName:val("lastName"),email:val("email"),phone:val("phone"),
     street:val("street"),zip:val("zip"),city:val("city"),items:liveItems
@@ -1226,7 +1309,7 @@ function syncItemsFromVisibleRows(){
 function orderFingerprint(){
   const val=id=>document.getElementById(id)?.value?.trim?.() || "";
   return JSON.stringify({
-    surface:document.querySelector('input[name="surface"]:checked')?.value || "",
+    surface:selectedSurfaceLabel(),
     shipping:document.querySelector('input[name="shipping"]:checked')?.value || "",
     firstName:val("firstName"),lastName:val("lastName"),email:val("email"),phone:val("phone"),
     street:val("street"),zip:val("zip"),city:val("city"),
@@ -1276,13 +1359,13 @@ function populateDefaultFormat(preserveValue=true){
   const previous=preserveValue ? defaultFormat.value : "1";
   defaultFormat.innerHTML="";
   PRICE_TABLE.forEach(([label,price],i)=>{
-    if(!isLabelAvailable(label)) return;
+    if(!isLabelAvailable(label) || !currentFormatAllowed(i)) return;
     const o=document.createElement("option");
     o.value=i;
     o.textContent=`${label} · ${euro(price)}`;
     defaultFormat.appendChild(o);
   });
-  if(previous!=="" && PRICE_TABLE[Number(previous)] && isLabelAvailable(PRICE_TABLE[Number(previous)][0])){
+  if(previous!=="" && PRICE_TABLE[Number(previous)] && isLabelAvailable(PRICE_TABLE[Number(previous)][0]) && currentFormatAllowed(Number(previous))){
     defaultFormat.value=previous;
   }else if(defaultFormat.options.length){
     defaultFormat.value=defaultFormat.options[0].value;
@@ -1292,7 +1375,7 @@ function populateDefaultFormat(preserveValue=true){
 function backendProductLabel(p){return p?.label || p?.name || p?.title || "";}
 
 function selectedSurfaceCode(){
-  return document.querySelector('input[name="surface"]:checked')?.value==="Matt" ? "matte" : "glossy";
+  return selectedSurfaceInput()?.value==="Matt" ? "matte" : "glossy";
 }
 
 function settingCents(settings,key,fallback){
@@ -1375,7 +1458,7 @@ function syncBackendPrices(preserve=true){
   if(updates){
     PRICE_TABLE=next;
     populateDefaultFormat(false);
-    if(previous!=="" && PRICE_TABLE[Number(previous)] && isLabelAvailable(PRICE_TABLE[Number(previous)][0])) defaultFormat.value=previous;
+    if(previous!=="" && PRICE_TABLE[Number(previous)] && isLabelAvailable(PRICE_TABLE[Number(previous)][0]) && currentFormatAllowed(Number(previous))) defaultFormat.value=previous;
     updateVisibleMugPrices();
     syncFormatCardAvailability();
     if(items.length) renderFiles();
@@ -1429,7 +1512,7 @@ loadBackendPrices();
 
 function formatOptions(selected){
   return PRICE_TABLE.map(([label,price],i) => {
-    if(!isLabelAvailable(label)) return "";
+    if(!isLabelAvailable(label) || !currentFormatAllowed(i,selected)) return "";
     return `<option value="${i}" ${i===selected?"selected":""}>${label} · ${euro(price)}</option>`;
   }).join("");
 }
@@ -1558,12 +1641,14 @@ function defaultCropOrientation(item){
   if(!dims || dims[1]==null || Number(dims[0])===Number(dims[1])) return "square";
   return (item.pixelHeight||0)>(item.pixelWidth||0) ? "portrait" : "landscape";
 }
-function cropRectFor(item,state){
+function cropRectFor(item,state,withWhiteBorder=isWhiteBorderSelected() && isWhiteBorderFormatIndex(item?.format)){
   if(!item?.pixelWidth || !item?.pixelHeight) return null;
   const orientation=state.orientation==="square" ? "landscape" : state.orientation;
   const ps=cropPrintSize(item,orientation);
   if(!ps) return null;
-  const W=item.pixelWidth,H=item.pixelHeight,target=ps.w/ps.h,imgRatio=W/H;
+  const innerW=withWhiteBorder?Math.max(0.1,ps.w-2*WHITE_BORDER_CM):ps.w;
+  const innerH=withWhiteBorder?Math.max(0.1,ps.h-2*WHITE_BORDER_CM):ps.h;
+  const W=item.pixelWidth,H=item.pixelHeight,target=innerW/innerH,imgRatio=W/H;
   let baseW,baseH;
   if(imgRatio>target){baseH=H;baseW=H*target;}else{baseW=W;baseH=W/target;}
   const z=Math.max(1,Math.min(3,Number(state.zoom)||1));
@@ -1572,7 +1657,7 @@ function cropRectFor(item,state){
   let cx=Number.isFinite(state.cx)?state.cx:W/2,cy=Number.isFinite(state.cy)?state.cy:H/2;
   cx=Math.min(maxX,Math.max(minX,cx));cy=Math.min(maxY,Math.max(minY,cy));
   state.cx=cx;state.cy=cy;
-  return {x:cx-w/2,y:cy-h/2,w,h,printW:ps.w,printH:ps.h};
+  return {x:cx-w/2,y:cy-h/2,w,h,printW:innerW,printH:innerH,outerPrintW:ps.w,outerPrintH:ps.h,withWhiteBorder};
 }
 function cropQualityFor(item,state){
   const r=cropRectFor(item,state);
@@ -1597,7 +1682,14 @@ function drawCrop(){
   cropCtx.save();cropCtx.fillStyle="#fff";cropCtx.fillRect(0,0,cropCanvas.width,cropCanvas.height);
   cropCtx.imageSmoothingEnabled=true;cropCtx.imageSmoothingQuality="high";
   cropCtx.filter=CROP_STATE.optimize ? "brightness(1.03) contrast(1.04) saturate(1.04)" : "none";
-  cropCtx.drawImage(CROP_IMAGE,r.x,r.y,r.w,r.h,0,0,cropCanvas.width,cropCanvas.height);cropCtx.restore();
+  if(r.withWhiteBorder){
+    const bx=Math.max(1,Math.round(cropCanvas.width*(WHITE_BORDER_CM/r.outerPrintW)));
+    const by=Math.max(1,Math.round(cropCanvas.height*(WHITE_BORDER_CM/r.outerPrintH)));
+    cropCtx.drawImage(CROP_IMAGE,r.x,r.y,r.w,r.h,bx,by,Math.max(1,cropCanvas.width-2*bx),Math.max(1,cropCanvas.height-2*by));
+  }else{
+    cropCtx.drawImage(CROP_IMAGE,r.x,r.y,r.w,r.h,0,0,cropCanvas.width,cropCanvas.height);
+  }
+  cropCtx.restore();
   const q=cropQualityFor(CROP_ACTIVE_ITEM,CROP_STATE);
   cropQuality.innerHTML=`<span class="qualitybadge ${q.kind}">${escapeHtml(q.label)}</span><span class="qualitydetail">${escapeHtml(q.detail)}</span>`;
   cropZoomValue.textContent=Number(CROP_STATE.zoom).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})+"×";
@@ -1619,7 +1711,7 @@ async function openCropEditor(item){
     cropZoom.value=String(CROP_STATE.zoom);cropOptimize.checked=CROP_STATE.optimize;
     const ps=cropPrintSize(item,CROP_STATE.orientation==="square"?"landscape":CROP_STATE.orientation);
     cropOrientationBox.style.display=ps?.square?"none":"block";
-    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"} · Verschieben · mit zwei Fingern oder Regler zoomen`;
+    document.getElementById("cropSubtitle").textContent=`${PRICE_TABLE[item.format]?.[0]||"Foto"}${isWhiteBorderSelected()?" · Weißer Rand (glänzend)":""} · Verschieben · mit zwei Fingern oder Regler zoomen`;
     cropProcessing.classList.remove("show");cropModal.classList.add("show");cropModal.setAttribute("aria-hidden","false");document.body.classList.add("crop-open");drawCrop();
   }catch(err){alert(err?.message||"Ausschnittbearbeitung konnte nicht geöffnet werden.");CROP_ACTIVE_ITEM=null;CROP_IMAGE=null;CROP_STATE=null;}
 }
@@ -1633,7 +1725,7 @@ function resetCropEditor(){
 function revokeEditedPreview(item){if(item?.editedPreviewUrl){try{URL.revokeObjectURL(item.editedPreviewUrl);}catch(_e){}item.editedPreviewUrl="";}}
 function clearAppliedCrop(item){if(!item)return;revokeEditedPreview(item);item.uploadFile=null;item.cropState=null;item.editedPixelWidth=0;item.editedPixelHeight=0;item.edited=false;}
 async function makeCroppedFile(item,state){
-  const r=cropRectFor(item,state);if(!r)throw new Error("Ausschnitt konnte nicht berechnet werden.");
+  const r=cropRectFor(item,state,false);if(!r)throw new Error("Ausschnitt konnte nicht berechnet werden.");
   const maxSide=6500,scale=Math.min(1,maxSide/Math.max(r.w,r.h)),outW=Math.max(1,Math.round(r.w*scale)),outH=Math.max(1,Math.round(r.h*scale));
   const c=document.createElement("canvas");c.width=outW;c.height=outH;const ctx=c.getContext("2d",{alpha:false});
   ctx.fillStyle="#fff";ctx.fillRect(0,0,outW,outH);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";ctx.filter=state.optimize?"brightness(1.03) contrast(1.04) saturate(1.04)":"none";
@@ -1646,6 +1738,31 @@ async function makeCroppedFile(item,state){
   const file=new File([blob],filename,{type:outType,lastModified:Date.now()});
   return {file,width:outW,height:outH,previewUrl:URL.createObjectURL(blob)};
 }
+
+async function makeWhiteBorderUploadFile(item){
+  if(itemType(item.format)!=="photo" || !isWhiteBorderFormatIndex(item.format)) return item.uploadFile||item.file;
+  const img=await loadImageForCrop(item);
+  const state=item.cropState?{...item.cropState}:{orientation:defaultCropOrientation(item),zoom:1,cx:item.pixelWidth/2,cy:item.pixelHeight/2,optimize:false};
+  const r=cropRectFor(item,state,true);
+  if(!r) throw new Error("Weißer Rand konnte für dieses Bild nicht berechnet werden.");
+  const innerFracW=Math.max(0.05,(r.outerPrintW-2*WHITE_BORDER_CM)/r.outerPrintW);
+  const innerFracH=Math.max(0.05,(r.outerPrintH-2*WHITE_BORDER_CM)/r.outerPrintH);
+  const rawOuterW=r.w/innerFracW,rawOuterH=r.h/innerFracH;
+  const maxSide=6500,scale=Math.min(1,maxSide/Math.max(rawOuterW,rawOuterH));
+  const outW=Math.max(1,Math.round(rawOuterW*scale)),outH=Math.max(1,Math.round(rawOuterH*scale));
+  const bx=Math.max(1,Math.round(outW*(WHITE_BORDER_CM/r.outerPrintW)));
+  const by=Math.max(1,Math.round(outH*(WHITE_BORDER_CM/r.outerPrintH)));
+  const c=document.createElement("canvas");c.width=outW;c.height=outH;const ctx=c.getContext("2d",{alpha:false});
+  ctx.fillStyle="#fff";ctx.fillRect(0,0,outW,outH);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";ctx.filter=state.optimize?"brightness(1.03) contrast(1.04) saturate(1.04)":"none";
+  ctx.drawImage(img,r.x,r.y,r.w,r.h,bx,by,Math.max(1,outW-2*bx),Math.max(1,outH-2*by));
+  const srcType=(item.file?.type||"").toLowerCase();
+  const outType=srcType==="image/png"?"image/png":srcType==="image/webp"?"image/webp":"image/jpeg";
+  const ext=outType==="image/png"?"png":outType==="image/webp"?"webp":"jpg";
+  const blob=await new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(new Error("Weißrand-Datei konnte nicht erzeugt werden.")),outType,outType==="image/png"?undefined:0.94));
+  const base=(item.name||"foto").replace(/\.[^.]+$/,"");
+  return new File([blob],`${base}_weisser_rand.${ext}`,{type:outType,lastModified:Date.now()});
+}
+
 async function applyCropEditor(){
   if(!CROP_ACTIVE_ITEM||!CROP_STATE)return;
   const btn=document.getElementById("cropApply");btn.disabled=true;cropProcessing.classList.add("show");
@@ -1843,7 +1960,7 @@ function renderFiles(){
     const safeName=escapeHtml(item.name);
     const q=qualityInfo(item);
     row.innerHTML=`
-      <div class="thumb ${itemType(item.format)==="photo"?"crop-clickable":""}" title="${itemType(item.format)==="photo"?"Bild bearbeiten":""}">
+      <div class="thumb ${itemType(item.format)==="photo"?"crop-clickable":""} ${isWhiteBorderSelected() && isWhiteBorderFormatIndex(item.format)?"white-border-preview":""}" title="${itemType(item.format)==="photo"?"Bild bearbeiten":""}">
         <img src="${item.editedPreviewUrl || item.url}" alt="">
       </div>
       <div class="filemeta">
@@ -1994,7 +2111,7 @@ function updateSummary(){
   document.getElementById("sumImageCount").textContent=items.length;
   document.getElementById("sumPrintCount").textContent=printCount;
   const hasPhotos=items.some(isPhotoItem);
-  document.getElementById("sumSurface").textContent=hasPhotos ? document.querySelector('input[name="surface"]:checked').value : (items.length ? "–" : document.querySelector('input[name="surface"]:checked').value);
+  document.getElementById("sumSurface").textContent=hasPhotos ? selectedSurfaceLabel() : (items.length ? "–" : selectedSurfaceLabel());
   document.getElementById("sumPhotos").textContent=euro(pricing.productCents/100);
   document.getElementById("sumShipping").textContent=euro(shipping);
   document.getElementById("sumTotal").textContent=euro(pricing.productCents/100+shipping);
@@ -2009,12 +2126,16 @@ function updateProductHint(){
   const idx=Number(defaultFormat.value || 0);
   if(!surfaceHint) return;
   if(itemType(idx)==="mug"){
-    surfaceHint.textContent="Für Fototassen ist die Auswahl Matt/Glänzend nicht relevant. Sie können trotzdem Fotoabzüge und Fototassen in einer Bestellung mischen.";
+    surfaceHint.textContent="Für Fototassen ist die Oberflächenwahl nicht relevant. Sie können trotzdem Fotoabzüge und Fototassen in einer Bestellung mischen.";
     surfaceHint.classList.add("show");
+  }else if(isWhiteBorderSelected()){
+    surfaceHint.textContent="";
+    surfaceHint.classList.remove("show");
   }else{
     surfaceHint.textContent="";
     surfaceHint.classList.remove("show");
   }
+  updateWhiteBorderHint();
 }
 defaultFormat.addEventListener("change",updateProductHint);
 updateProductHint();
@@ -2071,7 +2192,17 @@ function makeOrderNo(){
 document.querySelectorAll('input[name="surface"],input[name="shipping"]').forEach(el=>{
   el.addEventListener("change",()=>{
     invalidateReview(el.name==="surface" ? "Oberfläche geändert – bitte Bestellung erneut prüfen." : "Lieferart geändert – bitte Bestellung erneut prüfen.");
-    if(el.name==="surface" && BACKEND_PRODUCTS.length) syncBackendPrices(true);
+    if(el.name==="surface"){
+      const normalized=normalizeItemsForWhiteBorder();
+      if(BACKEND_PRODUCTS.length) syncBackendPrices(true);
+      else populateDefaultFormat(true);
+      updateProductHint();
+      if(items.length || normalized) renderFiles();
+      document.querySelectorAll(".surface-pick").forEach(btn=>{
+        const wb=btn.dataset.whiteBorder==="1";
+        btn.classList.toggle("active",btn.dataset.surface===el.value && wb===isWhiteBorderSelected());
+      });
+    }
     updateSummary();
     toggleAddress();
   });
@@ -2277,12 +2408,11 @@ document.querySelectorAll(".format-card[data-format-index]").forEach(btn=>{
 document.querySelectorAll(".surface-pick[data-surface]").forEach(btn=>{
   btn.addEventListener("click",()=>{
     const wanted=btn.dataset.surface;
-    const radio=document.querySelector(`input[name="surface"][value="${wanted}"]`);
+    const wantedBorder=btn.dataset.whiteBorder==="1";
+    const radio=[...document.querySelectorAll(`input[name="surface"][value="${wanted}"]`)].find(r=>(r.dataset.whiteBorder==="1")===wantedBorder);
     if(radio){
       radio.checked=true;
-      document.querySelectorAll(".surface-pick").forEach(x=>x.classList.toggle("active",x===btn));
-      if(BACKEND_PRODUCTS.length) syncBackendPrices(true);
-      updateSummary();
+      radio.dispatchEvent(new Event("change",{bubbles:true}));
     }
     goToOrder();
   });
@@ -2291,7 +2421,7 @@ document.querySelectorAll(".surface-pick[data-surface]").forEach(btn=>{
 document.querySelectorAll('input[name="surface"]').forEach(radio=>{
   radio.addEventListener("change",()=>{
     document.querySelectorAll(".surface-pick").forEach(btn=>{
-      btn.classList.toggle("active",btn.dataset.surface===radio.value);
+      btn.classList.toggle("active",btn.dataset.surface===radio.value && (btn.dataset.whiteBorder==="1")===(radio.dataset.whiteBorder==="1"));
     });
   });
 });
@@ -2389,9 +2519,13 @@ async function uploadOne(item, itemIndex, orderId, token, surface){
   const code=formatCode(label);
   if(!code) throw new Error("Unbekanntes Format: "+label);
 
-  const surfaceCode=itemType(item.format)==="mug" ? "none" : (surface==="Glänzend" ? "glossy" : "matte");
+  const surfaceCode=itemType(item.format)==="mug" ? "none" : (surface==="Matt" ? "matte" : "glossy");
 
-  const uploadFile=item.uploadFile || item.file;
+  let uploadFile=item.uploadFile || item.file;
+  if(isWhiteBorderSelected() && itemType(item.format)==="photo" && isWhiteBorderFormatIndex(item.format)){
+    try{ uploadFile=await makeWhiteBorderUploadFile(item); }
+    catch(err){ throw new Error(`${item.name}: Weißer Rand konnte in diesem Browser nicht erzeugt werden. ${err?.message||""}`.trim()); }
+  }
   const response=await fetch(UPLOAD_API_URL,{
     method:"POST",
     headers:{
@@ -2627,7 +2761,7 @@ updateSummary();
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
-        const reg = await navigator.serviceWorker.register("/app/sw.js?v=27.1", {scope:"/app/", updateViaCache:"none"});
+        const reg = await navigator.serviceWorker.register("/app/sw.js?v=27", {scope:"/app/", updateViaCache:"none"});
         await reg.update();
       } catch (err) {
         console.warn("FotoJoe APP: Service Worker", err);

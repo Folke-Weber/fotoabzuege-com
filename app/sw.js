@@ -1,8 +1,8 @@
-/* FotoJoe APP · GETIN V27.1
+/* FotoJoe APP · GETIN V28
    Absichtlich kein API-/Upload-Caching.
    Navigation: Netzwerk zuerst, damit GETIN-Updates sofort greifen.
 */
-const APP_CACHE = "fotojoe-app-v27-1-launch-20260829";
+const APP_CACHE = "fotojoe-app-v28-weisser-rand-20260831";
 const STATIC = [
   "/app/offline.html",
   "/app/manifest.webmanifest",
