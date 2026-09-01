@@ -1,56 +1,46 @@
-# fotoabzüge.com — Fotoabzüge von Foto Weber Haigerloch
+# fotoabzüge.com — FotoJoe · Foto Weber Haigerloch
 
-> Öffentliche Website und installierbare FotoJoe-Web-App zum Bestellen von Fotoabzügen.
-> Betreiber ist Foto Weber, Folke Weber e.K., Unterstadt 14, 72401 Haigerloch,
-> Baden-Württemberg. Fotoabzüge werden im eigenen Fotolabor in Matt oder Glänzend produziert.
+> FotoJoe – Fotos auswählen. Bestellen. Fertig.
+> Fotos bestellen. Einfach am PC & Smartphone.
+> Bei Abholung können Sie Ihre Farbbilder in 1 Stunde abholen.
 
-## Kernangebot
-- Fotoabzüge in klassischen, quadratischen, Vario- und Panoramaformaten
-- Auswahl Matt oder Glänzend
-- Bestellung direkt im Browser oder über die installierbare FotoJoe-App
-- Bilder vom Smartphone oder PC auswählen
-- Ausschnitt verschieben und zoomen; auf Mobilgeräten auch Zwei-Finger-Zoom
-- Qualitätsanzeige für die Pixelauflösung des gewählten Druckformats
-- optionale dezente Bild- und Farboptimierung
+## Angebot
+- Fotoabzüge direkt am PC oder Smartphone bestellen
+- Matt oder Glänzend
+- Weißer Rand: 10×15 cm, 13×13 cm und 13×18 cm; automatisch glänzend
+- klassische Formate, quadratische Formate, Vario und Panorama
+- Ausschnitt vor der Bestellung verschieben und zoomen
+- Qualitätsanzeige passend zum gewählten Druckformat
 - Abholung bei Foto Weber in Haigerloch oder Versand
-- Fototassen und ausgewählte weitere Fotoprodukte
+- professionelle Produktion auf Epson SureLab D3000 Professional Dry Lab mit Epson UltraChrome D6
 
-## Preise
-Produkt-, Aktions- und Versandpreise werden im Bestellprozess aus dem zentralen FotoJoe-Backend geladen.
-Für aktuelle Preise ist die Anzeige im Bestellprozess maßgeblich; diese Datei nennt bewusst keine festen Preise.
+## Region und Abholung
+Abholort: Foto Weber, Unterstadt 14, 72401 Haigerloch.
+Bei Abholung können Sie Ihre Farbbilder in 1 Stunde abholen.
 
-## Bestellablauf
-1. Produkt oder Format wählen
-2. Matt oder Glänzend wählen, sofern es sich um Fotoabzüge handelt
-3. Bilder auswählen
-4. Ausschnitt, Qualität und Stückzahl prüfen
-5. Abholung oder Versand wählen und Kontaktdaten eingeben
-6. Bestellsumme prüfen und Bestellung absenden
+Regional angesprochen werden insbesondere:
+Horb, Freudenstadt, Rottenburg, Ergenzingen, Eutingen im Gäu, Starzach, Hirrlingen, Rangendingen, Hechingen, Empfingen, Sulz am Neckar, Rosenfeld, Geislingen, Grosselfingen, Bisingen, Balingen und Albstadt.
 
 ## Wichtige Seiten
-- Startseite und Bestellung: https://fotoabzüge.com/
-- FotoJoe-App: https://fotoabzüge.com/app/
+- Startseite / Bestellung: https://fotoabzüge.com/
 - Fotoabzüge vom Handy: https://fotoabzüge.com/fotoabzuege-vom-handy/
 - Fotoabzüge 10×15: https://fotoabzüge.com/fotoabzuege-10x15/
 - Matt oder Glänzend: https://fotoabzüge.com/fotoabzuege-matt-oder-glaenzend/
 - Smartphone-Fotos ohne Beschnitt: https://fotoabzüge.com/smartphone-fotos-ohne-beschnitt/
-- Fotoabzüge in Haigerloch: https://fotoabzüge.com/fotoabzuege-haigerloch/
+- Abholung in Haigerloch: https://fotoabzüge.com/fotoabzuege-haigerloch/
+- Horb & Landkreis Freudenstadt: https://fotoabzüge.com/fotoabzuege-horb-freudenstadt/
+- Hechingen & Umgebung: https://fotoabzüge.com/fotoabzuege-hechingen-umgebung/
+- Balingen & Albstadt: https://fotoabzüge.com/fotoabzuege-balingen-albstadt/
+- Rottenburg & Ergenzingen: https://fotoabzüge.com/fotoabzuege-rottenburg-ergeningen/
 
-## Häufige Fragen und kurze Antworten
-- Kann ich Fotoabzüge direkt vom Smartphone bestellen? Ja, im mobilen Browser oder über FotoJoe.
-- Kann ich den Bildausschnitt ändern? Ja, der Ausschnitt kann verschoben und gezoomt werden.
-- Gibt es Matt und Glänzend? Ja, Fotoabzüge können in beiden Oberflächen bestellt werden.
-- Was mache ich bei Smartphone-Fotos mit anderem Seitenverhältnis? Dafür stehen unter anderem Varioformate zur Auswahl.
-- Kann ich lokal abholen? Ja, Abholung bei Foto Weber, Unterstadt 14, 72401 Haigerloch, ist auswählbar.
+## Preise
+Aktuelle Produkt-, Aktions- und Versandpreise werden im FotoJoe-Bestellprozess aus dem zentralen Backend geladen. Diese Datei nennt bewusst keine festen Produktpreise.
 
-## Betreiber und Kontakt
+## Betreiber
 Foto Weber · Folke Weber e.K. · Unterstadt 14 · 72401 Haigerloch · Deutschland
 Telefon: +49 7474 6248
 E-Mail: foto-weber-haigerloch@t-online.de
 Unternehmenswebsite: https://www.fotoweber.de/
 
-## Technische Hinweise für Such- und Antwortsysteme
-- Kanonische öffentliche Domain: https://fotoabzüge.com/
-- IDN/ASCII: https://xn--fotoabzge-w9a.com/
-- Die /app/ ist bewusst noindex; öffentliche Informations- und Ratgeberseiten sind indexierbar.
-- OAI-SearchBot darf die öffentlichen Seiten crawlen.
+## Crawling
+OAI-SearchBot und gängige Suchcrawler dürfen die öffentlichen Seiten crawlen. Die /app/ ist bewusst noindex; die öffentliche Startseite und Informationsseiten sind indexierbar.

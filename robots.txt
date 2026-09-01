@@ -1,41 +1,43 @@
-# robots.txt · fotoabzüge.com (Foto Weber Haigerloch)
-# Öffentliche Startseite für Suchmaschinen und Answer-Engines zugänglich.
+# robots.txt · fotoabzüge.com · FotoJoe V29
+# Öffentliche Informations- und Bestellseiten sind für Suchmaschinen und Answer-Engines zugänglich.
 # /app/ bleibt per Meta-Robots noindex; Crawling ist erlaubt, damit noindex gelesen werden kann.
 
 User-agent: *
 Allow: /
 
-# OpenAI Search / ChatGPT
+# ChatGPT Search
 User-agent: OAI-SearchBot
 Allow: /
 
+# ChatGPT user-initiated browsing / agent access
 User-agent: ChatGPT-User
 Allow: /
 
-# GPTBot betrifft Training, nicht die ChatGPT-Suche. Aktuell zugelassen.
+# OpenAI training crawler – separat von Search
 User-agent: GPTBot
 Allow: /
 
-# Weitere Crawler
+# Google Search
 User-agent: Googlebot
 Allow: /
 
+# Microsoft / Bing
 User-agent: Bingbot
 Allow: /
 
+# Weitere Answer-Engines
 User-agent: PerplexityBot
 Allow: /
-
 User-agent: ClaudeBot
 Allow: /
 
+# Google-Extended steuert die Nutzung für bestimmte generative Systeme; nicht das normale Google-Ranking.
 User-agent: Google-Extended
 Allow: /
 
 User-agent: Applebot
 Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://xn--fotoabzge-w9a.com/sitemap.xml
+Sitemap: https://www.xn--fotoabzge-w9a.com/sitemap.xml
