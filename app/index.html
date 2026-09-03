@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe APP · GETIN V28 · LAUNCH · MOBILE UX · 2026-08-27 -->
+<!-- FotoJoe APP · GETIN V31 · LAUNCH · MOBILE UX · 2026-09-03 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -17,9 +17,9 @@
 <meta name="apple-mobile-web-app-title" content="FotoJoe">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="/app/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/app/icons/icon-192-v26.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/app/icons/icon-512-v26.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/app/icons/apple-touch-icon-180-v26.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/app/icons/icon-192-v31.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/app/icons/icon-512-v31.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/app/icons/apple-touch-icon-180-v31.png">
 <link rel="preload" as="image" href="/hero-fotoabzuege.0bb4bdc6fd.webp" type="image/webp" fetchpriority="high">
 <link rel="canonical" href="https://fotoabzüge.com/">
 <meta property="og:title" content="Fotoabzüge online bestellen – Foto Weber Haigerloch">
@@ -661,7 +661,7 @@ body.crop-open{overflow:hidden}
 #pwaIosTip.show ~ .last-selection-btn{bottom:max(170px,calc(env(safe-area-inset-bottom) + 170px))}
 
 
-/* FotoJoe GETIN V28 · Weißer Rand · minimal auf V27-Standard aufgebaut */
+/* FotoJoe GETIN V31 · Weißer Rand · stabile Funktionsbasis */
 .surface-cards{grid-template-columns:repeat(3,1fr)}
 .surface-card.white-border-card{border-color:#f0cfc5;background:#fffaf8}
 .surface-card.white-border-card strong{color:var(--red)}
@@ -1097,7 +1097,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service & Rechtliches</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a><a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener">Impressum</a><a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener">Liefer- & Zahlungsbedingungen</a><a href="https://www.fotoweber.de/j/shop/withdrawal" target="_blank" rel="noopener">Widerrufsbelehrung</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe APP · GETIN V28 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe APP · GETIN V31 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1210,7 +1210,7 @@ let items = [];
 let nextId = 1;
 
 
-/* FotoJoe V28 – Weißer Rand, backend-kompatibel als glänzend */
+/* FotoJoe V31 – Weißer Rand, backend-kompatibel als glänzend */
 const WHITE_BORDER_FORMATS = new Set(["10×15 cm","13×13 cm","13×18 cm"]);
 const WHITE_BORDER_CM = 0.5;
 function selectedSurfaceInput(){return document.querySelector('input[name="surface"]:checked');}
@@ -2761,7 +2761,7 @@ updateSummary();
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
-        const reg = await navigator.serviceWorker.register("/app/sw.js?v=27", {scope:"/app/", updateViaCache:"none"});
+        const reg = await navigator.serviceWorker.register("/app/sw.js?v=31", {scope:"/app/", updateViaCache:"none"});
         await reg.update();
       } catch (err) {
         console.warn("FotoJoe APP: Service Worker", err);

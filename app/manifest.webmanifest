@@ -5,7 +5,7 @@
   "description": "FotoJoe – die schlanke Bildbestellung für Fotoabzüge und Fotoprodukte von JustForWork bei Foto Weber Haigerloch. Jetzt auch mit weißem Rand in 10×15, 13×13 und 13×18 cm.",
   "lang": "de-DE",
   "dir": "ltr",
-  "start_url": "/app/?v=28",
+  "start_url": "/app/?v=31",
   "scope": "/app/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -16,19 +16,19 @@
   ],
   "icons": [
     {
-      "src": "/app/icons/icon-192-v26.png",
+      "src": "/app/icons/icon-192-v31.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/app/icons/icon-512-v26.png",
+      "src": "/app/icons/icon-512-v31.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/app/icons/icon-maskable-512-v26.png",
+      "src": "/app/icons/icon-maskable-512-v31.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
