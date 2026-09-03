@@ -1,0 +1,82 @@
+FotoJoe V32 – TECHNISCHES TESTPROTOKOLL
+Datum: 03.09.2026
+Stand: Browser + App + PEARL-Fotokalender + QR-Code
+
+ERGEBNIS: PASS
+
+1. STATISCHE PRÜFUNGEN – 37 PASS
+- V32-Kern-Dateien vorhanden
+- Browser, App und beide Kalender tragen V32
+- Manifest JSON gültig; Start-URL /app/?v=32
+- Kalender-Shortcut im App-Manifest vorhanden
+- V32-App-Icons vorhanden
+- sitemap.xml gültig
+- QR-Code technisch dekodiert: https://xn--fotoabzge-w9a.com/app/?v=32
+- Service Worker JavaScript syntaktisch gültig
+- Service-Worker-Cache auf V32; POST/API-Uploads werden nicht gecacht
+- Kalender-Upload nutzt serialisierte Upload-Warteschlange
+- neue Bilder werden ausschließlich in freie Plätze ergänzt
+- freier Platz wird nach Bilddekodierung erneut geprüft
+- Bildtausch vorhanden
+- Bildverbesserung einzeln und für alle Bilder vorhanden
+- Bildverbesserung wird im Produktionsrenderer angewendet
+- Browser und App enthalten die allgemeine FAQ „Kann ich auch aus anderen Orten bestellen?“
+- Browser und App referenzieren den V32-QR-Code
+- lokale Dateireferenzen / JSON-LD / Inline-JavaScript geprüft
+
+2. CHROMIUM-FUNKTIONSTESTS – 40 PASS
+Browser V32:
+- QR-Code sichtbar und geladen
+- Kalender-Einstieg vorhanden
+- FAQ vorhanden
+- Weißer Rand: genau 10×15, 13×13, 13×18
+- Rückwechsel auf Glänzend stellt die normalen Formate wieder her
+- normaler Fotoupload: 1 Bild + danach 3 Bilder = 4 Bilder; nichts wird gelöscht
+- keine JavaScript-Page-Errors
+
+App V32 Desktop:
+- QR-Code sichtbar und geladen
+- Kalender-Einstieg vorhanden
+- FAQ vorhanden
+- Weißer Rand korrekt
+- normaler Fotoupload ergänzt bestehende Bilder
+- keine JavaScript-Page-Errors
+
+Kalender Browser V32:
+- Geburtstagskalender Start September -> Ende August
+- 1 Bild laden -> 1/13
+- danach 8 weitere -> 9/13
+- erstes Bild bleibt erhalten
+- danach weitere 4 -> 13/13
+- Titelbild <-> Dezember ohne neuen Upload getauscht
+- einzelne Bildverbesserung funktioniert
+- „Alle Bilder verbessern“ -> 13/13
+- keine JavaScript-Page-Errors
+
+Kalender App V32:
+- Start September -> Ende August
+- 1 Bild + danach 8 weitere -> 9/13
+- erstes Bild bleibt erhalten
+- keine JavaScript-Page-Errors
+
+App Mobil 390×844:
+- kein horizontaler Überlauf
+- Desktop-QR wird mobil ausgeblendet
+- direkter App-/Installationslink wird angezeigt
+- Kalender-Einstieg vorhanden
+
+3. PRODUKTIONSPAKETE – PASS
+20×30 cm:
+- 13 JPEG-Seiten + JSON/TXT-Manifest
+- 2362×3543 Pixel
+- Bildverbesserung im Manifest für 13/13 Seiten bestätigt
+
+30×40 cm Geburtstagskalender:
+- Zeitraum September 2027 – August 2028
+- Dateinamen 01_September_2027.jpg bis 12_August_2028.jpg
+- 3543×4724 Pixel
+
+WICHTIG:
+- Es wurde bei diesen Tests KEIN echter zahlungspflichtiger Produktivauftrag an das Live-Backend gesendet.
+- Backend-Antworten wurden für die UI-Funktionstests simuliert, damit keine Kunden-/Testbestellung entsteht.
+- Produktions-ZIP-Dateien wurden lokal im Browser erzeugt und anschließend technisch geprüft.

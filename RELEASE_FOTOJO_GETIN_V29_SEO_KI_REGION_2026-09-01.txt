@@ -1,0 +1,25 @@
+FotoJoe GETIN V29 · SEO/KI/REGION · 2026-09-01
+
+Basis: erfolgreich live getestete FotoJoe V28.
+
+V29 ändert KEINE Bestell-, Upload-, Crop-, Preis-, Backend-, Tenant- oder GETOUT-Logik.
+
+Neu:
+- Hauptaussagen sichtbar: „FotoJoe – Fotos auswählen. Bestellen. Fertig.“ und „Fotos bestellen. Einfach am PC & Smartphone.“
+- feste Aussage: „Bei Abholung können Sie Ihre Farbbilder in 1 Stunde abholen.“
+- regionaler Startseitenblock mit den vereinbarten Orten
+- 4 eigenständige regionale Informationsseiten
+- Qualitäts-/FAQ-Inhalte klarer für Such- und Antwortsysteme
+- interne Links erweitert
+- sitemap.xml auf 10 öffentliche URLs erweitert
+- robots.txt mit OAI-SearchBot, Googlebot und weiteren Crawlern
+- llms.txt aktualisiert
+- FAQPage-JSON-LD auf der Startseite entfernt (Google FAQ Rich Results seit 2026 eingestellt); sichtbare FAQ bleibt erhalten
+
+Unverändert:
+- /app/ Bestellfunktion und PWA-Dateien
+- Backend-URLs und API-Routen
+- Tenant foto-weber
+- Produkt-/Preislogik
+- Weißer-Rand-Produktionslogik V28
+- GETOUT-Schnittstelle

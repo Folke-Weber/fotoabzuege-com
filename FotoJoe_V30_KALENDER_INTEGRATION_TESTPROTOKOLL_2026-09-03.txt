@@ -1,0 +1,45 @@
+FotoJoe V30 – PEARL-Kalender Integration – Testprotokoll
+Datum: 03.09.2026
+
+BASIS
+- aktuelle reparierte V29-Startseite
+- V29 SEO/KI/Region-Dateibaum
+- getestetes Kalender-Modul V2
+
+GEPRÜFT
+PASS – Startseite enthält PEARL-Fotokalender-Karte mit Link /kalender/
+PASS – vorhandene Fotoabzug-JavaScript-Blöcke byteidentisch zur V29-Startseite
+PASS – /app/ (12 Dateien) byteidentisch zu V29
+PASS – Kalender: 20×30 cm Hochformat
+PASS – Kalender: 30×40 cm Hochformat
+PASS – Kalender: Klassisch
+PASS – Kalender: Modern
+PASS – Kalender: Geburtstagskalender
+PASS – Geburtstagskalender: frei wählbarer Startmonat
+PASS – production_family calendar_pearl wird erwartet
+PASS – Ausgabeziel 2_SONDERPRODUKTE
+PASS – bestehende Backend-Endpunkte unverändert
+PASS – Root-JavaScript Syntax via node --check
+PASS – Kalender-JavaScript Syntax via node --check
+PASS – JSON-LD der Startseite valide
+PASS – JSON-LD der Kalenderseite valide
+PASS – sitemap.xml valide und /kalender/ eingetragen
+PASS – llms.txt um Kalender ergänzt
+PASS – interne lokale Bild-/Dateireferenzen vorhanden
+PASS – ALFO-Kachel bewirbt Kalender nicht mehr; nur Fotobücher & Fotogeschenke
+
+NICHT VERÄNDERT
+- bestehende Fotoabzug-Bestelllogik
+- /app/
+- vorhandene Produktpreise
+- Backend-Code
+- GETOUT-Installation
+
+VOR ÖFFENTLICHER BESTELLFREIGABE
+Die zwei Kalenderprodukte müssen im Backend aktiv sein und freigegebene Preise besitzen:
+- PEARL-Fotokalender 20×30 cm Hochformat
+- PEARL-Fotokalender 30×40 cm Hochformat
+production_family: calendar_pearl
+output_target: 2_SONDERPRODUKTE
+
+Ohne diese Backend-Produkte bleibt der Kalender-Bestellbutton absichtlich deaktiviert.

@@ -1,0 +1,17 @@
+FotoJoe V30.3 – Kalender Bildlogik Test
+Datum: 03.09.2026
+
+PASS – JavaScript Syntax (node --check)
+PASS – Upload ergänzt freie Plätze statt state.images zurückzusetzen
+PASS – Testszenario 3 Bilder + weitere 10 Bilder -> 13 belegte Plätze
+PASS – Desktop Drag & Drop tauscht Quell- und Zielplatz
+PASS – Touch/Mobil: Auswahl -> Tauschmodus -> Zielplatz
+PASS – Titelbild kann mit jedem Monatsbild getauscht werden
+PASS – Geburtstagskalender September -> August bleibt unverändert
+PASS – Bildverbesserung im Preview- und Produktionsrenderer über denselben imageFilter
+PASS – Produktionsrenderer enthält keinen FotoJoe-Webseitenfuß
+PASS – Schrittfolge 1,2,3,4,5,6
+PASS – Originale außerhalb kalender/index.html bleiben gegenüber V30-Integrationsbasis unverändert
+
+Hinweis:
+Die automatische Bildverbesserung korrigiert Helligkeit, Kontrast und Farbsättigung moderat. Sie ist reversibel („Original verwenden“).

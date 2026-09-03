@@ -1,0 +1,19 @@
+FotoJoe V28 – Upload-Checkliste
+
+Für das MINIMALE Update müssen nur diese 6 Produktivdateien hochgeladen/ersetzt werden:
+1. /index.html
+2. /vergleich-weisser-rand-urlaub.webp
+3. /app/index.html
+4. /app/manifest.webmanifest
+5. /app/offline.html
+6. /app/sw.js
+
+Danach prüfen:
+- Startseite lädt wie bisher.
+- Matt funktioniert.
+- Glänzend funktioniert.
+- Weißer Rand zeigt nur 10×15, 13×13, 13×18.
+- Weißer Rand ist in Vorschau sichtbar.
+- Eine Testbestellung mit genau 1 Bild 10×15 Weißer Rand durchführen.
+- GETOUT-Eingang und erzeugte Datei kontrollieren.
+- Erst danach V28 als neuen SAFE-Stand archivieren.

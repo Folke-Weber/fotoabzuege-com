@@ -1,0 +1,15 @@
+FotoJoe V32 – KOMPLETTER BROWSER- UND APP-STAND
+Datum: 03.09.2026
+
+Enthalten:
+- Browser-Startseite mit sichtbarem QR-Code zur FotoJoe App
+- FotoJoe App V32 mit sichtbarem QR-Code bei Desktop-Aufruf
+- PEARL-Fotokalender im Browser und in der App
+- Kalender-Upload ergänzt bestehende Bilder, statt sie zu ersetzen
+- Bildtausch ohne neuen Upload
+- Bildverbesserung einzeln und für alle Kalenderbilder
+- Geburtstagskalender mit frei wählbarem Startmonat
+- FAQ: Bestellung auch aus anderen Orten / deutschlandweiter Versand
+- PWA-Manifest, Icons und Service-Worker auf V32
+
+Wichtig: Kein echter kostenpflichtiger Produktivauftrag wurde während der technischen Prüfung ausgelöst.

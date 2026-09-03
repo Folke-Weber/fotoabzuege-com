@@ -1,0 +1,23 @@
+FotoJoe GETIN V30 – PEARL-Kalender Integration
+Datum: 03.09.2026
+
+Basis: funktionierende V29-Startseite / V28 Bestellfunktionsbasis.
+
+Neu:
+- PEARL-Fotokalender als eigene Produktkarte auf der Startseite
+- /kalender/ mit 20×30 und 30×40 cm Hochformat
+- Designs Klassisch, Modern, Geburtstagskalender
+- Geburtstagskalender mit frei wählbarem Startmonat
+- 13 Bilder: Titel + 12 Monate
+- Produktion in Haigerloch
+- Sitemap / llms.txt / strukturierte Daten um Kalender ergänzt
+- ALFO-Hinweis auf Fotobücher & Fotogeschenke reduziert; Kalender nicht mehr als ALFO-Leistung beworben
+
+Unverändert:
+- /app/ komplett unverändert
+- Fotoabzug-Bestelllogik unverändert
+- Backend-Endpunkte unverändert
+- bestehende Preise unverändert
+
+Wichtig vor öffentlicher Bestellfreigabe:
+Im Backend müssen die zwei aktiven Produkte der production_family calendar_pearl mit freigegebenen Preisen angelegt sein. Ohne diese Produkte bleibt der Bestellbutton im Kalender bewusst deaktiviert.

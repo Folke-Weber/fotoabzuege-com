@@ -1,0 +1,25 @@
+FotoJoe GETIN V30.3 – Kalender-Bildbedienung
+Stand: 03.09.2026
+
+Basis:
+- FotoJoe GETIN V30 integrierter PEARL-Kalender
+- Kalender V30.2 Upload/Bildverbesserung
+
+Neu / korrigiert:
+1. Mehrfacher Bildupload ERGÄNZT vorhandene Auswahl.
+   Beispiel: zuerst 3 Bilder wählen, danach 10 weitere -> alle 13 bleiben erhalten.
+2. Desktop: Bilder per Drag & Drop zwischen Titel und allen 12 Monaten tauschen/verschieben.
+3. Smartphone/Tablet: belegtes Bild antippen -> „Bild tauschen / verschieben“ -> Zielmonat antippen.
+   Vorhandene Bilder werden getauscht; bei leerem Zielplatz wird das Bild verschoben.
+4. Titelbild kann jederzeit ohne erneuten Upload auf einen Monat gelegt werden und umgekehrt.
+5. FotoJoe Bildverbesserung pro Bild oder für alle Bilder: automatische Helligkeits-, Kontrast- und Farbkorrektur.
+6. Die aktivierte Bildverbesserung wird im Produktionsrender verwendet, nicht nur in der Bildschirmvorschau.
+7. Schrittfolge sauber 1 bis 6.
+8. FotoJoe-Webseitenfuß/Bedienelemente werden nicht in die 13 Produktions-JPEGs gerendert.
+
+Unverändert:
+- Formate 20x30 / 30x40 Hochformat
+- Designs Klassisch / Modern / Geburtstagskalender
+- freier Startmonat beim Geburtstagskalender
+- Backend-/Bestell-Endpunkte
+- Ausgabeziel Kalender: 2_SONDERPRODUKTE

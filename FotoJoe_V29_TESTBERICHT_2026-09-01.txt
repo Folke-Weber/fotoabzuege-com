@@ -1,0 +1,24 @@
+FotoJoe V29 · SEO/KI/REGION · TECHNISCHER TESTBERICHT · 2026-09-01
+
+Basis: FotoJoe V28 (live getestet).
+
+PASS · App/PWA-Dateien byte-identisch zu V28 · 12 Dateien unverändert
+PASS · Bestell-/Backend-JavaScript ab BACKEND_BASE unverändert · SHA256-Tailvergleich
+PASS · Kernkennung vorhanden: https://fotoworks-backend.folke-weber.workers.dev
+PASS · Kernkennung vorhanden: foto-weber
+PASS · Kernkennung vorhanden: /api/v1/catalog
+PASS · Kernkennung vorhanden: /api/order
+PASS · Öffentliche HTML-Seiten parsbar + JSON-LD gültiges JSON · 10 öffentliche HTML-Dateien
+PASS · Interne Links lösen lokal auf · keine defekten internen Pfade
+PASS · Sitemap XML gültig und Ziele vorhanden · 10 URLs
+PASS · Beide Hauptaussagen + 1-Stunden-Aussage sichtbar
+PASS · Alle vereinbarten Regionalorte auf Startseite
+PASS · OAI-SearchBot in robots.txt erlaubt
+PASS · Googlebot in robots.txt erlaubt
+PASS · FAQPage-JSON-LD auf Startseite entfernt
+PASS · Neue Regionalseiten ohne statische Produktpreise
+PASS · Neue Regional-Titles kompakt (≤60 Zeichen)
+
+ERGEBNIS: PASS – V29 technische Prüfungen bestanden.
+
+Hinweis: Kein echter Produktivauftrag wurde gesendet. Bestell-/Backend-Code ist hashbasiert gegen V28 als unverändert geprüft.

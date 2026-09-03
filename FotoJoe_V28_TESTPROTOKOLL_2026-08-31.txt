@@ -1,0 +1,67 @@
+FotoJoe GETIN V28 – TESTPROTOKOLL
+Stand: 31.08.2026
+
+AUSGANGSBASIS
+- V28 wurde ausschließlich aus der vom Benutzer am 31.08.2026 gelieferten aktuellen Online-ZIP von fotoabzüge.com aufgebaut.
+- SHA256 der gelieferten Ausgangs-ZIP: 10ac96ec4a30b2a70d7a2086dd25e5a35ebe81e266acf37b8e2831c9d9b188a2
+- Kein Redesign und keine Übernahme der zuvor verworfenen V27.2.
+
+GEÄNDERTE BESTEHENDE DATEIEN
+- index.html
+- app/index.html
+- app/manifest.webmanifest
+- app/offline.html
+- app/sw.js
+
+NEUE PRODUKTIVDATEI
+- vergleich-weisser-rand-urlaub.webp
+
+ALLE ANDEREN DATEIEN
+- Gegen die gelieferte Online-ZIP unverändert.
+
+FUNKTIONSTESTS – DESKTOP
+- Drei Oberflächenoptionen vorhanden: Matt, Glänzend, Weißer Rand.
+- Weißer Rand zeigt exakt 10×15, 13×13 und 13×18 cm.
+- Beim Wechsel zurück auf Glänzend werden wieder alle 26 normalen Formatoptionen angeboten.
+- Weißer Rand ist in Thumbnail und Ausschnittvorschau sichtbar.
+- Zusammenfassung zeigt „Weißer Rand (glänzend)“.
+- Backend-Payload bleibt kompatibel: surface = „Glänzend“.
+- Upload-Header bleibt kompatibel: x-surface = glossy.
+- Tenant bleibt: foto-weber.
+- Upload-Datei erhält _weisser_rand im Dateinamen.
+- Erzeugte Upload-Datei wurde dekodiert; alle vier Ecken sind weiß, Bildmitte enthält Bildinformation.
+- Keine JavaScript-Console-Fehler und keine Page-Errors im Test.
+
+FUNKTIONSTESTS – FORMATE
+- 10×15: Seitenverhältnis geprüft, weiße Ecken geprüft.
+- 13×13: Seitenverhältnis 1:1 geprüft, weiße Ecken geprüft.
+- 13×18: Seitenverhältnis geprüft, weiße Ecken geprüft.
+- Normalisierung geprüft: 20×30 -> 13×18; 20×20 -> 13×13, wenn Weißer Rand aktiviert wird.
+
+FUNKTIONSTESTS – MOBIL/PWA
+- Testbreite 390 px.
+- Weißer Rand zeigt exakt die drei vorgesehenen Größen.
+- Kein horizontaler Überlauf (Viewport 390 px / Seitenbreite 390 px).
+- Keine JavaScript-Console-Fehler und keine Page-Errors.
+- Service-Worker-Cache auf V28 aktualisiert.
+
+STATISCHE/TECHNISCHE PRÜFUNGEN
+- JavaScript-Syntax von Root und App mit Node geprüft: bestanden.
+- Keine doppelten HTML-IDs gefunden.
+- JSON-LD parsebar.
+- manifest.webmanifest parsebar.
+- Interne lokale Datei-/Bildreferenzen geprüft: keine fehlenden Dateien.
+- Vergleichsmotiv ist in Root und App jeweils zweimal eingebunden: ohne und mit weißem Rand.
+- Kritische Backend-Konstanten mit der gelieferten Online-Version verglichen: unverändert.
+- Secret-Scan: kein SUPER_ADMIN_TOKEN, kein cfat_-Token und keine Bearer-Passwörter gefunden.
+
+QUALITÄTS-/HERSTELLERRECHERCHE
+- Qualitätsaussagen wurden gegen offizielle Epson-Unterlagen zum SureLab D3000 geprüft.
+- Epson beschreibt MicroPiezo-Technik, UltraChrome D6 mit sechs Farben, großen Farbraum, professionelle Dry-Lab-Anwendung und wasserbeständige Prints.
+- Es wird bewusst NICHT behauptet, der D3000 sei eine klassische Silberhalogenid-Fotobelichtungsmaschine.
+- Es wird bewusst keine pauschale Abwertung von Thermosublimationssystemen verwendet.
+
+WICHTIGE GRENZE DES TESTS
+- Es wurde KEINE echte Produktionsbestellung an das Live-Backend geschickt.
+- Backend-/Upload-Abläufe wurden mit abgefangenen Mock-Antworten geprüft, damit kein Testauftrag in der Produktion entsteht.
+- Nach dem Upload auf fotoabzüge.com ist deshalb noch ein kurzer echter Live-Endtest mit einem Bild erforderlich, bevor V28 als endgültiger neuer SAFE-Stand archiviert wird.

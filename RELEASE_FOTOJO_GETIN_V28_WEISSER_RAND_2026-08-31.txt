@@ -1,0 +1,21 @@
+FotoJoe GETIN V28 · 31.08.2026
+
+BASIS
+- Ausschließlich aus der vom Benutzer gelieferten aktuellen Online-Version von fotoabzüge.com gebaut.
+- Kein Redesign. Bestehende Struktur, Preise, Backend-URLs, Tenant und GETOUT-Schnittstellen bleiben unverändert.
+
+NEU
+- Dritte Oberflächenwahl: Weißer Rand.
+- Weißer Rand nur 10×15 cm, 13×13 cm und 13×18 cm.
+- Weißer Rand ist technisch und preislich Glänzend; Backend erhält weiterhin glossy/Glänzend.
+- Alle anderen Fotoformate werden bei aktivem Weißrand-Modus ausgeblendet.
+- Vorschau/Ausschnitteditor zeigt den Rand sichtbar.
+- Finale Upload-Datei erhält den weißen Rand als Bildbestandteil und den Dateinamenszusatz _weisser_rand.
+- Homepage zeigt dasselbe Urlaubsbild ohne/mit weißem Rand; dafür wird ein schlankes 3:2-Vergleichsmotiv als eigenes WebP-Asset mitgeliefert.
+- Bestehender Produktionsblock fachlich präzisiert: Epson SureLab D3000 Professional Dry Lab, UltraChrome D6.
+- PWA-Cache/Start-URL auf V28 aktualisiert; alte FotoWorks-Bezeichnung in offline.html korrigiert.
+
+SICHERHEIT
+- Keine Änderung an BACKEND_BASE, TENANT_SLUG, API-Routen oder Authentifizierung.
+- Weißer Rand wird gegenüber Backend als glänzend behandelt.
+- Keine echte Testbestellung gegen Produktion; API-Tests erfolgen ausschließlich mit abgefangenen Mock-Antworten.

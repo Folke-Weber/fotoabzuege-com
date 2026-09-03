@@ -1,0 +1,25 @@
+FotoJoe V30 – Backend-Vorgabe für PEARL-Kalender
+
+Produkt 1
+Code: CALENDAR_PEARL_20X30
+Name: PEARL-Fotokalender 20×30 cm
+Format: 20×30 cm Hochformat
+Material/Oberfläche: PEARL
+Kategorie: calendar
+production_family: calendar_pearl
+output_target: 2_SONDERPRODUKTE
+pickup_allowed: 1
+shipping_allowed: nach Ihrer Freigabe
+Preis: NOCH FESTZULEGEN
+
+Produkt 2
+Code: CALENDAR_PEARL_30X40
+Name: PEARL-Fotokalender 30×40 cm
+Format: 30×40 cm Hochformat
+Material/Oberfläche: PEARL
+Kategorie: calendar
+production_family: calendar_pearl
+output_target: 2_SONDERPRODUKTE
+pickup_allowed: 1
+shipping_allowed: nach Ihrer Freigabe
+Preis: NOCH FESTZULEGEN
