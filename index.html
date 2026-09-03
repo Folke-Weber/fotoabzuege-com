@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe GETIN V29 · SEO/KI/REGION · V28 FUNKTIONSBASIS · 2026-09-01 -->
+<!-- FotoJoe GETIN V30 · PEARL-KALENDER INTEGRATION · V29 SEO/KI/REGION + V28 FUNKTIONSBASIS · 2026-09-03 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -368,6 +368,10 @@ body.modal-open{overflow:hidden}
 .visual-product-teaser .price-list small{font-size:12px;font-weight:700;color:#555;min-width:44px}
 .visual-product-teaser .pickup-text{font-size:13px;font-weight:900;color:var(--red)}
 .visual-product-teaser .product-teaser-arrow{font-size:32px;line-height:1;color:#111;justify-self:end}
+.calendar-product-teaser{grid-column:1/-1;text-decoration:none;color:inherit}
+.calendar-product-teaser .product-teaser-visual{background:#202020}
+.calendar-product-teaser .calendar-badges{display:flex;gap:7px;flex-wrap:wrap}
+.calendar-product-teaser .calendar-badges small{padding:3px 7px;border-radius:999px;background:#fff2dc;border:1px solid #ead0a0;color:#76510f;font-size:10px;font-weight:900}
 @media(max-width:700px){
   .visual-product-teaser{grid-template-columns:96px 1fr 22px;gap:14px;min-height:104px;padding:12px 14px 12px 12px}
   .visual-product-teaser .product-teaser-visual{height:72px}
@@ -655,7 +659,7 @@ body.crop-open{overflow:hidden}
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://fotoabzüge.com/#website","url":"https://fotoabzüge.com/","name":"fotoabzüge.com","inLanguage":"de-DE","publisher":{"@id":"https://fotoabzüge.com/#business"}},{"@type":["Store","PhotographyBusiness","LocalBusiness"],"@id":"https://fotoabzüge.com/#business","name":"Foto Weber Haigerloch","alternateName":"fotoabzüge.com","description":"Fotogeschäft in Haigerloch mit professioneller Fotoproduktion. FotoJoe ermöglicht Fotoabzüge am PC und Smartphone; bei Abholung können Farbbilder in 1 Stunde abgeholt werden.","url":"https://fotoabzüge.com/","telephone":"+49 7474 6248","email":"foto-weber-haigerloch@t-online.de","currenciesAccepted":"EUR","image":"https://fotoabzüge.com/hero-fotoabzuege.0bb4bdc6fd.webp","address":{"@type":"PostalAddress","streetAddress":"Unterstadt 14","postalCode":"72401","addressLocality":"Haigerloch","addressRegion":"Baden-Württemberg","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":48.3671255,"longitude":8.8031371},"areaServed":[{"@type":"Country","name":"Deutschland"},{"@type":"AdministrativeArea","name":"Zollernalbkreis"},{"@type":"AdministrativeArea","name":"Landkreis Freudenstadt"},{"@type":"City","name":"Horb am Neckar"},{"@type":"City","name":"Freudenstadt"},{"@type":"City","name":"Rottenburg am Neckar"},{"@type":"City","name":"Hechingen"},{"@type":"City","name":"Balingen"},{"@type":"City","name":"Albstadt"}],"sameAs":["https://www.fotoweber.de/"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Fotoprodukte","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fotoabzüge online bestellen"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fototassen mit eigenem Bild"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Leinwandbilder zur Abholung"}}]}},{"@type":"WebApplication","@id":"https://fotoabzüge.com/app/#app","name":"FotoJoe – Bildbestellung","url":"https://fotoabzüge.com/app/","applicationCategory":"ShoppingApplication","operatingSystem":"Web","inLanguage":"de-DE","provider":{"@id":"https://fotoabzüge.com/#business"},"description":"Installierbare Web-App zum Bestellen von Fotoabzügen mit Formatwahl, Bildausschnitt, Qualitätsanzeige und Bildoptimierung."},{"@type":"Service","@id":"https://fotoabzüge.com/#service-fotoabzuege","name":"Fotoabzüge online bestellen","serviceType":"Fotoabzüge und Fotodruck","url":"https://fotoabzüge.com/","provider":{"@id":"https://fotoabzüge.com/#business"},"areaServed":[{"@type":"Country","name":"Deutschland"},{"@type":"AdministrativeArea","name":"Zollernalbkreis"},{"@type":"AdministrativeArea","name":"Landkreis Freudenstadt"}],"description":"Fotoabzüge online am PC oder Smartphone bestellen. Matt, Glänzend oder Weißer Rand. Bei Abholung können Farbbilder in 1 Stunde in Haigerloch abgeholt werden."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://fotoabzüge.com/"},{"@type":"ListItem","position":2,"name":"Fotoabzüge & Produkte","item":"https://fotoabzüge.com/#formate"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://fotoabzüge.com/#website","url":"https://fotoabzüge.com/","name":"fotoabzüge.com","inLanguage":"de-DE","publisher":{"@id":"https://fotoabzüge.com/#business"}},{"@type":["Store","PhotographyBusiness","LocalBusiness"],"@id":"https://fotoabzüge.com/#business","name":"Foto Weber Haigerloch","alternateName":"fotoabzüge.com","description":"Fotogeschäft in Haigerloch mit professioneller Fotoproduktion. FotoJoe ermöglicht Fotoabzüge am PC und Smartphone; bei Abholung können Farbbilder in 1 Stunde abgeholt werden.","url":"https://fotoabzüge.com/","telephone":"+49 7474 6248","email":"foto-weber-haigerloch@t-online.de","currenciesAccepted":"EUR","image":"https://fotoabzüge.com/hero-fotoabzuege.0bb4bdc6fd.webp","address":{"@type":"PostalAddress","streetAddress":"Unterstadt 14","postalCode":"72401","addressLocality":"Haigerloch","addressRegion":"Baden-Württemberg","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":48.3671255,"longitude":8.8031371},"areaServed":[{"@type":"Country","name":"Deutschland"},{"@type":"AdministrativeArea","name":"Zollernalbkreis"},{"@type":"AdministrativeArea","name":"Landkreis Freudenstadt"},{"@type":"City","name":"Horb am Neckar"},{"@type":"City","name":"Freudenstadt"},{"@type":"City","name":"Rottenburg am Neckar"},{"@type":"City","name":"Hechingen"},{"@type":"City","name":"Balingen"},{"@type":"City","name":"Albstadt"}],"sameAs":["https://www.fotoweber.de/"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Fotoprodukte","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fotoabzüge online bestellen"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fototassen mit eigenem Bild"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Leinwandbilder zur Abholung"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"PEARL-Fotokalender 20×30 und 30×40 cm","url":"https://fotoabzüge.com/kalender/"}}]}},{"@type":"WebApplication","@id":"https://fotoabzüge.com/app/#app","name":"FotoJoe – Bildbestellung","url":"https://fotoabzüge.com/app/","applicationCategory":"ShoppingApplication","operatingSystem":"Web","inLanguage":"de-DE","provider":{"@id":"https://fotoabzüge.com/#business"},"description":"Installierbare Web-App zum Bestellen von Fotoabzügen mit Formatwahl, Bildausschnitt, Qualitätsanzeige und Bildoptimierung."},{"@type":"Service","@id":"https://fotoabzüge.com/#service-fotoabzuege","name":"Fotoabzüge online bestellen","serviceType":"Fotoabzüge und Fotodruck","url":"https://fotoabzüge.com/","provider":{"@id":"https://fotoabzüge.com/#business"},"areaServed":[{"@type":"Country","name":"Deutschland"},{"@type":"AdministrativeArea","name":"Zollernalbkreis"},{"@type":"AdministrativeArea","name":"Landkreis Freudenstadt"}],"description":"Fotoabzüge online am PC oder Smartphone bestellen. Matt, Glänzend oder Weißer Rand. Bei Abholung können Farbbilder in 1 Stunde in Haigerloch abgeholt werden."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://fotoabzüge.com/"},{"@type":"ListItem","position":2,"name":"Fotoabzüge & Produkte","item":"https://fotoabzüge.com/#formate"}]}]}
 </script>
 <meta name="author" content="Foto Weber Haigerloch">
 <meta property="og:image" content="https://fotoabzüge.com/hero-fotoabzuege.0bb4bdc6fd.webp">
@@ -702,7 +706,7 @@ body.crop-open{overflow:hidden}
       <div class="hero-actions">
         <a class="btn" href="#formate">▣ Fotos & Produkte auswählen →</a>
       </div>
-      <div class="hero-trust"><span>✦ Matt · Glänzend · Weißer Rand</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>✓ Leinwand nur Abholung</span></div>
+      <div class="hero-trust"><span>✦ Matt · Glänzend · Weißer Rand</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>▣ PEARL-Fotokalender</span><span>✓ Leinwand nur Abholung</span></div>
     </div>
     <div class="hero-image"><img src="/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven" loading="eager" decoding="async" fetchpriority="high"></div>
   </div>
@@ -735,7 +739,7 @@ body.crop-open{overflow:hidden}
   <div class="wrap">
     <div class="kicker">FotoJoe · Annahmeterminal & App für Fotoprodukte</div>
     <h2>Für jedes Bild das <b>Richtige.</b></h2>
-    <p class="sub">Die fünf beliebtesten Fotoformate sehen Sie sofort als Bildkacheln. Darunter finden Sie Fototassen und Leinwandbilder ebenfalls direkt als bebilderte Auswahlkarten – Sondergrößen und Vario nur einen Klick weiter.</p>
+    <p class="sub">Die fünf beliebtesten Fotoformate sehen Sie sofort als Bildkacheln. Darunter finden Sie Fototassen, Leinwandbilder und unsere PEARL-Fotokalender direkt als klare Auswahlkarten – Sondergrößen und Vario nur einen Klick weiter.</p>
 
     <div class="flowline" aria-label="Bestellablauf">
       <span>1 Produkt</span><span>2 Oberfläche</span><span>3 Bilder</span><span>4 Lieferung</span><span>5 Prüfen</span>
@@ -789,14 +793,23 @@ body.crop-open{overflow:hidden}
         </span>
         <span class="product-teaser-arrow" aria-hidden="true">›</span>
       </button>
+      <a class="product-teaser visual-product-teaser calendar-product-teaser" href="/kalender/" aria-label="PEARL-Fotokalender gestalten">
+        <span class="product-teaser-visual"><img loading="lazy" decoding="async" src="/teaser-kalender-pearl.webp" alt="FotoJoe PEARL-Fotokalender als Beispiel"></span>
+        <span class="product-teaser-copy">
+          <strong>PEARL-Fotokalender</strong>
+          <span class="calendar-badges"><small>20×30 Hochformat</small><small>30×40 Hochformat</small><small>3 Designs</small></span>
+          <span class="pickup-text">Eigene Produktion in Haigerloch</span>
+        </span>
+        <span class="product-teaser-arrow" aria-hidden="true">›</span>
+      </a>
     </div>
-    <a class="alfo-external" id="alfoLink" href="https://alfo-fotobuch.com?affiliateCode=51016" target="_blank" rel="noopener noreferrer" aria-label="ALFO Fotobuch, Kalender und Fotogeschenke mit Foto-Weber-Händlerzuordnung öffnen">
+    <a class="alfo-external" id="alfoLink" href="https://alfo-fotobuch.com?affiliateCode=51016" target="_blank" rel="noopener noreferrer" aria-label="ALFO Fotobuch und Fotogeschenke mit Foto-Weber-Händlerzuordnung öffnen">
       <span class="alfo-logo-original">
         <img loading="lazy" decoding="async" data-alfo-original="logo" src="/alfo-logo.d1e24727c2.png" alt="ALFO Fotobuch">
       </span>
       <span class="alfo-external-copy">
-        <strong>Fotobücher, Kalender & Fotogeschenke</strong>
-        <small>Fotobücher, Kalender & Fotogeschenke im ALFO-Designer · Händlerzuordnung Foto Weber</small>
+        <strong>Fotobücher & Fotogeschenke</strong>
+        <small>Fotobücher & weitere Fotogeschenke im ALFO-Designer · Händlerzuordnung Foto Weber</small>
         <span class="alfo-external-action">Jetzt gestalten →</span>
       </span>
       <span class="alfo-promo-original">
@@ -1105,7 +1118,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service & Rechtliches</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a><a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener">Impressum</a><a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener">Liefer- & Zahlungsbedingungen</a><a href="https://www.fotoweber.de/j/shop/withdrawal" target="_blank" rel="noopener">Widerrufsbelehrung</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe V29 · SEO/KI/Region · V28 Funktionsbasis · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe V30 · PEARL-Kalender · SEO/KI/Region · V28 Funktionsbasis · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
