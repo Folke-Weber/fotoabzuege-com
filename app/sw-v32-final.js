@@ -1,8 +1,8 @@
-/* FotoJoe APP · GETIN V32 · MIT PEARL-KALENDER
+/* FotoJoe APP · GETIN V32 · FORCE UPDATE · MIT PEARL-KALENDER
    Absichtlich kein API-/Upload-Caching.
    Navigation: Netzwerk zuerst, damit GETIN-Updates sofort greifen.
 */
-const APP_CACHE = "fotojoe-app-v32-komplett-20260903";
+const APP_CACHE = "fotojoe-app-v32-final-force-20260903";
 const STATIC = [
   "/app/offline.html",
   "/app/manifest.webmanifest",

@@ -2,10 +2,10 @@
   "id": "/app/",
   "name": "FotoJoe – Bildbestellung",
   "short_name": "FotoJoe",
-  "description": "FotoJoe – die schlanke Bildbestellung für Fotoabzüge und Fotoprodukte von JustForWork bei Foto Weber Haigerloch. Jetzt auch mit weißem Rand in 10×15, 13×13 und 13×18 cm.",
+  "description": "FotoJoe V32 – Fotoabzüge und PEARL-Fotokalender von Foto Weber Haigerloch direkt am Smartphone bestellen und gestalten.",
   "lang": "de-DE",
   "dir": "ltr",
-  "start_url": "/app/?v=31",
+  "start_url": "/app/?v=32-final",
   "scope": "/app/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -16,19 +16,19 @@
   ],
   "icons": [
     {
-      "src": "/app/icons/icon-192-v31.png",
+      "src": "/app/icons/icon-192-v32.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/app/icons/icon-512-v31.png",
+      "src": "/app/icons/icon-512-v32.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/app/icons/icon-maskable-512-v31.png",
+      "src": "/app/icons/icon-maskable-512-v32.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -44,6 +44,11 @@
       "name": "Bestellung starten",
       "short_name": "Bestellen",
       "url": "/app/#bestellen"
+    },
+    {
+      "name": "PEARL-Fotokalender gestalten",
+      "short_name": "Kalender",
+      "url": "/app/kalender/"
     }
   ]
 }

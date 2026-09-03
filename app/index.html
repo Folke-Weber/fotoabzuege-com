@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe APP · GETIN V31 · LAUNCH · MOBILE UX · 2026-09-03 -->
+<!-- FotoJoe APP · GETIN V32 · FOTOABZÜGE + PEARL-KALENDER + QR · 2026-09-03 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Fotoabzüge online bestellen | Foto Weber Haigerloch</title>
-<meta name="description" content="FotoJoe: Fotoabzüge direkt vom Smartphone bestellen. Format wählen, Ausschnitt prüfen, Bildqualität kontrollieren und Matt, Glänzend oder weißen Rand auswählen.">
+<meta name="description" content="FotoJoe: Fotoabzüge und PEARL-Fotokalender direkt vom Smartphone bestellen. Fotos auswählen, Ausschnitt und Bildqualität prüfen sowie Kalender gestalten.">
 <meta name="theme-color" content="#ef3a19">
 <meta name="application-name" content="fotoabzüge.com">
 <meta name="mobile-web-app-capable" content="yes">
@@ -17,13 +17,13 @@
 <meta name="apple-mobile-web-app-title" content="FotoJoe">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="/app/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/app/icons/icon-192-v31.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/app/icons/icon-512-v31.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/app/icons/apple-touch-icon-180-v31.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/app/icons/icon-192-v32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/app/icons/icon-512-v32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/app/icons/apple-touch-icon-180-v32.png">
 <link rel="preload" as="image" href="/hero-fotoabzuege.0bb4bdc6fd.webp" type="image/webp" fetchpriority="high">
 <link rel="canonical" href="https://fotoabzüge.com/">
 <meta property="og:title" content="Fotoabzüge online bestellen – Foto Weber Haigerloch">
-<meta property="og:description" content="Fotoabzüge in Matt, Glänzend oder mit weißem Rand, Fototassen und weitere Fotoprodukte einfach online bestellen.">
+<meta property="og:description" content="Fotoabzüge, Fototassen und PEARL-Fotokalender einfach online bestellen und gestalten.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fotoabzüge.com/">
 <meta property="og:locale" content="de_DE">
@@ -40,7 +40,7 @@
   "applicationCategory":"ShoppingApplication",
   "operatingSystem":"Web",
   "inLanguage":"de-DE",
-  "description":"Installierbare Web-App zum Bestellen von Fotoabzügen mit Formatwahl, Ausschnitt, Qualitätsanzeige und Bildoptimierung.",
+  "description":"Installierbare Web-App zum Bestellen von Fotoabzügen und PEARL-Fotokalendern mit Bildauswahl, Ausschnitt, Qualitätsanzeige und Bildoptimierung.",
   "provider":{
     "@type":"LocalBusiness",
     "@id":"https://fotoabzüge.com/#business",
@@ -661,7 +661,22 @@ body.crop-open{overflow:hidden}
 #pwaIosTip.show ~ .last-selection-btn{bottom:max(170px,calc(env(safe-area-inset-bottom) + 170px))}
 
 
-/* FotoJoe GETIN V31 · Weißer Rand · stabile Funktionsbasis */
+
+/* FotoJoe APP V32 · integrierter PEARL-Fotokalender */
+.calendar-product-teaser{grid-column:1/-1;text-decoration:none;color:inherit}
+.calendar-product-teaser .product-teaser-visual{background:linear-gradient(135deg,#171717,#292929);display:flex;align-items:center;justify-content:center;padding:9px 12px}
+.calendar-teaser-logo{display:flex;align-items:center;gap:10px;width:100%;color:#fff}
+.calendar-teaser-icon{width:54px;height:54px;flex:0 0 54px;border-radius:8px;background:#fff;position:relative;box-shadow:0 4px 12px #0005;overflow:hidden}
+.calendar-teaser-icon:before{content:"";position:absolute;left:0;right:0;top:0;height:13px;background:#ef3a19}
+.calendar-teaser-icon:after{content:"";position:absolute;left:9px;right:9px;top:23px;height:22px;background:repeating-linear-gradient(to right,#d7d7d7 0 1px,transparent 1px 9px),repeating-linear-gradient(to bottom,#d7d7d7 0 1px,transparent 1px 8px)}
+.calendar-teaser-wordmark{min-width:0;line-height:1}
+.calendar-teaser-wordmark strong{display:block;font-size:25px;letter-spacing:-.055em;color:#fff}
+.calendar-teaser-wordmark strong b{color:#ef3a19}
+.calendar-teaser-wordmark small{display:block;margin-top:5px;font-size:9px;letter-spacing:.11em;color:#ddd;font-weight:900}
+.calendar-product-teaser .calendar-badges{display:flex;gap:7px;flex-wrap:wrap}
+.calendar-product-teaser .calendar-badges small{padding:3px 7px;border-radius:999px;background:#fff2dc;border:1px solid #ead0a0;color:#76510f;font-size:10px;font-weight:900}
+
+/* FotoJoe GETIN V32 · Weißer Rand · stabile Funktionsbasis */
 .surface-cards{grid-template-columns:repeat(3,1fr)}
 .surface-card.white-border-card{border-color:#f0cfc5;background:#fffaf8}
 .surface-card.white-border-card strong{color:var(--red)}
@@ -689,6 +704,16 @@ body.crop-open{overflow:hidden}
   .border-compare-grid{grid-template-columns:1fr;gap:14px}
   .border-compare-image.with-white-border{padding:14px}
 }
+
+/* FotoJoe APP V32 · QR-Übergabe vom PC auf das Smartphone */
+.v32-qr-promo{padding:26px 0;background:#fff;border-bottom:1px solid var(--line)}
+.v32-qr-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:26px;padding:24px 28px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(110deg,#fff 0 64%,#f5f5f3 64%);box-shadow:0 12px 30px #0000000d}
+.v32-qr-copy .kicker{margin-bottom:5px}.v32-qr-copy h3{margin:0 0 8px;font-size:clamp(24px,3vw,34px);line-height:1.05;letter-spacing:-.035em}.v32-qr-copy h3 b{color:var(--red)}
+.v32-qr-copy p{margin:0;color:var(--muted);max-width:690px;font-size:14px;line-height:1.5}
+.v32-qr-actions{display:flex;align-items:center;gap:16px}.v32-qr-box{width:148px;height:148px;padding:10px;background:#fff;border:2px solid #111;border-radius:14px;box-shadow:0 10px 26px #00000012}.v32-qr-box img{width:100%;height:100%;object-fit:contain}
+.v32-qr-help{max-width:190px;color:#444;font-size:12px;font-weight:800;line-height:1.42}.v32-qr-help strong{display:block;color:var(--red);font-size:11px;letter-spacing:.08em;margin-bottom:5px}
+.v32-qr-mobile{display:none;margin-top:14px;gap:10px;align-items:center;flex-wrap:wrap}.v32-qr-mobile small{color:var(--muted);font-size:11px}
+@media(max-width:760px){.v32-qr-promo{padding:16px 0}.v32-qr-card{grid-template-columns:1fr;padding:18px;background:#fff}.v32-qr-actions{display:none}.v32-qr-mobile{display:flex}.v32-qr-copy h3{font-size:24px}}
 </style>
 
 </head>
@@ -717,21 +742,38 @@ body.crop-open{overflow:hidden}
     <div>
       <div class="kicker">Premium Fotoabzüge aus Ihrem Fotofachgeschäft</div>
       <h1>Fotoabzüge in<br><span>Laborqualität.</span></h1>
-      <p class="lead">Brillante Fotoabzüge in vielen Formaten – dazu Fototassen und Leinwandbilder. Wählen Sie Ihr Produkt in wenigen Schritten und laden Sie anschließend Ihre Bilder hoch.</p>
+      <p class="lead">Brillante Fotoabzüge in vielen Formaten – dazu Fototassen, Leinwandbilder und PEARL-Fotokalender. Wählen Sie Ihr Produkt in wenigen Schritten und laden Sie anschließend Ihre Bilder hoch.</p>
       <div class="hero-actions">
         <a class="btn" href="#formate">▣ Fotos & Produkte auswählen →</a>
       </div>
-      <div class="hero-trust"><span>✦ Matt · Glänzend · Weißer Rand</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>✓ Leinwand nur Abholung</span></div>
+      <div class="hero-trust"><span>✦ Matt · Glänzend · Weißer Rand</span><span>▯ Standard, Sonder & Vario</span><span>◉ Fototassen</span><span>▣ PEARL-Fotokalender</span><span>✓ Leinwand nur Abholung</span></div>
     </div>
     <div class="hero-image"><img src="/hero-fotoabzuege.0bb4bdc6fd.webp" alt="Hochwertige Fotoabzüge mit Familien-, Reise- und Landschaftsmotiven" loading="eager" decoding="async" fetchpriority="high"></div>
   </div>
 </header>
 
+<section class="v32-qr-promo" aria-label="FotoJoe App per QR-Code öffnen">
+  <div class="wrap">
+    <div class="v32-qr-card">
+      <div class="v32-qr-copy">
+        <div class="kicker">FotoJoe App · QR-Code</div>
+        <h3>Vom Computer direkt <b>aufs Smartphone.</b></h3>
+        <p>Wenn Sie diese Seite am PC oder Laptop geöffnet haben, scannen Sie den QR-Code mit Ihrem Smartphone. Er führt direkt zur FotoJoe App mit Fotoabzügen und PEARL-Fotokalender.</p>
+        <div class="v32-qr-mobile"><a class="btn" href="/app/?v=32">FotoJoe App öffnen →</a><small>iPhone: Safari · Teilen · „Zum Home-Bildschirm“ · Android: „App installieren“</small></div>
+      </div>
+      <div class="v32-qr-actions">
+        <div class="v32-qr-box"><img src="/app-qrcode-v32.png" alt="QR-Code zur FotoJoe App" loading="eager" decoding="async"></div>
+        <div class="v32-qr-help"><strong>APP PER QR-CODE</strong>Scannen → FotoJoe App öffnen.<br>iPhone: Safari · Teilen · „Zum Home-Bildschirm“.<br>Android: „App installieren“.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="soft center" id="formate">
   <div class="wrap">
     <div class="kicker">FotoJoe · Annahmeterminal & App für Fotoprodukte</div>
     <h2>Für jedes Bild das <b>Richtige.</b></h2>
-    <p class="sub">Die fünf beliebtesten Fotoformate sehen Sie sofort als Bildkacheln. Darunter finden Sie Fototassen und Leinwandbilder ebenfalls direkt als bebilderte Auswahlkarten – Sondergrößen und Vario nur einen Klick weiter.</p>
+    <p class="sub">Die fünf beliebtesten Fotoformate sehen Sie sofort als Bildkacheln. Darunter finden Sie Fototassen, Leinwandbilder und unsere PEARL-Fotokalender direkt als klare Auswahlkarten – Sondergrößen und Vario nur einen Klick weiter.</p>
 
     <div class="flowline" aria-label="Bestellablauf">
       <span>1 Produkt</span><span>2 Oberfläche</span><span>3 Bilder</span><span>4 Lieferung</span><span>5 Prüfen</span>
@@ -785,14 +827,23 @@ body.crop-open{overflow:hidden}
         </span>
         <span class="product-teaser-arrow" aria-hidden="true">›</span>
       </button>
+      <a class="product-teaser visual-product-teaser calendar-product-teaser" href="/app/kalender/" aria-label="PEARL-Fotokalender in der FotoJoe App gestalten">
+        <span class="product-teaser-visual" aria-hidden="true"><span class="calendar-teaser-logo"><span class="calendar-teaser-icon"></span><span class="calendar-teaser-wordmark"><strong>Foto<b>Joe</b></strong><small>PEARL-FOTOKALENDER</small></span></span></span>
+        <span class="product-teaser-copy">
+          <strong>PEARL-Fotokalender</strong>
+          <span class="calendar-badges"><small>20×30 Hochformat</small><small>30×40 Hochformat</small><small>3 Designs</small></span>
+          <span class="pickup-text">Direkt in der App gestalten</span>
+        </span>
+        <span class="product-teaser-arrow" aria-hidden="true">›</span>
+      </a>
     </div>
-    <a class="alfo-external" id="alfoLink" href="https://alfo-fotobuch.com?affiliateCode=51016" target="_blank" rel="noopener noreferrer" aria-label="ALFO Fotobuch, Kalender und Fotogeschenke mit Foto-Weber-Händlerzuordnung öffnen">
+    <a class="alfo-external" id="alfoLink" href="https://alfo-fotobuch.com?affiliateCode=51016" target="_blank" rel="noopener noreferrer" aria-label="ALFO Fotobücher und Fotogeschenke mit Foto-Weber-Händlerzuordnung öffnen">
       <span class="alfo-logo-original">
         <img loading="lazy" decoding="async" data-alfo-original="logo" src="/alfo-logo.d1e24727c2.png" alt="ALFO Fotobuch">
       </span>
       <span class="alfo-external-copy">
-        <strong>Fotobücher, Kalender & Fotogeschenke</strong>
-        <small>Fotobücher, Kalender & Fotogeschenke im ALFO-Designer · Händlerzuordnung Foto Weber</small>
+        <strong>Fotobücher & Fotogeschenke</strong>
+        <small>Fotobücher & Fotogeschenke im ALFO-Designer · Händlerzuordnung Foto Weber</small>
         <span class="alfo-external-action">Jetzt gestalten →</span>
       </span>
       <span class="alfo-promo-original">
@@ -1064,6 +1115,7 @@ body.crop-open{overflow:hidden}
       <div class="delivery-card"><strong>Welche Oberflächen gibt es?</strong><p>Matt, Glänzend und Weißer Rand. Weißer Rand ist in 10×15, 13×13 und 13×18 cm erhältlich und automatisch glänzend.</p></div>
       <div class="delivery-card"><strong>Wie groß können die Bilder werden?</strong><p>Fotoabzüge bis 30×48 cm als Festformat und 30-cm-Vario bis 121 cm Länge; Leinwand bis 90×130 cm.</p></div>
       <div class="delivery-card"><strong>Kann ich verschiedene Stückzahlen bestellen?</strong><p>Ja. Für jedes Bild kann die gewünschte Menge einzeln eingestellt werden.</p></div>
+      <div class="delivery-card"><strong>Kann ich auch aus anderen Orten bestellen?</strong><p>Ja. FotoJoe ist nicht auf einzelne Orte beschränkt. Sie können Ihre Bilder von überall online am PC oder Smartphone bestellen. Wir versenden deutschlandweit; alternativ können Sie Ihre Farbbilder bei Foto Weber in Haigerloch abholen.</p></div>
     </div>
   </div>
 </section>
@@ -1097,7 +1149,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service & Rechtliches</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a><a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener">Impressum</a><a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener">Liefer- & Zahlungsbedingungen</a><a href="https://www.fotoweber.de/j/shop/withdrawal" target="_blank" rel="noopener">Widerrufsbelehrung</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe APP · GETIN V31 · Mobile UX · Ausschnitt/Farboptimierung · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoe APP · GETIN V32 · Fotoabzüge + PEARL-Fotokalender · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1210,7 +1262,7 @@ let items = [];
 let nextId = 1;
 
 
-/* FotoJoe V31 – Weißer Rand, backend-kompatibel als glänzend */
+/* FotoJoe V32 – Weißer Rand, backend-kompatibel als glänzend */
 const WHITE_BORDER_FORMATS = new Set(["10×15 cm","13×13 cm","13×18 cm"]);
 const WHITE_BORDER_CM = 0.5;
 function selectedSurfaceInput(){return document.querySelector('input[name="surface"]:checked');}
@@ -2761,8 +2813,14 @@ updateSummary();
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
-        const reg = await navigator.serviceWorker.register("/app/sw.js?v=31", {scope:"/app/", updateViaCache:"none"});
+        const reg = await navigator.serviceWorker.register("/app/sw-v32-final.js?v=32-final", {scope:"/app/", updateViaCache:"none"});
         await reg.update();
+        let reloading = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (reloading) return;
+          reloading = true;
+          location.reload();
+        });
       } catch (err) {
         console.warn("FotoJoe APP: Service Worker", err);
       }
