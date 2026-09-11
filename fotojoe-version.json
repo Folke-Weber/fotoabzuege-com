@@ -1,5 +1,6 @@
 {
-  "latestBuild": 33,
-  "forceIfBehindBy": 5,
-  "label": "V33 TEST-2"
+  "latestBuild": 0,
+  "forceIfBehindBy": 999999,
+  "label": "V34 - Zwangsupdate deaktiviert",
+  "forcedUpdate": false
 }
