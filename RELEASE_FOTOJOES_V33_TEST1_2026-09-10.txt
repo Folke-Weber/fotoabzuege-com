@@ -1,0 +1,21 @@
+FotoJoes GETIN V33 TEST-1 · 10.09.2026
+
+BASIS
+- Sichere V32 als Ausgangspunkt; V32 bleibt unverändert.
+
+FIX 1 · WEISSER RAND / BELICHTERTEST
+- Produktionsdatei: links/rechts +1,5 mm Weißrand-Kompensation gegenüber oben/unten.
+- Das Bild wird in der Weißrand-Produktionsdatei ohne zusätzlichen Beschnitt in den Innenbereich eingepasst (contain statt zusätzlichem fill/crop).
+- Ziel des Testprints: seitliche und obere/untere Ränder am Belichter angleichen und den beobachteten ca. 2-mm-Zusatzbeschnitt vermeiden.
+- WICHTIG: Das ist eine Belichter-KALIBRIERUNG. Erst einen 10x15-Testprint prüfen, bevor der Stand finalisiert wird.
+
+FIX 2 · BESTELLSTATUS
+- Vor Prüfung: Zahlungspflichtig-bestellen-Feld weiß/inaktiv.
+- Nach erfolgreicher Prüfung: Prüfen-Feld dunkel + Haken; Zahlungspflichtig-bestellen-Feld rot/aktiv.
+- Während Übertragung: Bestellfeld dunkel.
+- Erst nach vollständig erfolgreicher Übertragung: Feld weiß + grüner Haken.
+- Bei Fehler: Feld springt, wenn Wiederholung zulässig, wieder auf rot/aktiv.
+
+NICHT GEÄNDERT
+- Backend-URLs, Tenant, Preise, Upload-/GETOUT-Schnittstellen.
+- V32 wurde nicht überschrieben.

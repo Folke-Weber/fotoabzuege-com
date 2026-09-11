@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FotoJoe GETIN V32 · KOMPLETTSTAND · BROWSER + APP + PEARL-KALENDER + QR · 2026-09-03 -->
+<!-- FotoJoes GETIN V33 TEST-2 · WEISSRAND-KALIBRIERUNG + CHECKOUT-STATUS · Basis V32 · 2026-09-10 -->
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -237,8 +237,14 @@ footer a{display:block;padding:4px 0}
 @keyframes selectionFlash{0%{box-shadow:0 0 0 0 rgba(239,58,25,.45)}100%{box-shadow:0 0 0 12px rgba(239,58,25,0)}}
 
 
-.sendbtn{width:100%;margin-top:12px;font-size:18px;padding:16px 20px;background:#111;color:#fff;border:0;border-radius:9px;font-weight:950;cursor:pointer}
-.sendbtn:disabled{opacity:.45;cursor:not-allowed}
+/* FotoJoes V33 TEST-2 – klare Checkout-Zustände */
+.sendbtn{width:100%;margin-top:12px;font-size:18px;padding:16px 20px;background:#fff;color:#222;border:2px solid #d8d8d3;border-radius:9px;font-weight:950;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease,opacity .18s ease}
+.sendbtn:disabled{opacity:1;cursor:not-allowed;background:#fff;color:#8a8a86;border-color:#deded9}
+.sendbtn.order-ready{background:linear-gradient(90deg,var(--red),var(--red2));color:#fff;border-color:transparent;cursor:pointer}
+.sendbtn.order-sending{background:#1b1b1b;color:#fff;border-color:#1b1b1b;cursor:wait}
+.sendbtn.order-sent{background:#fff;color:#237a3b;border:2px solid #43a85e;cursor:default}
+.reviewbtn.review-done{background:#1b1b1b!important;color:#fff!important;border-color:#1b1b1b!important;box-shadow:none!important}
+.reviewbtn.review-done:before{content:"✓ ";color:#8ee39f}
 .uploadprogress{display:none;margin-top:16px;padding:16px;border-radius:12px;background:#f7f7f5;border:1px solid #e2e2de}
 .uploadprogress.show{display:block}
 .progressbar{height:10px;background:#e5e5e1;border-radius:999px;overflow:hidden;margin-top:10px}
@@ -1126,7 +1132,7 @@ body.crop-open{overflow:hidden}
     <div><strong>Service & Rechtliches</strong><a href="tel:+4974746248">Anrufen</a><a href="mailto:foto-weber-haigerloch@t-online.de">E-Mail</a><a href="https://www.fotoweber.de/">Foto Weber</a><a href="https://www.fotoweber.de/about/" target="_blank" rel="noopener">Impressum</a><a href="https://www.fotoweber.de/j/privacy" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.fotoweber.de/j/shop/deliveryinfo" target="_blank" rel="noopener">Liefer- & Zahlungsbedingungen</a><a href="https://www.fotoweber.de/j/shop/withdrawal" target="_blank" rel="noopener">Widerrufsbelehrung</a></div>
   </div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoe V32 · Browser + App + PEARL-Kalender · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoes V33 TEST-2 · Browser + App + PEARL-Kalender · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1242,6 +1248,15 @@ let nextId = 1;
 /* FotoJoe V28 – Weißer Rand, backend-kompatibel als glänzend */
 const WHITE_BORDER_FORMATS = new Set(["10×15 cm","13×13 cm","13×18 cm"]);
 const WHITE_BORDER_CM = 0.5;
+/* FotoJoes V33 TEST-2 – Belichter-Kalibrierung Weißrand.
+   Gemessener Test: Seitenrand ca. 1,5 mm kleiner als oben/unten.
+   Deshalb wird nur die PRODUKTIONSDATEI seitlich um +1,5 mm kompensiert.
+   Die Bildzeichnung nutzt contain, damit außerhalb des vom Kunden gewählten
+   Formatausschnitts kein zusätzlicher Weißrand-Beschnitt entsteht. */
+const WHITE_BORDER_SIDE_COMP_CM = 0.15;
+function whiteBorderMarginsFor(item){
+  return {x:WHITE_BORDER_CM+WHITE_BORDER_SIDE_COMP_CM,y:WHITE_BORDER_CM};
+}
 function selectedSurfaceInput(){return document.querySelector('input[name="surface"]:checked');}
 function isWhiteBorderSelected(){return selectedSurfaceInput()?.dataset.whiteBorder==="1";}
 function selectedSurfaceLabel(){return isWhiteBorderSelected()?"Weißer Rand (glänzend)":(selectedSurfaceInput()?.value||"");}
@@ -1361,7 +1376,9 @@ function invalidateReview(message="Bestellung geändert – bitte erneut prüfen
   const send=document.getElementById("sendOrder");
   const preview=document.getElementById("orderPreview");
   const status=document.getElementById("reviewPriceStatus");
-  if(send){send.disabled=true;send.dataset.reviewValid="0";send.setAttribute("aria-disabled","true");}
+  if(send){send.disabled=true;send.dataset.reviewValid="0";send.setAttribute("aria-disabled","true");send.classList.remove("order-ready","order-sending","order-sent");send.textContent="Zahlungspflichtig bestellen & Bilder übertragen";}
+  const review=document.getElementById("reviewOrder");
+  if(review) review.classList.remove("review-done");
   if(preview) preview.classList.remove("show");
   if(status){status.textContent=message;status.className="review-price-status changed";}
 }
@@ -1768,22 +1785,33 @@ async function makeCroppedFile(item,state){
   return {file,width:outW,height:outH,previewUrl:URL.createObjectURL(blob)};
 }
 
+function drawImageContain(ctx,img,sx,sy,sw,sh,dx,dy,dw,dh){
+  const srcRatio=sw/sh,targetRatio=dw/dh;
+  let rw=dw,rh=dh,rx=dx,ry=dy;
+  if(srcRatio>targetRatio){rh=dw/srcRatio;ry=dy+(dh-rh)/2;}
+  else{rw=dh*srcRatio;rx=dx+(dw-rw)/2;}
+  ctx.drawImage(img,sx,sy,sw,sh,rx,ry,Math.max(1,rw),Math.max(1,rh));
+}
+
 async function makeWhiteBorderUploadFile(item){
   if(itemType(item.format)!=="photo" || !isWhiteBorderFormatIndex(item.format)) return item.uploadFile||item.file;
   const img=await loadImageForCrop(item);
   const state=item.cropState?{...item.cropState}:{orientation:defaultCropOrientation(item),zoom:1,cx:item.pixelWidth/2,cy:item.pixelHeight/2,optimize:false};
   const r=cropRectFor(item,state,true);
   if(!r) throw new Error("Weißer Rand konnte für dieses Bild nicht berechnet werden.");
-  const innerFracW=Math.max(0.05,(r.outerPrintW-2*WHITE_BORDER_CM)/r.outerPrintW);
-  const innerFracH=Math.max(0.05,(r.outerPrintH-2*WHITE_BORDER_CM)/r.outerPrintH);
+  const margins=whiteBorderMarginsFor(item);
+  const innerFracW=Math.max(0.05,(r.outerPrintW-2*margins.x)/r.outerPrintW);
+  const innerFracH=Math.max(0.05,(r.outerPrintH-2*margins.y)/r.outerPrintH);
   const rawOuterW=r.w/innerFracW,rawOuterH=r.h/innerFracH;
   const maxSide=6500,scale=Math.min(1,maxSide/Math.max(rawOuterW,rawOuterH));
   const outW=Math.max(1,Math.round(rawOuterW*scale)),outH=Math.max(1,Math.round(rawOuterH*scale));
-  const bx=Math.max(1,Math.round(outW*(WHITE_BORDER_CM/r.outerPrintW)));
-  const by=Math.max(1,Math.round(outH*(WHITE_BORDER_CM/r.outerPrintH)));
+  const bx=Math.max(1,Math.round(outW*(margins.x/r.outerPrintW)));
+  const by=Math.max(1,Math.round(outH*(margins.y/r.outerPrintH)));
   const c=document.createElement("canvas");c.width=outW;c.height=outH;const ctx=c.getContext("2d",{alpha:false});
   ctx.fillStyle="#fff";ctx.fillRect(0,0,outW,outH);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";ctx.filter=state.optimize?"brightness(1.03) contrast(1.04) saturate(1.04)":"none";
-  ctx.drawImage(img,r.x,r.y,r.w,r.h,bx,by,Math.max(1,outW-2*bx),Math.max(1,outH-2*by));
+  /* Kein zusätzlicher 2-mm-artiger Beschnitt durch das Einpassen in den Weißrand:
+     der bereits gewählte Kundenausschnitt bleibt vollständig sichtbar. */
+  drawImageContain(ctx,img,r.x,r.y,r.w,r.h,bx,by,Math.max(1,outW-2*bx),Math.max(1,outH-2*by));
   const srcType=(item.file?.type||"").toLowerCase();
   const outType=srcType==="image/png"?"image/png":srcType==="image/webp"?"image/webp":"image/jpeg";
   const ext=outType==="image/png"?"png":outType==="image/webp"?"webp":"jpg";
@@ -2344,10 +2372,14 @@ document.getElementById("reviewOrder").addEventListener("click",async ()=>{
   priceStatus.textContent=promotionStatusText(pricing);
   priceStatus.className="review-price-status ok";
   preview.classList.add("show");
+  reviewBtn.classList.add("review-done");
+  reviewBtn.textContent="Bestellung geprüft";
   const sendAfterReview=document.getElementById("sendOrder");
   sendAfterReview.disabled=false;
   sendAfterReview.dataset.reviewValid="1";
   sendAfterReview.setAttribute("aria-disabled","false");
+  sendAfterReview.classList.remove("order-sending","order-sent");
+  sendAfterReview.classList.add("order-ready");
   preview.scrollIntoView({behavior:"smooth",block:"nearest"});
 });
 
@@ -2643,6 +2675,34 @@ async function finalizeWithRecovery(order, progressText, progressHint){
   }
 }
 
+function clearCompletedOrderSelection(){
+  // Auftrag ist serverseitig vollständig abgeschlossen: lokale Bildauswahl bewusst leeren,
+  // damit derselbe Auftrag nicht versehentlich noch einmal bestellt werden kann.
+  items.forEach(item=>{
+    try{ if(item?.url) URL.revokeObjectURL(item.url); }catch(_e){}
+    revokeEditedPreview(item);
+  });
+  items=[];
+  if(fileInput) fileInput.value="";
+  LAST_REVIEW_PRICE=null;
+  LAST_REVIEW_FINGERPRINT=null;
+
+  const preview=document.getElementById("orderPreview");
+  if(preview) preview.classList.remove("show");
+  const review=document.getElementById("reviewOrder");
+  if(review){
+    review.disabled=false;
+    review.classList.remove("review-done");
+    review.textContent="Bestellung prüfen →";
+  }
+  const send=document.getElementById("sendOrder");
+  if(send){
+    send.dataset.reviewValid="0";
+    send.setAttribute("aria-disabled","true");
+  }
+  renderFiles();
+}
+
 document.getElementById("sendOrder").addEventListener("click", async ()=>{
   const btn=document.getElementById("sendOrder");
   const progress=document.getElementById("uploadProgress");
@@ -2668,6 +2728,9 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
   error.classList.remove("show");
   progress.classList.add("show");
   btn.disabled=true;
+  btn.classList.remove("order-ready","order-sent");
+  btn.classList.add("order-sending");
+  btn.textContent="Bestellung wird übertragen …";
   ACTIVE_UPLOAD=true;
   ACTIVE_UPLOAD_UI={text:progressText,hint:progressHint};
 
@@ -2719,6 +2782,12 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     progressBar.style.width="100%";
     success.innerHTML=`<strong>Bestellung erfolgreich übertragen.</strong><br>Bestellnummer: <strong>${order.orderId}</strong><br>${items.length} Bilddatei${items.length===1?"":"en"} wurden sicher übertragen.<br>Status: <strong>vollständig</strong>`;
     success.classList.add("show");
+    btn.classList.remove("order-ready","order-sending");
+    btn.classList.add("order-sent");
+    btn.textContent="✓ Bestellung erfolgreich gesendet";
+    btn.disabled=true;
+    btn.setAttribute("aria-disabled","true");
+    clearCompletedOrderSelection();
   }catch(err){
     const raw=String(err?.message||err||"");
     const friendly=networkLikeError(err)
@@ -2731,6 +2800,9 @@ document.getElementById("sendOrder").addEventListener("click", async ()=>{
     const canRetry=btn.dataset.reviewValid==="1" && reviewStillCurrent();
     btn.disabled=!canRetry;
     btn.setAttribute("aria-disabled",canRetry?"false":"true");
+    btn.classList.remove("order-sending","order-sent");
+    if(canRetry){btn.classList.add("order-ready");btn.textContent="Zahlungspflichtig bestellen & Bilder übertragen";}
+    else{btn.classList.remove("order-ready");}
   }finally{
     ACTIVE_UPLOAD=false;
     ACTIVE_UPLOAD_UI=null;
@@ -2780,11 +2852,16 @@ updateSummary();
 if("serviceWorker" in navigator){
   window.addEventListener("load",async()=>{
     try{
-      const reg=await navigator.serviceWorker.register("/app/sw.js?v=32",{scope:"/app/",updateViaCache:"none"});
+      const reg=await navigator.serviceWorker.register("/app/sw.js?v=33-test2",{scope:"/app/",updateViaCache:"none"});
       await reg.update();
     }catch(_e){}
   });
 }
 </script>
+
+<script>
+window.FOTOJO_GETIN_BUILD=33;
+</script>
+<script src="/fotojoe-update.js?v=1"></script>
 </body>
 </html>

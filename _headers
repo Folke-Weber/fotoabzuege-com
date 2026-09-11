@@ -31,3 +31,9 @@
   Cache-Control: public, max-age=300, s-maxage=3600
 /fotoabzuege-haigerloch/*
   Cache-Control: public, max-age=300, s-maxage=3600
+
+# FotoJoes Versionsprüfung: niemals zwischenspeichern
+/fotojoe-version.json
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+/fotojoe-update.js
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0

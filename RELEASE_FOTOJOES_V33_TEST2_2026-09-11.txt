@@ -1,0 +1,21 @@
+FotoJoes GETIN V33 TEST-2 – 11.09.2026
+
+Basis: V33 TEST-1 / sicherer Rückfallstand V32 bleibt unverändert.
+
+Änderungen:
+1. Auftragsreset nach erfolgreichem Server-Abschluss
+   - Bilder bleiben während Prüfen und Übertragen erhalten.
+   - Erst NACH erfolgreichem Finalize/READY werden lokale Bildobjekte aus GETIN entfernt.
+   - Datei-Auswahl wird geleert, Review-Fingerprint und Preisprüfung werden verworfen.
+   - Der grüne Erfolgshinweis mit Auftragsnummer bleibt sichtbar.
+   - Derselbe Bildsatz kann dadurch nicht versehentlich mit einem zweiten Klick erneut bestellt werden.
+
+2. Update-Gate ab V33
+   - Browser und installierte PWA/App prüfen /fotojoe-version.json mit no-store.
+   - forceIfBehindBy = 5.
+   - Beispiel: Wenn latestBuild später 38 ist, erzwingt ein noch laufender V33-Client ein Update.
+   - Bei Zwangsupdate werden FotoJoes-PWA-Caches gelöscht, Service Worker aktualisiert und die Seite mit Cache-Buster neu geladen.
+   - Die Sperre ist nicht wegklickbar.
+   - Prüfung beim Start und nach längerer Rückkehr aus dem Hintergrund.
+
+3. Weißrand-Kalibrierung und Checkout-Farbzustände aus TEST-1 bleiben unverändert enthalten.
