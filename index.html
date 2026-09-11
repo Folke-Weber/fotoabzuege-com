@@ -689,6 +689,27 @@ body.crop-open{overflow:hidden}
 <style>
 .pickup-onehour{display:inline-block;margin-top:7px;color:#8a2a18}.delivery-onehour{margin-top:8px;color:#8a2a18}.onehour-hero{display:inline-block;margin:12px 0 0;padding:10px 14px;border-left:4px solid var(--red);background:#fff7f4;border-radius:0 8px 8px 0;color:#4a2b23}
 .regional-section{padding:66px 0;background:#fff}.regional-lead{font-size:18px;color:#555;max-width:1040px}.regional-promise{margin:24px 0;display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:12px;background:#fff7f4;border:1px solid #ffd2c6}.regional-promise strong{font-size:19px}.regional-promise span{color:#666;font-size:13px}.regional-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.regional-card{display:flex;flex-direction:column;gap:5px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:.2s}.regional-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px #0000000d;border-color:#ef3a1955}.regional-card b{font-size:17px}.regional-card span{font-size:13px;color:#666}.faq-list{display:grid;gap:10px}.faq-list details{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fff}.faq-list summary{font-weight:900;cursor:pointer}.faq-list p{margin:10px 0 0;color:#555}@media(max-width:760px){.regional-grid{grid-template-columns:1fr}.regional-section{padding:50px 0}.regional-lead{font-size:16px}.onehour-hero{font-size:14px}}
+
+/* FotoJoes V35 · separater Dokument-/Kopien-Upload */
+.copy-upload-section{padding:76px 0;background:#f7f7f4;border-top:1px solid var(--line)}
+.copy-upload-head{max-width:850px}.copy-upload-head p{font-size:17px;color:#555;line-height:1.6}
+.copy-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.copy-price-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 8px 22px #00000008}
+.copy-price-card strong{display:block;font-size:18px;margin-bottom:9px}.copy-price-card span{display:block;color:#555;line-height:1.55}.copy-price-card b{color:var(--red)}
+.copy-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:20px}
+.copy-drop{display:block;border:2px dashed #c9c9c3;border-radius:14px;padding:24px;text-align:center;cursor:pointer;background:#fbfbf9}
+.copy-drop:hover{border-color:var(--red);background:#fff8f5}.copy-drop input{display:none}.copy-drop strong{display:block;font-size:18px}.copy-drop small{display:block;margin-top:6px;color:#666}
+.copy-file-list{display:grid;gap:12px;margin-top:16px}.copy-file-row{display:grid;grid-template-columns:minmax(180px,1.4fr) 1fr 100px 100px 110px 38px;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.copy-file-name{min-width:0}.copy-file-name b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.copy-file-name small{color:#777}
+.copy-file-row select,.copy-file-row input,.copy-customer-grid input{width:100%;border:1px solid #cfcfca;border-radius:9px;padding:10px 11px;background:#fff;font:inherit}
+.copy-file-row label{font-size:11px;color:#666;font-weight:800}.copy-file-row .copy-field{display:grid;gap:4px}.copy-line-total{text-align:right;font-weight:900}.copy-remove{border:0;background:#f3f3f0;border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:20px}
+.copy-customer-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.copy-customer-grid .wide{grid-column:1/-1}.copy-customer-grid label{display:grid;gap:5px;font-size:12px;color:#555;font-weight:850}
+.copy-summary{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:20px;padding:16px;border-radius:12px;background:#f8f8f5}.copy-summary-total{font-size:24px;font-weight:950}.copy-pickup{font-size:13px;color:#555}
+.copy-order-btn{margin-top:16px;width:100%;border:0;border-radius:11px;padding:15px 18px;background:var(--red);color:#fff;font-weight:950;font-size:16px;cursor:pointer}.copy-order-btn:disabled{opacity:.45;cursor:not-allowed}
+.copy-status{display:none;margin-top:14px;padding:13px 15px;border-radius:10px}.copy-status.show{display:block}.copy-status.ok{background:#edf8ee;border:1px solid #b9dfbd;color:#235b29}.copy-status.err{background:#fff0ec;border:1px solid #ffc8bb;color:#7d2818}.copy-status.info{background:#f3f6fa;border:1px solid #ccd7e6;color:#30455f}
+.copy-legal{margin-top:10px;font-size:11px;color:#777;line-height:1.45}
+@media(max-width:900px){.copy-price-grid{grid-template-columns:1fr}.copy-file-row{grid-template-columns:1fr 1fr 1fr}.copy-file-name{grid-column:1/-1}.copy-line-total{text-align:left}.copy-remove{justify-self:end}}
+@media(max-width:620px){.copy-upload-section{padding:52px 0}.copy-box{padding:16px}.copy-file-row{grid-template-columns:1fr 1fr}.copy-file-name{grid-column:1/-1}.copy-file-row .copy-product{grid-column:1/-1}.copy-customer-grid{grid-template-columns:1fr}.copy-customer-grid .wide{grid-column:auto}.copy-summary{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
@@ -703,6 +724,7 @@ body.crop-open{overflow:hidden}
       <a href="#formate">Formate & Produkte</a>
       <a href="#oberflaechen">Oberflächen</a>
       <a href="#bestellen">Bestellen</a>
+      <a href="#kopien">Kopien</a>
       <a href="#lieferung">Versand & Abholung</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -1113,6 +1135,49 @@ body.crop-open{overflow:hidden}
   </div>
 </section>
 
+
+<section class="copy-upload-section" id="kopien">
+  <div class="wrap">
+    <div class="copy-upload-head">
+      <div class="kicker">Dokumente &amp; Kopien</div>
+      <h2>Dokument hochladen. <b>Wir drucken es für Sie.</b></h2>
+      <p>PDF, Word, Excel oder Bilddatei bequem hochladen und bei Foto Weber in Haigerloch abholen. Dieser Upload ist bewusst getrennt von Ihrer Fotobestellung.</p>
+    </div>
+
+    <div class="copy-price-grid" aria-label="Preise für Dokumentausdrucke">
+      <div class="copy-price-card"><strong>Farbkopie A4</strong><span>1–2 Stück: <b>1,50 €</b><br>ab 3 Stück: <b>1,20 €</b></span></div>
+      <div class="copy-price-card"><strong>Farbkopie A3</strong><span>1–2 Stück: <b>3,50 €</b><br>ab 3 Stück: <b>2,50 €</b></span></div>
+      <div class="copy-price-card"><strong>SW A4</strong><span>1–2 Stück: <b>0,80 €</b><br>ab 3 Stück: <b>0,50 €</b></span></div>
+    </div>
+
+    <div class="copy-box">
+      <label class="copy-drop" for="copyFiles">
+        <input id="copyFiles" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,application/pdf,image/jpeg,image/png,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+        <strong>Dokumente auswählen</strong>
+        <small>PDF · JPG/JPEG · PNG · Word DOC/DOCX · Excel XLS/XLSX · maximal 40 MB je Datei</small>
+      </label>
+      <div id="copyFileList" class="copy-file-list"></div>
+
+      <div class="copy-customer-grid">
+        <label>Vorname<input id="copyFirstName" autocomplete="given-name" required></label>
+        <label>Nachname<input id="copyLastName" autocomplete="family-name" required></label>
+        <label>E-Mail<input id="copyEmail" type="email" autocomplete="email" required></label>
+        <label>Telefon<input id="copyPhone" type="tel" autocomplete="tel"></label>
+      </div>
+
+      <div class="copy-summary">
+        <div><strong>Abholung bei Foto Weber</strong><div class="copy-pickup">Unterstadt 14 · 72401 Haigerloch</div></div>
+        <div><span>Gesamt</span><div id="copyTotal" class="copy-summary-total">0,00 €</div></div>
+      </div>
+      <button id="copyOrderButton" class="copy-order-btn" type="button" disabled>Kopierauftrag kostenpflichtig bestellen</button>
+      <div class="copy-legal">Bei PDF-, Word- und Excel-Dateien geben Sie bitte die Seitenzahl laut Dokument bzw. Druckansicht an. Die Preisstaffel gilt je Druckart ab insgesamt 3 Druckseiten. Word- und Excel-Dateien werden im Originalformat an Foto Weber übertragen und dort auf dem Bürorechner geöffnet und gedruckt.</div>
+      <div id="copyStatusInfo" class="copy-status info"></div>
+      <div id="copyStatusOk" class="copy-status ok"></div>
+      <div id="copyStatusErr" class="copy-status err"></div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap footergrid">
     <div><strong>fotoabzüge.com</strong><br>Ein Angebot von Foto Weber Haigerloch<br><br>Unterstadt 14 · 72401 Haigerloch<br>Telefon 07474 6248<br>foto-weber-haigerloch@t-online.de</div>
@@ -1121,7 +1186,7 @@ body.crop-open{overflow:hidden}
   </div>
   <div class="wrap regional-seo-footer"><strong>Regionale Abholung in Haigerloch:</strong> Rangendingen · Hirrlingen · Hechingen · Balingen · Eutingen im Gäu · Horb · Sulz am Neckar · Waldachtal · Haiterbach · Freudenstadt · Albstadt · Pfalzgrafenweiler · Ergenzingen. <a href="/fotoabzuege-horb-freudenstadt/">Horb &amp; Freudenstadt</a> · <a href="/fotoabzuege-hechingen-umgebung/">Hechingen &amp; Umgebung</a> · <a href="/fotoabzuege-balingen-albstadt/">Balingen &amp; Albstadt</a> · <a href="/fotoabzuege-rottenburg-ergeningen/">Ergenzingen &amp; Umgebung</a></div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoes V34 · Browser · PEARL-Kalender · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoes V35 · Browser · Dokumente & Kopien · PEARL-Kalender · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -2851,6 +2916,86 @@ if("serviceWorker" in navigator){
 <script>
 window.FOTOJO_GETIN_BUILD=34;
 </script>
+
+<script>
+(()=>{
+  "use strict";
+  const backend=typeof BACKEND_BASE!=="undefined"?BACKEND_BASE:"https://fotoworks-backend.folke-weber.workers.dev";
+  const tenant=typeof TENANT_SLUG!=="undefined"?TENANT_SLUG:"foto-weber";
+  const createUrl=`${backend}/api/v1/orders?tenant=${encodeURIComponent(tenant)}`;
+  const uploadUrl=`${backend}/api/upload`;
+  const finalizeUrl=`${backend}/api/finalize`;
+  const allowedExt=new Set(["pdf","jpg","jpeg","png","doc","docx","xls","xlsx"]);
+  const maxBytes=41943040;
+  const fileInput=document.getElementById("copyFiles");
+  if(!fileInput) return;
+  const list=document.getElementById("copyFileList"), totalEl=document.getElementById("copyTotal"), btn=document.getElementById("copyOrderButton");
+  const info=document.getElementById("copyStatusInfo"), ok=document.getElementById("copyStatusOk"), err=document.getElementById("copyStatusErr");
+  let docs=[];
+  const euro=c=>Number(c/100).toLocaleString("de-DE",{style:"currency",currency:"EUR"});
+  const extOf=n=>(String(n).toLowerCase().match(/\.([a-z0-9]+)$/)||[])[1]||"";
+  const isImage=f=>["jpg","jpeg","png"].includes(extOf(f.name));
+  const price=(code,totalQty)=>code==="COPY_A4_COLOR"?(totalQty>=3?120:150):code==="COPY_A3_COLOR"?(totalQty>=3?250:350):(totalQty>=3?50:80);
+  function clearStatus(){for(const el of [info,ok,err]){el.classList.remove("show");el.textContent=""}}
+  function show(el,text){clearStatus();el.textContent=text;el.classList.add("show")}
+  function totalsByCode(){const m=new Map();for(const d of docs){const q=d.pages*d.copies;m.set(d.code,(m.get(d.code)||0)+q)}return m}
+  function totalCents(){const m=totalsByCode();return docs.reduce((sum,d)=>sum+price(d.code,m.get(d.code)||1)*d.pages*d.copies,0)}
+  function validCustomer(){const fn=document.getElementById("copyFirstName").value.trim(),ln=document.getElementById("copyLastName").value.trim(),em=document.getElementById("copyEmail").value.trim();return fn&&ln&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)}
+  function refreshButton(){btn.disabled=!(docs.length&&validCustomer())}
+  function render(){
+    list.innerHTML=""; const totals=totalsByCode();
+    docs.forEach((d,i)=>{
+      const row=document.createElement("div");row.className="copy-file-row";
+      row.innerHTML=`<div class="copy-file-name"><b title="${escapeHtml(d.file.name)}">${escapeHtml(d.file.name)}</b><small>${(d.file.size/1048576).toFixed(1).replace(".",",")} MB</small></div>
+      <div class="copy-field copy-product"><label>Druckart</label><select data-k="code"><option value="COPY_A4_COLOR">Farbe A4</option><option value="COPY_A3_COLOR">Farbe A3</option><option value="COPY_A4_BW">SW A4</option></select></div>
+      <div class="copy-field"><label>Seiten</label><input data-k="pages" type="number" min="1" max="250" value="${d.pages}" ${isImage(d.file)?"disabled":""}></div>
+      <div class="copy-field"><label>Exemplare</label><input data-k="copies" type="number" min="1" max="250" value="${d.copies}"></div>
+      <div class="copy-line-total">${euro(price(d.code,totals.get(d.code)||1)*d.pages*d.copies)}</div>
+      <button class="copy-remove" type="button" title="Datei entfernen">×</button>`;
+      const sel=row.querySelector('select[data-k="code"]');sel.value=d.code;
+      sel.onchange=()=>{d.code=sel.value;render()};
+      const pages=row.querySelector('input[data-k="pages"]');pages.onchange=()=>{d.pages=Math.max(1,Math.min(250,Math.round(Number(pages.value)||1)));render()};
+      const copies=row.querySelector('input[data-k="copies"]');copies.onchange=()=>{d.copies=Math.max(1,Math.min(250,Math.round(Number(copies.value)||1)));render()};
+      row.querySelector(".copy-remove").onclick=()=>{docs.splice(i,1);render()};
+      list.appendChild(row);
+    });
+    totalEl.textContent=euro(totalCents());refreshButton();
+  }
+  function escapeHtml(v){return String(v).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]))}
+  fileInput.addEventListener("change",()=>{
+    clearStatus();
+    for(const f of [...fileInput.files]){
+      const ext=extOf(f.name);
+      if(!allowedExt.has(ext)){show(err,`${f.name}: Dateiformat wird nicht unterstützt.`);continue}
+      if(f.size>maxBytes){show(err,`${f.name}: Datei ist größer als 40 MB.`);continue}
+      docs.push({file:f,code:"COPY_A4_COLOR",pages:1,copies:1});
+    }
+    fileInput.value="";render();
+  });
+  for(const id of ["copyFirstName","copyLastName","copyEmail","copyPhone"]){document.getElementById(id).addEventListener("input",refreshButton)}
+  async function jsonFetch(url,opt){const r=await fetch(url,opt);let d={};try{d=await r.json()}catch{}if(!r.ok||!d.ok)throw new Error(d.error||`HTTP ${r.status}`);return d}
+  btn.addEventListener("click",async()=>{
+    clearStatus();if(!docs.length||!validCustomer())return;
+    if(docs.some(d=>d.pages*d.copies>999)){show(err,"Je Datei sind maximal 999 Druckseiten möglich. Bitte Seiten oder Exemplare reduzieren.");return}
+    const totalQty=docs.reduce((n,d)=>n+d.pages*d.copies,0);if(totalQty>2500){show(err,"Bitte teilen Sie den Auftrag in kleinere Bestellungen auf.");return}
+    btn.disabled=true;btn.textContent="Kopierauftrag wird übertragen …";
+    try{
+      show(info,"Auftrag wird angelegt …");
+      const payload={tenant,source:"copies",shipping:"pickup",firstName:document.getElementById("copyFirstName").value.trim(),lastName:document.getElementById("copyLastName").value.trim(),email:document.getElementById("copyEmail").value.trim(),phone:document.getElementById("copyPhone").value.trim(),items:docs.map(d=>({filename:d.file.name,productCode:d.code,pageCount:d.pages,copyCount:d.copies,quantity:d.pages*d.copies}))};
+      const order=await jsonFetch(createUrl,{method:"POST",headers:{"content-type":"application/json","x-fotoworks-tenant":tenant},body:JSON.stringify(payload)});
+      if(Math.abs(Number(order.total||0)*100-totalCents())>0.5)throw new Error("Serverpreis weicht von der angezeigten Summe ab. Bitte nicht erneut senden und Foto Weber informieren.");
+      for(let i=0;i<docs.length;i++){
+        const d=docs[i];show(info,`Datei ${i+1} von ${docs.length} wird übertragen: ${d.file.name}`);
+        await jsonFetch(uploadUrl,{method:"POST",headers:{"content-type":d.file.type||"application/octet-stream","x-order-id":order.orderId,"x-upload-token":order.uploadToken,"x-filename":encodeURIComponent(d.file.name),"x-product-code":d.code,"x-quantity":String(d.pages*d.copies),"x-item-index":String(i),"x-fotoworks-tenant":tenant},body:d.file});
+      }
+      await jsonFetch(finalizeUrl,{method:"POST",headers:{"content-type":"application/json","x-fotoworks-tenant":tenant},body:JSON.stringify({orderId:order.orderId,uploadToken:order.uploadToken,tenant})});
+      docs=[];render();show(ok,`Kopierauftrag erfolgreich übertragen. Bestellnummer: ${order.orderId}. Sie erhalten zusätzlich eine Bestätigung per E-Mail.`);
+    }catch(e){show(err,"Fehler: "+String(e?.message||e))}
+    finally{btn.textContent="Kopierauftrag kostenpflichtig bestellen";refreshButton()}
+  });
+})();
+</script>
+
 <script src="/fotojoe-update.js?v=1"></script>
 </body>
 </html>
