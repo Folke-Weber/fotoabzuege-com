@@ -705,8 +705,10 @@ body.crop-open{overflow:hidden}
 .copy-file-row label{font-size:11px;color:#666;font-weight:800}.copy-file-row .copy-field{display:grid;gap:4px}.copy-line-total{text-align:right;font-weight:900}.copy-remove{border:0;background:#f3f3f0;border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:20px}
 .copy-customer-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.copy-customer-grid .wide{grid-column:1/-1}.copy-customer-grid label{display:grid;gap:5px;font-size:12px;color:#555;font-weight:850}
 .copy-summary{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:20px;padding:16px;border-radius:12px;background:#f8f8f5}.copy-summary-total{font-size:24px;font-weight:950}.copy-pickup{font-size:13px;color:#555}
-.copy-order-btn{margin-top:16px;width:100%;border:0;border-radius:11px;padding:15px 18px;background:var(--red);color:#fff;font-weight:950;font-size:16px;cursor:pointer}.copy-order-btn:disabled{opacity:.45;cursor:not-allowed}
-.copy-status{display:none;margin-top:14px;padding:13px 15px;border-radius:10px}.copy-status.show{display:block}.copy-status.ok{background:#edf8ee;border:1px solid #b9dfbd;color:#235b29}.copy-status.err{background:#fff0ec;border:1px solid #ffc8bb;color:#7d2818}.copy-status.info{background:#f3f6fa;border:1px solid #ccd7e6;color:#30455f}
+.copy-order-btn{margin-top:16px;width:100%;border:0;border-radius:11px;padding:15px 18px;background:var(--red);color:#fff;font-weight:950;font-size:16px;cursor:pointer;transition:.18s ease}.copy-order-btn:disabled{opacity:.45;cursor:not-allowed}.copy-order-btn.copy-success{background:#218739;color:#fff;opacity:1;cursor:default}
+.copy-progress{display:none;margin-top:12px}.copy-progress.show{display:block}.copy-progress-head{display:flex;justify-content:space-between;gap:12px;font-size:12px;font-weight:900;color:#555;margin-bottom:6px}.copy-progress-track{height:12px;border-radius:999px;overflow:hidden;background:#ecece7;border:1px solid #deded8}.copy-progress-bar{height:100%;width:0;background:#d9573f;transition:width .28s ease}.copy-progress.done .copy-progress-bar{background:#218739}.copy-progress.done .copy-progress-head{color:#235b29}
+.copy-status{display:none;margin-top:14px;padding:13px 15px;border-radius:10px}.copy-status.show{display:block}.copy-status.ok{background:#edf8ee;border:1px solid #b9dfbd;color:#235b29;font-weight:850}.copy-status.err{background:#fff0ec;border:1px solid #ffc8bb;color:#7d2818}.copy-status.info{background:#f3f6fa;border:1px solid #ccd7e6;color:#30455f}
+.format-assistant{margin-top:7px;padding:8px 10px;border-radius:9px;background:#f7f8f5;border:1px solid #e4e5df;font-size:11px;line-height:1.45;color:#555}.format-assistant strong{color:#222}.format-assistant .fa-warn{display:block;margin-top:3px;color:#7b5a24;font-weight:800}
 .copy-legal{margin-top:10px;font-size:11px;color:#777;line-height:1.45}
 @media(max-width:900px){.copy-price-grid{grid-template-columns:1fr}.copy-file-row{grid-template-columns:1fr 1fr 1fr}.copy-file-name{grid-column:1/-1}.copy-line-total{text-align:left}.copy-remove{justify-self:end}}
 @media(max-width:620px){.copy-upload-section{padding:52px 0}.copy-box{padding:16px}.copy-file-row{grid-template-columns:1fr 1fr}.copy-file-name{grid-column:1/-1}.copy-file-row .copy-product{grid-column:1/-1}.copy-customer-grid{grid-template-columns:1fr}.copy-customer-grid .wide{grid-column:auto}.copy-summary{align-items:flex-start;flex-direction:column}}
@@ -1170,6 +1172,10 @@ body.crop-open{overflow:hidden}
         <div><span>Gesamt</span><div id="copyTotal" class="copy-summary-total">0,00 €</div></div>
       </div>
       <button id="copyOrderButton" class="copy-order-btn" type="button" disabled>Kopierauftrag kostenpflichtig bestellen</button>
+      <div id="copyProgress" class="copy-progress" aria-live="polite">
+        <div class="copy-progress-head"><span id="copyProgressText">Übertragung läuft …</span><span id="copyProgressPct">0 %</span></div>
+        <div class="copy-progress-track" role="progressbar" aria-label="Übertragung Kopierauftrag" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="copyProgressBar" class="copy-progress-bar"></div></div>
+      </div>
       <div class="copy-legal">Bei PDF-, Word- und Excel-Dateien geben Sie bitte die Seitenzahl laut Dokument bzw. Druckansicht an. Die Preisstaffel gilt je Druckart ab insgesamt 3 Druckseiten. Word- und Excel-Dateien werden im Originalformat an Foto Weber übertragen und dort auf dem Bürorechner geöffnet und gedruckt.</div>
       <div id="copyStatusInfo" class="copy-status info"></div>
       <div id="copyStatusOk" class="copy-status ok"></div>
@@ -1186,7 +1192,7 @@ body.crop-open{overflow:hidden}
   </div>
   <div class="wrap regional-seo-footer"><strong>Regionale Abholung in Haigerloch:</strong> Rangendingen · Hirrlingen · Hechingen · Balingen · Eutingen im Gäu · Horb · Sulz am Neckar · Waldachtal · Haiterbach · Freudenstadt · Albstadt · Pfalzgrafenweiler · Ergenzingen. <a href="/fotoabzuege-horb-freudenstadt/">Horb &amp; Freudenstadt</a> · <a href="/fotoabzuege-hechingen-umgebung/">Hechingen &amp; Umgebung</a> · <a href="/fotoabzuege-balingen-albstadt/">Balingen &amp; Albstadt</a> · <a href="/fotoabzuege-rottenburg-ergeningen/">Ergenzingen &amp; Umgebung</a></div>
   <div class="wrap legal">Fotoabzüge & Fotoprodukte von Foto Weber Haigerloch · Leinwandbilder derzeit nur auf Anfrage und zur Abholung.</div>
-  <div class="wrap buildversion">FotoJoes V35 · Browser · Dokumente & Kopien · PEARL-Kalender · by JustForWork · All Rights Reserved</div>
+  <div class="wrap buildversion">FotoJoes V36 · Browser · Formatassistent · Dokumente & Kopien · PEARL-Kalender · by JustForWork · All Rights Reserved</div>
 </footer>
 
 
@@ -1688,6 +1694,34 @@ function qualityInfo(item){
   return {kind,label,detail:detail.join(" · "),crop,ppi};
 }
 
+function ratioAssistant(item){
+  if(!item || !item.pixelWidth || !item.pixelHeight || itemType(item.format)!=="photo") return "";
+  const shortPx=Math.min(item.pixelWidth,item.pixelHeight), longPx=Math.max(item.pixelWidth,item.pixelHeight);
+  if(!shortPx) return "";
+  const r=longPx/shortPx;
+  let label, optimal, frame, warning="";
+  if(Math.abs(r-1.5)<=0.07){
+    label="2:3";
+    optimal="10×15 · 20×30 · 30×45";
+    frame="10×15 · 20×30 · 30×45";
+  }else if(Math.abs(r-(4/3))<=0.07){
+    label="4:3";
+    optimal="15×20 · 30×40";
+    frame="15×20 · 30×40";
+  }else if(Math.abs(r-(16/9))<=0.10){
+    label="16:9";
+    optimal="Vario / Panorama";
+    frame="10×15 · 15×20 · 20×30";
+    warning="Optimal passende Breitformate sind meist keine klassischen Standardformate für handelsübliche Rahmen.";
+  }else{
+    label=`${r.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})}:1`;
+    optimal="Vario / Panorama prüfen";
+    frame="Standardformat wählen und Bildausschnitt prüfen";
+    warning="Ein optimal passendes Sonderformat ist nicht immer ein Standardformat für handelsübliche Rahmen.";
+  }
+  return `<div class="format-assistant"><strong>Formatassistent: ${escapeHtml(label)}</strong><br>Optimal fürs Bild: ${escapeHtml(optimal)}<br>Standard für Rahmen: ${escapeHtml(frame)}${warning?`<span class="fa-warn">Hinweis: ${escapeHtml(warning)}</span>`:""}</div>`;
+}
+
 function updateQualityCell(itemId){
   const item=items.find(x=>x.id===itemId);
   const row=fileList.querySelector(`[data-id="${itemId}"]`);
@@ -1695,7 +1729,7 @@ function updateQualityCell(itemId){
   const cell=row.querySelector(".qualitycell");
   if(!cell) return;
   const q=qualityInfo(item);
-  cell.innerHTML=`<span class="qualitybadge ${q.kind}">${escapeHtml(q.label)}</span>${q.detail?`<span class="qualitydetail">${escapeHtml(q.detail)}</span>`:""}`;
+  cell.innerHTML=`<span class="qualitybadge ${q.kind}">${escapeHtml(q.label)}</span>${q.detail?`<span class="qualitydetail">${escapeHtml(q.detail)}</span>`:""}${ratioAssistant(item)}`;
 }
 
 function probeImageDimensions(item){
@@ -2085,7 +2119,7 @@ function renderFiles(){
       <div class="qtycell">
         <input aria-label="Stückzahl für ${safeName}" type="number" min="1" max="999" step="1" value="${item.qty}">
       </div>
-      <div class="qualitycell"><span class="qualitybadge ${q.kind}">${escapeHtml(q.label)}</span>${q.detail?`<span class="qualitydetail">${escapeHtml(q.detail)}</span>`:""}</div>
+      <div class="qualitycell"><span class="qualitybadge ${q.kind}">${escapeHtml(q.label)}</span>${q.detail?`<span class="qualitydetail">${escapeHtml(q.detail)}</span>`:""}${ratioAssistant(item)}</div>
       <strong class="lineprice">${euro(price*item.qty)}</strong>
       <div class="removecell"><button class="removebtn" type="button" title="Bild entfernen" aria-label="${safeName} entfernen">×</button></div>
     `;
@@ -2882,7 +2916,7 @@ updateSummary();
 
 
 <script>
-/* FotoJoe GETIN V25.2 – mobiles Navigationsmenü; keine Bestell-/Uploadlogik */
+/* FotoJoes V36 – mobiles Navigationsmenü; keine Bestell-/Uploadlogik */
 (()=>{
   const toggle=document.getElementById('mobileNavToggle');
   const links=document.querySelector('.navlinks');
@@ -2914,7 +2948,7 @@ if("serviceWorker" in navigator){
 </script>
 
 <script>
-window.FOTOJO_GETIN_BUILD=34;
+window.FOTOJO_GETIN_BUILD=36;
 </script>
 
 <script>
@@ -2931,17 +2965,45 @@ window.FOTOJO_GETIN_BUILD=34;
   if(!fileInput) return;
   const list=document.getElementById("copyFileList"), totalEl=document.getElementById("copyTotal"), btn=document.getElementById("copyOrderButton");
   const info=document.getElementById("copyStatusInfo"), ok=document.getElementById("copyStatusOk"), err=document.getElementById("copyStatusErr");
+  const progress=document.getElementById("copyProgress"), progressBar=document.getElementById("copyProgressBar"), progressText=document.getElementById("copyProgressText"), progressPct=document.getElementById("copyProgressPct"), progressTrack=progress?.querySelector(".copy-progress-track");
   let docs=[];
   const euro=c=>Number(c/100).toLocaleString("de-DE",{style:"currency",currency:"EUR"});
   const extOf=n=>(String(n).toLowerCase().match(/\.([a-z0-9]+)$/)||[])[1]||"";
   const isImage=f=>["jpg","jpeg","png"].includes(extOf(f.name));
   const price=(code,totalQty)=>code==="COPY_A4_COLOR"?(totalQty>=3?120:150):code==="COPY_A3_COLOR"?(totalQty>=3?250:350):(totalQty>=3?50:80);
+  let copyOrderSuccess=false;
+  function setCopyProgress(percent,text,done=false){
+    const p=Math.max(0,Math.min(100,Math.round(Number(percent)||0)));
+    progress?.classList.add("show");
+    progress?.classList.toggle("done",!!done);
+    if(progressBar)progressBar.style.width=`${p}%`;
+    if(progressPct)progressPct.textContent=`${p} %`;
+    if(progressText)progressText.textContent=text||"Übertragung läuft …";
+    if(progressTrack)progressTrack.setAttribute("aria-valuenow",String(p));
+  }
+  function hideCopyProgress(){
+    progress?.classList.remove("show","done");
+    if(progressBar)progressBar.style.width="0%";
+    if(progressPct)progressPct.textContent="0 %";
+    if(progressText)progressText.textContent="Übertragung läuft …";
+    if(progressTrack)progressTrack.setAttribute("aria-valuenow","0");
+  }
+  function resetSuccessButton(){
+    if(!copyOrderSuccess)return;
+    copyOrderSuccess=false;
+    btn.classList.remove("copy-success");
+    btn.textContent="Kopierauftrag kostenpflichtig bestellen";
+    hideCopyProgress();
+  }
   function clearStatus(){for(const el of [info,ok,err]){el.classList.remove("show");el.textContent=""}}
   function show(el,text){clearStatus();el.textContent=text;el.classList.add("show")}
   function totalsByCode(){const m=new Map();for(const d of docs){const q=d.pages*d.copies;m.set(d.code,(m.get(d.code)||0)+q)}return m}
   function totalCents(){const m=totalsByCode();return docs.reduce((sum,d)=>sum+price(d.code,m.get(d.code)||1)*d.pages*d.copies,0)}
   function validCustomer(){const fn=document.getElementById("copyFirstName").value.trim(),ln=document.getElementById("copyLastName").value.trim(),em=document.getElementById("copyEmail").value.trim();return fn&&ln&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)}
-  function refreshButton(){btn.disabled=!(docs.length&&validCustomer())}
+  function refreshButton(){
+    if(copyOrderSuccess){btn.disabled=true;return}
+    btn.disabled=!(docs.length&&validCustomer())
+  }
   function render(){
     list.innerHTML=""; const totals=totalsByCode();
     docs.forEach((d,i)=>{
@@ -2963,7 +3025,7 @@ window.FOTOJO_GETIN_BUILD=34;
   }
   function escapeHtml(v){return String(v).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]))}
   fileInput.addEventListener("change",()=>{
-    clearStatus();
+    resetSuccessButton();hideCopyProgress();clearStatus();
     for(const f of [...fileInput.files]){
       const ext=extOf(f.name);
       if(!allowedExt.has(ext)){show(err,`${f.name}: Dateiformat wird nicht unterstützt.`);continue}
@@ -2972,26 +3034,43 @@ window.FOTOJO_GETIN_BUILD=34;
     }
     fileInput.value="";render();
   });
-  for(const id of ["copyFirstName","copyLastName","copyEmail","copyPhone"]){document.getElementById(id).addEventListener("input",refreshButton)}
+  for(const id of ["copyFirstName","copyLastName","copyEmail","copyPhone"]){document.getElementById(id).addEventListener("input",()=>{resetSuccessButton();hideCopyProgress();refreshButton()})}
   async function jsonFetch(url,opt){const r=await fetch(url,opt);let d={};try{d=await r.json()}catch{}if(!r.ok||!d.ok)throw new Error(d.error||`HTTP ${r.status}`);return d}
   btn.addEventListener("click",async()=>{
     clearStatus();if(!docs.length||!validCustomer())return;
     if(docs.some(d=>d.pages*d.copies>999)){show(err,"Je Datei sind maximal 999 Druckseiten möglich. Bitte Seiten oder Exemplare reduzieren.");return}
     const totalQty=docs.reduce((n,d)=>n+d.pages*d.copies,0);if(totalQty>2500){show(err,"Bitte teilen Sie den Auftrag in kleinere Bestellungen auf.");return}
     btn.disabled=true;btn.textContent="Kopierauftrag wird übertragen …";
+    setCopyProgress(5,"Übertragung läuft – Auftrag wird vorbereitet …");
     try{
       show(info,"Auftrag wird angelegt …");
       const payload={tenant,source:"copies",shipping:"pickup",firstName:document.getElementById("copyFirstName").value.trim(),lastName:document.getElementById("copyLastName").value.trim(),email:document.getElementById("copyEmail").value.trim(),phone:document.getElementById("copyPhone").value.trim(),items:docs.map(d=>({filename:d.file.name,productCode:d.code,pageCount:d.pages,copyCount:d.copies,quantity:d.pages*d.copies}))};
       const order=await jsonFetch(createUrl,{method:"POST",headers:{"content-type":"application/json","x-fotoworks-tenant":tenant},body:JSON.stringify(payload)});
+      setCopyProgress(12,"Auftrag angelegt – Dateien werden übertragen …");
       if(Math.abs(Number(order.total||0)*100-totalCents())>0.5)throw new Error("Serverpreis weicht von der angezeigten Summe ab. Bitte nicht erneut senden und Foto Weber informieren.");
       for(let i=0;i<docs.length;i++){
-        const d=docs[i];show(info,`Datei ${i+1} von ${docs.length} wird übertragen: ${d.file.name}`);
+        const d=docs[i];
+        const startPct=12+Math.round((i/docs.length)*78);
+        show(info,`Datei ${i+1} von ${docs.length} wird übertragen: ${d.file.name}`);
+        setCopyProgress(startPct,`Übertragung läuft – Datei ${i+1} von ${docs.length}: ${d.file.name}`);
         await jsonFetch(uploadUrl,{method:"POST",headers:{"content-type":d.file.type||"application/octet-stream","x-order-id":order.orderId,"x-upload-token":order.uploadToken,"x-filename":encodeURIComponent(d.file.name),"x-product-code":d.code,"x-quantity":String(d.pages*d.copies),"x-item-index":String(i),"x-fotoworks-tenant":tenant},body:d.file});
+        setCopyProgress(12+Math.round(((i+1)/docs.length)*78),`Datei ${i+1} von ${docs.length} übertragen …`);
       }
+      setCopyProgress(94,"Übertragung fast fertig – Auftrag wird abgeschlossen …");
       await jsonFetch(finalizeUrl,{method:"POST",headers:{"content-type":"application/json","x-fotoworks-tenant":tenant},body:JSON.stringify({orderId:order.orderId,uploadToken:order.uploadToken,tenant})});
-      docs=[];render();show(ok,`Kopierauftrag erfolgreich übertragen. Bestellnummer: ${order.orderId}. Sie erhalten zusätzlich eine Bestätigung per E-Mail.`);
-    }catch(e){show(err,"Fehler: "+String(e?.message||e))}
-    finally{btn.textContent="Kopierauftrag kostenpflichtig bestellen";refreshButton()}
+      docs=[];
+      copyOrderSuccess=true;
+      btn.classList.add("copy-success");
+      btn.textContent="✓ Kopierauftrag erfolgreich bestellt";
+      setCopyProgress(100,"✓ Übertragung abgeschlossen",true);
+      render();
+      btn.disabled=true;
+      show(ok,`Kopierauftrag erfolgreich übertragen. Bestellnummer: ${order.orderId}. Sie erhalten zusätzlich eine Bestätigung per E-Mail.`);
+    }catch(e){setCopyProgress(0,"Übertragung abgebrochen");show(err,"Fehler: "+String(e?.message||e))}
+    finally{
+      if(!copyOrderSuccess)btn.textContent="Kopierauftrag kostenpflichtig bestellen";
+      refreshButton()
+    }
   });
 })();
 </script>
