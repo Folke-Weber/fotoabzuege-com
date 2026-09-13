@@ -16,3 +16,5 @@ Neu:
 - Bilder: fototasse-weiss.jpg / fototasse-farbig.jpg
 
 WICHTIG: Erst prüfen lassen. Danach können die Dateien in das Hauptverzeichnis von Folke-Weber/fotoabzuege-com hochgeladen werden. Die drei Ordner müssen als Ordner erhalten bleiben.
+
+V36.2 AENDERUNG: Hauptzielseite fuer Tassen jetzt /fototassen-sofort/. Alte /fototassen-haigerloch/ leitet auf die neue Zielseite weiter. Startseite und Sitemap angepasst.
